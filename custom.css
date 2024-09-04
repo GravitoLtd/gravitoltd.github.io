@@ -1,0 +1,59 @@
+/* custom.css */
+
+/* Customize the logo */
+.wy-side-nav-search .icon {
+    background: url("../img/logo.png") no-repeat;
+    background-size: contain; /* Ensures the logo scales correctly */
+    width: 100px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    text-indent: -9999px; /* Hide default text */
+}
+
+/* Customize theme colors */
+:root {
+    --wy-nav-side-background: #000000; /* Sidebar background color */
+    --wy-nav-side-link-color: #ffffff; /* Sidebar link color */
+    --wy-menu-vertical-caption: #9e9e9e; /* Sidebar link color */
+    /* --wy-menu-vertical-caption: #FF4010; /* Sidebar link color */
+    --wy-nav-side-link-active-color: #ffa500; /* Sidebar active link color */
+    --wy-content-bg-color: #ffffff; /* Background color for the main content area */
+    --wy-content-color: #333333; /* Default text color */
+}
+
+/* Customize sidebar */
+.wy-nav-side {
+    background-color: var(--wy-nav-side-background); /* Sidebar background color */
+}
+
+.wy-menu-vertical p.caption {
+    color:var(--wy-menu-vertical-caption)
+}
+
+.wy-side-nav-search{
+    background-color:#000000; 
+}
+
+.wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo {
+    max-width: 50%; 
+
+}
+
+.wy-nav-side a {
+    color: var(--wy-nav-side-link-color); /* Sidebar link color */
+}
+
+.wy-nav-side a.current {
+    color: var(--wy-nav-side-link-active-color); /* Active link color */
+}
+
+/* Customize main content */
+.wy-content {
+    background-color: var(--wy-content-bg-color); /* Main content background color */
+    color: var(--wy-content-color); /* Main content text color */
+}
+
+/* Customize footer */
+.wy-footer {
+    background-color: #f8f9fa; /* Footer background color */
+    color: #333; /* Footer text color */
+}
