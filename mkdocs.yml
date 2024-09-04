@@ -1,0 +1,51 @@
+site_name: Gravito Documentation
+site_url: https://gravitoltd.github.io/
+
+theme:
+  name: readthedocs
+  logo: 'img/logo.png'  # Path to your custom logo
+  favicon: 'img/logo.png'  # Optional: Path to your favicon
+  custom_dir: 'docs/css'  # Optional: Specify the custom directory if needed
+  palette:
+    primary: 'indigo'
+    accent: 'orange'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+extra_css:
+  - 'css/custom.css'  # Path to your custom CSS file
+
+nav:
+  - Getting started:
+      - Frequently Asked Questions: 'Getting_started/Frequently_Asked_Questions.md'
+      - Register: 'Getting_started/Register.md'
+      - Support: 'Getting_started/Support.md'
+      - Release Notes: 'Getting_started/Release_Notes.md'
+  - Gravito Intelligent CMP:
+      - Getting Started: 'Gravito_Intelligent_CMP/Getting_Started.md'
+      - Setup and Design: 'Gravito_Intelligent_CMP/Setup_and_Design.md'
+      - GTM Template: 'Gravito_Intelligent_CMP/GTM_Template.md'
+      - Release Notes: 'Gravito_Intelligent_CMP/Release_Notes.md'
+      - Advanced Features: 'Gravito_Intelligent_CMP/Advanced_Features.md'
+  - Gravito TCF 2.2 CMP:
+      - Getting Started: 'Gravito_TCF_2.2_CMP/Getting_Started.md'
+      - Setup and Design: 'Gravito_TCF_2.2_CMP/Setup_and_Design.md'
+      - Mobile apps: 'Gravito_TCF_2.2_CMP/Mobile_apps.md'
+      - Advanced features: 'Gravito_TCF_2.2_CMP/Advanced_features.md'
+  - Gravito SDK:
+      - Getting Started: 'Gravito_SDK/Getting_Started.md'
+      - Release Notes: 'Gravito_SDK/Release_Notes.md'
+      - Version 2 (Latest): 'Gravito_SDK/Version_2_(Latest).md'
+  - Gravito API:
+      - Getting Started: 'Gravito_API/Getting_Started.md'
+      - Setup and Validation: 'Gravito_API/Setup_and_Validation.md'
+      - Version 3 (Latest): 'Gravito_API/Version_3_(Latest).md'
+      - Version 2: 'Gravito_API/Version_2.md'
+      - Microprofile: 'Gravito_API/Microprofile.md'
+  - Other Features:
+      - Cookie Scanner: 'Other_Features/Cookie_Scanner.md'
+      - GVL Comparison: 'Other_Features/GVL_Comparison.md'
+      - Prebid User Id Module: 'Other_Features/Prebid_User_Id_Module.md'
+  - Try it out:
+      - Playbooks: 'Try_it_out/Playbooks.md'
