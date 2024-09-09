@@ -1,5 +1,15 @@
 /* custom.css */
 
+@font-face {
+    font-family: "gravitofont";
+    src: url('../fonts/Aeonik-Regular.ttf') format('truetype');;
+}
+
+*{
+    font-family: 'gravitofont', Helvetica, Arial, Lucida, sans-serif;
+    
+}
+
 /* Customize the logo */
 .wy-side-nav-search .icon {
     background: url("../img/logo.png") no-repeat;
