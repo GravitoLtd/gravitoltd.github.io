@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Version 4 (Latest) - Gravito Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Version 4 (Latest)";
+        var mkdocs_page_input_path = "Gravito_Intelligent_CMP\\advanced\\Latest_Config.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../..">
+          <img src="../../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Frequently_Asked_Questions/">Frequently Asked Questions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Register/">Register</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Support/">Support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito Intelligent CMP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GTM_Template/">GTM Template</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Release_Notes/">Release Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Advanced_Features/">Advanced Features</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito TCF 2.2 CMP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Mobile_apps/">Mobile apps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Advanced_features/">Advanced features</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Release_Notes/">Release Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Setup_and_Validation/">Setup and Validation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Version_3_%28Latest%29/">Version 3 (Latest)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Version_2/">Version 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Microprofile/">Microprofile</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other Features</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Other_Features/Cookie_Scanner/">Cookie Scanner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Other_Features/GVL_Comparison/">GVL Comparison</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Other_Features/Prebid_User_Id_Module/">Prebid User Id Module</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Try it out</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Try_it_out/Playbooks/">Playbooks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Gravito Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Version 4 (Latest)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="version-4-latest">Version 4 (Latest)</h1>
+<h2 id="how-it-works">How it works?</h2>
+<h3 id="configuration">Configuration</h3>
+<p>Light CMP can be configure and customize as per your need with the help of configuration object.You can generate this configuration object using our Admin Portal or you can create your own from scratch. Following is the example of config object for light CMP.</p>
+<pre><code>var gravitoCMPConfig={
+    &quot;settings&quot;: {
+      &quot;type&quot;: &quot;Light&quot;,
+      &quot;useGCM&quot;: false,
+      &quot;useGravitoBackend&quot;: false,
+      &quot;backendUrl&quot;: &quot;&quot;,
+      &quot;catchCMPEvents&quot;: true,
+      &quot;sdkVersion&quot;: 2,
+      &quot;gtmTags&quot;: []
+    },
+    &quot;core&quot;: {
+      &quot;cookieName&quot;: &quot;GCString&quot;,
+      &quot;languageCode&quot;: &quot;en&quot;,
+      &quot;cookieExpiry&quot;: 365,
+      &quot;settingBtnId&quot;: &quot;manageSettings&quot;,
+      &quot;firstLayerId&quot;: &quot;&quot;,
+      &quot;secondLayerId&quot;: &quot;&quot;,
+      &quot;cookieReportLayerId&quot;: &quot;&quot;,
+      &quot;syncEvents&quot;: [
+        &quot;layer1:opt-in:all&quot;,
+        &quot;layer2:opt-in:all&quot;,
+        &quot;layer2:opt-in:selected&quot;,
+        &quot;layer2:opt-out:all&quot;,
+        &quot;layer1:opt-out:all&quot;
+      ],
+      &quot;syncAfter&quot;: 1800,
+      &quot;useTopDomain&quot;: false,
+      &quot;adsConsentId&quot;: 4,
+      &quot;analyticsConsentId&quot;: 3,
+      &quot;version&quot;: 1,
+      &quot;consents&quot;: [
+        {
+          &quot;type&quot;: &quot;consent&quot;,
+          &quot;id&quot;: 1,
+          &quot;name&quot;: &quot;Essential cookies&quot;,
+          &quot;description&quot;: &quot;Essential cookies and similar technologies are implementing the basic functions of the website such as page navigation, use of forms and shopping cart functionality. Without these technologies the website will not work properly.&quot;,
+          &quot;isConsentable&quot;: false
+        },
+        {
+          &quot;type&quot;: &quot;consent&quot;,
+          &quot;id&quot;: 2,
+          &quot;name&quot;: &quot;Functional cookies&quot;,
+          &quot;description&quot;: &quot;Functional cookies and similar technologies make it possible to save information that changes the way the website appears to you or functions, e.g. your preferred language.&quot;,
+          &quot;isConsentable&quot;: true
+        },
+        {
+          &quot;type&quot;: &quot;consent&quot;,
+          &quot;id&quot;: 3,
+          &quot;name&quot;: &quot;Statistical cookies&quot;,
+          &quot;description&quot;: &quot;Statistical cookies and similar technologies allow us to collect information about how our website is used. This information helps us to improve the content and usability of the website.&quot;,
+          &quot;isConsentable&quot;: true
+        },
+        {
+          &quot;type&quot;: &quot;consent&quot;,
+          &quot;id&quot;: 4,
+          &quot;name&quot;: &quot;Marketing &amp; advertising cookies&quot;,
+          &quot;description&quot;: &quot;Marketing cookies and similar technologies are used to track visitors across websites. The intention is to display ads that are relevant and interesting to you and thus more valuable for us and third-party advertisers.&quot;,
+          &quot;isConsentable&quot;: true
+        }
+      ]
+    },
+    &quot;text&quot;: {
+      &quot;firstLayer&quot;: {
+        &quot;title&quot;: &quot;We need your consent to provide personalized experience&quot;,
+        &quot;introductionText&quot;: &quot;We and our third-party vendors are collecting personal data (e.g. IP address, device identifier) through the use of cookies and other technical methods which are storing and accessing data on your device to provide the best user experience and show targetted content and advertising.&quot;,
+        &quot;legalFooter&quot;: &quot;By accepting, you are allowing data processing within the service, rejection can affect the user experience.&quot;,
+        &quot;privacyPolicyUrl&quot;: &quot;https://site.url.invalid/privacy-policy&quot;,
+        &quot;privacyLabel&quot;: &quot;Privacy Policy&quot;,
+        &quot;checkBoxLabels&quot;: {
+          &quot;consent&quot;: &quot;Consent&quot;
+        },
+        &quot;actions&quot;: [&quot;Accept all&quot;, &quot;Settings&quot;, &quot;Reject all&quot;]
+      },
+      &quot;secondLayer&quot;: {
+        &quot;title&quot;: &quot;Gravito Settings&quot;,
+        &quot;introductionText&quot;: &quot;Please select from the following list of purposes to help us serve you better.&quot;,
+        &quot;privacyPolicyUrl&quot;: &quot;https://site.url.invalid/privacy-policy&quot;,
+        &quot;privacyLabel&quot;: &quot;Privacy Policy&quot;,
+        &quot;checkBoxLabels&quot;: {
+          &quot;consent&quot;: &quot;Consent&quot;
+        },
+        &quot;actions&quot;: [&quot;Accept all&quot;, &quot;Accept selected&quot;, &quot;Reject all&quot;]
+      },
+      &quot;confirmationLayer&quot;: {
+        &quot;confirmationForUncheck&quot;: {
+          &quot;heading&quot;: &quot;Are you sure you want to disable?&quot;,
+          &quot;paragraphs&quot;: [
+            &quot;These cookies or other technical methods are important so that we can provide you with a better and more personal user experience.&quot;
+          ]
+        },
+        &quot;confirmationForAcceptSelected&quot;: {
+          &quot;heading&quot;: &quot;Are you sure you want to disable?&quot;,
+          &quot;paragraphs&quot;: [
+            &quot;Cookies and other technical methods are important so that we can provide you with a better and more personal user experience.&quot;,
+            &quot;Without cookies or other technical methods, our ability to develop our services based on your preferences becomes more difficult, some features may be blocked, and your user experience may deteriorate.&quot;
+          ]
+        },
+        &quot;actions&quot;: [&quot;Cancel&quot;, &quot;Yes&quot;]
+      },
+      &quot;cookieReportLayer&quot;: {
+        &quot;buttonTitle&quot;: &quot;Cookie Report&quot;,
+        &quot;heading&quot;: &quot;Cookie Reports layer header&quot;,
+        &quot;introductionText&quot;: &quot;Cookies are small text files that websites can use to make the user experience more efficient. We use cookies on the website. We use cookies on this website to improve the visitor experience and to better serve you. Based on our scan, this is how the cookies that will be used based on the preference set by you.&quot;,
+        &quot;beforeAcceptHeader&quot;: &quot;Before Accepting&quot;,
+        &quot;afterAcceptHeader&quot;: &quot;After Accepting&quot;,
+        &quot;nameHeader&quot;: &quot;Name&quot;,
+        &quot;domainHeader&quot;: &quot;Domain&quot;,
+        &quot;descriptionHeader&quot;: &quot;Description&quot;,
+        &quot;cookieTypeHeader&quot;: &quot;Cookie Type&quot;,
+        &quot;expiryHeader&quot;: &quot;Expiry in days&quot;,
+        &quot;httpOnlyHeader&quot;: &quot;Http Only&quot;,
+        &quot;noCookieDataMessage&quot;: &quot;No scan results available&quot;,
+        &quot;noCookieDataBeforeAcceptingMsg&quot;: &quot;No cookies were found before Accepting the consents on this domain.&quot;,
+        &quot;noCookieDataAfterAcceptingMsg&quot;: &quot;No cookies were found after Accepting the consents on this domain &quot;
+      }
+    },
+    &quot;style&quot;: {
+
+      &quot;customCSS&quot;: &quot;&quot;,
+      &quot;logoUrl&quot;: &quot;https://cdn.gravito.net/logos/gravito_logo.jpg&quot;,
+      &quot;logoSvg&quot;: &quot;&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;105\&quot; height=\&quot;18\&quot; viewBox=\&quot;0 0 105 18\&quot;&gt;&lt;path fill=\&quot;#1C4598\&quot; fill-rule=\&quot;evenodd\&quot; d=\&quot;M88.922 10.934h6.569l-3.285-6.331-3.284 6.331zm9.95 6.844l-1.563-3.046H87.086l-1.545 3.045h-5.837L89.07.29h6.568L105 17.778h-6.128zM73.445.291h5.284v17.487h-5.284V.291zm-9.152 0h6.974l-9.413 8.18 10.617 9.307h-7.463l-9.64-9.12L64.293.291zM50.085 17.778h5.283V.291h-5.283v17.487zm-9.04-4.209c1.156 0 1.563-.069 1.84-.325.258-.24.372-.548.372-1.576V6.332c0-1.028-.114-1.334-.372-1.574-.277-.258-.684-.326-1.84-.326h-8.208c-1.155 0-1.561.068-1.837.326-.26.24-.374.546-.374 1.574v5.336c0 1.028.114 1.337.374 1.576.276.256.682.325 1.837.325h8.209zm6.976-1.198c0 2.43-.423 3.269-1.123 4.072C45.826 17.64 44.265 18 41.258 18h-8.632c-3.007 0-4.57-.36-5.641-1.557-.7-.803-1.122-1.641-1.122-4.072V5.629c0-2.43.423-3.266 1.122-4.071C28.057.36 29.619 0 32.626 0h8.633c3.006 0 4.567.36 5.64 1.558.699.805 1.122 1.642 1.122 4.071v6.742zM5.056 17.778H0V.291h8.744l10.031 13.055V.291h5.056v17.487h-8.567L5.056 4.5v13.278z\&quot;/&gt;&lt;/svg&gt;&quot;,
+      &quot;logoType&quot;: &quot;img&quot;,
+      &quot;primaryColor&quot;: &quot;orange&quot;,
+      &quot;secondaryColor&quot;: &quot;grey&quot;,
+
+      &quot;disableConfirmationModal&quot;: false,
+
+      &quot;fonts&quot;: [
+        {
+          &quot;url&quot;: &quot;https://cdn.gravito.net/fonts/lato-v22-latin-700.woff2&quot;,
+          &quot;unicodeRange&quot;: &quot;U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://cdn.gravito.net/fonts/lato-v22-latin-700.woff2&quot;,
+          &quot;unicodeRange&quot;: &quot;U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;&quot;
+        }
+      ]
+    }
+  },
+
+</code></pre>
+<h3 id="deployment">Deployment</h3>
+<p>Light CMP's can be deployed with the help of SDK V2. Add your config object to window.gravitoCMPConifg variable.</p>
+<pre><code>window.gravitoCMPConfig = gravitoCMPConfig;
+
+</code></pre>
+<h4 id="standalone-light-cmp">Standalone Light CMP.</h4>
+<p>To add Standalone light CMP add following script in your website below your gravitoCMPConfig object.</p>
+<pre><code>var gravitoSDKTag = document.createElement(&quot;script&quot;);
+gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
+gravitoSDKTag.onload = function () {
+  window.gravito.init(&quot;lightCMP&quot;);
+};
+document.body.appendChild(gravitoSDKTag);
+
+</code></pre>
+<h4 id="light-cmp-with-backend">Light CMP with backend.</h4>
+<p>To add Light CMP with backend add following values to settings section of your config object</p>
+<pre><code>window.gravitoCMPConfig = {
+  settings: {
+    type: &quot;Light&quot;,
+    useGravitoBackend: true,
+    backendUrl: &quot;https://gto.yourDomainName&quot;, // if left empty url will be generated from hostname
+    version: &quot;bundle_latest_4&quot;,
+    sdkVersion: 2,
+  },
+  //other sections
+};
+
+</code></pre>
+<p>And add following script in your website below your gravitoCMPConfig object.</p>
+<pre><code>var gravitoSDKTag = document.createElement(&quot;script&quot;);
+gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
+gravitoSDKTag.onload = function () {
+  window.gravito.init(&quot;lightCMP&quot;, &quot;firstParty&quot;);
+};
+document.body.appendChild(gravitoSDKTag);
+
+</code></pre>
+<h4 id="using-gcm-mode">Using GCM mode.</h4>
+<p>GCM support can be added to both standalone CMP and CMP with backend by adding useGCM property to settings section.</p>
+<pre><code>window.gravitoCMPConfig = {
+  settings: {
+    type: &quot;Light&quot;,
+    useGCM: true, // add this to enable GCMuseGravitoBackend: true,
+    backendUrl: &quot;https://gto.yourDomainName&quot;, // if left empty url will be generated from hostname
+    version: &quot;bundle_latest_2&quot;,
+    sdkVersion: 2,
+  },
+  //other sections
+};
+
+</code></pre>
+<h3 id="sample-scripts">Sample Scripts</h3>
+<h4 id="light-cmp-in-modal-view">Light CMP in Modal View.</h4>
+<p>By using customCSS property you can render CMP in modal view. Following script demonstrates this type of customization.</p>
+<pre><code>var customCss =
+  &quot;gravitoLightCMP-layer1-logo{ margin: 0 25px 0 0 !important; width: 80px !important; }.gravitoLightCMP-layer1-modal,.gravitoLightCMP-layer2-modal {width: 75%;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);bottom: unset;}&quot;;
+window.gravitoCMPConfig = {
+  settings: {
+    type: &quot;Light&quot;,
+    useGCM: false,
+    useGravitoBackend: false,
+    backendUrl: &quot;&quot;,
+    catchCMPEvents: true,
+    sdkVersion: 2,
+    userIdModule: false,
+    gtmTags: [],
+    version: &quot;bundle_latest_4&quot;,
+  },
+  core: {
+    cookieName: &quot;GCString&quot;,
+    languageCode: &quot;en&quot;,
+    cookieExpiry: 365,
+    settingBtnId: &quot;manageSettings&quot;,
+    firstLayerId: &quot;&quot;,
+    secondLayerId: &quot;&quot;,
+    cookieReportLayerId: &quot;&quot;,
+    syncEvents: [
+      &quot;layer1:opt-in:all&quot;,
+      &quot;layer2:opt-in:all&quot;,
+      &quot;layer2:opt-in:selected&quot;,
+      &quot;layer2:opt-out:all&quot;,
+      &quot;layer1:opt-out:all&quot;,
+    ],
+    syncAfter: 1800,
+    useTopDomain: false,
+    adsConsentId: 4,
+    analyticsConsentId: 3,
+    version: 1,
+    consents: [
+      {
+        type: &quot;consent&quot;,
+        id: 1,
+        name: &quot;Essential cookies&quot;,
+        description:
+          &quot;Essential cookies and similar technologies are implementing the basic functions of the website such as page navigation, use of forms and shopping cart functionality. Without these technologies the website will not work properly.&quot;,
+        isConsentable: false,
+      },
+      {
+        type: &quot;consent&quot;,
+        id: 2,
+        name: &quot;Functional cookies&quot;,
+        description:
+          &quot;Functional cookies and similar technologies make it possible to save information that changes the way the website appears to you or functions, e.g. your preferred language.&quot;,
+        isConsentable: true,
+      },
+      {
+        type: &quot;consent&quot;,
+        id: 3,
+        name: &quot;Statistical cookies&quot;,
+        description:
+          &quot;Statistical cookies and similar technologies allow us to collect information about how our website is used. This information helps us to improve the content and usability of the website.&quot;,
+        isConsentable: true,
+      },
+      {
+        type: &quot;consent&quot;,
+        id: 4,
+        name: &quot;Marketing &amp; advertising cookies&quot;,
+        description:
+          &quot;Marketing cookies and similar technologies are used to track visitors across websites. The intention is to display ads that are relevant and interesting to you and thus more valuable for us and third-party advertisers.&quot;,
+        isConsentable: true,
+      },
+    ],
+  },
+  text: {
+    firstLayer: {
+      title: &quot;We need your consent to provide personalized experience&quot;,
+      introductionText:
+        &quot;We and our third-party vendors are collecting personal data (e.g. IP address, device identifier) through the use of cookies and other technical methods which are storing and accessing data on your device to provide the best user experience and show targetted content and advertising.&quot;,
+      legalFooter:
+        &quot;By accepting, you are allowing data processing within the service, rejection can affect the user experience.&quot;,
+      privacyPolicyUrl: &quot;https://site.url.invalid/privacy-policy&quot;,
+      privacyLabel: &quot;Privacy Policy&quot;,
+      checkBoxLabels: {
+        consent: &quot;Consent&quot;,
+      },
+      actions: [&quot;Accept all&quot;, &quot;Settings&quot;, &quot;Reject all&quot;],
+    },
+    secondLayer: {
+      title: &quot;Gravito Settings&quot;,
+      introductionText:
+        &quot;Please select from the following list of purposes to help us serve you better.&quot;,
+      privacyPolicyUrl: &quot;https://site.url.invalid/privacy-policy&quot;,
+      privacyLabel: &quot;Privacy Policy&quot;,
+      checkBoxLabels: {
+        consent: &quot;Consent&quot;,
+      },
+      actions: [&quot;Accept all&quot;, &quot;Accept selected&quot;, &quot;Reject all&quot;],
+    },
+    confirmationLayer: {
+      confirmationForUncheck: {
+        heading: &quot;Are you sure you want to disable?&quot;,
+        paragraphs: [
+          &quot;These cookies or other technical methods are important so that we can provide you with a better and more personal user experience.&quot;,
+        ],
+      },
+      confirmationForAcceptSelected: {
+        heading: &quot;Are you sure you want to disable?&quot;,
+        paragraphs: [
+          &quot;Cookies and other technical methods are important so that we can provide you with a better and more personal user experience.&quot;,
+          &quot;Without cookies or other technical methods, our ability to develop our services based on your preferences becomes more difficult, some features may be blocked, and your user experience may deteriorate.&quot;,
+        ],
+      },
+      actions: [&quot;Cancel&quot;, &quot;Yes&quot;],
+    },
+    cookieReportLayer: {
+      buttonTitle: &quot;Cookie Report&quot;,
+      heading: &quot;Cookie Reports layer header&quot;,
+      introductionText:
+        &quot;Cookies are small text files that websites can use to make the user experience more efficient. We use cookies on the website. We use cookies on this website to improve the visitor experience and to better serve you. Based on our scan, this is how the cookies that will be used based on the preference set by you.&quot;,
+      beforeAcceptHeader: &quot;Before Accepting&quot;,
+      afterAcceptHeader: &quot;After Accepting&quot;,
+      nameHeader: &quot;Name&quot;,
+      domainHeader: &quot;Domain&quot;,
+      descriptionHeader: &quot;Description&quot;,
+      cookieTypeHeader: &quot;Cookie Type&quot;,
+      expiryHeader: &quot;Expiry in days&quot;,
+      httpOnlyHeader: &quot;Http Only&quot;,
+      noCookieDataMessage: &quot;No scan results available&quot;,
+      noCookieDataBeforeAcceptingMsg:
+        &quot;No cookies were found before Accepting the consents on this domain.&quot;,
+      noCookieDataAfterAcceptingMsg:
+        &quot;No cookies were found after Accepting the consents on this domain &quot;,
+    },
+  },
+  style: {
+    customCSS: customCss,
+    logoUrl: &quot;https://cdn.gravito.net/logos/gravito_logo.jpg&quot;,
+    logoSvg:
+      '&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;105&quot; height=&quot;18&quot; viewBox=&quot;0 0 105 18&quot;&gt;&lt;path fill=&quot;#1C4598&quot; fill-rule=&quot;evenodd&quot; d=&quot;M88.922 10.934h6.569l-3.285-6.331-3.284 6.331zm9.95 6.844l-1.563-3.046H87.086l-1.545 3.045h-5.837L89.07.29h6.568L105 17.778h-6.128zM73.445.291h5.284v17.487h-5.284V.291zm-9.152 0h6.974l-9.413 8.18 10.617 9.307h-7.463l-9.64-9.12L64.293.291zM50.085 17.778h5.283V.291h-5.283v17.487zm-9.04-4.209c1.156 0 1.563-.069 1.84-.325.258-.24.372-.548.372-1.576V6.332c0-1.028-.114-1.334-.372-1.574-.277-.258-.684-.326-1.84-.326h-8.208c-1.155 0-1.561.068-1.837.326-.26.24-.374.546-.374 1.574v5.336c0 1.028.114 1.337.374 1.576.276.256.682.325 1.837.325h8.209zm6.976-1.198c0 2.43-.423 3.269-1.123 4.072C45.826 17.64 44.265 18 41.258 18h-8.632c-3.007 0-4.57-.36-5.641-1.557-.7-.803-1.122-1.641-1.122-4.072V5.629c0-2.43.423-3.266 1.122-4.071C28.057.36 29.619 0 32.626 0h8.633c3.006 0 4.567.36 5.64 1.558.699.805 1.122 1.642 1.122 4.071v6.742zM5.056 17.778H0V.291h8.744l10.031 13.055V.291h5.056v17.487h-8.567L5.056 4.5v13.278z&quot;/&gt;&lt;/svg&gt;',
+    logoType: &quot;img&quot;,
+    primaryColor: &quot;orange&quot;,
+    secondaryColor: &quot;grey&quot;,
+    disableConfirmationModal: false,
+    fonts: [
+      {
+        url: &quot;https://cdn.gravito.net/fonts/lato-v22-latin-700.woff2&quot;,
+        unicodeRange:
+          &quot;U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;&quot;,
+      },
+      {
+        url: &quot;https://cdn.gravito.net/fonts/lato-v22-latin-700.woff2&quot;,
+        unicodeRange:
+          &quot;U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;&quot;,
+      },
+    ],
+  },
+};
+var gravitoSDKTag = document.createElement(&quot;script&quot;);
+gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
+gravitoSDKTag.onload = function () {
+  window.gravito.init(&quot;lightCMP&quot;);
+};
+document.body.appendChild(gravitoSDKTag);
+
+</code></pre>
+<h2 id="migrating-to-lightcmp-version-4">Migrating to lightCMP Version 4</h2>
+<ol>
+<li>Add settings section your config Object with following properties.</li>
+</ol>
+<pre><code>var gravitoCMPConfig = {
+  settings: {
+    type: &quot;Light&quot;,
+    useGCM: false, // Set this flag to true if you want to use Google Consent Mode with light CMP
+    useGravitoBackend: false, // Set this flag to true if you want to use gravito backend with Light CMP
+    backendUrl: &quot;&quot;, // This will be the URL of your gravito firstparty domain for backend support EX: https://gto.yourdomain.net. if left empty it will be evaluated from your hosted domain.
+    version: &quot;bundle_latest_4&quot;, // This will be the version of your lightCMP. bundle_latest_4 is recommended
+    sdkVersion: 2, // Don;t change this value ,
+    catchCMPEvents: false, // Set this value to true if you want to capture CMP events and generate report on https://admin.gravito.net dashborad.
+  },
+  // other properties
+};
+</code></pre>
+<ol>
+<li>CSS structure in Version 4 is different from that of Version 2 so if you are comming from version 2 you will have to redo the css customization for v4 and update you customCSS property in style section of your config object.</li>
+<li>Light CMP Version 4 should be deployed with gravito SDK version 2.Change your deployment script as follows.</li>
+</ol>
+<pre><code>window.gravitoCMPConfig = gravitoCMPConfig; // Replace this with your config object;var gravitoSDKTag = document.createElement(&quot;script&quot;);
+gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
+gravitoSDKTag.onload = function () {
+  window.gravito.init(&quot;lightCMP&quot;); // For Standalone Light CMP
+  // window.gravito.init(&quot;lightCMP&quot;,firstParty); // For Light CMP with backend
+};
+document.body.appendChild(gravitoSDKTag);
+
+</code></pre>
+<ol>
+<li>Version 4 now has feature to resurface CMP to users if their is version upgrade in config. To enable this you will have to add <code>resurfaceOnMissingVersion: true</code> to the core section of your config.</li>
+<li>Test your implementation of Light CMP Version 4 thoroughly to ensure that all features are working as expected and that there are no issues with the updated CSS structure or GCM/backend integration.</li>
+<li>Once you have confirmed that everything is working as expected, you can proceed with deploying Light CMP Version 4 on your production website.</li>
+</ol>
+<p>Note Please note that this is a general guide and your specific implementation may require additional steps. It is always recommended to test your implementation thoroughly before deploying it to production. If you have any questions or issues during the migration process, please reach out to Gravito support for assistance.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

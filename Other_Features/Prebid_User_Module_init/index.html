@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>GTM Template - Gravito Documentation</title>
+    <title>Getting Started - Gravito Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "GTM Template";
-        var mkdocs_page_input_path = "Gravito_Intelligent_CMP\\GTM_Template.md";
+        var mkdocs_page_name = "Getting Started";
+        var mkdocs_page_input_path = "Other_Features\\Prebid_User_Module_init.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -53,18 +53,16 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito Intelligent CMP</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../Getting_Started/">Getting Started</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/Getting_Started/">Getting Started</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Setup_and_Design/">Setup and Design</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/Setup_and_Design/">Setup and Design</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">GTM Template</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/GTM_Template/">GTM Template</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Release_Notes/">Release Notes</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/Release_Notes/">Release Notes</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Advanced_Features/">Advanced Features</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/Advanced_Features/">Advanced Features</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito TCF 2.2 CMP</span></p>
@@ -102,11 +100,11 @@
               </ul>
               <p class="caption"><span class="caption-text">Other Features</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/Cookie_Scanner/">Cookie Scanner</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Cookie_Scanner/">Cookie Scanner</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/GVL_Comparison/">GVL Comparison</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../GVL_Comparison/">GVL Comparison</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/Prebid_User_Id_Module/">Prebid User Id Module</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Prebid_User_Id_Module/">Prebid User Id Module</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Try it out</span></p>
@@ -128,8 +126,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Gravito Intelligent CMP</li>
-      <li class="breadcrumb-item active">GTM Template</li>
+      <li class="breadcrumb-item active">Getting Started</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -138,23 +135,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="gtm-template">GTM Template</h1>
-<p>Gravito CMP now can be deployed using GTM Template. In order to use this feature, while creating the configuration for Gravito CMP you will have to check the "Is GTM?" flag in the basic section of the configuration wizard.</p>
-<p><img alt="" src="../../img/light_cmp/1_light_cmp.png" /></p>
-<p>If the config is created using the "is GTM? " flag then In the list view we can see an additional GTM icon in front of it. By clicking on the icon we can copy the Unique GTM token of the config which can be used in your GTM container.</p>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/08/image-2-1024x222.png" /></p>
-<p>Now go to your Google Tag Manager, and while creating a GTM tag search for Gravito Lite Custom Template</p>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/08/image-1024x361.png" /></p>
-<p>Inside the tag configuration UI, paste your GTM token, Which you copied from the configurator UI of the Gravito admin portal.</p>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/08/image-1-1024x374.png" /></p>
-<p>Add your required Triggers and then click on save. This template will now use the configuration that you have created and will add Gravito CMP to your website.</p>
+                <h1 id="getting-started">Getting Started</h1>
+<p>Gravito has a user module in prebid js, customers now can use Gravito’s first party service and prebid js usermodule to use a persistent first party id in prebid’s bit stream.</p>
+<p>To Add prebid user ID module add following code to your site.</p>
+<pre><code class="language-javascript">
+window.gravitoCMPConfig = {    
+    settings: {      
+    sdkVersion: 2,      
+userIdModule: true,      
+prebidUrl: &quot;your prebid.js build URL&quot;, // url from which prebid build should be loaded. default will point to gravito's build    
+},  
+};  
+var gravitoSDKTag = document.createElement(&quot;script&quot;);  
+gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;  
+gravitoSDKTag.onload = function () {    
+    // init gravito with two comma separated parameters, firstParty and prebid    
+// this will make sure that the first party service drops a persistent id which can be utlized in prebids bit stream.    
+window.gravito.init(&quot;firstParty&quot;, &quot;prebid&quot;);  
+};  document.body.appendChild(gravitoSDKTag);   
+
+</code></pre>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Setup_and_Design/" class="btn btn-neutral float-left" title="Setup and Design"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Release_Notes/" class="btn btn-neutral float-right" title="Release Notes">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -176,10 +179,6 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Setup_and_Design/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../Release_Notes/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
