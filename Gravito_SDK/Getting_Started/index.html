@@ -138,7 +138,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="to-be-done">To be done</h1>
+                <h1 id="getting-started">Getting Started</h1>
+<p>The Gravito SDK ( Latest Version 2) is a tool that allows developers to communicate with the Gravito APIs and deploy both light CMP and TCF CMP. It includes functions for interacting with the Gravito first party backend solution and is used by all major services within the Gravito platform.</p>
+<p>How to include Gravito SDK to your project?</p>
+<pre><code>&lt;script&gt;
+window.gravitoCMPConfig = {
+  settings: {
+    sdkVersion: 2,
+  },
+};
+var gravitoSDKTag = document.createElement(&quot;script&quot;);
+gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
+gravitoSDKTag.onload = function () {
+  console.log(&quot;gravito SDK loaded&quot;);
+};
+document.body.appendChild(gravitoSDKTag);
+&lt;/script&gt;
+</code></pre>
               
             </div>
           </div><footer>

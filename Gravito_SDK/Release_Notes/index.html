@@ -82,6 +82,8 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Release Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-v2">Release Notes ( V2 )</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Version_2_%28Latest%29/">Version 2 (Latest)</a>
@@ -138,7 +140,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="to-be-done">To be done</h1>
+                <h1 id="release-notes">Release Notes</h1>
+<p>Release Notes (V 2.0.12)<em> (08/02/2024)</em></p>
+<p>New Features:</p>
+<ul>
+<li>SDK now emits separate events when the user has clicked "reject all" previously. This enhancement provides more granular insights into user interactions, allowing for better tracking and analysis of user behavior.</li>
+<li>Added support for GCMV2 for TCF Consent Banners. With this update, Gravito now supports GCMV2.</li>
+</ul>
+<p>Release Notes (V 2.0.11 ) <em>(31/01/2024)</em></p>
+<p>New Features:</p>
+<p>1. Additional Consent Mode Support with TCF CMP</p>
+<p>GravitoSDK now seamlessly supports Google's Additional Consent Mode when integrated with TCF CMP. This enhancement ensures that your application is equipped to handle additional consent requirements in compliance with evolving privacy standards set by Google.</p>
+<p>Bug Fixes:</p>
+<p>1. Crash Fix for Empty First-Party Data</p>
+<p>In version 2.0.11, we've addressed a  bug that caused the SDK to crash when encountering empty first-party data. This bug fix ensures the stability of your website, providing a seamless experience for users even when first-party data is absent.</p>
+<p>Release Notes ( V 2.0.8 ) (<em>04/01/2024</em>)</p>
+<p>New Features</p>
+<ol>
+<li>Google Consent Mode V2 Integration in Light CMP:<ul>
+<li>Gravito SDK now seamlessly integrates Google Consent Mode V2 functionalities within the Light CMP (Consent Management Platform). This update empowers developers to leverage Google's enhanced consent management features, allowing for more refined control over data tracking and advertising purposes.</li>
+<li>With this integration, developers can align their applications with evolving privacy regulations and user preferences by managing consent behavior based on user preferences regarding data collection and processing for advertising purposes.</li>
+</ul>
+</li>
+<li>Support for Custom Cookie Expiry in TCF CMP 'Reject-All' Action:<ul>
+<li>The Gravito SDK introduces support for customizing cookie expiration specifically for the 'Reject-All' action within the TCF CMP (Transparency and Consent Framework Consent Management Platform).</li>
+<li>Developers can now set distinct cookie expiry duration for cookies generated when users opt to 'Reject All' within the CMP UI. This feature empowers publishers to manage cookie lifespans, facilitating re-prompting of CMP UI after a lower expiry period for users who have initially rejected all consent. This is available to be set in the TCF CMP configurator on Gravito portal</li>
+</ul>
+</li>
+</ol>
+<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2024/01/rejectall-cookie.jpg" /></p>
+<hr />
+<h2 id="release-notes-v2">Release Notes ( V2 )</h2>
+<ol>
+<li>Gravito SDK Version 2 now uses a modular approach to avoid unnecessary imports of files into your website. You can configure which modules you want to use at the time of initialization process.</li>
+<li>Currently, it supports four modules: LightCMP, TCFCMP, FirstParty, and UserId modules. The SDK is compatible with LightCMP version 4 and above and TCF CMP version 3 and above.</li>
+<li>This new version of the SDK allows for more flexibility and control over the data collection and processing on your website.</li>
+<li>We recommend updating to this latest version to take advantage of the new features and improvements. Note If you have any issues or questions, please reach out to our support team for assistance.</li>
+</ol>
               
             </div>
           </div><footer>

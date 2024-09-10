@@ -138,7 +138,145 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="to-be-done">To be done</h1>
+                <h1 id="version-2-latest">Version 2 (Latest)</h1>
+<h1 id="using-sdk-v2">Using SDK V2</h1>
+<p>To use Gravito's SDK you should have the Gravito config added to your site. Make sure you also have settings section added inside your config. You can get the config from the <a href="https://adminv2.gravito.net/">Gravito Admin Portal</a></p>
+<p>👉Looking for an older version of Gravito SDK? You can find the older versions here</p>
+<p><a href="../advanced/Gravito_sdk_v1/">Gravito SDK V1</a></p>
+<h2 id="how-it-works">How it works?</h2>
+<h3 id="configuration">Configuration</h3>
+<p>SDK Version can be configured using gravitoCMPConfig object.</p>
+<pre><code>window.gravitoCMPConfig = {
+  settings: {
+    sdkVersion: 2,
+  },
+};
+
+</code></pre>
+<h3 id="deployment">Deployment</h3>
+<p>To Include Gravito SDK Version 2 add following JavaScript to your site. Make sure config loading logic is added above this script.</p>
+<pre><code>var gravitoSDKTag = document.createElement(&quot;script&quot;);
+gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
+gravitoSDKTag.onload = function () {
+  console.log(&quot;gravito SDK loaded&quot;);
+};
+document.body.appendChild(gravitoSDKTag);
+
+</code></pre>
+<h3 id="sample-scripts">Sample Scripts</h3>
+<p>Using SDK to deploy First-Party. To include first-party helper functions of SDK V2 add following JavaScript to your site. Make sure config loading logic is added above this script.</p>
+<pre><code>var gravitoSDKTag = document.createElement(&quot;script&quot;);
+gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
+gravitoSDKTag.onload = function () {
+  window.gravito.init(&quot;firstParty&quot;);
+};
+document.body.appendChild(gravitoSDKTag);
+
+</code></pre>
+<p>To check if the first party has been added to your site or not, please use following script and test it with browser console window. It should return your gravito registered first-party URL</p>
+<pre><code>gravito.firstParty.getDefaultURL();
+</code></pre>
+<p>Once First-party is added to your website you can use the first-party function to interact with gravito backend.</p>
+<h5 id="get-your-profile">Get Your profile.</h5>
+<p>To get your profile you can call following function</p>
+<pre><code>function customCb(data) {
+  console.log(&quot;data&quot;, data);
+}
+gravito.firstParty.getProfile(customCb);
+
+</code></pre>
+<h5 id="have-your-own-first-party-id">Have your own First Party Id?</h5>
+<p>Using gravito first-party you can use your own ID and give it more persistence using Gravito First Party API</p>
+<pre><code>function customCb(data) {
+  console.log(&quot;data&quot;, data);
+}
+var gmId = &quot;your own id&quot;;
+gravito.firstParty.postEvents(
+  {
+    &quot;gmId-overide&quot;: &quot;gmid changed to &quot; + gmId,
+  },
+  customCb,
+  gmId
+);
+
+</code></pre>
+<h5 id="send-a-key-value-pair-of-events">Send a Key value pair of events.</h5>
+<p>You can attach key-value pairs to the profile for eg: pageViews : n</p>
+<pre><code>function customCb(data) {
+  console.log(&quot;data&quot;, data);
+}
+let key = &quot;pageViews&quot;;
+let value = 2;
+let model = {};
+model[key] = value;
+gravito.firstParty.postEvents(model, customCb);
+
+</code></pre>
+<h5 id="send-a-keys-to-the-profile">Send a Keys to the Profile.</h5>
+<p>Attach keys to the profile to get a complete picture of the profile. eg: GA ID.</p>
+<pre><code>function customCb(data) {
+  console.log(&quot;data&quot;, data);
+}
+let keysInput = [
+  {
+    i: &quot;56396541p-0jud-7qawe-lk45ue973723&quot;,
+    K: &quot;GAID&quot;,
+    v: &quot;56396541p-0jud-7qawe-lk45ue973723&quot;,
+  },
+];
+
+gravito.firstParty.postKeys(keysInput, customCb);
+
+</code></pre>
+<h5 id="send-a-consent-to-the-profile">Send a Consent to the Profile.</h5>
+<p>Attach consents to the profile to access it any time.</p>
+<pre><code>function customCb(data) {
+  console.log(&quot;data&quot;, data);
+}
+let consentInputs = [
+  { i: &quot;t&quot;, c: &quot;consent1&quot;, s: false },
+  { i: &quot;m&quot;, c: &quot;consent2&quot;, s: false },
+];
+
+gravito.firstParty.postConsents(consentInputs, customCb);
+
+</code></pre>
+<h5 id="bridge-in-match-on-id">Bridge in Match On id.</h5>
+<p>Connect with matchOnId ( eg: a deterministic Id) to connect X-domain and X-device.</p>
+<pre><code>function customCb(data) {
+  console.log(&quot;data&quot;, data);
+}
+let matchOnId = &quot;your_match_onId&quot;;
+
+gravito.firstParty.attachMatchOnId(matchOnId, customCb);
+
+</code></pre>
+<h5 id="reset-profile">Reset Profile.</h5>
+<p>To reset your firstParty profile use following snippet.</p>
+<pre><code>function customCb(data) {
+  console.log(&quot;data&quot;, data);
+}
+let matchOnId = &quot;reset&quot;;
+
+gravito.firstParty.attachMatchOnId(matchOnId, customCb);
+
+</code></pre>
+<h5 id="delete-profile">Delete Profile.</h5>
+<p>To delete your firstParty profile use following snippet</p>
+<pre><code>function customCb(data) {
+  console.log(&quot;data&quot;, data);
+}
+let matchOnId = &quot;delete&quot;;
+
+gravito.firstParty.attachMatchOnId(matchOnId, customCb);
+
+</code></pre>
+<h4 id="using-sdk-to-deploy-light-cmp">Using SDK to deploy Light CMP.</h4>
+<p>To know how to deploy light CMP with SDK v2 please click here(Link to Deployment section of Light CMP).</p>
+<h4 id="using-sdk-to-deploy-tcf-cmp">Using SDK to deploy TCF CMP.</h4>
+<p>To know how to deploy TCF CMP with SDK v2 please click here(Link to Deployment section of TCF CMP ).</p>
+<h4 id="using-sdk-to-include-gravitos-prebid-js-usermodule">Using SDK to Include Gravito's prebid js usermodule.</h4>
+<p>To know how to include Gravito's prebid js usermodule with SDK v2 please click here(Link to Deployment section of prebid js usermodule).</p>
               
             </div>
           </div><footer>
