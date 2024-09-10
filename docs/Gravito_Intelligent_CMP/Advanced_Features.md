@@ -5,11 +5,11 @@ Here are the links to the advanced features supported by Gravito Intelligent CMP
 
 ### Customization
 
-1.  [Advanced Customization Options](https://www.gravito.net/uncategorized/config-options-light-cmp/)
+1.  [Advanced Customization Options](./advanced/Light_Cmp_Config_Options.md)
     
-2.  [Latest Gravito Configuration example (json)](https://www.gravito.net/uncategorized/light-cmp-version-4/)
+2.  [Latest Gravito Configuration example (json)](./advanced/Latest_Config.md)
     
-3.  [Headless CMP using Gravito](https://www.gravito.net/docs/headless-cmp/)
+3.  [Headless CMP using Gravito](./advanced/Headless_Cmp.md)
     
 
 ### Integrations

@@ -2,6 +2,8 @@
 
 Looking for our product page ? Checkout  [gravito.net](https://www.gravito.net).
 
+![alt text](/img/logo.png)
+
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
