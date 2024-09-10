@@ -138,7 +138,509 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="to-be-done">To be done</h1>
+                <p>TCF CMP implementation on mobile apps can take two different strategies:</p>
+<ol>
+<li>You have TCF CMP already configured and set up for your website or you are planning to have such AND your application is made with webviews (= content is displayed on webviews and 3rd party vendor scripts and tags are loaded on those as would on ordinary browser)</li>
+<li>Your app runs natively (without webviews) and TCF CMP needs to be implemented natively AND/OR your application is using SDKs for mar/adtech.</li>
+</ol>
+<p>There can be hybrids of above so mixing features is still possible.</p>
+<h3 id="option-1-same-tcf-cmp-setup-for-website-and-mobile-apps">Option 1 : Same TCF CMP setup for website and mobile app(s)</h3>
+<p>Assuming that you have TCF CMP already setup for your website(s). Easiest way to deploy the same for your mobile application is to include it on the app via webview. You can host a blank page containing CMP on your site or CDN. Include CMP scripts and configuration on it and load the URL inside the app. The core requirement is that all content comes from same second level domain, ie. same CMP cookie is accessible on all webviews.</p>
+<h3 id="option-2-native-apps-cmp-embedded-via-webview">Option 2 : Native apps, CMP embedded via webview</h3>
+<p>Native app integration requires a bit different approach per application architecture:</p>
+<ul>
+<li>React Native (example project : <a href="https://github.com/GravitoLtd/react-native-webview-sample">https://github.com/GravitoLtd/react-native-webview-sample</a>)</li>
+<li>Android Native (<a href="https://github.com/GravitoLtd/android-webview-sample">https://github.com/GravitoLtd/android-webview-sample</a>)</li>
+<li>iOS Native (<a href="https://github.com/GravitoLtd/ios-webview-sample">https://github.com/GravitoLtd/ios-webview-sample</a>)</li>
+<li>Flutter (<a href="https://github.com/GravitoLtd/flutter-webview-sample"></a><a href="https://github.com/GravitoLtd/flutter-webview-sample">https://github.com/GravitoLtd/flutter-webview-sample</a>)</li>
+</ul>
+<h2 id="integration">Integration</h2>
+<p>To Integrate TCF Complaint CMP into Mobile Apps you can use Gravito's WebView-based CMP. It uses WebView to render and Manage CMP consents, and stores the consents in SharedPreferences so that they can be accessed by vendors. Gravito Supports the Integration of three major platforms Android(Native), IOS(Native), and React-Native. Integration varies from platform to platform.</p>
+<h2 id="assumptions">Assumptions</h2>
+<p>The document assumes that the reader  </p>
+<ul>
+<li>Knows how to use a web-view component with the current native setup. </li>
+<li>
+<p>Knows how to read and update data into the shared preferences in android and into the default storage in IOS. </p>
+</li>
+<li>
+<p>Knows how to pass data to and from WebView. </p>
+</li>
+<li>Has access to the code base of demo Apps </li>
+<li>Is aware of TCFv2 terms such as TC string, CMP, etc.</li>
+</ul>
+<h2 id="react-native">React-Native</h2>
+<p>Flow Diagram</p>
+<p>The following diagram shows the flow of data for the React Native Implementation.</p>
+<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-2.png" /></p>
+<ol>
+<li>
+<p>React Native initializes the Web-view by passing the URL to our hosted CMP. This is done by passing URL as a prop to the Web-view component. </p>
+</li>
+<li>
+<p>Web-view then fetches the required content from the host and loads the HTML page. </p>
+</li>
+<li>
+<p>On Successful loading of the page, JavaScript sends the onStart message to react-native through the "ReactNativeWebView" window object. </p>
+</li>
+<li>
+<p>This message is then received by React Native using the onMessage attribute of React Native's WebView component. </p>
+</li>
+<li>
+<p>React Native then sends the TC string from shared preference to the Web-view using inject javascript function of the WebView component. This function is used to fire on message events which are then listened to by CMP inside Web-view. </p>
+</li>
+<li>
+<p>CMP then use this TC string to render the current state of consent and user can change their preferences using the checkbox controls. </p>
+</li>
+<li>
+<p>Whenever a user performs a save action, a modified TC string is sent back to React Native and is then stored in shared preferences. </p>
+</li>
+</ol>
+<p>Sending Data From React-Native App to CMP</p>
+<p>WebView-based CMP communicates with the native side through WebView and post-message in the case of React-Native.</p>
+<p>WebView should send the data to CMP when the CMP code is fully loaded inside WebView. This can be insured by listening to the "CMP-loaded" post-message event from CMP this can be done in onMessage hook of WebView as done in sample app for react-native.</p>
+<pre><code>&lt;WebView
+          ref={webView =&gt; (this.webView = webView)}
+          source={{
+            uri: 'https://yourcdnurl/index.html?platform=reactnative',
+          }}
+          style={{marginTop: 0, backgroundColor: 'orange'}}
+          scalesPageToFit={true}
+          onLoadStart={() =&gt; this.setState({loading: true})}
+          onLoad={() =&gt; {
+           // use this hook to send data to CMP when html is loaded
+          }}
+          onMessage={event =&gt; {
+            const {
+              tcstring,
+              type,
+              currentstate,
+              configversion,
+              tcstringversion,
+            } = JSON.parse(event.nativeEvent.data);
+            console.log('type', type);
+            switch (type) {
+              case 'CMP-loaded':
+               // here you know that CMP has been loaded in Webiview and is waiting for Data to be send by webiview
+              case 'save':
+                // This event will be sent when user saves the consent on CMP UI, for eg Accept All,Reject All, or Accept Selected
+                break;
+              case 'load':
+                //here you will get load event in which you will have config version and tcversion
+                break;
+              case 'close':
+                //here you can handle modal close event
+                console.log('close event occured');
+                break;
+              default:
+                break;
+            }
+          }}
+        /&gt;
+
+</code></pre>
+<p>There are two possible cases in which App needs to send Data to CMP.</p>
+<ol>
+<li>
+<p>When the user opens app for the first time.\
+    When the user opens the app for the first time he has not given any consent and needs to show the first-layer consent window where he can accept all consents, reject all, or can go to the second-layer to manage the consents more granularly.\
+    In this case, App Should pass an empty string to CMP through a post-message. CMP will then listen to this event as there is no data sent from the app CMP will show the first layer of UI.</p>
+</li>
+<li>
+<p>When the user has previously consented and want to manage/change his consents.\
+    When a user comes to manage the consent, the App should Initialize the WebView and send previously stored consent data in response to "CMP-loaded".</p>
+</li>
+</ol>
+<pre><code>case 'CMP-loaded':
+        // here you know that CMP has been loaded in WebView and is waiting for Data to be send from WebView
+
+        let dataToSend = {
+            type: 'cookieData',
+            tcstring: tcstring, // recived from save event  when user opted previously should be empty when user come for first time,
+            nontcfdata: nontcfdata, // recived from save event  when user opted previously should be empty when user come for first time
+        };
+
+        const clientResponseCode = `
+                    window.postMessage(${JSON.stringify(
+                        dataToSend,
+                    )}, &quot;*&quot;);
+                        true;
+                        `;
+        if (this.webView) {
+            this.webView.injectJavaScript(clientResponseCode);
+        }
+        break;
+</code></pre>
+<p>Catching save actions on CMP UI</p>
+<p>When user performs any save action on CMP UI, CMP will dispatch a post-message to WebView which can be handled inside onMessage handler of WebView. In our Sample Apps we save the received data as is and is provided to CMP in "CMP-loaded" event.</p>
+<pre><code> case 'save':
+        // This event will be sent when user saves the consent on CMP UI, for eg Accept All,Reject All, or Accept Selected
+        // event Data will have following json object structure
+        // data = {
+        //   type: 'save',
+        //   tcstring: 'string',
+        //   currentstate: 'Object',
+        //   nontcfdata: 'Object',
+        //   configversion: 'number',
+        //   tcstringversion: 'number',
+        //   inAppTCData: 'Object',
+        // };
+        // this data should be stored in Shared preferences in format describe here https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#in-app-details
+        break;
+</code></pre>
+<p>Catching close action on CMP UI</p>
+<p>When a user performs close action on CMP UI, CMP will dispatch a post-message to WebView which can be handled inside the onMessage handler of WebView. </p>
+<pre><code> case 'close':
+        //here you can handle modal close event
+        console.log('close event occured');
+        break;
+</code></pre>
+<h2 id="native-ios">Native IOS</h2>
+<p>Flow Diagram</p>
+<p>The following diagram shows the flow of data for the IOS Implementation.</p>
+<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-3.png" /></p>
+<ol>
+<li>
+<p>IOS initializes the WKWebView by passing the URL to our hosted CMP. This is done by using the "loadTheUrl" function of the "ViewController" class. </p>
+</li>
+<li>
+<p>WKWebView then fetches the required content from the host and loads the HTML page. </p>
+</li>
+<li>
+<p>On Successful loading of the page, JavaScript sends the onStart message to IOS through "webkit.messageHandlers.jsHandler" window object. </p>
+</li>
+<li>
+<p>This message is then handled by the "userContentController" function of ViewController class. </p>
+</li>
+<li>
+<p>IOS then sends the TC string from UserDefaults to the WKWebView using the "evaluateJavaScript" function of WebView. This function is used to fire on message events which are then listened by CMP inside WebView. </p>
+</li>
+<li>
+<p>CMP then use this TC string to render the current state of consent and user can change their preferences using the checkbox controls. </p>
+</li>
+<li>
+<p>Whenever a user performs save action, a modified TC string is sent back to IOS and is then stored to UserDefaults</p>
+</li>
+</ol>
+<p>Sending Data From IOS App to CMP</p>
+<p>WebView-based CMP communicates with the native side through WebView and post-message in the case of React-Native.</p>
+<p>WebView should send the data to CMP when the CMP code is fully loaded inside WebView. This can be insured by listening to the "start" post-message event from CMP this can be done in WebView as done in sample app for IOS</p>
+<pre><code>class ViewController: UIViewController ,UIWebViewDelegate,WKScriptMessageHandler,UITextFieldDelegate{
+
+    @IBOutlet weak var TOKEN: UITextField!
+
+    @IBOutlet weak var webview: WKWebView!
+
+    @IBOutlet weak var showToken: WKWebView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.webview.uiDelegate = self as? WKUIDelegate
+        TOKEN.delegate = self as UITextFieldDelegate
+        self.loadTheUrl()
+    }
+    //----- FUNCTION TO LOAD HTML
+    func loadTheUrl(){
+        webview.configuration.userContentController.add(self, name: &quot;jsHandler&quot;)
+        webview.load(NSURLRequest(url: NSURL(string: &quot;https://yourcdnurl/index.html?platform=ios&quot;)! as URL) as URLRequest)
+
+    }
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == &quot;jsHandler&quot; {
+            print(message.body)
+            let json = message.body as? NSDictionary
+            let event = json?[&quot;event&quot;] as? String
+            print(event)
+            switch event {
+
+            case &quot;start&quot;:
+                // here you know that CMP has been loaded in Webiview and is waiting for Data to be send by webiview
+            case &quot;close&quot;:
+                // here you can do clean up action on close event
+            case &quot;save&quot;:
+                // This event will be sent when user saves the consent on CMP UI, for eg Accept All,Reject All, or Accept Selected
+            default: break
+
+            }
+        }
+    }
+}
+</code></pre>
+<p>There are two possible cases in which App needs to send Data to CMP.</p>
+<ol>
+<li>
+<p>When the user opens app for the first time.\
+    When the user opens the app for the first time he has not given any consent and needs to show the first-layer consent window where he can accept all consents, reject all, or can go to the second-layer to manage the consents more granularly.\
+    In this case, App Should pass an empty string to CMP through a post-message. CMP will then listen to this event as there is no data sent from the app CMP will show the first layer of UI.</p>
+</li>
+<li>
+<p>When the user has previously consented and want to manage/change his consents.\
+    When a user comes to manage the consent, the App should Initialize the WebView and send previously stored consent data in response to "start".</p>
+</li>
+</ol>
+<pre><code> case &quot;start&quot;:
+        //here we are sending data to CMP through post message,data to be send must have following structure {
+
+            tcstring: tcstring, // recived from save event  when user opted previously should be empty when user come for first time,
+            nontcfdata: nontcfdata, // recived from save event  when user opted previously should be empty when user come for first time
+        };
+
+        guard let tcstring=UserDefaults.standard.object(forKey:&quot;tcstring&quot;) else {
+            let tcstring=&quot;&quot;
+            let startjs = &quot;window.postMessage('\(tcstring)', \&quot;*\&quot;);true;&quot;
+            webview.evaluateJavaScript(startjs, completionHandler: nil)
+            return
+        }
+
+        print(tcstring)
+        var error: NSError?
+
+        let data = try?JSONSerialization.data(withJSONObject: tcstring, options: JSONSerialization.WritingOptions.prettyPrinted)
+
+        if let data = data {
+            let json = NSString(data: data, encoding: NSUTF8StringEncoding)
+            if let json = json {
+                print(json)
+                let startjs = &quot;window.postMessage(\(json), \&quot;*\&quot;);true;&quot;
+                webview.evaluateJavaScript(startjs, completionHandler: nil)
+            }
+        }
+</code></pre>
+<p>Catching save actions on CMP UI</p>
+<p>When user performs any save action on CMP UI, CMP will dispatch a post-message to WebView which can be handled inside WebView. In our Sample Apps we save the received data as is and is provided to CMP in "start" event.</p>
+<pre><code> case 'save':
+        // This event will be sent when user saves the consent on CMP UI, for eg Accept All,Reject All, or Accept Selected
+        // event Data will have following json object structure
+        // data = {
+        //   type: 'save',
+        //   tcstring: 'string',
+        //   currentstate: 'Object',
+        //   nontcfdata: 'Object',
+        //   configversion: 'number',
+        //   tcstringversion: 'number',
+        //   inAppTCData: 'Object',
+        // };
+        // this data should be stored in Shared preferences in format describe here https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#in-app-details
+        break;
+</code></pre>
+<p>Catching close action on CMP UI</p>
+<p>When a user performs close action on CMP UI, CMP will dispatch a post-message to WebView which can be handled inside the WebView. </p>
+<pre><code> case 'close':
+        //here you can handle modal close event
+        console.log('close event occured');
+
+</code></pre>
+<h2 id="native-android">Native Android</h2>
+<p>Flow Diagram</p>
+<p>The following diagram shows the flow of data for the Android Implementation.</p>
+<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-4-1024x526.png" /></p>
+<ol>
+<li>
+<p>Android initializes the WebView by passing the URL to our hosted CMP. This is done by using the "loadUrl" function of WebView. Along with this it also exposes the object which has functionalities to get data and send data from android. This object is available as a window.Android object in WebView. Android uses "addJavascriptInterface" function of WebView to achieve this. </p>
+</li>
+<li>
+<p>WebView then fetches the required content from the host and loads the HTML page. </p>
+</li>
+<li>
+<p>JavaScript then gets the TC string from the android code using the functions exposed by the Window.Android object. </p>
+</li>
+<li>
+<p>This TC string is then used by CMP to render the current state of consents. </p>
+</li>
+<li>
+<p>When the user performs save action, modified TC string is then sent back and stored in shared preference using function exposed by the Android window object. </p>
+</li>
+</ol>
+<p>Sending Data From Android App to CMP</p>
+<p>In Android communication between Native side and CMP happens through function which are exposed by Android WebView.</p>
+<p>WebView exposes certain functions which can be called from CMP.So CMP uses this function to send data across.</p>
+<p>Following code explains how to handle different action that user performs on CMP UI</p>
+<pre><code>public class WebViewAdapter {
+    Context mContext;
+    WebViewCallback webViewCallback = null;
+    /** Instantiate the interface and set the context */
+    WebViewAdapter(Context c,WebViewCallback webViewCallback) {
+        mContext = c;
+        this.webViewCallback = webViewCallback;
+
+    }
+
+    @JavascriptInterface
+    public void getValueFromWebView(String value) {
+        // This function will called by CMP code to send data accross to Android APP
+        // It Will pass different JSON object Strings for difference cases
+        // FOR SAVE
+        // so when user performs any save action on CMP UI such as Accept All, Reject All, or Accept Selected,
+        // CMP will call this function with json string of below object
+        // {
+        //   type: &quot;save&quot;,
+        //   tcstring: 'string',
+        //   currentstate: 'object',
+        //   nontcfdata: 'object',
+        //   configversion: 'string,
+        //   tcstringversion: 'string,
+        //   inAppTCData: 'object',,
+        // };
+            // this data should be stored in Shared preferences in format describe here https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#in-app-details
+
+   FOR CLOSE
+    //   When user click close button on second layer JSON object string of following object will pass to this function
+    //   {
+    //     type: &quot;close&quot;,
+    //     data: &quot;cmp ui closed&quot;,
+    //   }
+
+    }
+
+    @JavascriptInterface
+    public String getValueFromStorage(){
+       // This function will be called when CMP want to received data from WebView, This function should return the stringified JSON of following type
+        // {
+        //     tcstring:&quot;string&quot; // previoulsy stored string received in getValueFromWebView
+        //     nontcfdata:&quot;object&quot; //previoulsy stored value received in getValueFromWebView
+        // }
+    }
+
+}
+</code></pre>
+<h2 id="flutter">Flutter</h2>
+<p>Flow Diagram</p>
+<p>The following diagram shows the flow of data for the Flutter Implementation.</p>
+<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-2.png" /></p>
+<ol>
+<li>
+<p>Flutter initializes the Web-view by passing the URL to our hosted CMP. This is done by creating WebView Controller and assigning it to the WebView Widget. </p>
+</li>
+<li>
+<p>Web-view then fetches the required content from the host and loads the HTML page. </p>
+</li>
+<li>
+<p>On Successful loading of the page, JavaScript sends the onStart message to WebView through the "FlutterAppWebView" window object. (Note please keep the JavaScript Channel name as "FlutterAppWebView")</p>
+</li>
+<li>
+<p>This message is then received by WebView's JavaScript channel using the onMessageReceived parameter.</p>
+</li>
+<li>
+<p>Flutter then sends the TC string from shared preference to the Web-view using runJavaScriptfunction of the WebView controller. This function is used to fire on message events which are then listened to by CMP inside Web-view. </p>
+</li>
+<li>
+<p>CMP then use this TC string to render the current state of consent and user can change their preferences using the checkbox controls. </p>
+</li>
+<li>
+<p>Whenever a user performs a save action, a modified TC string is sent back to Flutter and is then stored in shared preferences. </p>
+</li>
+</ol>
+<p>Sending Data From Flutter App to CMP</p>
+<p>WebView-based CMP communicates with the native side through WebView and post-message in the case of Flutter.</p>
+<p>WebView should send the data to CMP when the CMP code is fully loaded inside WebView. This can be insured by listening to the "CMP-loaded" post-message event from CMP this can be done in onMessageReceived hook of WebView as done in sample app for Flutter. </p>
+<p>First create a WebView Controller and JavaScript Channel, make sure you name this channel as "FlutterAppWebView" only.</p>
+<pre><code> controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            // Update loading bar.
+          },
+          onPageStarted: (String url) {},
+          onPageFinished: (String url) {},
+          onWebResourceError: (WebResourceError error) {
+            print(&quot;err&quot;);
+          },
+          onNavigationRequest: (NavigationRequest request) {
+            if (request.url.startsWith('https://www.youtube.com/')) {
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..addJavaScriptChannel(
+        'FlutterAppWebView',
+        onMessageReceived:(){})
+</code></pre>
+<p>Add listeners to various events emitted by JavaScript using javaScript channels onMessageRecievd method.and specify the CMP url to load inside the webview.</p>
+<pre><code> ..addJavaScriptChannel(
+        'FlutterAppWebView',
+        onMessageReceived: (JavaScriptMessage message) async {
+          var messageData = jsonDecode(message.message);
+          // Obtain shared preferences.
+          final SharedPreferences prefs = await SharedPreferences.getInstance();
+          String messageType = messageData[&quot;type&quot;];
+          switch (messageType) {
+
+        },
+      ) ..loadRequest(Uri.parse(
+          'https://gravitocdn.blob.core.windows.net/webview/index.2.3.html?platform=flutter'));
+
+</code></pre>
+<p>There are two possible cases in which App needs to send Data to CMP.</p>
+<ol>
+<li>
+<p>When the user opens app for the first time.\
+    When the user opens the app for the first time he has not given any consent and needs to show the first-layer consent window where he can accept all consents, reject all, or can go to the second-layer to manage the consents more granularly.\
+    In this case, App Should pass an empty string to CMP through a post-message. CMP will then listen to this event as there is no data sent from the app CMP will show the first layer of UI.</p>
+</li>
+<li>
+<p>When the user has previously consented and want to manage/change his consents.\
+    When a user comes to manage the consent, the App should Initialize the WebView and send previously stored consent data in response to "CMP-loaded".</p>
+</li>
+</ol>
+<pre><code>    case &quot;CMP-loaded&quot;:
+
+              // this message will be fired when cmp will be loaded now app has to check it has previously stored consent
+              // in native storage if yes then we need to send it to CMP else we need to send empty data
+              final String? resultString = prefs.getString('cookieData');
+              var storedData =
+                  resultString != null ? jsonDecode(resultString) : null;
+
+              var message = {
+                &quot;type&quot;: &quot;cookieData&quot;,
+                &quot;tcstring&quot;: storedData != null ? storedData[&quot;tcstring&quot;] : null,
+                &quot;nontcfdata&quot;:
+                    storedData != null ? storedData[&quot;nontcfdata&quot;] : null
+              };
+              String jsonMessage = jsonEncode(message);
+
+              controller.runJavaScript(' window.postMessage($jsonMessage)');
+
+              break;
+</code></pre>
+<p>Catching save actions on CMP UI</p>
+<p>When user performs any save action on CMP UI, CMP will dispatch a post-message to WebView which can be handled inside onRecivedMessage handler of WebView. In our Sample Apps we save the received data as is and is provided to CMP in "CMP-loaded" event.</p>
+<pre><code> case &quot;save&quot;:
+
+              //         messagedata will have following strucutre
+              //          let onSaveMessageFlutter = {
+              //   type: &quot;save&quot;,
+              //   tcstring: encodedString,
+              //   currentstate: getCoreConfigDetails(),
+              //   nontcfdata: nonTCFModel.Model,
+              //   configversion: config.core.version,
+              //   tcstringversion: tcModel.cmpVersion,
+              //   inAppTCData: getInAppTCData(),
+              // };
+
+              // this message will be fired when there is save action perfomed on CMP ui inside webView,
+              // data with this message should be stored in native storage
+              // this is only for sample app, In production you will have to store keys in format specified here
+              //https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#in-app-details
+              var d = {
+                &quot;tcstring&quot;: messageData[&quot;tcstring&quot;],
+                &quot;nontcfdata&quot;: messageData[&quot;nontcfdata&quot;],
+              };
+              await prefs.setString(&quot;cookieData&quot;, jsonEncode(d));
+              break;
+</code></pre>
+<p>Catching close action on CMP UI</p>
+<p>When a user performs close action on CMP UI, CMP will dispatch a post-message to WebView which can be handled inside the onRecivedMessage handler of WebView.</p>
+<pre><code> case &quot;close&quot;:
+              setState(() {
+                print(&quot;close&quot;);
+                _showWebView = false;
+              });
+              break;
+</code></pre>
               
             </div>
           </div><footer>
