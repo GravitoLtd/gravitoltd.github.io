@@ -4,16 +4,12 @@ Looking for our product page ? Checkout  [gravito.net](https://www.gravito.net).
 
 ![alt text](/img/logo.png)
 
-## Commands
+## We’re leading with privacy in visitor data solutions
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+![alt text](./img/about-us-3.png)
 
-## Project layout
+Our mission is to deliver flexible and purpose-built technology that can operate as a standalone solution or within your cloud environment.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Clients can choose tools to enhance their marketing capabilities, tailored to the maturity of their tech stack.
+
+### Loved by developers and business
