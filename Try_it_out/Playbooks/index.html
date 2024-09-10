@@ -111,6 +111,10 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Playbooks</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#deploy-basic-consent-management-banner-and-wire-the-tags-on-it">Deploy basic consent management banner and wire the tags on it</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deploy-consent-management-banner-with-first-party-api-integration">Deploy consent management banner with first party API integration</a>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -138,7 +142,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="to-be-done">To be done</h1>
+                <h1 id="playbooks">Playbooks</h1>
+<p>Quick guides to get started with various deployment scenarios.</p>
+<h4 id="deploy-basic-consent-management-banner-and-wire-the-tags-on-it">Deploy basic consent management banner and wire the tags on it</h4>
+<ol>
+<li>Register/login to <a href="https://adminv2.gravito.net/">https://adminv2.gravito.net</a></li>
+<li>Navigate to CMP &gt; Gravito CMP configurator &gt; New Configuration</li>
+<li>Create configuration, you will find help from content menus and tooltips</li>
+<li>Upload configuration when satisfied with the result</li>
+<li>Generate deployment script from list of configurations, by clicking script icon in front of your config.</li>
+<li>Copy the script to clipboard (to deploy via GTM or similar) or download it to be uploaded to your server</li>
+<li>If you are up to deploy via GTM, follow the steps <a href="../../Gravito_Intelligent_CMP/GTM_Template/">here</a></li>
+<li>Otherwise embed the uploaded cmp script to your website template, third party tags that you might have need to be wrapped with custom triggers that are listening to CMP events and consent being set</li>
+<li>Add link on your website from which the user can resurface the CMP, give the link id "manageSettings" or whatever you specified when configuring the CMP. Alternatively you can specify the link to call window.gravitoLightCMP.openPreferences()</li>
+<li>Test that CMP opens as it should and after accept/reject click the CMP won't surface again on page reload</li>
+</ol>
+<h4 id="deploy-consent-management-banner-with-first-party-api-integration">Deploy consent management banner with first party API integration</h4>
+<ol>
+<li>Register/login to <a href="https://adminv2.gravito.net/">https://adminv2.gravito.net</a></li>
+<li>If you have not added the domain you are up to deploy CMP to when registering, add the domain by going to Account &gt; Register domains</li>
+<li>Add domain if needed</li>
+<li>Go to Domains &gt; First party domains &gt; New domain</li>
+<li>Select the domain you are planning to use CMP on, repeat the steps if you have multiple domains</li>
+<li>After you have added domain(s), you will have DNS settings to be made, add those to DNS server of your domain</li>
+<li>When you are complete with DNS settings wait few minutes (minimum) for the changes to propagate</li>
+<li>Open newly added first party domain from the list (click on Edit), check to confirm that you have done the required DNS settings and click on Validate</li>
+<li>After validation the certificate is created, repeat the steps for other domains if you added multiple</li>
+<li>Navigate to CMP &gt; Gravito CMP configurator &gt; New Configuration</li>
+<li>On the settings page of the configurator click on the "Use Gravito Backend" checkbox. you can optionally pass your first-party domain URL, else our code SDK will smartly derive it from the domain on which this configuration is deployed, We recommend keeping this field blank unless you need it</li>
+<li>You will find help from content menus and tooltipsUpload configuration when satisfied with the result.</li>
+<li>Generate deployment script from list of configurations</li>
+<li>Copy the script to clipboard (to deploy via GTM or similar) or download it to be uploaded to your server</li>
+<li>If you are up to deploy via GTM, follow the steps <a href="https://web-staging.gravito.net/docs/lightcmp/integration/">here</a></li>
+<li>Otherwise embed the uploaded cmp script to your website template, third party tags that you might have need to be wrapped with custom triggers that are listening to CMP events and consent being set</li>
+<li>Add link on your website from which the user can resurface the CMP, give the link id "manageSettings" or whatever you specified when configuring the CMP. Alternatively you can specify the link to call window.gravitoLightCMP.openPreferences()</li>
+<li>Validate that there is request made to https://gto.<yourdomain> when CMP loads on your website (on first page load)</li>
+<li>Test that CMP opens as it should and after accept/reject click the CMP won't surface again on page reload</li>
+</ol>
               
             </div>
           </div><footer>
