@@ -39,6 +39,10 @@
     color:var(--wy-menu-vertical-caption)
 }
 
+.wy-nav-top {
+    background-color:#000000;
+}
+
 .wy-side-nav-search{
     background-color:#000000; 
 }
@@ -66,18 +70,4 @@
 .wy-footer {
     background-color: #f8f9fa; /* Footer background color */
     color: #333; /* Footer text color */
-}
-
-.wy-nav-content {
-    max-width: 100% !important;
-}
-
-.docutils {
-    max-width: 100% !important;
-    table-layout: fixed;
-    th:first-child,
-    td:first-child {
-     max-width: 30% !important;
-    
-    }
 }
