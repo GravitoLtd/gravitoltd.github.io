@@ -1,11 +1,11 @@
 Frequently Asked Questions
 ==========================
 
-**Frequently Asked Questions (FAQ) – Gravito Intelligent CMP and TCF 2.2 CMP Banner**.
+**Frequently Asked Questions (FAQ) – Gravito First-Party Identifiers, Gravito Intelligent CMP and TCF 2.2 CMP Banner**.
 
 **1\. What is Gravito?**
 
-Gravito is a Consent Banner provider for websites. It offers both TCF (Transparency & Consent Framework 2.2 ) certified Consent Management Platforms (CMPs) for publisher websites and CMPs for normal retail and ecommerce websites.
+Gravito is more than just a Consent Banner provider for websites. That being said, it offers both TCF (Transparency & Consent Framework 2.2 ) certified Consent Management Platforms (CMPs) for publisher websites and CMPs for normal retail and ecommerce websites.
 
 **2\. What is a Consent Banner?**
 

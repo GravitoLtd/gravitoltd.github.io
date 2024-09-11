@@ -39,6 +39,10 @@
     color:var(--wy-menu-vertical-caption)
 }
 
+.wy-nav-top {
+    background-color:#000000;
+}
+
 .wy-side-nav-search{
     background-color:#000000; 
 }
