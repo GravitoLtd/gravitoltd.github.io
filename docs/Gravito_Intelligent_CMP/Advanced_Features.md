@@ -9,9 +9,9 @@ Here are the links to the advanced features supported by Gravito Intelligent CMP
     
 2.  [Latest Gravito Configuration example (json)](./advanced/Latest_Config.md)
     
-3.  [Headless CMP using Gravito](./advanced/Headless_Cmp.md)
+3.  [Headless CMP using Gravito]¸
     
 
 ### Integrations
 
-*   [How to integrate events emitted by the Gravito Intelligent CMP?](https://www.gravito.net/uncategorized/integration/)
+*   [How to integrate events emitted by the Gravito Intelligent CMP?](./advanced/integration.md)
