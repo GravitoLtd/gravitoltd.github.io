@@ -17,8 +17,7 @@ Following variables are good within "gravitoCMPConfig" variable.
 | style.secondaryColor | Secondary color of your brand/styling | 1.0.0 |
 | fonts | Define which fonts CMP should use, unicodeRange can be left out if not needed | 1.0.0 |
 | core.adsConsentId | Which consent ID can be used as indication of ads consent, required by Google Consent Mode | 1.0.1 |
-| core.analyticsConsentId |\
-Which consent ID can be used as indication of analytics consent, required by Google Consent Mode | 1.0.1 |
+| core.analyticsConsentId | Which consent ID can be used as indication of analytics consent, required by Google Consent Mode | 1.0.1 |
 | style.logoSvg | You can enter the logo as SVG code here | 1.0.1 |
 | style.logoType | img or svg | 1.0.1 |
 | style.disableConfirmationModal | true/false, controls if the removal of consent is confirmed with popup or is the function direct | 1.0.1 |
