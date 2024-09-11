@@ -2,8 +2,6 @@
 
 Looking for our product page ? Checkout  [gravito.net](https://www.gravito.net).
 
-![alt text](/img/logo.png)
-
 ## We’re leading with privacy in visitor data solutions
 
 ![alt text](./img/about-us-3.png)
