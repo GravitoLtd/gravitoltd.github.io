@@ -42,7 +42,7 @@ Flow Diagram
 
 The following diagram shows the flow of data for the React Native Implementation.
 
-![](https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-2.png)
+![](./img/reactnativeflow.png)
 
 1.  React Native initializes the Web-view by passing the URL to our hosted CMP. This is done by passing URL as a prop to the Web-view component. 
 
@@ -176,7 +176,7 @@ Flow Diagram
 
 The following diagram shows the flow of data for the IOS Implementation.
 
-![](https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-3.png)
+![](./img/iosflow.png)
 
 1.  IOS initializes the WKWebView by passing the URL to our hosted CMP. This is done by using the "loadTheUrl" function of the "ViewController" class. 
 
@@ -319,7 +319,7 @@ Flow Diagram
 
 The following diagram shows the flow of data for the Android Implementation.
 
-![](https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-4-1024x526.png)
+![](./img/androidflow.png)
 
 1.  Android initializes the WebView by passing the URL to our hosted CMP. This is done by using the "loadUrl" function of WebView. Along with this it also exposes the object which has functionalities to get data and send data from android. This object is available as a window.Android object in WebView. Android uses "addJavascriptInterface" function of WebView to achieve this. 
 
@@ -396,7 +396,7 @@ Flow Diagram
 
 The following diagram shows the flow of data for the Flutter Implementation.
 
-![](https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-2.png)
+![](./img/flutterflow.png)
 
 1.  Flutter initializes the Web-view by passing the URL to our hosted CMP. This is done by creating WebView Controller and assigning it to the WebView Widget. 
 
