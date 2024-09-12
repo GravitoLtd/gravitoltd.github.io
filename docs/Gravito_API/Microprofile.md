@@ -37,7 +37,7 @@ First learn about setting up [First Party API](https://www.gravito.net/docs/fir
   ], 
   "c": [
      { "i":"t", 
-       "c":"consent1", 
+       "c":"consent2", 
        "s": false 
      }, 
      { "i":"m", 
