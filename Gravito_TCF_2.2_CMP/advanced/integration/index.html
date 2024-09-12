@@ -14,7 +14,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "Integration";
-        var mkdocs_page_input_path = "Gravito_TCF_2.2_CMP/advanced/integration.md";
+        var mkdocs_page_input_path = "Gravito_TCF_2.2_CMP\\advanced\\integration.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -72,6 +72,8 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Setup_and_Design/">Setup and Design</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Mobile_apps/">Mobile apps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Release_Notes/">Release Notes</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Advanced_features/">Advanced features</a>
                   </li>
@@ -135,81 +137,81 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>Gravito CMP emits "gravito:cmp:light" events. Events indicate the UI actions and points when the user has given or denied the consents and rest of the tags can either trigger or not.</p>
-<p>The event types are:</p>
+                <h1 id="integration">Integration</h1>
+<p>Gravito TCF CMP emits “gravito:tcfv2:client” events. Events indicate the UI actions and points when the user has given or denied the consents and rest of the tags can either trigger or not.</p>
+<h2 id="events-can-be-listened-to-by-the-addeventlistener-method">Events can be listened to by the <code>addEventListener</code> method:</h2>
+<pre><code class="language-javascript">document.addEventListener('gravito:tcfv2:client', function(event) {
+  var  eventType = e.detail.eventType;
+//   you can also get consent state of Gravito TCF CMP
+  var consentState =window.gravitoCMP.currentState ;
+  console.log(eventType);
+  console.log(consentState);
+//   depending upon event types you can perform necessary actions
+});
+</code></pre>
+<h2 id="event-types">Event Types:</h2>
+<!-- create a table for events type with srn no event  and descriprtion -->
 <table>
 <thead>
 <tr>
-<th>Action</th>
-<th>eventType</th>
+<th>Sr.No</th>
+<th>Event Type</th>
 <th>Trigger</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Custom settings confirmed by clicking "Accept selected"</td>
-<td>layer2:opt-in:selected</td>
-<td>User clicks on "Accept selected" on 2nd layer of CMP</td>
+<td>1</td>
+<td><code>cmploaded</code></td>
+<td>This event is emitted when the CMP is loaded in browser window.</td>
 </tr>
 <tr>
-<td>"Accept all" clicked on layer 1</td>
-<td>layer1:opt-in:all</td>
-<td>User clicks on "Accept selected" on 2nd layer of CMP</td>
+<td>2</td>
+<td><code>layer1:opt-in:all</code></td>
+<td>This event is emitted when user click on accept all  button on layer 1.</td>
 </tr>
 <tr>
-<td>"Accept all" clicked on layer 2</td>
-<td>layer2:opt-in:all</td>
-<td>User clicks on "Accept all" button on 1st layer</td>
+<td>3</td>
+<td><code>layer1:opt-out:all</code></td>
+<td>This event is emitted when user click on reject all.</td>
 </tr>
 <tr>
-<td>"Reject all" clicked on layer 2</td>
-<td>layer2:opt-out:all</td>
-<td>User clicks on "Accept all" button on 2nd layer</td>
+<td>4</td>
+<td><code>layer1:show-settings</code></td>
+<td>This event is emitted when user click on settings   button on layer 1.</td>
 </tr>
 <tr>
-<td>CMP UI closed</td>
-<td>cmpui:closed</td>
-<td>User clicks on "Reject all" button on 2nd layer</td>
+<td>5</td>
+<td><code>layer2:opt-in:all</code></td>
+<td>This event is emitted when user click on accept all  button on layer 2.</td>
 </tr>
 <tr>
-<td>Parent site visible without CMP UI</td>
-<td>layer2:back-to-site</td>
-<td>CMP UI closes because of user actions</td>
+<td>6</td>
+<td><code>layer2:opt-out:all</code></td>
+<td>This event is emitted when user click on reject all  button on layer 2.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>layer2:opt-in:selected</code></td>
+<td>This event is emitted when user click on accept selected   button on layer 2.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>consent-not-set</code></td>
+<td>This event is emitted when user does not have consent cookies</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>opt-in:previously</code></td>
+<td>This event is emitted when user has consent cookies</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>opt-in:previously:outdated</code></td>
+<td>This event is emitted when user has consent cookies but are outdated</td>
 </tr>
 </tbody>
 </table>
-<p>Example of listening events and currentState object</p>
-<pre><code>const getCookieData = (cname) =&gt; {
-  var name = cname + &quot;=&quot;;
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(&quot;;&quot;);
-  for (var i = 0; i &lt; ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == &quot; &quot;) {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return &quot;&quot;;
-};
-document.addEventListener(&quot;gravito:cmp:light&quot;, function (event) {
-  var button_click_events = [
-    &quot;layer1:opt-in:all&quot;,
-    &quot;layer2:opt-out:all&quot;,
-    &quot;layer2:opt-in:selected&quot;,
-    &quot;layer2:opt-in:all&quot;,
-  ];
-  if (button_click_events.includes(event.detail.eventType)) {
- let currentState = getCookieData(
-                gravitoCMPConfig.core.cookieName
-              );
-depending upon the currentState of consent you can perform the required actions
-
-  }
-});
-</code></pre>
               
             </div>
           </div><footer>

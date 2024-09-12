@@ -14,7 +14,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "Mobile apps";
-        var mkdocs_page_input_path = "Gravito_TCF_2.2_CMP/Mobile_apps.md";
+        var mkdocs_page_input_path = "Gravito_TCF_2.2_CMP\\Mobile_apps.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -74,6 +74,8 @@
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Mobile apps</a>
     <ul class="current">
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Release_Notes/">Release Notes</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Advanced_features/">Advanced features</a>
                   </li>
@@ -172,7 +174,7 @@
 <h2 id="react-native">React-Native</h2>
 <p>Flow Diagram</p>
 <p>The following diagram shows the flow of data for the React Native Implementation.</p>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-2.png" /></p>
+<p><img alt="" src="../img/reactnativeflow.png" /></p>
 <ol>
 <li>
 <p>React Native initializes the Web-view by passing the URL to our hosted CMP. This is done by passing URL as a prop to the Web-view component. </p>
@@ -298,7 +300,7 @@
 <h2 id="native-ios">Native IOS</h2>
 <p>Flow Diagram</p>
 <p>The following diagram shows the flow of data for the IOS Implementation.</p>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-3.png" /></p>
+<p><img alt="" src="../img/iosflow.png" /></p>
 <ol>
 <li>
 <p>IOS initializes the WKWebView by passing the URL to our hosted CMP. This is done by using the "loadTheUrl" function of the "ViewController" class. </p>
@@ -433,7 +435,7 @@
 <h2 id="native-android">Native Android</h2>
 <p>Flow Diagram</p>
 <p>The following diagram shows the flow of data for the Android Implementation.</p>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-4-1024x526.png" /></p>
+<p><img alt="" src="../img/androidflow.png" /></p>
 <ol>
 <li>
 <p>Android initializes the WebView by passing the URL to our hosted CMP. This is done by using the "loadUrl" function of WebView. Along with this it also exposes the object which has functionalities to get data and send data from android. This object is available as a window.Android object in WebView. Android uses "addJavascriptInterface" function of WebView to achieve this. </p>
@@ -506,7 +508,7 @@
 <h2 id="flutter">Flutter</h2>
 <p>Flow Diagram</p>
 <p>The following diagram shows the flow of data for the Flutter Implementation.</p>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2023/03/MicrosoftTeams-image-2.png" /></p>
+<p><img alt="" src="../img/flutterflow.png" /></p>
 <ol>
 <li>
 <p>Flutter initializes the Web-view by passing the URL to our hosted CMP. This is done by creating WebView Controller and assigning it to the WebView Widget. </p>
@@ -646,7 +648,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../Setup_and_Design/" class="btn btn-neutral float-left" title="Setup and Design"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Advanced_features/" class="btn btn-neutral float-right" title="Advanced features">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Release_Notes/" class="btn btn-neutral float-right" title="Release Notes">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -672,7 +674,7 @@
       <span><a href="../Setup_and_Design/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Advanced_features/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Release_Notes/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

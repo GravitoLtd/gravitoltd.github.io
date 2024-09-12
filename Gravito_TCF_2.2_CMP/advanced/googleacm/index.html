@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Gravito SDK V1 - Gravito Documentation</title>
+    <title>Google Additional Consent Mode - Gravito Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Gravito SDK V1";
-        var mkdocs_page_input_path = "Gravito_SDK\\advanced\\Gravito_sdk_v1.md";
+        var mkdocs_page_name = "Google Additional Consent Mode";
+        var mkdocs_page_input_path = "Gravito_TCF_2.2_CMP\\advanced\\googleacm.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -67,24 +67,24 @@
               </ul>
               <p class="caption"><span class="caption-text">Gravito TCF 2.2 CMP</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Getting_Started/">Getting Started</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_Started/">Getting Started</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Setup_and_Design/">Setup and Design</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Setup_and_Design/">Setup and Design</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Mobile_apps/">Mobile apps</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Mobile_apps/">Mobile apps</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Release_Notes/">Release Notes</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Release_Notes/">Release Notes</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_TCF_2.2_CMP/Advanced_features/">Advanced features</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Advanced_features/">Advanced features</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito SDK</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_Started/">Getting Started</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Getting_Started/">Getting Started</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Release_Notes/">Release Notes</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Release_Notes/">Release Notes</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Version_2_%28Latest%29/">Version 2 (Latest)</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito API</span></p>
@@ -128,7 +128,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Gravito SDK V1</li>
+      <li class="breadcrumb-item active">Google Additional Consent Mode</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -137,88 +137,86 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="gravito-sdk-v1">Gravito SDK V1</h1>
-<h2 id="using-sdk-v1">Using SDK V1</h2>
-<p>Version 1.0.10 added support for custom functions to call before initializing CMP and call back when backend data is available. This is useful for any type of integration with backend API that can store the consents (and perhaps other profile information). Example deployment, defining custom backend sync interval (60 secs), default is 1800 secs (30 mins):</p>
-<pre><code>window.gravitoCMPConfig = gravitoCMPConfig;
-
-gravitoCMPConfig.core.syncAfter=60;
-
-function getCmpData() {
-            //data fetching logic  here
-            var date = new Date(&quot;06/30/2022&quot;)
-            var domain = window.location.hostname
-            var value = null
-            var xhr = new XMLHttpRequest();
-            xhr.open(&quot;POST&quot;, 'https://gto.gravito.net/api/firstparty', true);
-            xhr.withCredentials = true;
-            xhr.onreadystatechange = function (response) {
-                if (xhr.readyState == XMLHttpRequest.DONE &amp;&amp; xhr.status == 200) {
-                    console.log(&quot;1P response : &quot; + response.target.response);
-                    var result = JSON.parse(response.target.response)
-                    if (result.events) {
-                        var gdata = result.events.gravitoData ? JSON.parse(result.events.gravitoData) : null
-                        value = gdata ? gdata.TCString : null
-                        if (value) {
-                            document.cookie =
-                                &quot;TcString&quot; +
-                                &quot;=&quot; +
-                                value +
-                                &quot;; expires=&quot; +
-                                date.toGMTString() +
-                                &quot;; path=/; domain=&quot; +
-                                domain;
-                        }
-                        if (gdata) {
-                            document.cookie =
-                                &quot;gravitoData&quot; +
-                                &quot;=&quot; +
-                                JSON.stringify(gdata) +
-                                &quot;; expires=&quot; +
-                                date.toGMTString() +
-                                &quot;; path=/; domain=&quot; +
-                                domain;
-                        }
-
-                    }
-                    var obj = {
-                        senderId: &quot;gravitoCMPSuperWrapper&quot;,
-                        status: &quot;ready&quot;,
-                    };
-                    window.postMessage(obj, &quot;*&quot;);
-                }
-            }
-            xhr.send();
-
-        }
-        function postCmpData(data) {
-            console.log(&quot;data&quot;, data)
-            var gravitoData = JSON.stringify(data)
-            var xhr = new XMLHttpRequest();
-            xhr.open(&quot;POST&quot;, 'https://gto.gravito.net/api/firstparty?gravitoData=' + gravitoData, true);
-            xhr.withCredentials = true;
-            xhr.onreadystatechange = function (response) {
-                if (xhr.readyState == XMLHttpRequest.DONE &amp;&amp; xhr.status == 200) {
-                    console.log(&quot;1P response : &quot; + response.target.response);
-                }
-            }
-            xhr.send();
-        }
-        var gravitoSdkTag = document.createElement(&quot;script&quot;);
-        gravitoSdkTag.src = &quot;https://cdn.gravito.net/sdk/gravitoSDK_latest.js&quot;;
-        gravitoSdkTag.onload = function () {
-            window.gravito.ready(function () {
-                gravito.initTCFCMPWithCustomBackend(getCmpData, function () {
-                    gravito.initTCFCMP(
-                        &quot;https://cdn.gravito.net/tcf-v2&quot;,
-                        &quot;https://cdn.gravito.net/cmpbuilds&quot;,
-                        &quot;bundle_latest_2&quot;
-                    );
-                }, postCmpData)
-            });
-        };
-document.body.appendChild(gravitoSdkTag);
-</code></pre>
+                <h1 id="google-additional-consent-mode">Google Additional Consent Mode</h1>
+<p><strong>Introduction</strong> </p>
+<p>This documentation provides a step-by-step guide on enabling Additional Consent Mode (ACM) support in Gravito TCF CMP. ACM is a feature that allows your CMP to handle additional consents required by Google.  You can find the Google technical specification about ACM <a href="https://support.google.com/admanager/answer/9681920?hl=en">here</a>.</p>
+<h2 id="what-is-additional-consent-mode-acm"><strong>What is Additional Consent Mode (ACM)?</strong></h2>
+<p>Additional Consent Mode (ACM) is a feature introduced by Google to manage additional user consents for third-party vendors, particularly for scenarios like ad personalization. </p>
+<h2 id="enabling-acm-support"><strong>Enabling ACM Support</strong></h2>
+<p><strong>Login to Admin Portal</strong> </p>
+<ol>
+<li>
+<p>Open your web browser and navigate to the Gravito TCF CMP Admin Portal. </p>
+</li>
+<li>
+<p>Log in with your credentials. </p>
+</li>
+</ol>
+<p><strong>Configure a New CMP</strong> </p>
+<p>**Basic Tab **</p>
+<ol>
+<li>
+<p>In the Admin Portal, select the "CMP" option from the navbar. </p>
+</li>
+<li>
+<p>Choose "TCF 2.2 Configurator" from the available options. </p>
+</li>
+<li>
+<p>For a new configuration, click on the "New Configuration" button. </p>
+</li>
+<li>
+<p>Fill in the required details on the Basic tab and click "Next" to move to the Settings tab. </p>
+</li>
+</ol>
+<p>**Settings Tab **</p>
+<ol>
+<li>
+<p>On the Settings tab, fill in the required fields as per your configuration requirements. </p>
+</li>
+<li>
+<p>Click on the "Use ACM Mode" checkbox to enable ACM support. </p>
+</li>
+<li>
+<p>Click "Next" to proceed to the Core tab. </p>
+</li>
+</ol>
+<p>**Core Tab **</p>
+<ol>
+<li>
+<p>In the Core tab, find the "Google Vendors" multi-select field. </p>
+</li>
+<li>
+<p>Select the Google vendors you want to use. </p>
+</li>
+<li>
+<p>Configure other fields based on your requirements. </p>
+</li>
+<li>
+<p>Click on the "Preview" button. </p>
+</li>
+</ol>
+<p>**Preview CMP **</p>
+<ol>
+<li>
+<p>In the preview's second layer, navigate to the "Vendors" tab. </p>
+</li>
+<li>
+<p>You will see the selected Google vendors listed under vendors. </p>
+</li>
+</ol>
+<p><strong>Add ACM Support to Existing Config</strong> </p>
+<ol>
+<li>
+<p>Follow the steps to reach the configuration list in the Admin Portal. </p>
+</li>
+<li>
+<p>Click on the "Copy Config" button for the existing configuration you want to update. </p>
+</li>
+<li>
+<p>Follow the steps outlined above for configuring a new CMP, starting from the Basic tab. </p>
+</li>
+</ol>
+<p>This completes the process of enabling Additional Consent Mode (ACM) support in Gravito TCF CMP. If you encounter any issues or have questions, please reach out to our support team.</p>
               
             </div>
           </div><footer>
