@@ -21,7 +21,7 @@ Additional Consent Mode (ACM) is a feature introduced by Google to manage additi
 
 **Configure a New CMP** 
 
-**Basic Tab **
+**Basic Tab**
 
 1.  In the Admin Portal, select the "CMP" option from the navbar. 
 
@@ -31,7 +31,7 @@ Additional Consent Mode (ACM) is a feature introduced by Google to manage additi
 
 1.  Fill in the required details on the Basic tab and click "Next" to move to the Settings tab. 
 
-**Settings Tab **
+**Settings Tab**
 
 1.  On the Settings tab, fill in the required fields as per your configuration requirements. 
 
@@ -39,7 +39,7 @@ Additional Consent Mode (ACM) is a feature introduced by Google to manage additi
 
 1.  Click "Next" to proceed to the Core tab. 
 
-**Core Tab **
+**Core Tab**
 
 1.  In the Core tab, find the "Google Vendors" multi-select field. 
 
@@ -49,7 +49,7 @@ Additional Consent Mode (ACM) is a feature introduced by Google to manage additi
 
 1.  Click on the "Preview" button. 
 
-**Preview CMP **
+**Preview CMP**
 
 1.  In the preview's second layer, navigate to the "Vendors" tab. 
 
