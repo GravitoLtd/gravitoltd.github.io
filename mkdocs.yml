@@ -44,6 +44,7 @@ nav:
       - Version 3 (Latest): 'Gravito_API/Version_3_(Latest).md'
       - Version 2: 'Gravito_API/Version_2.md'
       - Microprofile: 'Gravito_API/Microprofile.md'
+      - Customer Data API: 'Gravito_API/CustomerdataApi.md'
   - Other Features:
       - Cookie Scanner: 'Other_Features/Cookie_Scanner.md'
       - GVL Comparison: 'Other_Features/GVL_Comparison.md'
