@@ -91,9 +91,51 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#version-409-release-notes-release-date-08022024">Version 4.0.9 Release Notes ( Release date 08/02/2024)</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-408-release-notes-release-date-31012024">Version 4.0.8 Release Notes (Release date 31/01/2024)</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#version-407-release-date-04012024">Version 4.0.7 (Release date 04/01/2024)</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#version-405-04122023">Version 4.0.5 (04/12/2023)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-300">Version 3.0.0</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-207">Version 2.0.7</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-206">Version 2.0.6</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-205">Version 2.0.5</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-204">Version 2.0.4</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-203">Version 2.0.3</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-202">Version 2.0.2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-201">Version 2.0.1</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-200">Version 2.0.0</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-1010">Version 1.0.10</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-109">Version 1.0.9</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-108">Version 1.0.8</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-107">Version 1.0.7</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-106">Version 1.0.6</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-105">Version 1.0.5</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-104">Version 1.0.4</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-103">Version 1.0.3</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-102">Version 1.0.2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-101">Version 1.0.1</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-100">Version 1.0.0</a>
     </li>
     </ul>
                   </li>
@@ -120,6 +162,8 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Version_2/">Version 2</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Microprofile/">Microprofile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/CustomerdataApi/">Customer Data API</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Other Features</span></p>
@@ -180,7 +224,7 @@
 <ul>
 <li>Fixed an issue with the IAB CMP validator: A bug has been resolved where the CMP was not being correctly validated before giving consents on a page with IAB validator.</li>
 </ul>
-<p>Version 4.0.8 Release Notes (<em>Release date 31/01/2024</em>)</p>
+<h2 id="version-408-release-notes-release-date-31012024">Version 4.0.8 Release Notes (<em>Release date 31/01/2024</em>)</h2>
 <p>1. Google's Additional Consent Mode Support</p>
 <p>Gravito TCF CMP now fully supports Google's Additional Consent Mode. This integration enhances your ability to manage user consents and ensures compliance with the latest privacy standards set by Google. Here is a <a href="https://www.gravito.net/docs/google-additional-consent-mode/">step by step guide</a> on how to implement</p>
 <p>2. Binding Non-TCF Vendors to TCF Purposes and Legitimate Interest</p>
@@ -196,8 +240,8 @@
 </ul>
 </li>
 </ol>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2024/01/language-selector-1024x265.jpg" /></p>
-<p><img alt="" src="https://www.gravito.net/wp-content/uploads/2024/01/language-selector2.jpg" /></p>
+<p><img alt="" src="../img/language-selector-1024x265.jpg" /></p>
+<p><img alt="" src="../img/language-selector2.jpg" /></p>
 <ol>
 <li>Custom Cookie Expiry for 'Reject-All' Action:<ul>
 <li>Gravito TCF CMP introduces the ability for publishers to set distinct cookie expirations based on user actions. Specifically, when a user clicks on 'Reject All' within the CMP UI, a cookie with a lower expiry duration is generated.</li>
@@ -219,7 +263,7 @@ New Major Release : Compatible with Gravito's TCF 2.2 CMP</p>
 <li>Purpose Descriptions: In the first layer below each declared consentable item, we've added descriptive information. This enables you to view item descriptions without navigating to the second layer, facilitating a better understanding of the purposes associated with each vendor and aiding in your decision-making process.</li>
 <li>Accessibility Improvements: Gravito's TCF 2.2 CMP is now more accessible than ever. It can be operated using the tab key and is compatible with screen readers, ensuring a more inclusive user experience for all.</li>
 </ol>
-<p>Version 3.0.0</p>
+<h2 id="version-300">Version 3.0.0</h2>
 <ol>
 <li>SDK v2 compatibility.</li>
 <li>Feature to capture CMP events such as Accept-All, and Reject-All, and have a report generated on the Admin portal.</li>
@@ -227,22 +271,22 @@ New Major Release : Compatible with Gravito's TCF 2.2 CMP</p>
 <li>Features to configure necessary consents for Non-targeting Ads. (Please contact Gravito to Implement)</li>
 <li>Feature to have a custom first layer. (Please contact Gravito to Implement)</li>
 </ol>
-<p>Version 2.0.7</p>
+<h2 id="version-207">Version 2.0.7</h2>
 <p>Added option to enable "Reject all" button to first layer of the CMP. Enable this by adding third label for first layer actions:</p>
 <pre><code>firstlayer: { actions: [&quot;Settings&quot;, &quot;Accept all&quot;, &quot;Reject all&quot;]... }
 </code></pre>
-<p>Version 2.0.6</p>
+<h2 id="version-206">Version 2.0.6</h2>
 <p>Bug fixes, purposes overlapping with stacks caused the accordions to show data incorrectly.</p>
-<p>Version 2.0.5</p>
+<h2 id="version-205">Version 2.0.5</h2>
 <p>Bug fix release, updates the gravitoCMP.currentState behavior and reflects the stacks acceptance to purposes.</p>
-<p>Version 2.0.4</p>
+<h2 id="version-204">Version 2.0.4</h2>
 <p>Bug fix release, fixed a corner case bug which was showing "undefined" for vendors which did not request consent nor legitimate interest use.</p>
-<p>Version 2.0.3</p>
+<h2 id="version-203">Version 2.0.3</h2>
 <p>New configurable feature to enable special icon on 2nd layer to allow consumer to copy TCstring containing current CMP consent setting. This is to help with validation of CMP functions, copied TCstring can be validated and analyzed at <a href="http://iabtcf.com/#/decode">http://iabtcf.com/#/decode</a> independently.</p>
 <pre><code>style.showCopyTcStringButton=true;
 </code></pre>
 <p>Version also contains bug fixes to some translations being missing on vendor details listing.</p>
-<p>Version 2.0.2</p>
+<h2 id="version-202">Version 2.0.2</h2>
 <p>Removed usage of global scope cookie in TCF CMP(Now the customer cannot write cookie in global scope).</p>
 <p>Removed usage of OOB in TCF CMP (now the customer cannot use OOB).</p>
 <p>Fixed the issue with the vendor list. Previously if the vendor was removed from GVL and is present in the config file then CMP was throwing an error. Now CMP will only render the vendor if is present in config.</p>
@@ -264,12 +308,12 @@ no: &quot;No&quot;,
 seconds: &quot;seconds&quot;,
 days: &quot;days&quot;
 </code></pre>
-<p>Version 2.0.1</p>
+<h2 id="version-201">Version 2.0.1</h2>
 <p>Added configuration option to enable/disable scrollbar for 2nd layer of CMP and the width of the scrollbar:</p>
 <pre><code>style.showScrollBars:true,
 style.scrollBarWidth:10px
 </code></pre>
-<p>Version 2.0.0</p>
+<h2 id="version-200">Version 2.0.0</h2>
 <p><img alt="" src="https://gblobscdn.gitbook.com/assets%2F-LObJLb_jcS77VaCaJdR%2F-MRy4Iz_J2XDdPgvwgvZ%2F-MRy4MQ3eObc9qKNoelp%2Fimage.png?alt=media&amp;token=b04aa3d5-6535-4385-a47e-2627f6a66d96" /></p>
 <p>New UI elements TCF 2.1 policy enables under vendor view (not all vendors are providing the details)</p>
 <p>New major release to include TCF 2.1 changes. Since the new version of TCF policy covers few UI changes there is need to add few translation items to CMP deployment code (under commonTerm precisely):</p>
@@ -311,9 +355,9 @@ var cmp_path=componentUrl + &quot;/bundle_latest_2.js&quot;
 var cmp_path=componentUrl + &quot;/uibundle-2.0.0.js&quot;
 </code></pre>
 <p>We strongly suggest on hooking to _latest pipeline to load always up-to-date core libraries. Breaking changes are branched as separate major releases as all CMP customers are experiencing here.</p>
-<p>Version 1.0.10</p>
+<h2 id="version-1010">Version 1.0.10</h2>
 <p>Fix to allow logo to be left blank.</p>
-<p>Version 1.0.9</p>
+<h2 id="version-109">Version 1.0.9</h2>
 <p>Default font was changed, to make use of it the font configuration needs to be changed on configurations or wrapper files to following:</p>
 <pre><code>fonts: [
    {
@@ -326,19 +370,19 @@ var cmp_path=componentUrl + &quot;/uibundle-2.0.0.js&quot;
     },
 ],
 </code></pre>
-<p>Version 1.0.8</p>
+<h2 id="version-108">Version 1.0.8</h2>
 <p>Another bugfix release, fixed issue with special characters not working on gravitoData cookie with Safari browsers. Additionally superwrapper was refactored to support IE11.</p>
-<p>Version 1.0.7</p>
+<h2 id="version-107">Version 1.0.7</h2>
 <p>Bugfix release, fixed mainly CSS bugs.</p>
-<p>Version 1.0.6</p>
+<h2 id="version-106">Version 1.0.6</h2>
 <p>Enables CMP connectivity with backend systems to store the consent string to CDP or similar. The configuration is made by default to support Gravito CDP but can be customized to support any other backend that has API endpoint(s) exposed for the CMP to GET/POST.</p>
 <p>See <a href="https://web-staging.gravito.net/gravito-cmp/deployment/superwrapper">separate chapter</a> about enabling and configuring superwrapper.js</p>
-<p>Version 1.0.5</p>
+<h2 id="version-105">Version 1.0.5</h2>
 <p>Bug fix release, no new configuration options. The release fixes few localization defects.</p>
-<p>Version 1.0.4</p>
+<h2 id="version-104">Version 1.0.4</h2>
 <p>Publishers can remove the custom purposes, if they are not needed. CMP need to be resurfaced in order affect this change for existing deployments with custom purposes. Leave customPurposes as attribute to configuration even there would not be any under it.</p>
 <p>CMP dialog can be resurfaced using an helper function gravitoCMP.openPreferences()</p>
-<p>Version 1.0.3</p>
+<h2 id="version-103">Version 1.0.3</h2>
 <p>We have enabled few UI options, those can be enabled by adding following configuration items:</p>
 <pre><code>consentInputType:&quot;toggle&quot;,
 useAccordionForPurpose:true,
@@ -349,14 +393,14 @@ googleTcfId:755
 <p>Load the version from your config:</p>
 <pre><code>var ui_path= componentUrl + &quot;/uibundle-1.0.3.js&quot;var cmp_path=componentUrl + &quot;/bundle-1.0.3.js&quot;
 </code></pre>
-<p>Version 1.0.2</p>
+<h2 id="version-102">Version 1.0.2</h2>
 <p>Added configuration option for cookie domain, allowing to configure if the CMP cookie is set on the current hostname domain the CMP operates on (e.g. subdomain.domain.xx) or to top level allowing the subdomains to share the CMP preferences (cookie is set to .domain.xx).</p>
 <pre><code>useTopDomain:false
 </code></pre>
 <p>Load the version from your config:</p>
 <pre><code>var ui_path= componentUrl + &quot;/uibundle-1.0.2.js&quot;var cmp_path=componentUrl + &quot;/bundle-1.0.2.js&quot;
 </code></pre>
-<p>Version 1.0.1</p>
+<h2 id="version-101">Version 1.0.1</h2>
 <p>Core libraries updated, publisher country code added to configuration.</p>
 <pre><code>var ui_path= componentUrl + &quot;/uibundle-1.0.1.js&quot;
 var cmp_path=componentUrl + &quot;/bundle-1.0.1.js&quot;
@@ -367,7 +411,7 @@ purposeOneTreatment:false,
 publisherCountryCode:&quot;FI&quot;,
 </code></pre>
 <p>See <a href="https://web-staging.gravito.net/gravito-cmp/deployment">deployment page</a> for more details for using these.</p>
-<p><strong>Version 1.0.0</strong></p>
+<h2 id="version-100">Version 1.0.0</h2>
 <ul>
 <li>IAB TCF 2.0 support, validated as vendor id 302</li>
 <li>Fully responsive, mobile optimized UI</li>
@@ -385,9 +429,9 @@ publisherCountryCode:&quot;FI&quot;,
 var cmp_path=componentUrl + &quot;/bundle_latest.js&quot;
 </code></pre>
 <p>Direct links to files:</p>
-<p><a href="https://cdn.gravito.net/cmp/wrapper-fi-latest.js">https://cdn.gravito.net/cmp/wrapper-fi-latest.js</a>\
-<a href="https://cdn.gravito.net/cmp/bundle_latest.js">https://cdn.gravito.net/cmp/bundle_latest.js</a>\
-<a href="https://cdn.gravito.net/cmp/uibundle_latest.js">https://cdn.gravito.net/cmp/uibundle_latest.js</a></p>
+<p><a href="https://cdn.gravito.net/cmp/wrapper-fi-latest.js">https://cdn.gravito.net/cmp/wrapper-fi-latest.js</a></p>
+<p><a href="https://cdn.gravito.net/cmp/bundle_latest.js">https://cdn.gravito.net/cmp/bundle_latest.js</a></p>
+<p><a href="https://cdn.gravito.net/cmp/uibundle_latest.js">https://cdn.gravito.net/cmp/uibundle_latest.js</a></p>
               
             </div>
           </div><footer>
