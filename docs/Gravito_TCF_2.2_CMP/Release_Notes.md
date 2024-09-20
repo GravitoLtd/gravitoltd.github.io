@@ -33,7 +33,7 @@ Bug Fixes:
 
 -   Fixed an issue with the IAB CMP validator: A bug has been resolved where the CMP was not being correctly validated before giving consents on a page with IAB validator.
 
-Version 4.0.8 Release Notes (*Release date 31/01/2024*)
+## Version 4.0.8 Release Notes (*Release date 31/01/2024*)
 
 1\. Google's Additional Consent Mode Support
 
@@ -51,9 +51,9 @@ In version 4.0.8, Gravito TCF CMP introduces a groundbreaking feature that allow
     -   Gravito TCF CMP now empowers publishers with enhanced user accessibility through multi-language support within a single configuration. Within the CMP UI, a language selection dropdown is introduced, enabling users to translate the CMP UI into their preferred language.
     -   The translations available are controlled by publishers within their configurations, allowing them to provide a seamless experience by catering to diverse language preferences.
 
-![](https://www.gravito.net/wp-content/uploads/2024/01/language-selector-1024x265.jpg)
+![](./img/language-selector-1024x265.jpg)
 
-![](https://www.gravito.net/wp-content/uploads/2024/01/language-selector2.jpg)
+![](./img/language-selector2.jpg)
 
 1.  Custom Cookie Expiry for 'Reject-All' Action:
     -   Gravito TCF CMP introduces the ability for publishers to set distinct cookie expirations based on user actions. Specifically, when a user clicks on 'Reject All' within the CMP UI, a cookie with a lower expiry duration is generated.
@@ -77,7 +77,7 @@ Enhancements:
 5.  Purpose Descriptions: In the first layer below each declared consentable item, we've added descriptive information. This enables you to view item descriptions without navigating to the second layer, facilitating a better understanding of the purposes associated with each vendor and aiding in your decision-making process.
 6.  Accessibility Improvements: Gravito's TCF 2.2 CMP is now more accessible than ever. It can be operated using the tab key and is compatible with screen readers, ensuring a more inclusive user experience for all.
 
-Version 3.0.0
+## Version 3.0.0
 
 1.  SDK v2 compatibility.
 2.  Feature to capture CMP events such as Accept-All, and Reject-All, and have a report generated on the Admin portal.
@@ -85,7 +85,7 @@ Version 3.0.0
 4.  Features to configure necessary consents for Non-targeting Ads. (Please contact Gravito to Implement)
 5.  Feature to have a custom first layer. (Please contact Gravito to Implement)
 
-Version 2.0.7
+## Version 2.0.7
 
 Added option to enable "Reject all" button to first layer of the CMP. Enable this by adding third label for first layer actions:
 
@@ -93,19 +93,19 @@ Added option to enable "Reject all" button to first layer of the CMP. Enable thi
 firstlayer: { actions: ["Settings", "Accept all", "Reject all"]... }
 ```
 
-Version 2.0.6
+## Version 2.0.6
 
 Bug fixes, purposes overlapping with stacks caused the accordions to show data incorrectly.
 
-Version 2.0.5
+## Version 2.0.5
 
 Bug fix release, updates the gravitoCMP.currentState behavior and reflects the stacks acceptance to purposes.
 
-Version 2.0.4
+## Version 2.0.4
 
 Bug fix release, fixed a corner case bug which was showing "undefined" for vendors which did not request consent nor legitimate interest use.
 
-Version 2.0.3
+## Version 2.0.3
 
 New configurable feature to enable special icon on 2nd layer to allow consumer to copy TCstring containing current CMP consent setting. This is to help with validation of CMP functions, copied TCstring can be validated and analyzed at <http://iabtcf.com/#/decode> independently.
 
@@ -115,7 +115,7 @@ style.showCopyTcStringButton=true;
 
 Version also contains bug fixes to some translations being missing on vendor details listing.
 
-Version 2.0.2
+## Version 2.0.2
 
 Removed usage of global scope cookie in TCF CMP(Now the customer cannot write cookie in global scope).
 
@@ -144,7 +144,7 @@ seconds: "seconds",
 days: "days"
 ```
 
-Version 2.0.1
+## Version 2.0.1
 
 Added configuration option to enable/disable scrollbar for 2nd layer of CMP and the width of the scrollbar:
 
@@ -153,7 +153,7 @@ style.showScrollBars:true,
 style.scrollBarWidth:10px
 ```
 
-Version 2.0.0
+## Version 2.0.0
 
 ![](https://gblobscdn.gitbook.com/assets%2F-LObJLb_jcS77VaCaJdR%2F-MRy4Iz_J2XDdPgvwgvZ%2F-MRy4MQ3eObc9qKNoelp%2Fimage.png?alt=media&token=b04aa3d5-6535-4385-a47e-2627f6a66d96)
 
@@ -214,11 +214,11 @@ var cmp_path=componentUrl + "/uibundle-2.0.0.js"
 
 We strongly suggest on hooking to _latest pipeline to load always up-to-date core libraries. Breaking changes are branched as separate major releases as all CMP customers are experiencing here.
 
-Version 1.0.10
+## Version 1.0.10
 
 Fix to allow logo to be left blank.
 
-Version 1.0.9
+## Version 1.0.9
 
 Default font was changed, to make use of it the font configuration needs to be changed on configurations or wrapper files to following:
 
@@ -235,31 +235,31 @@ fonts: [
 ],
 ```
 
-Version 1.0.8
+## Version 1.0.8
 
 Another bugfix release, fixed issue with special characters not working on gravitoData cookie with Safari browsers. Additionally superwrapper was refactored to support IE11.
 
-Version 1.0.7
+## Version 1.0.7
 
 Bugfix release, fixed mainly CSS bugs.
 
-Version 1.0.6
+## Version 1.0.6
 
 Enables CMP connectivity with backend systems to store the consent string to CDP or similar. The configuration is made by default to support Gravito CDP but can be customized to support any other backend that has API endpoint(s) exposed for the CMP to GET/POST.
 
 See [separate chapter](https://web-staging.gravito.net/gravito-cmp/deployment/superwrapper) about enabling and configuring superwrapper.js
 
-Version 1.0.5
+## Version 1.0.5
 
 Bug fix release, no new configuration options. The release fixes few localization defects.
 
-Version 1.0.4
+## Version 1.0.4
 
 Publishers can remove the custom purposes, if they are not needed. CMP need to be resurfaced in order affect this change for existing deployments with custom purposes. Leave customPurposes as attribute to configuration even there would not be any under it.
 
 CMP dialog can be resurfaced using an helper function gravitoCMP.openPreferences()
 
-Version 1.0.3
+## Version 1.0.3
 
 We have enabled few UI options, those can be enabled by adding following configuration items:
 
@@ -277,7 +277,7 @@ Load the version from your config:
 var ui_path= componentUrl + "/uibundle-1.0.3.js"var cmp_path=componentUrl + "/bundle-1.0.3.js"
 ```
 
-Version 1.0.2
+## Version 1.0.2
 
 Added configuration option for cookie domain, allowing to configure if the CMP cookie is set on the current hostname domain the CMP operates on (e.g. subdomain.domain.xx) or to top level allowing the subdomains to share the CMP preferences (cookie is set to .domain.xx).
 
@@ -291,7 +291,7 @@ Load the version from your config:
 var ui_path= componentUrl + "/uibundle-1.0.2.js"var cmp_path=componentUrl + "/bundle-1.0.2.js"
 ```
 
-Version 1.0.1
+## Version 1.0.1
 
 Core libraries updated, publisher country code added to configuration.
 
@@ -310,7 +310,7 @@ publisherCountryCode:"FI",
 
 See [deployment page](https://web-staging.gravito.net/gravito-cmp/deployment) for more details for using these.
 
-**Version 1.0.0**
+## Version 1.0.0
 
 -   IAB TCF 2.0 support, validated as vendor id 302
 -   Fully responsive, mobile optimized UI
@@ -333,6 +333,8 @@ var cmp_path=componentUrl + "/bundle_latest.js"
 
 Direct links to files:
 
-<https://cdn.gravito.net/cmp/wrapper-fi-latest.js>\
-<https://cdn.gravito.net/cmp/bundle_latest.js>\
+<https://cdn.gravito.net/cmp/wrapper-fi-latest.js>
+
+<https://cdn.gravito.net/cmp/bundle_latest.js>
+
 <https://cdn.gravito.net/cmp/uibundle_latest.js>
