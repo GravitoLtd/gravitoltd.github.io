@@ -18,7 +18,7 @@ extra_css:
 
 nav:
   - Getting started:
-      - Frequently Asked Questions: 'Getting_started/Frequently_Asked_Questions.md'
+      #- Frequently Asked Questions: 'Getting_started/Frequently_Asked_Questions.md'
       - Register: 'Getting_started/Register.md'
       - Support: 'Getting_started/Support.md'
       - Release Notes: 'Getting_started/Release_Notes.md'

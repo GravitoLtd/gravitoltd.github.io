@@ -5,17 +5,42 @@ Stay up to date with our latest releases!
 
 Gravito’s release notes are generally divided as different category as development happens constantly under all categories. You can jump to specific release notes here
 
-*   [Gravito Intelligent CMP](https://www.gravito.net/docs/lightcmp/release-notes-4/)
+*   [Gravito Intelligent CMP](https://docs.gravito.net/docs/Gravito_Intelligent_CMP/Release_Notes/)
     
-*   [Gravito TCF 2.2 CMP](https://www.gravito.net/docs/tcf-cmp/tcf-cmp-releases/)
+*   [Gravito TCF 2.2 CMP](https://docs.gravito.net/docs/Gravito_TCF_2.2_CMP/Release_Notes/)
     
-*   [Gravito SDK](https://www.gravito.net/docs/gravito-sdk-release-notes/)
+*   [Gravito SDK](https://docs.gravito.net/Gravito_SDK/Release_Notes/)
     
 
 Here you can find more about the general product updates
 
-Product Release notes
+Product Release notes : 
 ---------------------
+
+Release notes: Sprint 77 - 13/08/2024
+--------------------------------------
+
+   * Generate and manage Data Access tokens (in Manage Account section)
+   * Optimization and refactoring in Gravito & TCF CMP Configurator
+   * Removed the customer admin checkbox option (user will be always accepted as customer admin)
+   * Support for Dutch translations in TCF configurator.
+   * Cookie disclaimers can now be added to each of the Non-TCF Vendor via TCF Configurator.
+   * Configurations related to Pixel Requests section on cookie report layer can now be configured using TCF configurator.
+   * Both TCF and Gravito configurator are now setup to create V5 configs that use SDK version 3.
+
+
+Release notes: Sprint 76 - 12/06/2024 
+--------------------------------------
+
+ * Dashboard charts are now split into 2 sections ie. "Visitor Statistics" & "CMP Statistics".
+  * Browser and Domain table merged to show domain specific browser statistics in reporting.
+ * newly added Firstparty & device statistics for dashboard and compare trends
+ * Renaming and beaytification of dashboard content.
+ * Domain group creation and management feature has been added.
+ * Domain group selector/filter for dashboard & reporting.
+ * "Guide Me" documentation upgradation.
+ * Bug fixes & Optimization changes.
+
 
 Release Notes : Sprint 75 (10/04/2024)
 --------------------------------------
