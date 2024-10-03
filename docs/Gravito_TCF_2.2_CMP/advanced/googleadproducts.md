@@ -29,7 +29,7 @@ To integrate Gravito's CMP with Google Advertising Products, it is crucial to en
 -   Problem: Google services may reject the TC string due to formatting errors or incomplete data. 
 -   Solution: Use the IAB's decode tool at <https://iabtcf.com/#/decode>  to validate the TC string. Ensure that the string adheres to the latest specifications set by the IAB. 
 
-​### Issue 2: Incomplete or Incorrect Vendor Configuration 
+### Issue 2: Incomplete or Incorrect Vendor Configuration 
 
 -   Problem: Google Advertising Products might not operate correctly if not configured properly in the CMP's vendor list. 
 -   Solution: Double-check the vendor settings in Gravito's CMP. Make sure that Google and its services are enabled with appropriate consent features activated. 
