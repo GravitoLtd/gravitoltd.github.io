@@ -5,7 +5,7 @@ theme:
   name: readthedocs
   logo: 'img/logo.png'  # Path to your custom logo
   favicon: 'img/favicon-gravito.png'  # Optional: Path to your favicon
-  custom_dir: 'docs/css'  # Optional: Specify the custom directory if needed
+  # custom_dir: overrides  # Optional: Specify the custom directory if needed
   palette:
     primary: 'indigo'
     accent: 'orange'
@@ -14,7 +14,10 @@ theme:
     code: 'Roboto Mono'
 
 extra_css:
-  - 'css/custom.css'  # Path to your custom CSS file
+  - css/custom.css  # Path to your custom CSS file
+
+extra_javascript:
+  - js/modal.js  # Your custom JavaScript file
 
 nav:
   - Getting started:
