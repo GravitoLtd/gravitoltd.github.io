@@ -21,6 +21,8 @@ images.forEach(function (img) {
 var closeBtn = document.getElementsByClassName("close")[0];
 
 // Close the modal when the close button is clicked
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
+if (closeBtn) {
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+}
