@@ -20,7 +20,7 @@ The following are the configurations that can be done in CMP config to achieve t
         <td>to highlight first purpose</td>
         <td style="text-align: center;">Boolean</td>
         <td rowspan="4">
-            <img class="clickable-img" src="../img/highlight.png" alt="Highlighted purpose 1">
+            <img class="clickable-img" src="./img/highlight.png" alt="Highlighted purpose 1">
         </td>
     </tr>
     <tr>

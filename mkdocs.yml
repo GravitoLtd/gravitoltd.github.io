@@ -34,7 +34,6 @@ nav:
   - Gravito TCF 2.2 CMP:
       - Getting Started: 'Gravito_TCF_2.2_CMP/Getting_Started.md'
       - Setup and Design: 'Gravito_TCF_2.2_CMP/Setup_and_Design.md'
-      - CMP Customizations: 'Gravito_TCF_2.2_CMP/Customization.md'
       - Mobile apps: 'Gravito_TCF_2.2_CMP/Mobile_apps.md'
       - Release Notes: 'Gravito_TCF_2.2_CMP/Release_Notes.md'
       - Advanced features: 'Gravito_TCF_2.2_CMP/Advanced_features.md'

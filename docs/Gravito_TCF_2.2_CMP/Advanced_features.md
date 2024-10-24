@@ -12,4 +12,5 @@ Integration
 
 Customization
 --------------------
-[Latest Gravito TCF 2.2 CMP Configuraton example (json)](./advanced/version3.md)
+1. [Latest Gravito TCF 2.2 CMP Configuraton example (json)](./advanced/version3.md)
+2. [Want to customize your TCF 2.2 CMP ? Here is how](./advanced/customization.md) <mark>New</mark>

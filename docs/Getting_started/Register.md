@@ -3,6 +3,8 @@ Register
 
 Before you can start using Gravito features you will need to register yourself in the Gravito portal. Head to [https://adminv2.gravito.net](https://adminv2.gravito.net/) and enter your email you want to use with Gravito:
 
+<img src='../img/signinorregister.png' alt="Description" width="600" height=auto>
+
 ![](./img/signinorregister.png)
 
 After submission you will receive an email with PIN code, enter that to application:
