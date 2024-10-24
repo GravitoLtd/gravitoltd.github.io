@@ -20,7 +20,7 @@ The following are the configurations that can be done in CMP config to achieve t
         <td>to highlight first purpose</td>
         <td style="text-align: center;">Boolean</td>
         <td rowspan="4">
-            <img class="clickable-img" src="./img/highlight.png" alt="Highlighted purpose 1">
+            <img class="clickable-img" src="../../img/highlight.png" alt="Highlighted purpose 1">
         </td>
     </tr>
     <tr>
@@ -43,7 +43,7 @@ The following are the configurations that can be done in CMP config to achieve t
         <td>to display action buttons above tabs in 2nd layer</td>
         <td style="text-align: center;">Boolean</td>
         <td>
-            <img class="clickable-img" src="../img/btnOnTab.png" alt="Buttons on top">
+            <img class="clickable-img" src="../../img/btnOnTab.png" alt="Buttons on top">
         </td>
     </tr>
     <tr>
@@ -51,7 +51,7 @@ The following are the configurations that can be done in CMP config to achieve t
         <td>to choose between 2 tab layout or 3 tab layout</td>
         <td style="text-align: center;">select</td>
         <td>
-            <img class="clickable-img" src="../img/tabLayout.png" alt="Tab layout">
+            <img class="clickable-img" src="../../img/tabLayout.png" alt="Tab layout">
         </td>
     </tr>
     <tr>
@@ -59,7 +59,7 @@ The following are the configurations that can be done in CMP config to achieve t
         <td>to choose between toogle or checkbox input for consents</td>
         <td style="text-align: center;">select</td>
         <td>
-            <img class="clickable-img" src="../img/inputType.png" alt="Input Type">
+            <img class="clickable-img" src="../../img/inputType.png" alt="Input Type">
         </td>
     </tr>
     <tr>
@@ -67,7 +67,7 @@ The following are the configurations that can be done in CMP config to achieve t
         <td>to enable/disable the confirmation modal</td>
         <td style="text-align: center;">Boolean</td>
         <td>
-            <img class="clickable-img" src="../img/confirmation.png" alt="Confirmation Modal">
+            <img class="clickable-img" src="../../img/confirmation.png" alt="Confirmation Modal">
         </td>
     </tr>
     <tr>
@@ -75,7 +75,7 @@ The following are the configurations that can be done in CMP config to achieve t
         <td>to enable/disable the confirmation modal</td>
         <td style="text-align: center;">Boolean</td>
         <td>
-            <img class="clickable-img" src="../img/accordion.png" alt="Accordion View">
+            <img class="clickable-img" src="../../img/accordion.png" alt="Accordion View">
         </td>
     </tr>
 </table>
