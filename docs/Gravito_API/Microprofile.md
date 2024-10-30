@@ -15,7 +15,7 @@ Wish it was. However, the general idea is pretty simple. We store various types 
 
 **How does it work?**
 
-First learn about setting up [First Party API](https://www.gravito.net/docs/first-party-api/), after registering your domain(s) you are ready to roll: (Example provided based on [Version 3](https://www.gravito.net/docs/first-party-api/version-3/))
+First learn about setting up First Party API, after registering your domain(s) you are ready to roll: (Example provided based on [Version 3](https://docs.gravito.net/Gravito_API/Version_3_%28Latest%29)
 
 ```javascript
 (function () { 
