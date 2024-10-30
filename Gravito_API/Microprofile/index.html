@@ -145,7 +145,8 @@
 <p>Gravito Microprofile is sort of a synonym to first party API. First party API was initially developed as simple microservice to help with setting first party cookie to hold CMP settings and consents. As more advanced requirements started to surface we thought that calling the service “microprofile” would be reasonable.</p>
 <p><strong>Micro means simple, right?</strong></p>
 <p>Wish it was. However, the general idea is pretty simple. We store various types of attributes to a cookie that is set from server-side by API served from sub-domain associated with your domain. Two reasons why:</p>
-<p>1) server-side cookie lasts longer than cookies set by javascript running on client2) API operating on your domain avoids the blocking of third party cookies (now and the future)</p>
+<p>1) server-side cookie lasts longer than cookies set by javascript running on client</p>
+<p>2) API operating on your domain avoids the blocking of third party cookies (now and the future)</p>
 <p><strong>How does it work?</strong></p>
 <p>First learn about setting up <a href="https://www.gravito.net/docs/first-party-api/">First Party API</a>, after registering your domain(s) you are ready to roll: (Example provided based on <a href="https://www.gravito.net/docs/first-party-api/version-3/">Version 3</a>)</p>
 <pre><code class="language-javascript">(function () { 
@@ -198,6 +199,9 @@ xhr.send(JSON.stringify(params));
 <p><strong>“c” stands for</strong> <em><strong>consents</strong></em>, that is to collect the consents received from CMP. Again the behavior follows the key/value pairs approach but with fixed structure:</p>
 <p><code>"i":"consentId", -&gt; string"c":"consentName", -&gt; string"s":  status as true or false -&gt; bool</code></p>
 <p>Same as with keyring, the timestamp of adding/modifying particular consentId is recorded and returned in API responses. This allows to monitor that when consents are changed and how those turning points connect to collected IDs in keyring (allowing or preventing further activities within integrated systems).</p>
+<p><strong>Limitations</strong></p>
+<p>In our microprofile ( basically a server-side cookie that holds key-value pairs, consents and keys), especially the <em><strong>events</strong></em>  supports storing various data types—we support longer values like TCstrings, but there are some practical size limits to keep in mind. To maintain compatibility, the profile size should stay below 5KB, with a safe limit of 2KB for headers to avoid issues. Exceeding these limits, can choke the webservers (for. eg: on AWS, this could result in added costs or even failed requests). To work within these boundaries, we recommend encoding data into a shorter format whenever possible. </p>
+<p><em>Note</em>: We compress the profile data, which often reduces 5KB down to 1-2KB depending on the data density. However, heavy use of cookies or extra headers can still push limits, especially in browser or network handling, so it's wise to keep only relevant information in these profiles.</p>
               
             </div>
           </div><footer>
