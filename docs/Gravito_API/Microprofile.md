@@ -9,7 +9,9 @@ Gravito Microprofile is sort of a synonym to first party API. First party API wa
 
 Wish it was. However, the general idea is pretty simple. We store various types of attributes to a cookie that is set from server-side by API served from sub-domain associated with your domain. Two reasons why:
 
-1) server-side cookie lasts longer than cookies set by javascript running on client2) API operating on your domain avoids the blocking of third party cookies (now and the future)
+1) server-side cookie lasts longer than cookies set by javascript running on client
+
+2) API operating on your domain avoids the blocking of third party cookies (now and the future)
 
 **How does it work?**
 
@@ -76,3 +78,9 @@ When sending requests to API you will notice that keyring items will have timest
 `   "i":"consentId", -> string"c":"consentName", -> string"s":  status as true or false -> bool   `
 
 Same as with keyring, the timestamp of adding/modifying particular consentId is recorded and returned in API responses. This allows to monitor that when consents are changed and how those turning points connect to collected IDs in keyring (allowing or preventing further activities within integrated systems).
+
+**Limitations**
+
+In our microprofile ( basically a server-side cookie that holds key-value pairs, consents and keys), especially the _**events**_  supports storing various data types—we support longer values like TCstrings, but there are some practical size limits to keep in mind. To maintain compatibility, the profile size should stay below 5KB, with a safe limit of 2KB for headers to avoid issues. Exceeding these limits, can choke the webservers (for. eg: on AWS, this could result in added costs or even failed requests). To work within these boundaries, we recommend encoding data into a shorter format whenever possible. 
+
+*Note*: We compress the profile data, which often reduces 5KB down to 1-2KB depending on the data density. However, heavy use of cookies or extra headers can still push limits, especially in browser or network handling, so it's wise to keep only relevant information in these profiles.
