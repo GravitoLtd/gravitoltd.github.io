@@ -1,5 +1,4 @@
-Playbooks
-=========
+# Playbooks
 
 Quick guides to get started with various deployment scenarios.
 
@@ -32,7 +31,7 @@ Quick guides to get started with various deployment scenarios.
 12. You will find help from content menus and tooltipsUpload configuration when satisfied with the result.
 13. Generate deployment script from list of configurations
 14. Copy the script to clipboard (to deploy via GTM or similar) or download it to be uploaded to your server
-15. If you are up to deploy via GTM, follow the steps [here](https://web-staging.gravito.net/docs/lightcmp/integration/)
+15. If you are up to deploy via GTM, follow the steps [here](https://docs.gravito.net/Gravito_Intelligent_CMP/GTM_Template/)
 16. Otherwise embed the uploaded cmp script to your website template, third party tags that you might have need to be wrapped with custom triggers that are listening to CMP events and consent being set
 17. Add link on your website from which the user can resurface the CMP, give the link id "manageSettings" or whatever you specified when configuring the CMP. Alternatively you can specify the link to call window.gravitoLightCMP.openPreferences()
 18. Validate that there is request made to https://gto.<yourdomain> when CMP loads on your website (on first page load)
