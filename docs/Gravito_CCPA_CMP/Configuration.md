@@ -84,3 +84,44 @@ Here you can find the configuration options for the Gravito CCPA CMP.
         <td style="text-align: center;">String</td>
     </tr>
 </table>
+
+## Example Configuration
+
+```json
+{
+  "title": "Gravito CCPA CMP",
+  "introductionText": "This is a testing model for Gravito's CCPA compliant CMP.",
+  "cookieName": "usprivacy",
+  "cookieExpiry": 30,
+  "defaultUspString": "1NNN",
+  "consents": [
+    {
+      "name": "notice",
+      "label": "Notice/Opportunity to Opt Out"
+    },
+    {
+      "name": "optOutSale",
+      "label": "Opt-Out Sale"
+    },
+    {
+      "name": "lspa",
+      "label": "LSPA Covered Transaction"
+    }
+  ],
+  "logoUrl": "https://cdn.gravito.net/logos/Gravito-logo-Dark.png",
+  "style": {
+    "customCss": "",
+    "fonts": [
+      {
+        "url": "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwXjeu.woff2",
+        "unicodeRange": "U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXg.woff2",
+        "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;"
+      }
+    ]
+  },
+  "componentUrl": "https://gravitocdn.blob.core.windows.net/ccpa"
+}
+```
