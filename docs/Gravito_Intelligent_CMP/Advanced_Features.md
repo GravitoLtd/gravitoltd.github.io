@@ -15,3 +15,10 @@ Here are the links to the advanced features supported by Gravito Intelligent CMP
 ### Integrations
 
 *   [How to integrate events emitted by the Gravito Intelligent CMP?](./advanced/integration.md)
+
+
+### Support for CCPA
+
+*   [About CCPA?](../Gravito_CCPA_CMP/About_Ccpa.md)
+*   [Getting Started](../Gravito_CCPA_CMP/Getting_Started.md)
+*   [Configuration](../Gravito_CCPA_CMP/Configuration.md)
