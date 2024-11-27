@@ -192,6 +192,123 @@ CSS customization can be done by adding the custom CSS in the `style` section of
 }
 ```
 
+## Deployment
+
+To deploy the Gravito CCPA CMP on your website, there are majorly two ways:
+
+1. **Deployment Script**: You have to paste the deployment script provided by gravito into your website's HTML code just after the opening `<body>` tag. The deployment script will load the CMP on your website.
+
+```html
+<script>
+  var gravitoCMPConfig = {
+    title: "Gravito CCPA CMP",
+    introductionText:
+      "We value your privacy. Our website uses cookies and similar technologies to enhance your experience. By continuing to browse, you consent to their use as outlined in our <a href='https://www.gravito.net/privacy-notice/' target='_blank'>Privacy Policy</a>. You may manage your preferences at any time.",
+    cookieName: "usprivacy",
+    cookieExpiry: 30,
+    defaultUspString: "1YYY",
+    consents: [
+      {
+        name: "notice",
+        label: "Notice/Opportunity to Opt Out",
+      },
+      {
+        name: "optOutSale",
+        label: "Opt-Out Sale",
+      },
+      {
+        name: "lspa",
+        label: "LSPA Covered Transaction",
+      },
+    ],
+    logoUrl: "https://cdn.gravito.net/logos/Gravito-logo-Dark.png",
+    style: {
+      customCss: "",
+      fonts: [
+        {
+          url: "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwXjeu.woff2",
+          unicodeRange:
+            "U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;",
+        },
+        {
+          url: "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXg.woff2",
+          unicodeRange:
+            "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;",
+        },
+      ],
+    },
+    componentUrl: "https://gravitocdn.blob.core.windows.net/ccpa",
+  };
+  window.gravitoCMPConfig = gravitoCMPConfig;
+
+  var gravitoSDKTag = document.createElement("script");
+  gravitoSDKTag.type = "module";
+  gravitoSDKTag.src = "https://cdn.gravito.net/sdkv3/latest/sdk.js";
+  gravitoSDKTag.onload = function () {
+    window.gravito.init("CCPA");
+  };
+  document.body.appendChild(gravitoSDKTag);
+</script>
+```
+
+2. **Using GTM**: You can also deploy the CMP using Google Tag Manager (GTM).
+   You have to create a GTM tag and paste the deployment script provided by gravito into the tag.
+
+```html
+<script>
+  var gravitoCMPConfig = {
+    title: "Gravito CCPA CMP",
+    introductionText:
+      "We value your privacy. Our website uses cookies and similar technologies to enhance your experience. By continuing to browse, you consent to their use as outlined in our <a href='https://www.gravito.net/privacy-notice/' target='_blank'>Privacy Policy</a>. You may manage your preferences at any time.",
+    cookieName: "usprivacy",
+    cookieExpiry: 30,
+    defaultUspString: "1YYY",
+    consents: [
+      {
+        name: "notice",
+        label: "Notice/Opportunity to Opt Out",
+      },
+      {
+        name: "optOutSale",
+        label: "Opt-Out Sale",
+      },
+      {
+        name: "lspa",
+        label: "LSPA Covered Transaction",
+      },
+    ],
+    logoUrl: "https://cdn.gravito.net/logos/Gravito-logo-Dark.png",
+    style: {
+      customCss: "",
+      fonts: [
+        {
+          url: "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwXjeu.woff2",
+          unicodeRange:
+            "U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;",
+        },
+        {
+          url: "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXg.woff2",
+          unicodeRange:
+            "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;",
+        },
+      ],
+    },
+    componentUrl: "https://gravitocdn.blob.core.windows.net/ccpa",
+  };
+  window.gravitoCMPConfig = gravitoCMPConfig;
+
+  var gravitoSDKTag = document.createElement("script");
+  gravitoSDKTag.type = "module";
+  gravitoSDKTag.src = "https://cdn.gravito.net/sdkv3/latest/sdk.js";
+  gravitoSDKTag.onload = function () {
+    window.gravito.init("CCPA");
+  };
+  document.body.appendChild(gravitoSDKTag);
+</script>
+```
+
+Now trigger the GTM tag from your website to load the CMP.
+
 <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
     <a href="../../Gravito_Intelligent_CMP/Advanced_Features/" class="btn btn-neutral float-left" title="Advanced Features"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     <a href="../About_Ccpa" class="btn btn-neutral float-right" title="About CCPA">Next <span class="icon icon-circle-arrow-right"></span></a>
