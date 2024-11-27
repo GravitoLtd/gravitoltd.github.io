@@ -104,15 +104,62 @@ Here you can find the configuration options for the Gravito CCPA CMP.
     </tr>
 </table>
 
+## CSS Customization
+
+CSS customization can be done by adding the custom CSS in the `style` section of the CMP config. The following are the CSS classes that can be used to customize the CMP.
+
+<table>
+    <tr>
+        <th>Class Name</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-card/td>
+        <td>to customize the CMP modal/card</td>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-logo-container</td>
+        <td>to customize the CMP logo container</td>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-logo</td>
+        <td>to customize the CMP logo image</td>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-title</td>
+        <td>to customize the CMP title</td>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-description</td>
+        <td>to customize the CMP description</td>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-checkbox-container</td>
+        <td>to customize the consent container</td>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-checkbox</td>
+        <td>to customize the checkbox styling</td>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-row</td>
+        <td>to customize the checkbox label</td>
+    </tr>
+    <tr>
+        <td>.gravitoCcpaCmp-btn-container button</td>
+        <td>to customize the CMP action button</td>
+    </tr>
+</table>
+
 ## Example Configuration
 
 ```json
 {
   "title": "Gravito CCPA CMP",
-  "introductionText": "This is a testing model for Gravito's CCPA compliant CMP.",
+  "introductionText": "We value your privacy. Our website uses cookies and similar technologies to enhance your experience. By continuing to browse, you consent to their use as outlined in our <a href='' target='_blank'>Privacy Policy</a>. You may manage your preferences at any time.",
   "cookieName": "usprivacy",
   "cookieExpiry": 30,
-  "defaultUspString": "1NNN",
+  "defaultUspString": "1YYY",
   "consents": [
     {
       "name": "notice",
