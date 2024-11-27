@@ -59,3 +59,8 @@ The USPrivacy cookie is typically stored in the browser as a first-party cookie 
 - **Opt-Out Sale**: Indicates whether the user has opted out of the sale of their personal information.
 
 - **LSPA**: Indicates whether the user has opted out of the sale of their personal information under the Limited Service Provider Agreement (LSPA).
+
+<div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+    <a href="../Getting_Started" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    <a href="../../Gravito_Intelligent_CMP/Advanced_Features/" class="btn btn-neutral float-right" title="Advanced Features">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
