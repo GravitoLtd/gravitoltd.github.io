@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Gravito CCPA CMP is a Consent Management Platform (CMP) that helps you manage user consent for your website. It is designed to help you comply with the California Consumer Privacy Act (CCPA) and other privacy regulations.
+Gravito CCPA CMP is a Consent Management Platform (CMP) that helps you manage user consent for your website. It is designed to help you comply with the [California Consumer Privacy Act (CCPA)](../Gravito_CCPA_CMP/About_Ccpa.md) and other privacy regulations.
 
 ## Features
 
@@ -10,7 +10,6 @@ Gravito CCPA CMP is a Consent Management Platform (CMP) that helps you manage us
 - **CCPA Compliance**: Comply with the California Consumer Privacy Act (CCPA).
 - **Customizable**: Customize the CMP to match your website's look and feel.
 - **Easy Integration**: Easily integrate the CMP with your website.
-- **GDPR Compliance**: Comply with the General Data Protection Regulation (GDPR).
 
 ## CMP Preview
 
