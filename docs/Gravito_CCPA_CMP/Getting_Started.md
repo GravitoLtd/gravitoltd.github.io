@@ -114,7 +114,7 @@ CSS customization can be done by adding the custom CSS in the `style` section of
         <th>Purpose</th>
     </tr>
     <tr>
-        <td>.gravitoCcpaCmp-card/td>
+        <td>.gravitoCcpaCmp-card</td>
         <td>to customize the CMP modal/card</td>
     </tr>
     <tr>

@@ -1,5 +1,34 @@
 # Release Notes
 
+## Version 5.0.2 
+
+Release date 28/11/2024
+
+TCF 2.2 was introduced about a year ago, and the IAB limits the validity of TC Strings to 13 months. This release includes an enhancement to our CMP core module with an additional check to ensure that invalid consents, if any, are promptly handled. **(Similar updates on named version 5 as well as older version 4)**
+
+*Key Update in 5.0.2:*
+
+Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now automatically prompt users to resurface and provide their consent again.
+ - This update ensures that all consents remain up-to-date and compliant with TCF 2.2 standards.
+ - This change minimizes the risk of invalid consents and enhances the reliability of your consent management process.
+
+ More details [here](./advanced/Resurfacing.md)
+
+## Version 4.0.12
+
+Release date 28/11/2024
+
+TCF 2.2 was introduced about a year ago, and the IAB limits the validity of TC Strings to 13 months. This release includes an enhancement to our CMP core module with an additional check to ensure that invalid consents, if any, are promptly handled.**(Similar updates on named version 5 as well as older version 4)**
+
+*Key Update in 4.0.12:*
+
+Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now automatically prompt users to resurface and provide their consent again.
+
+- This update ensures that all consents remain up-to-date and compliant with TCF 2.2 standards.
+- This change minimizes the risk of invalid consents and enhances the reliability of your consent management process.
+
+More details [here](./advanced/Resurfacing.md)
+
 ## Version 5.0.1
 
 Release Date: 13/08/2024
@@ -19,6 +48,7 @@ A new feature has been added that allows cookie declarations to be shown within 
 #### Configurator Enhancement:
 
 You can now easily add cookie declarations for non-TCF vendors directly through the configurator under each vendor's card. This makes managing and displaying cookie information more straightforward and integrated within your existing setup.
+
 
 ## Version 4.0.9
 
