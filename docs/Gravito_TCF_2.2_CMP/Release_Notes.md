@@ -8,11 +8,12 @@ TCF 2.2 was introduced about a year ago, and the IAB limits the validity of TC S
 
 *Key Update in 5.0.2:*
 
-Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now automatically prompt users to resurface and provide their consent again.
- - This update ensures that all consents remain up-to-date and compliant with TCF 2.2 standards.
- - This change minimizes the risk of invalid consents and enhances the reliability of your consent management process.
+Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now resurface automatically  and prompt users to  provide their consent again.
 
- More details [here](./advanced/Resurfacing.md)
+- This update ensures that all consents remain up-to-date and compliant with TCF 2.2 standards.
+- This change minimizes the risk of invalid consents and enhances the reliability of your consent management process.
+
+More details [here](./advanced/Resurfacing.md)
 
 ## Version 4.0.12
 
@@ -22,7 +23,7 @@ TCF 2.2 was introduced about a year ago, and the IAB limits the validity of TC S
 
 *Key Update in 4.0.12:*
 
-Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now automatically prompt users to resurface and provide their consent again.
+Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now resurface automatically  and prompt users to  provide their consent again.
 
 - This update ensures that all consents remain up-to-date and compliant with TCF 2.2 standards.
 - This change minimizes the risk of invalid consents and enhances the reliability of your consent management process.
