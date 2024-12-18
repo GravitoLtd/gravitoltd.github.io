@@ -140,8 +140,12 @@
                 <h1 id="version-3internal-latest">Version 3(Internal) (Latest)</h1>
 <p>Note: Version 3 does not correspond to TCF Version 3 but it is Internal Version 3 for gravito CMP, and is TCF version 2 complaint.</p>
 <h2 id="how-it-works">How it works?</h2>
-<p>Configuration</p>
-<p>TCF CMP can be configure and customize as per your need with the help of configuration object.You can generate this configuration object using our Admin Portal or you can create your own from scratch. Following is the example of config object for TCF CMP.</p>
+<p><strong>Configuration</strong></p>
+<p>TCF CMP can be configure and customize as per your need with the help of configuration object.You can generate this configuration object using our Admin Portal or you can create your own from scratch. </p>
+<ul>
+<li><strong>Note</strong>: <em>{VendorsCount}</em> is a placeholder which you can insert anywhere in the text. It will display the total number of vendors in your config.</li>
+</ul>
+<p>Following is the example of config object for TCF CMP.</p>
 <pre><code>window.gravitoCMPConfig = {
 settings: {
 type: &quot;TCF&quot;,
@@ -231,7 +235,7 @@ text: {
 firstLayer: {
   title: &quot;We need your consent to provide personalized experience&quot;,
   introductionText:
-    &quot;Gravito and its &lt;span id='partners-link'&gt;third-party vendors&lt;/span&gt; collect personal data (e.g. IP address, device identifier) through the use of cookies and other technical methods which are storing and accessing data on your device to provide the best user experience and show targetted content and advertising.&quot;,
+    &quot;Gravito and its &lt;span id='partners-link'&gt; {VendorsCount} third-party vendors&lt;/span&gt; collect personal data (e.g. IP address, device identifier) through the use of cookies and other technical methods which are storing and accessing data on your device to provide the best user experience and show targetted content and advertising.&quot;,
   consentableItemDescription:
     &quot;Gravito and its partners require consent for following:&quot;,
   legalFooter:
