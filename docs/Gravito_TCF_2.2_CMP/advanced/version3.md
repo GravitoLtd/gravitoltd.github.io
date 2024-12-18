@@ -6,9 +6,13 @@ Note: Version 3 does not correspond to TCF Version 3 but it is Internal Version 
 How it works?
 -------------
 
-Configuration
+**Configuration**
 
-TCF CMP can be configure and customize as per your need with the help of configuration object.You can generate this configuration object using our Admin Portal or you can create your own from scratch. Following is the example of config object for TCF CMP.
+TCF CMP can be configure and customize as per your need with the help of configuration object.You can generate this configuration object using our Admin Portal or you can create your own from scratch. 
+
+* **Note**: *{VendorsCount}* is a placeholder which you can insert anywhere in the text. It will display the total number of vendors in your config.
+
+Following is the example of config object for TCF CMP.
 
 ```
 window.gravitoCMPConfig = {
@@ -100,7 +104,7 @@ text: {
 firstLayer: {
   title: "We need your consent to provide personalized experience",
   introductionText:
-    "Gravito and its <span id='partners-link'>third-party vendors</span> collect personal data (e.g. IP address, device identifier) through the use of cookies and other technical methods which are storing and accessing data on your device to provide the best user experience and show targetted content and advertising.",
+    "Gravito and its <span id='partners-link'> {VendorsCount} third-party vendors</span> collect personal data (e.g. IP address, device identifier) through the use of cookies and other technical methods which are storing and accessing data on your device to provide the best user experience and show targetted content and advertising.",
   consentableItemDescription:
     "Gravito and its partners require consent for following:",
   legalFooter:
