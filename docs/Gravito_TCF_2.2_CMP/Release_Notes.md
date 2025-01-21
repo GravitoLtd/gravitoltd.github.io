@@ -1,14 +1,14 @@
 # Release Notes
 
-## Version 5.0.2 
+## Version 5.0.2
 
 Release date 28/11/2024
 
 TCF 2.2 was introduced about a year ago, and the IAB limits the validity of TC Strings to 13 months. This release includes an enhancement to our CMP core module with an additional check to ensure that invalid consents, if any, are promptly handled. **(Similar updates on named version 5 as well as older version 4)**
 
-*Key Update in 5.0.2:*
+_Key Update in 5.0.2:_
 
-Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now resurface automatically  and prompt users to  provide their consent again.
+Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now resurface automatically and prompt users to provide their consent again.
 
 - This update ensures that all consents remain up-to-date and compliant with TCF 2.2 standards.
 - This change minimizes the risk of invalid consents and enhances the reliability of your consent management process.
@@ -21,9 +21,9 @@ Release date 28/11/2024
 
 TCF 2.2 was introduced about a year ago, and the IAB limits the validity of TC Strings to 13 months. This release includes an enhancement to our CMP core module with an additional check to ensure that invalid consents, if any, are promptly handled.**(Similar updates on named version 5 as well as older version 4)**
 
-*Key Update in 4.0.12:*
+_Key Update in 4.0.12:_
 
-Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now resurface automatically  and prompt users to  provide their consent again.
+Automatic detection of expired TC Strings: When a TC String becomes invalid, the CMP will now resurface automatically and prompt users to provide their consent again.
 
 - This update ensures that all consents remain up-to-date and compliant with TCF 2.2 standards.
 - This change minimizes the risk of invalid consents and enhances the reliability of your consent management process.
@@ -49,7 +49,6 @@ A new feature has been added that allows cookie declarations to be shown within 
 #### Configurator Enhancement:
 
 You can now easily add cookie declarations for non-TCF vendors directly through the configurator under each vendor's card. This makes managing and displaying cookie information more straightforward and integrated within your existing setup.
-
 
 ## Version 4.0.9
 
@@ -85,7 +84,7 @@ Release date 04/01/2024
     - Gravito TCF CMP now empowers publishers with enhanced user accessibility through multi-language support within a single configuration. Within the CMP UI, a language selection dropdown is introduced, enabling users to translate the CMP UI into their preferred language.
     - The translations available are controlled by publishers within their configurations, allowing them to provide a seamless experience by catering to diverse language preferences.
 
-![](./img/language-selector-1024x265.jpg)
+![](./img/language-selector-1024x265.png)
 
 ![](./img/language-selector2.jpg)
 
@@ -109,7 +108,7 @@ Enhancements:
 
 1.  Disclosure Details Toggle: We've upgraded the functionality of the "Disclosure Details" button under each vendor. It now serves as a toggle button, allowing you to easily show or hide content as per your preference.
 2.  Support for Purpose Stacks: Gravito's TCF 2.2 CMP now seamlessly supports purpose stacks. You can now view the number of vendors utilizing specific purposes for both consent and legitimate interest under their respective accordion descriptions.
-3.  Improvements in 3-Tabs Layout: For users of the 3-tabs layout, we are displaying vendor consent counts  and vendor legitimate interest counts in their respective tabs. This provides a clearer organization and presentation of data.
+3.  Improvements in 3-Tabs Layout: For users of the 3-tabs layout, we are displaying vendor consent counts and vendor legitimate interest counts in their respective tabs. This provides a clearer organization and presentation of data.
 4.  Vendor Section Enhancements: We've enriched the vendor section with new details. Data retention information is now prominently displayed in front of each purpose. In cases where data retention is not specified, the standard retention period is shown. If neither is available, this section remains blank. Additionally, a Legitimate Claim URL has been included in the vendor details section for your convenience.
 5.  Purpose Descriptions: In the first layer below each declared consentable item, we've added descriptive information. This enables you to view item descriptions without navigating to the second layer, facilitating a better understanding of the purposes associated with each vendor and aiding in your decision-making process.
 6.  Accessibility Improvements: Gravito's TCF 2.2 CMP is now more accessible than ever. It can be operated using the tab key and is compatible with screen readers, ensuring a more inclusive user experience for all.
