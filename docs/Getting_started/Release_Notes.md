@@ -12,6 +12,33 @@ Here you can find more about the general product updates
 
 ## Product Release notes :
 
+## Release notes: Sprint 78 - 22/01/2025
+
+_Gravito CMP Configurator:_
+
+- The step names in configurator are changes as follows to better describe its purpose
+  - Core => Consent Categories
+  - Text => Banner Content
+  - style => Appearance
+- A new validation layer has been added which checks config for mandatory values and validity of privacy URL. It also displays report of errors found along with their location.
+- The sequence "Consent Categories" & "Setting" section has been changed along with their internal order keeping in mind the practicality of its occurrence.
+- Some user irrelevant configurations have been removed or placed under advance section to reduce complexity & confusion.
+
+_TCF CMP Configurator:_
+
+- The step names in configurator are changes as follows to better describe its purpose
+  - Core => TCF Settings
+  - Text => Banner Content
+  - style => Appearance
+- A new validation layer has been added which checks config for mandatory values and validity of privacy URL. It also displays report of errors found along with their location.
+- The sequence "TCF Settings" & "Setting" section has been changed along with their internal order keeping in mind the practicality of its occurrence
+- Some user irrelevant configurations have been removed or placed under advance section to reduce complexity & confusion.
+
+_Manage Cookie Scan:_
+
+- Added new manage cookie scan feature to check and correct cookies found during scan. Also a user can add or remove domains where cookie scan has to be performed.
+- user can also add new cookies manually in the database. These cookies will be displayed under the consents based on their category.
+
 ## Release notes: Sprint 77 - 13/08/2024
 
 - Generate and manage Data Access tokens (in Manage Account section)
