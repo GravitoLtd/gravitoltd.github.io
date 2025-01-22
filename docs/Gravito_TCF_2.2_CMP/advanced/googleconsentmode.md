@@ -34,9 +34,6 @@ Gravito TCF CMP now supports Google Consent Mode v2, allowing you to integrate i
 1.  **Core Configuration Tabs:**
     - Define consentable items, for your TCF CMP like purposes,special purposes , vendors, special features etc.
     - Enable Google Consent Mode (GCM) by checking the 'useGCM' checkbox.
-    - This will open Additional section which you can use to map google specified consents to IAB purposes.
-    - For each google consent select purposes from the dropdown list to which you want to map that specific consents.
-    - Also make sure that you have configured "googleTCFId" field correctly.
 
 ![](../img/gcmsettings.png)
 

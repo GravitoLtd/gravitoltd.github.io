@@ -5,6 +5,8 @@ Gravito has a user module in prebid js, customers now can use Gravito’s first 
 
 To Add prebid user ID module add following code to your site.
 
+Note: If you are using a wrapper like *Livewrapped* to initiate Prebid Id modules, you dont need to initiate Gravito's UserId module as part of the SDK. 
+
 ```javascript
 
 window.gravitoCMPConfig = {    
