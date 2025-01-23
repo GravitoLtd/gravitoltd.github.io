@@ -12,7 +12,7 @@ Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 78 - 22/01/2025
+## Release notes: Sprint 78 - 22/01/2025 <mark>New</mark>
 
 In the latest version , based on feedback collected from our customers we have modified some of the names and order of options in the configurator to keep things more understandable.
 
