@@ -12,4 +12,20 @@ Click on "Get Started" button after adding a Config name and selecting a appropr
 
 ![](./img/configurator_setup.png)
 
-You can now go through each of the section and configure the CMP as per your requirement.
+You can now go through each of the following sections and configure the CMP as per your requirement.
+
+### 1. Settings configuraton Tab
+
+![](./img/settings_tab.png)
+
+### 2. Styles configuraton Tab
+
+![](./img/style_tab.png)
+
+### 3. Framework configuraton Tab
+
+![](./img/gravito_cmp_tab.png)
+
+### 4. Deployment Tab
+
+![](./img/deployment_tab.png)
