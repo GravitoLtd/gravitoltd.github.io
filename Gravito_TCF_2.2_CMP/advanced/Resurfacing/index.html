@@ -147,31 +147,76 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="cmp-resurfacing-scenarios-and-core-module-updates">CMP resurfacing scenarios and Core module updates</h1>
-<h2 id="overview">Overview</h2>
-<p>As you are aware, the <strong>Transparency and Consent Framework (TCF) 2.2</strong> was introduced about a year ago. The Interactive Advertising Bureau (IAB) limits the validity of Transparency and Consent Strings (TC Strings) to <strong>13 months</strong>. Many TC Strings are now nearing their expiration date. While invalid consents are unlikely if the Consent Management Platform (CMP) has resurfaced in the past, it's important to ensure ongoing compliance.</p>
-<h2 id="upcoming-update">Upcoming Update</h2>
-<p>We are rolling out an update to our CMP core module that includes an extra check for the validity of TC Strings. This fix ensures that any obsolete or invalid consents are identified, and new consents are obtained automatically. As a result, users may be prompted again (resurfacing) to provide their consent.</p>
-<h3 id="key-details">Key Details</h3>
+<h2 id="manual-resurfacing">Manual Resurfacing</h2>
+<p>Manual resurfacing of Gravito CMP can be done using the  method  <em>gravitoCMP.openPreferences()</em>. Once the CMP is loaded and the consents given,  manually resurfacing of the CMP can be under a <em>"Cookie Settings"</em> link or button for eg. </p>
+<h3 id="sample-script">Sample Script</h3>
+<pre><code class="language-javascript">&lt;script&gt;
+// Function to be called when the link is clicked
+function buttonClicked() {
+    window.gravitoCMP.openPreferences();
+}
+
+function main() {
+    // Create a new anchor element
+    var link = document.createElement('a');
+    // Set the link text
+    link.innerHTML = 'Cookie Settings';
+    // Set the link's href attribute to '#'
+    link.href = '#';
+    // Set the link's onclick event to call the buttonClicked function
+    link.onclick = function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        buttonClicked();
+    };
+    // Apply CSS styles to center the link
+    link.style.display = 'block';
+    link.style.textAlign = 'center';
+    link.style.margin = '0 auto';
+
+    // Find the div with id 'footer-3'
+    var targetDiv = document.getElementById('footer-wrapper');
+    if (targetDiv) {
+        // Append the link to the target div
+        targetDiv.appendChild(link);
+        // Apply CSS styles to center the content of the target div
+        targetDiv.style.display = 'flex';
+        targetDiv.style.justifyContent = 'center';
+        targetDiv.style.alignItems = 'center';
+    } else {
+        console.error('Div with id &quot;footer-3&quot; not found');
+    }
+}
+
+main();
+&lt;/script&gt;
+
+</code></pre>
+<h2 id="automatic-resurfacing">Automatic Resurfacing</h2>
+<h3 id="overview">Overview</h3>
+<p>As you are aware, the <strong>Transparency and Consent Framework (TCF) 2.2</strong> was introduced about November 2023. The Interactive Advertising Bureau (IAB) limits the validity of Transparency and Consent Strings (TC Strings) to <strong>13 months</strong>. Many TC Strings are now nearing their expiration date. While invalid consents are unlikely if the Consent Management Platform (CMP) has resurfaced in the past, it's important to ensure ongoing compliance.</p>
+<h3 id="update">Update</h3>
+<p>We have  rolling out an update to our CMP core module that includes an extra check for the validity of TC Strings. This fix ensures that any obsolete or invalid consents are identified, and new consents are obtained automatically. As a result, users may be prompted again (resurfacing) to provide their consent.</p>
+<h4 id="key-details-of-the-update">Key Details of the update</h4>
 <ul>
 <li><strong>Rollout Date</strong>: <strong>28/11/2024</strong></li>
 <li><strong>Who is Affected</strong>: Everyone running TCF 2.2 Version</li>
 <li><strong>Action Required</strong>: <strong>No action is required from the publisher's end</strong>. If the consent strings of users are invalid, the CMP will automatically resurface to obtain re-consent.</li>
 </ul>
-<h2 id="example-impact-on-google-ad-manager">Example: Impact on Google Ad Manager</h2>
+<h3 id="example-impact-on-google-ad-manager">Example: Impact on Google Ad Manager</h3>
 <p>Outdated or invalid consent strings can lead to issues with advertising platforms like <strong>Google Ad Manager</strong>. Specifically, if the consent strings are expired or invalid, <a href="https://support.google.com/admanager/answer/9999955?hl=en">Google Ad Manager may throw <strong>3.3 errors</strong></a>, indicating consent-related problems that can hinder ad serving.</p>
-<h3 id="what-is-a-33-error">What is a 3.3 Error?</h3>
+<h4 id="what-is-a-33-error">What is a 3.3 Error?</h4>
 <p>A 3.3 error in Google Ad Manager signifies that there's an issue with the consent string provided in the ad request:</p>
 <ul>
 <li><strong>Missing or Invalid Consent</strong>: The ad request lacks a valid TC String, or the string is outdated.</li>
 <li><strong>Ad Delivery Impact</strong>: Ads may not be served properly, leading to decreased fill rates and potential revenue loss.</li>
 </ul>
-<h3 id="how-the-update-addresses-this-issue">How the Update Addresses This Issue</h3>
+<h4 id="how-the-update-addresses-this-issue">How the Update Addresses This Issue</h4>
 <p>With this CMP update:</p>
 <ul>
 <li><strong>Automatic Resurfacing</strong>: The CMP will prompt users to renew their consent when the TC String becomes obsolete.</li>
 <li><strong>Error Prevention</strong>: Ensuring valid consent strings are in place will prevent 3.3 errors in Google Ad Manager.</li>
 </ul>
-<h2 id="next-steps">Next Steps</h2>
+<h3 id="next-steps">Next Steps</h3>
 <ul>
 <li><strong>Publishers</strong>: No action is required on your part. The CMP will handle the resurfacing process automatically.</li>
 <li><strong>Users</strong>: May experience a prompt to provide consent again, which is a standard procedure to maintain compliance.</li>
