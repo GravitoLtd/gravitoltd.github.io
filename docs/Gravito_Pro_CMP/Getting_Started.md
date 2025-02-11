@@ -1,12 +1,16 @@
-# Getting Started
+# Introducing Gravito Pro CMP!
 
-Gravito Pro CMP is a new tool from Gravito. It is a CMP that is designed to be more customizable and flexible and provides single consistent setup to deployment process for all the CMP frameworks.
+**Gravito Pro CMP** is a powerful, new tool from Gravito designed for ultimate customizability and flexibility. It provides a single, consistent setup-to-deployment process for all CMP frameworks, making consent management smoother than ever! ✨
 
-💡 Note: Have you registered with Gravito yet? Please find here on how to get [registered with Gravito](../Getting_started/Register.md)
+## Quick Reminder:
+Have you registered with Gravito yet? 👉 [Get Registered Here](#) and unlock a world of possibilities with Gravito! 🚀
 
-We have the Gravito Pro CMP configurator using which you can create the consent banner of selected framework based on your needs
+## Gravito Pro CMP Configurator:
+Use our intuitive configurator to create a consent banner tailored to your selected framework and specific needs. Customize it to perfection and make your website truly yours! 🔧
 
-To include Pro CMP in your website copy and paste following script in your website.
+## Easy Integration:
+To include Gravito Pro CMP in your website, simply copy and paste the following script into your site’s code:
+
 
 **Note** Replace gravitoPROCMPConfig with your config object.
 

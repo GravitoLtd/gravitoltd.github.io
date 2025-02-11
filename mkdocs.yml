@@ -25,6 +25,10 @@ nav:
       - Register: 'Getting_started/Register.md'
       - Support: 'Getting_started/Support.md'
       - Release Notes: 'Getting_started/Release_Notes.md'
+  - Gravito Pro CMP:
+      - Getting Started: 'Gravito_Pro_CMP/Getting_Started.md'
+      - Setup and Design: 'Gravito_Pro_CMP/Setup_and_Design.md'
+      - Release Notes: 'Gravito_Pro_CMP/Release_Notes.md'
   - Gravito Intelligent CMP:
       - Getting Started: 'Gravito_Intelligent_CMP/Getting_Started.md'
       - Setup and Design: 'Gravito_Intelligent_CMP/Setup_and_Design.md'
@@ -37,10 +41,7 @@ nav:
       - Mobile apps: 'Gravito_TCF_2.2_CMP/Mobile_apps.md'
       - Release Notes: 'Gravito_TCF_2.2_CMP/Release_Notes.md'
       - Advanced features: 'Gravito_TCF_2.2_CMP/Advanced_features.md'
-  - Gravito Pro CMP:
-      - Getting Started: 'Gravito_Pro_CMP/Getting_Started.md'
-      - Setup and Design: 'Gravito_Pro_CMP/Setup_and_Design.md'
-      - Release Notes: 'Gravito_Pro_CMP/Release_Notes.md'
+
   - Gravito SDK:
       - Getting Started: 'Gravito_SDK/Getting_Started.md'
       - Release Notes: 'Gravito_SDK/Release_Notes.md'
