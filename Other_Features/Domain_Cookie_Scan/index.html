@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Cookie Scanner - Gravito Documentation</title>
+    <title>Domain Cookie Scan - Gravito Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Cookie Scanner";
-        var mkdocs_page_input_path = "Other_Features\\Cookie_Scanner.md";
+        var mkdocs_page_name = "Domain Cookie Scan";
+        var mkdocs_page_input_path = "Other_Features\\Domain_Cookie_Scan.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -111,8 +111,10 @@
               </ul>
               <p class="caption"><span class="caption-text">Other Features</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Cookie Scanner</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Domain Cookie Scan</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#lets-get-started">Lets get started.</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../GVL_Comparison/">GVL Comparison</a>
@@ -140,7 +142,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Other Features</li>
-      <li class="breadcrumb-item active">Cookie Scanner</li>
+      <li class="breadcrumb-item active">Domain Cookie Scan</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -149,7 +151,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="to-be-done">To be done</h1>
+                <h2 id="domain-cookie-scan">Domain Cookie Scan</h2>
+<p>Gravito provides an automated way to scan your domains, where you wish to deploy Gravito's PRO CMP. </p>
+<p>You can follow the following steps to achieve this.</p>
+<ul>
+<li>Decide and choose domains you need to automatically scan under Accounts</li>
+<li>Once cookie scan become available, you can edit, upload more cookies, add locales and translations and publish.</li>
+</ul>
+<h3 id="lets-get-started">Lets get started.</h3>
+<p>To enable the automated scan for your domain, please access Gravito's admin portal and go to "Account" section. Use "Manage cookie scan" section. Add the domain for which you wish to enable automated scan. </p>
+<p><img alt="" src="../../img/domaincookiescan/adddomain.png" /></p>
+<p>As you might be using various technologies on your site, at times it would be imposible for a automated scan to capture all possible cookies which are dropped. </p>
+<p>We provide an easier way for you to manage the cookie listing and publish the listing which will be used by the CMP banner.</p>
+<p>Following sections outlines this functionality in detail. </p>
+<p>Access the Domain Cookie Scan feature in Gravito's admin portal</p>
+<p><img alt="" src="../../img/domaincookiescan/acessdomaincookiescan.png" /></p>
+<p>If the automated cookie scan was done for your domain, you will see a accordion already added for the domain.</p>
+<p><img alt="" src="../../img/domaincookiescan/domaincookielisting.png" /></p>
+<p>Open the accordion and you will see a list of cookies found by the automated scan. If you want to add a new cookie to that list, please click on the "Add New Cookie" button, it will open a dialog, where you can add the required details.</p>
+<p><img alt="" src="../../img/domaincookiescan/addnewcookie.png" /></p>
+<p>If you wish to bulk update the cookies, then there is an easy way to do it, you can download the cookie listing, by clicking on "Download Cookie Scan", it will download all the cookies into a CSV file, which you can update. </p>
+<p><img alt="" src="../../img/domaincookiescan/downloaddomaincookiescan.png" /></p>
+<p>Please note that, Gravito support multilingual cookies based on your choice of languages. The CSV has a Locale field, please add your locale like "en" for English, "fi" for Finnish, "sv" for Swedish.  Please add the description into the relevant language.</p>
+<p>Once you are done with your updates to the cookie listing in CSV, you can then upload it using the "Upload Cookie Scan" button. </p>
+<p><img alt="" src="../../img/domaincookiescan/uploaddomaincookiescan.png" /></p>
+<p>Finally, when you are happy with your cookie listing, you can choose to Publish the cookie scan report, using the "Publish" button. </p>
+<p><img alt="" src="../../img/domaincookiescan/publishdomaincookiescan.png" /></p>
+<p>You can repeat this process, as many times as you wish, just make sure that you republish your changes, so that those will be seen on your CMP banner. </p>
               
             </div>
           </div><footer>
