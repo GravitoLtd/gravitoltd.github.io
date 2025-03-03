@@ -55,7 +55,6 @@ nav:
       - Customer Data API: 'Gravito_API/CustomerdataApi.md'
   - Other Features:
       - Domain Cookie Scan: 'Other_Features/Domain_Cookie_Scan.md'
-      - Cookie Scanner: 'Other_Features/Cookie_Scanner.md'
       - GVL Comparison: 'Other_Features/GVL_Comparison.md'
       - Prebid User Id Module: 'Other_Features/Prebid_User_Id_Module.md'
   - Try it out:

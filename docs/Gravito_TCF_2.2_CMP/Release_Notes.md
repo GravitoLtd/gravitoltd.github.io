@@ -2,6 +2,8 @@
 
 ## Version 5.0.7
 
+Release date 11/02/2025
+
 *New Features & Enhancements*
 
 - Granular Consents for Purposes Nested Inside Stacks

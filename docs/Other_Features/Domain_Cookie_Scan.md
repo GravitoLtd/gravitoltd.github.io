@@ -1,7 +1,14 @@
-Domain Cookie Scan
-========
+## Domain Cookie Scan
+
 
 Gravito provides an automated way to scan your domains, where you wish to deploy Gravito's PRO CMP. 
+
+You can follow the following steps to achieve this.
+
+- Decide and choose domains you need to automatically scan under Accounts
+- Once cookie scan become available, you can edit, upload more cookies, add locales and translations and publish.
+
+### Lets get started.
 
 To enable the automated scan for your domain, please access Gravito's admin portal and go to "Account" section. Use "Manage cookie scan" section. Add the domain for which you wish to enable automated scan. 
 
