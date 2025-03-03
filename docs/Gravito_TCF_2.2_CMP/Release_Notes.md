@@ -1,5 +1,21 @@
 # Release Notes
 
+## Version 5.0.7
+
+*New Features & Enhancements*
+
+- Granular Consents for Purposes Nested Inside Stacks
+- Implemented granular consent support for purposes nested inside stacks, in compliance with IAB guidelines.
+- This feature enhances transparency and user control, allowing users to grant or deny consent for individual purposes within a stack.
+Enabled by default, as recommended by IAB, ensuring seamless compliance with the latest industry standards.
+
+*Impact & Considerations*
+
+- Publishers and vendors do not need additional configuration, as this update is automatically applied.
+- Improves alignment with IAB TCF policies, ensuring a better user experience and regulatory compliance.
+
+For further details, please refer to the official documentation or reach out to our support team.
+
 ## Version 5.0.2
 
 Release date 28/11/2024
