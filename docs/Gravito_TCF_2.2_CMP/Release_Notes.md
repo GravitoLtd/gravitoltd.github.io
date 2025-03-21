@@ -1,5 +1,22 @@
 # Release Notes
 
+## Version 5.0.9
+
+Release date 19/02/2025
+
+*New Features & Enhancements*
+
+- Configurable Legitimate Interest for Vendors on ‘Reject All’
+
+    - Added a feature to allow configuration of vendors who will receive legitimate interest even when users select ‘Reject All’.
+    - This provides more flexibility in aligning with regulatory requirements and business needs.
+
+- Expanded Publisher Transparency & Control
+    - Added publisherPurposesConsents and publisherLegitimateInterests to publisherTC. This is for supporting [Prebid Version 9](https://docs.prebid.org/dev-docs/pb9-notes.html)
+
+- Accessibility Improvements
+    - Various UI and accessibility enhancements to improve user experience and compliance with accessibility standards.
+
 ## Version 5.0.7
 
 Release date 11/02/2025
