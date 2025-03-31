@@ -53,11 +53,12 @@ This feature minimizes the manual effort required to set up a new CMP configurat
 
 4. Review the extracted configuration and make necessary adjustments if required.
 
-## Popular CMP Providers and Their Cookie Names
+## Popular CMP Providers
 
-The following table lists some popular CMP providers and their respective cookie names. This information can be useful for users who want to identify the cookies set by their previous CMP.
+The following table lists some popular CMP providers and details of their TcString & AcString. This information can be useful for users who want to identify the strings set by their previous CMP.
 
-| CMP Provider | TcString Cookie Name | AcString Cookie Name |
-| ------------ | -------------------- | -------------------- |
-| OneTrust     | `eupubconsent-v2`    | ``                   |
-| Sanoma       | `euconsent-v2`       | ``                   |
+| CMP Provider | TcString Name               | AcString Name                | Location        |
+| ------------ | --------------------------- | ---------------------------- | --------------- |
+| OneTrust     | `eupubconsent-v2`           | ``                           | `Cookies`       |
+| Sanoma       | `euconsent-v2`              | ``                           | `Cookies`       |
+| Cookie Bot   | `cookiebotTcfConsentString` | `cookiebotGacmConsentString` | `Local Storage` |
