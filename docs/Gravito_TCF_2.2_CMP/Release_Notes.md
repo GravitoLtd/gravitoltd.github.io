@@ -8,7 +8,7 @@ _CMP Import Assistant_
 
 - Added a feature to allow users to import their previous CMP configurations into the new Gravito TCF CMP. This feature simplifies the migration process for users transitioning from other CMPs to Gravito.
 - Users can paste their previous CMP's TcString and AcString into the configurator, and the system will automatically extract relevant settings such as Publisher Country Code, Purpose One Treatment, Vendors, Special Features, Purposes, Publisher Restrictions, ACM (Additional Consent Mode), and Google Vendors.
-- Click [here](https://docs.gravito.net/Gravito_TCF_2.2_CMP/advanced/Migration_To_TCF/) for more details.
+- Click [here](./advanced/Migration_To_TCF.md) for more details.
 
 ## Version 5.0.9
 
