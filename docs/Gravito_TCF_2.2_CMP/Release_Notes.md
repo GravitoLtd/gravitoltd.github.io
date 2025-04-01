@@ -1,34 +1,45 @@
 # Release Notes
 
+## Version 5.0.10
+
+Release date 01/04/2025
+
+_CMP Import Assistant_
+
+- Added a feature to allow users to import their previous CMP configurations into the new Gravito TCF CMP. This feature simplifies the migration process for users transitioning from other CMPs to Gravito.
+- Users can paste their previous CMP's TcString and AcString into the configurator, and the system will automatically extract relevant settings such as Publisher Country Code, Purpose One Treatment, Vendors, Special Features, Purposes, Publisher Restrictions, ACM (Additional Consent Mode), and Google Vendors.
+- Click [here](https://docs.gravito.net/Gravito_TCF_2.2_CMP/advanced/Migration_To_TCF/) for more details.
+
 ## Version 5.0.9
 
 Release date 19/02/2025
 
-*New Features & Enhancements*
+_New Features & Enhancements_
 
 - Configurable Legitimate Interest for Vendors on ‘Reject All’
 
-    - Added a feature to allow configuration of vendors who will receive legitimate interest even when users select ‘Reject All’.
-    - This provides more flexibility in aligning with regulatory requirements and business needs.
+  - Added a feature to allow configuration of vendors who will receive legitimate interest even when users select ‘Reject All’.
+  - This provides more flexibility in aligning with regulatory requirements and business needs.
 
 - Expanded Publisher Transparency & Control
-    - Added publisherPurposesConsents and publisherLegitimateInterests to publisherTC. This is for supporting [Prebid Version 9](https://docs.prebid.org/dev-docs/pb9-notes.html)
+
+  - Added publisherPurposesConsents and publisherLegitimateInterests to publisherTC. This is for supporting [Prebid Version 9](https://docs.prebid.org/dev-docs/pb9-notes.html)
 
 - Accessibility Improvements
-    - Various UI and accessibility enhancements to improve user experience and compliance with accessibility standards.
+  - Various UI and accessibility enhancements to improve user experience and compliance with accessibility standards.
 
 ## Version 5.0.7
 
 Release date 11/02/2025
 
-*New Features & Enhancements*
+_New Features & Enhancements_
 
 - Granular Consents for Purposes Nested Inside Stacks
 - Implemented granular consent support for purposes nested inside stacks, in compliance with IAB guidelines.
 - This feature enhances transparency and user control, allowing users to grant or deny consent for individual purposes within a stack.
-Enabled by default, as recommended by IAB, ensuring seamless compliance with the latest industry standards.
+  Enabled by default, as recommended by IAB, ensuring seamless compliance with the latest industry standards.
 
-*Impact & Considerations*
+_Impact & Considerations_
 
 - Publishers and vendors do not need additional configuration, as this update is automatically applied.
 - Improves alignment with IAB TCF policies, ensuring a better user experience and regulatory compliance.
