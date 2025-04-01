@@ -60,5 +60,5 @@ The following table lists some popular CMP providers and details of their TcStri
 | CMP Provider | TcString Name               | AcString Name                | Location        |
 | ------------ | --------------------------- | ---------------------------- | --------------- |
 | OneTrust     | `eupubconsent-v2`           | ``                           | `Cookies`       |
-| Sanoma       | `euconsent-v2`              | ``                           | `Cookies`       |
+| Sourcepoint  | `euconsent-v2`              | ``                           | `Cookies`       |
 | Cookie Bot   | `cookiebotTcfConsentString` | `cookiebotGacmConsentString` | `Local Storage` |
