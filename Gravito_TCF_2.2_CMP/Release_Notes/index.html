@@ -82,6 +82,8 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Release Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#version-5010">Version 5.0.10</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#version-509">Version 5.0.9</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#version-507">Version 5.0.7</a>
@@ -220,29 +222,37 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="release-notes">Release Notes</h1>
+<h2 id="version-5010">Version 5.0.10</h2>
+<p>Release date 01/04/2025</p>
+<p><em>CMP Import Assistant</em></p>
+<ul>
+<li>Added a feature to allow users to import their previous CMP configurations into the new Gravito TCF CMP. This feature simplifies the migration process for users transitioning from other CMPs to Gravito.</li>
+<li>Users can paste their previous CMP's TcString and AcString into the configurator, and the system will automatically extract relevant settings such as Publisher Country Code, Purpose One Treatment, Vendors, Special Features, Purposes, Publisher Restrictions, ACM (Additional Consent Mode), and Google Vendors.</li>
+<li>Click <a href="../advanced/Migration_To_TCF/">here</a> for more details.</li>
+</ul>
 <h2 id="version-509">Version 5.0.9</h2>
 <p>Release date 19/02/2025</p>
 <p><em>New Features &amp; Enhancements</em></p>
 <ul>
 <li>
 <p>Configurable Legitimate Interest for Vendors on ‘Reject All’</p>
-<ul>
-<li>Added a feature to allow configuration of vendors who will receive legitimate interest even when users select ‘Reject All’.</li>
-<li>This provides more flexibility in aligning with regulatory requirements and business needs.</li>
-</ul>
+</li>
+<li>
+<p>Added a feature to allow configuration of vendors who will receive legitimate interest even when users select ‘Reject All’.</p>
+</li>
+<li>
+<p>This provides more flexibility in aligning with regulatory requirements and business needs.</p>
 </li>
 <li>
 <p>Expanded Publisher Transparency &amp; Control</p>
-<ul>
-<li>Added publisherPurposesConsents and publisherLegitimateInterests to publisherTC. This is for supporting <a href="https://docs.prebid.org/dev-docs/pb9-notes.html">Prebid Version 9</a></li>
-</ul>
+</li>
+<li>
+<p>Added publisherPurposesConsents and publisherLegitimateInterests to publisherTC. This is for supporting <a href="https://docs.prebid.org/dev-docs/pb9-notes.html">Prebid Version 9</a></p>
 </li>
 <li>
 <p>Accessibility Improvements</p>
-<ul>
-<li>Various UI and accessibility enhancements to improve user experience and compliance with accessibility standards.</li>
-</ul>
 </li>
+<li>Various UI and accessibility enhancements to improve user experience and compliance with accessibility standards.</li>
 </ul>
 <h2 id="version-507">Version 5.0.7</h2>
 <p>Release date 11/02/2025</p>
@@ -251,7 +261,7 @@
 <li>Granular Consents for Purposes Nested Inside Stacks</li>
 <li>Implemented granular consent support for purposes nested inside stacks, in compliance with IAB guidelines.</li>
 <li>This feature enhances transparency and user control, allowing users to grant or deny consent for individual purposes within a stack.
-Enabled by default, as recommended by IAB, ensuring seamless compliance with the latest industry standards.</li>
+  Enabled by default, as recommended by IAB, ensuring seamless compliance with the latest industry standards.</li>
 </ul>
 <p><em>Impact &amp; Considerations</em></p>
 <ul>
