@@ -18,6 +18,7 @@ extra_css:
 
 extra_javascript:
   - js/modal.js  # Your custom JavaScript file
+  - js/motomo.js #motomo analytics
 
 nav:
   - Getting started:
