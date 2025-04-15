@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Version 2 (Latest) - Gravito Documentation</title>
+    <title>IAB TCF - Gravito Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Version 2 (Latest)";
-        var mkdocs_page_input_path = "Gravito_SDK\\Version_2_(Latest).md";
+        var mkdocs_page_name = "IAB TCF";
+        var mkdocs_page_input_path = "Consent_Management\\Iab_tcf.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -51,10 +51,34 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Consent Managment</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Iab_tcf/">IAB TCF</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">IAB TCF</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#purpose-of-the-tcf">Purpose of the TCF</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-components">Key Components</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#evolution-of-the-tcf">Evolution of the TCF</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v11">TCF v1.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v20">TCF v2.0</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v21">TCF v2.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v22">TCF v2.2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#implications-for-stakeholders">Implications for Stakeholders</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a>
+    </li>
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Google_consent_mode/">Google Consent Mode</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito Pro CMP</span></p>
@@ -93,14 +117,12 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito SDK</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../Getting_Started/">Getting Started</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Getting_Started/">Getting Started</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Release_Notes/">Release Notes</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Release_Notes/">Release Notes</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Version 2 (Latest)</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito API</span></p>
@@ -146,8 +168,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Gravito SDK</li>
-      <li class="breadcrumb-item active">Version 2 (Latest)</li>
+          <li class="breadcrumb-item">Consent Managment</li>
+      <li class="breadcrumb-item active">IAB TCF</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -156,151 +178,116 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="version-2-latest">Version 2 (Latest)</h1>
-<h1 id="using-sdk-v2">Using SDK V2</h1>
-<p>To use Gravito's SDK you should have the Gravito config added to your site. Make sure you also have settings section added inside your config. You can get the config from the <a href="https://adminv2.gravito.net/">Gravito Admin Portal</a></p>
-<p>👉Looking for an older version of Gravito SDK? You can find the older versions here</p>
-<p><a href="../advanced/Gravito_sdk_v1/">Gravito SDK V1</a></p>
-<h2 id="how-it-works">How it works?</h2>
-<h3 id="configuration">Configuration</h3>
-<p>SDK Version can be configured using gravitoCMPConfig object.</p>
-<pre><code>window.gravitoCMPConfig = {
-  settings: {
-    sdkVersion: 2,
-  },
-};
-
-</code></pre>
-<h3 id="deployment">Deployment</h3>
-<p>To Include Gravito SDK Version 2 add following JavaScript to your site. Make sure config loading logic is added above this script.</p>
-<pre><code>var gravitoSDKTag = document.createElement(&quot;script&quot;);
-gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
-gravitoSDKTag.onload = function () {
-  console.log(&quot;gravito SDK loaded&quot;);
-};
-document.body.appendChild(gravitoSDKTag);
-
-</code></pre>
-<h3 id="sample-scripts">Sample Scripts</h3>
-<p>Using SDK to deploy First-Party. To include first-party helper functions of SDK V2 add following JavaScript to your site. Make sure config loading logic is added above this script.</p>
-<pre><code>var gravitoSDKTag = document.createElement(&quot;script&quot;);
-gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdkv2/latest/sdk.js&quot;;
-gravitoSDKTag.onload = function () {
-  window.gravito.init(&quot;firstParty&quot;);
-};
-document.body.appendChild(gravitoSDKTag);
-
-</code></pre>
-<p>To check if the first party has been added to your site or not, please use following script and test it with browser console window. It should return your gravito registered first-party URL</p>
-<pre><code>gravito.firstParty.getDefaultURL();
-</code></pre>
-<p>Once First-party is added to your website you can use the first-party function to interact with gravito backend.</p>
-<h5 id="get-your-profile">Get Your profile.</h5>
-<p>To get your profile you can call following function</p>
-<pre><code>function customCb(data) {
-  console.log(&quot;data&quot;, data);
-}
-gravito.firstParty.getProfile(customCb);
-
-</code></pre>
-<h5 id="have-your-own-first-party-id">Have your own First Party Id?</h5>
-<p>Using gravito first-party you can use your own ID and give it more persistence using Gravito First Party API</p>
-<pre><code>function customCb(data) {
-  console.log(&quot;data&quot;, data);
-}
-var gmId = &quot;your own id&quot;;
-gravito.firstParty.postEvents(
-  {
-    &quot;gmId-overide&quot;: &quot;gmid changed to &quot; + gmId,
-  },
-  customCb,
-  gmId
-);
-
-</code></pre>
-<h5 id="send-a-key-value-pair-of-events">Send a Key value pair of events.</h5>
-<p>You can attach key-value pairs to the profile for eg: pageViews : n</p>
-<pre><code>function customCb(data) {
-  console.log(&quot;data&quot;, data);
-}
-let key = &quot;pageViews&quot;;
-let value = 2;
-let model = {};
-model[key] = value;
-gravito.firstParty.postEvents(model, customCb);
-
-</code></pre>
-<h5 id="send-a-keys-to-the-profile">Send a Keys to the Profile.</h5>
-<p>Attach keys to the profile to get a complete picture of the profile. eg: GA ID.</p>
-<pre><code>function customCb(data) {
-  console.log(&quot;data&quot;, data);
-}
-let keysInput = [
-  {
-    i: &quot;56396541p-0jud-7qawe-lk45ue973723&quot;,
-    K: &quot;GAID&quot;,
-    v: &quot;56396541p-0jud-7qawe-lk45ue973723&quot;,
-  },
-];
-
-gravito.firstParty.postKeys(keysInput, customCb);
-
-</code></pre>
-<h5 id="send-a-consent-to-the-profile">Send a Consent to the Profile.</h5>
-<p>Attach consents to the profile to access it any time.</p>
-<pre><code>function customCb(data) {
-  console.log(&quot;data&quot;, data);
-}
-let consentInputs = [
-  { i: &quot;t&quot;, c: &quot;consent1&quot;, s: false },
-  { i: &quot;m&quot;, c: &quot;consent2&quot;, s: false },
-];
-
-gravito.firstParty.postConsents(consentInputs, customCb);
-
-</code></pre>
-<h5 id="bridge-in-match-on-id">Bridge in Match On id.</h5>
-<p>Connect with matchOnId ( eg: a deterministic Id) to connect X-domain and X-device.</p>
-<pre><code>function customCb(data) {
-  console.log(&quot;data&quot;, data);
-}
-let matchOnId = &quot;your_match_onId&quot;;
-
-gravito.firstParty.attachMatchOnId(matchOnId, customCb);
-
-</code></pre>
-<h5 id="reset-profile">Reset Profile.</h5>
-<p>To reset your firstParty profile use following snippet.</p>
-<pre><code>function customCb(data) {
-  console.log(&quot;data&quot;, data);
-}
-let matchOnId = &quot;reset&quot;;
-
-gravito.firstParty.attachMatchOnId(matchOnId, customCb);
-
-</code></pre>
-<h5 id="delete-profile">Delete Profile.</h5>
-<p>To delete your firstParty profile use following snippet</p>
-<pre><code>function customCb(data) {
-  console.log(&quot;data&quot;, data);
-}
-let matchOnId = &quot;delete&quot;;
-
-gravito.firstParty.attachMatchOnId(matchOnId, customCb);
-
-</code></pre>
-<h4 id="using-sdk-to-deploy-light-cmp">Using SDK to deploy Light CMP.</h4>
-<p>To know how to deploy light CMP with SDK v2 please click here(Link to Deployment section of Light CMP).</p>
-<h4 id="using-sdk-to-deploy-tcf-cmp">Using SDK to deploy TCF CMP.</h4>
-<p>To know how to deploy TCF CMP with SDK v2 please click here(Link to Deployment section of TCF CMP ).</p>
-<h4 id="using-sdk-to-include-gravitos-prebid-js-usermodule">Using SDK to Include Gravito's prebid js usermodule.</h4>
-<p>To know how to include Gravito's prebid js usermodule with SDK v2 please click here(Link to Deployment section of prebid js usermodule).</p>
+                <h1 id="iab-transparency-and-consent-framework-tcf">IAB Transparency and Consent Framework (TCF)</h1>
+<p><em>Last updated: April 9, 2025</em></p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The <strong>Interactive Advertising Bureau (IAB) Transparency and Consent Framework (TCF)</strong> is a standardized framework designed to assist all parties in the digital advertising supply chain in complying with European data protection laws, notably the <strong>General Data Protection Regulation (GDPR)</strong> and the <strong>ePrivacy Directive</strong>. </p>
+<p>Gravito CMP provides a TCF 2.2 compliant consent management platform recognized by IAB with ID <a href="https://iabeurope.eu/cmp-list/"><strong>302</strong></a>. With Gravito you can customize the look and feel of your CMP so that it blends well with your website. Gravito TCF 2.2 CMP is also listed as one of the<a href="https://support.google.com/admanager/answer/13554116?hl=en#zippy=%2Cgoogle-certified-cmps"> Google Certified TCF CMP's</a> (<em>Web and App</em>)</p>
+<hr />
+<h2 id="purpose-of-the-tcf">Purpose of the TCF</h2>
+<p>The TCF aims to:</p>
+<ul>
+<li><strong>Standardize</strong> the process of obtaining, managing, and communicating user consent for data processing in digital advertising.</li>
+<li><strong>Facilitate Compliance</strong> with legal requirements by providing a common language and set of protocols for publishers, advertisers, and technology vendors.</li>
+<li><strong>Enhance Transparency</strong> by informing users about how their data will be used and obtaining their explicit consent.</li>
+</ul>
+<hr />
+<h2 id="key-components">Key Components</h2>
+<ul>
+<li>
+<p><strong>Global Vendor List (GVL):</strong></p>
+<ul>
+<li>A registry of vendors participating in the TCF, detailing their data processing purposes and legal bases.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consent Management Platform (CMP):</strong></p>
+<ul>
+<li>Tools or services that help publishers collect, manage, and transmit user consent choices to vendors in a standardized manner.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transparency &amp; Consent String (TC String):</strong></p>
+<ul>
+<li>A compressed, encoded data structure that records user consent choices and preferences, which is then shared with vendors to inform them of the user's decisions.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="evolution-of-the-tcf">Evolution of the TCF</h2>
+<h3 id="tcf-v11">TCF v1.1</h3>
+<ul>
+<li><strong>Launched:</strong> April 2018</li>
+<li><strong>Objective:</strong> Establish an initial framework for managing user consent in line with GDPR requirements. </li>
+</ul>
+<h3 id="tcf-v20">TCF v2.0</h3>
+<ul>
+<li><strong>Launched:</strong> August 2019</li>
+<li><strong>Enhancements:</strong></li>
+<li>Provided users with more granular control over data processing purposes.</li>
+<li>Allowed users to object to data processing based on legitimate interests.</li>
+<li>Improved transparency regarding vendors' data processing activities. </li>
+</ul>
+<h3 id="tcf-v21">TCF v2.1</h3>
+<ul>
+<li><strong>Launched:</strong> August 2020</li>
+<li><strong>Updates:</strong></li>
+<li>Aligned the framework with the Planet49 ruling by the Court of Justice of the European Union.</li>
+<li>Standardized the disclosure of the duration of operation of cookies. </li>
+</ul>
+<h3 id="tcf-v22">TCF v2.2</h3>
+<ul>
+<li><strong>Launched:</strong> May 16, 2023</li>
+<li><strong>Key Changes:</strong><ul>
+<li><strong>Removal of Legitimate Interest for Certain Purposes:</strong> Vendors can no longer use legitimate interest as a legal basis for processing personal data for advertising and content personalization; consent is now required. </li>
+<li><strong>Enhanced Transparency:</strong> Introduction of user-friendly descriptions and real-use case examples to better inform users about data processing purposes. </li>
+<li><strong>Standardized Vendor Information:</strong> Vendors must provide detailed information about data categories collected, retention periods, and any legitimate interests claimed. </li>
+<li><strong>Disclosure of Vendor Count:</strong> Consent Management Platforms (CMPs) are required to disclose the total number of vendors seeking to establish a legal basis on the first layer of their user interfaces.</li>
+<li><strong>Facilitated Withdrawal of Consent:</strong> Users must be able to easily withdraw consent, with CMPs ensuring that their interfaces can be resurfaced for users to change their preferences at any time.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="implications-for-stakeholders">Implications for Stakeholders</h2>
+<ul>
+<li>
+<p><strong>Publishers:</strong></p>
+<ul>
+<li>Must ensure that their CMPs are updated to comply with TCF v2.2 requirements.</li>
+<li>Need to provide clear and accessible information to users about data processing activities and their rights.</li>
+</ul>
+</li>
+<li>
+<p><strong>Advertisers and Vendors:</strong></p>
+<ul>
+<li>Required to register with the GVL and adhere to the updated policies.</li>
+<li>Must rely solely on user consent for processing personal data for advertising and content personalization purposes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consent Management Platforms (CMPs):</strong></p>
+<ul>
+<li>Need to implement the new user interface and transparency requirements.</li>
+<li>Ensure mechanisms are in place for users to easily withdraw consent.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://iabeurope.eu/tcf-2-2-launches-all-you-need-to-know/">IAB Europe: TCF v2.2 Launch Announcement</a></li>
+<li><a href="https://iabeurope.eu/understanding-the-upcoming-transparency-consent-framework-v2-2/">IAB Europe: Understanding the Transparency &amp; Consent Framework v2.2</a></li>
+<li><a href="https://iabeurope.eu/transparency-consent-framework/">IAB Europe: Transparency &amp; Consent Framework Overview</a></li>
+</ul>
+<hr />
+<p><strong>Note:</strong> This document reflects the state of the IAB TCF as of April 9, 2025. For the most current information and guidance, please refer to the official IAB Europe resources linked above.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Release_Notes/" class="btn btn-neutral float-left" title="Release Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../Gravito_API/Getting_Started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../Getting_started/Release_Notes/" class="btn btn-neutral float-left" title="Release Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Google_consent_mode/" class="btn btn-neutral float-right" title="Google Consent Mode">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -323,10 +310,10 @@ gravito.firstParty.attachMatchOnId(matchOnId, customCb);
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Release_Notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../Getting_started/Release_Notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../Gravito_API/Getting_Started/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Google_consent_mode/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

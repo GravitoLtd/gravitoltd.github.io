@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Version 3 (Latest) - Gravito Documentation</title>
+    <title>Google Consent Mode - Gravito Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Version 3 (Latest)";
-        var mkdocs_page_input_path = "Gravito_API\\Version_3_(Latest).md";
+        var mkdocs_page_name = "Google Consent Mode";
+        var mkdocs_page_input_path = "Consent_Management\\Google_consent_mode.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -51,10 +51,24 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Consent Managment</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Iab_tcf/">IAB TCF</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Iab_tcf/">IAB TCF</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Google Consent Mode</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-google-consent-mode">What is Google Consent Mode?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-gravito-handles-google-consent-mode">How Gravito Handles Google Consent Mode</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-test-if-your-setup-is-working">How to test if your setup is working</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#google-consent-mode-support">Google Consent Mode support</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito Pro CMP</span></p>
@@ -102,22 +116,18 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito API</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../Getting_Started/">Getting Started</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Getting_Started/">Getting Started</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Setup_and_Validation/">Setup and Validation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Setup_and_Validation/">Setup and Validation</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Version 3 (Latest)</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#first-party-api-microprofile">First party API / Microprofile</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Version_3_%28Latest%29/">Version 3 (Latest)</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Version_2/">Version 2</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Version_2/">Version 2</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Microprofile/">Microprofile</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Microprofile/">Microprofile</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../CustomerdataApi/">Customer Data API</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/CustomerdataApi/">Customer Data API</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Other Features</span></p>
@@ -148,8 +158,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Gravito API</li>
-      <li class="breadcrumb-item active">Version 3 (Latest)</li>
+          <li class="breadcrumb-item">Consent Managment</li>
+      <li class="breadcrumb-item active">Google Consent Mode</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -158,122 +168,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="version-3-latest">Version 3 (Latest)</h1>
-<h2 id="first-party-api-microprofile">First party API / Microprofile</h2>
-<p>As discussed in the previous version 2, most common use for first party microprofile is to store CMP consents and other metadata on it. In version 3 we have added a whole new set of features to manage observations, consents and key rings with in the microprofile.</p>
-<p>New features:</p>
+                <h1 id="consent-management-google-consent-mode">Consent Management: Google Consent Mode</h1>
+<p><em>Last updated: January 15, 2024</em><br />
+<em>Announced: January 10, 2024</em></p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Google Consent Mode allows you to adjust how your Google tags behave based on the consent status of your end users. When integrated with <strong>Gravito</strong>’s TCF 2.2 CMP, it helps ensure compliance by dynamically controlling tag behavior across Google products such as Google Analytics, Google Ads, and more — without needing manual tag setup in Google Tag Manager (GTM). It is important to note that Google consent mode is not meant to be a solution to any regulatory requirement.</p>
+<p>This document explains:</p>
 <ul>
-<li>Supports Key Rings, Consents and events</li>
-<li>Data compression enabled by default</li>
-<li>Third-party to First-party ID fusion</li>
-<li>More options to get the audit trail.</li>
+<li>What Google Consent Mode is  </li>
+<li>The requirements to use it with Gravito  </li>
+<li>How Gravito handles tag behavior and consent signals  </li>
+<li>How to test if your setup is working  </li>
+<li>Getting Support</li>
 </ul>
-<p>The data properties of the Version 3 of the api looks like below.</p>
-<pre><code>{
-  &quot;i&quot;: &quot;&lt;microprofileid&gt;&quot;,
-  &quot;r&quot;: &quot;&lt;originDomain&gt;&quot;,
-  &quot;v&quot;: &quot;v3&quot;,
-  &quot;e&quot;: {
-    &quot;key1&quot;: &quot;value1&quot;,
-    &quot;key2&quot;: &quot;value2&quot;
-  },
-  &quot;k&quot;: [ //key value pairs
-    {
-      &quot;i&quot;: &quot;keyId&quot;,
-      &quot;k&quot;: &quot;KeyName&quot;,
-      &quot;v&quot;: &quot;keyValue&quot;,
-      &quot;t&quot;: &lt;timestamp&gt;
-    },
-    {
-      &quot;i&quot;: &quot;keyId&quot;,
-      &quot;k&quot;: &quot;KeyName&quot;,
-      &quot;v&quot;: &quot;keyValue&quot;,
-      &quot;t&quot;: &lt;timestamp&gt;
-    }
-  ],
-  &quot;c&quot;: [
-    {
-      &quot;i&quot;: &quot;consentId&quot;,
-      &quot;c&quot;: &quot;consentName&quot;,
-      &quot;s&quot;: true,
-      &quot;t&quot;: &lt;timestamp&gt;
-    },
-    {
-      &quot;i&quot;: &quot;consentId&quot;,
-      &quot;c&quot;: &quot;consentName&quot;,
-      &quot;s&quot;: true,
-      &quot;t&quot;: &lt;timestamp&gt;
-    }
-  ]
-}
-</code></pre>
-<p>The property values in the V3 are mainly short forms to reduce space in the requests. You can refer the full form here.</p>
-<p>Timestamp for each entity is auto-generated by Gravito 1st party end point itself to help you keep track of different values when merging data across domains.</p>
+<hr />
+<h2 id="what-is-google-consent-mode">What is Google Consent Mode?</h2>
+<p>Google Consent Mode provides a way for websites to communicate user consent choices to Google’s tags. It enables Google services to adjust data collection based on consent status, ensuring better compliance and reporting continuity. <a href="https://developers.google.com/tag-platform/security/guides/consent?consentmode=advanced">Read more here</a></p>
+<p>For example:</p>
 <ul>
-<li>k : Key Rings<ul>
-<li>i: Key Id</li>
-<li>k: Key Name</li>
-<li>v: Key Value</li>
-<li>t: Timestamp</li>
+<li>If a user declines marketing cookies, <code>ad_storage</code> is set to <code>denied</code>, limiting tracking.</li>
+<li>If the user accepts analytics cookies, <code>analytics_storage</code> is set to <code>granted</code>, enabling full data collection.</li>
 </ul>
-</li>
-<li>c: Consents<ul>
-<li>i: Consent Id</li>
-<li>k: Consent Name</li>
-<li>v: Consent Value</li>
-<li>t: Timestamp</li>
-</ul>
-</li>
-<li>e: Events</li>
-<li>i: Id</li>
-<li>r: Referrer</li>
-<li>v: version</li>
-</ul>
-<p>If there would be other needs to use microprofile to act as keyring store, store context analytics results (e.g. segments) or something similar, the calls to first party API microprofile would look something like this:</p>
-<pre><code>(function gtoFirstPartyV3() {
-    var xhr = new XMLHttpRequest();
-    var params = {
-    &quot;e&quot;: {},
-    &quot;k&quot;: [],
-    &quot;c&quot;: []
-    };
-
-    xhr.open(&quot;POST&quot;, &quot;https://gto.&lt;&lt;domain&gt;&gt;/api/v3/firstparty&quot;, true);
-    xhr.withCredentials = true;
-    xhr.onreadystatechange = function(response) {
-        if(xhr.readyState == XMLHttpRequest.DONE &amp;&amp; xhr.status == 200) {
-            console.log(&quot;1P Echo : &quot; + response.target.response);
-        }
-    }
-    xhr.send(JSON.stringify(params));
-})();
-</code></pre>
-<p>Please get in touch with is for a <em>detailed Postman collection</em> to get details of different use cases of this API. We will be happy to help. We can help you get started with sample GTM tag samples which enables simple profiling to complex cases which can enable Thirdparty to FirstParty Id fusion.</p>
-<p>Connect cookies across domains</p>
-<p>Under the Key value pair ("e"), similar to the version 2 you can still use the matchOnId to connect profiles to different domains. This for example can be done using a users Id when they login. (e.g. logged in user has UID known) </p>
-<p>matchOnID is the only reserved key value pair, it allows retrieving the cookie set for particular ID (e.g. logged in user has UID known) from other domain. A user with a matchOnId can be dealt with in 3 different ways to change the particular Id associated in 3 different ways.</p>
+<hr />
+<h2 id="requirements">Requirements</h2>
+<p>To enable Google Consent Mode via Gravito CMP, you’ll need:</p>
+<ol>
+<li>
+<p><strong>A Gravito TCF 2.2 CMP/ Intelligent CMP implementation</strong></p>
 <ul>
-<li>reset<ul>
-<li>Reset value for the matchOnId can be used to clear all the values from the events key value pair temporarily.</li>
+<li>This should be already configured and running on your site. If not, </li>
+<li><a href="../../Gravito_TCF_2.2_CMP/advanced/googleconsentmode/">TCF 2.2 setup and implementation guide</a>.</li>
+<li><a href="../../Gravito_Intelligent_CMP/advanced/Google_consent_mode_v2/">Intelligent CMP setup and implementation guide</a>.</li>
 </ul>
 </li>
-<li>disconnect<ul>
-<li>Disconnect value for the matchOnId can be used to remove the matchOnId from the events key value pair.</li>
+<li>
+<p><strong>Gravito Google Consent Mode support enabled</strong></p>
+<ul>
+<li>Gravito handles tag-level behavior without needing manual Google Tag Manager configuration.  </li>
+<li>The required consent signals (<code>ad_storage</code>, <code>analytics_storage</code>, etc.) are automatically injected based on user preferences.</li>
 </ul>
 </li>
-<li>delete<ul>
-<li>Delete keyword for the matchOnId can be used to delete the whole events and the existing microProfileId provided.</li>
-<li>This operation will reset the microProfileId and give you a new one.</li>
-</ul>
-</li>
-</ul>
-<p>Note: In all these cases passing the matchOnId value for a particular ID (e.g. logged in user has UID known) can resurface the whole profile again for your convenience.</p>
+</ol>
+<hr />
+<h2 id="how-gravito-handles-google-consent-mode">How Gravito Handles Google Consent Mode</h2>
+<p>Gravito CMP is designed to dynamically manage Consent Mode with minimal configuration. It depends basically on how you implement the CMP either with the deployment script or using Gravito's GTM template available in the GTM Gallery Here</p>
+<h2 id="how-to-test-if-your-setup-is-working">How to test if your setup is working</h2>
+<p>Please get in touch with Gravito support to get access to tooling which includes chrome extension's, sample script etc to validate that GCM is correctly setup on your site. 
+Here is an excmple of the Gravito's GCM validator plugin in action. Basically, you can check from the data layer how the consents are populated, like below. This example screenshot shows that the consent were <em>"denied"</em> which later was updated to <em>"granted"</em> when user gave consent</p>
+<p><img alt="Screenshot of Gravito's GCM Validator" src="../img/gcm_validator.jpg" title="Screenshot of Gravito's GCM Validator" /></p>
+<h2 id="google-consent-mode-support">Google Consent Mode support</h2>
+<p>All support issues related to implementation and working of <strong>Google Consent Mode</strong>, must be raised to Gravito's GCM support box : <a href="mailto: gcm.support@gravito.net">gcm.support(@)gravito.net</a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Setup_and_Validation/" class="btn btn-neutral float-left" title="Setup and Validation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Version_2/" class="btn btn-neutral float-right" title="Version 2">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Iab_tcf/" class="btn btn-neutral float-left" title="IAB TCF"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Gravito_Pro_CMP/Getting_Started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -296,10 +247,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Setup_and_Validation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Iab_tcf/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Version_2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../Gravito_Pro_CMP/Getting_Started/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
