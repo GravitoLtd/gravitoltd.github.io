@@ -1,14 +1,14 @@
 # Google Consent Mode v2
 
-## 🔍 What is Google Consent Mode v2?
+## What is Google Consent Mode v2?
 
 **Google Consent Mode v2** allows you to adjust how Google tags (like GA4, Google Ads, Floodlight) behave based on the user's consent choices. This helps ensure compliance with data protection regulations while still enabling important site functionality.
 
 Consent Mode v2 particularly impacts:
 
-- 🍪 **Cookies**
-- 🎯 **Ad Personalization**
-- 📊 **Analytics Tracking**
+- **Cookies**
+- **Ad Personalization**
+- **Analytics Tracking**
 
 With **Consent Mode v2**, Google introduced two **new consent signals** required to comply with the **EU Digital Markets Act (DMA)**:
 
@@ -20,23 +20,23 @@ With **Consent Mode v2**, Google introduced two **new consent signals** required
 
 > The new signals `ad_user_data` and `ad_personalization` are essential under DMA for platforms like Google Ads and should be set according to user consent.
 
-🔗 **[Official Google Documentation on Consent Mode v2](https://developers.google.com/tag-platform/devguides/consent)**
+**[Official Google Documentation on Consent Mode v2](https://developers.google.com/tag-platform/devguides/consent)**
 
 ---
 
-## 🛠️ Enabling Google Consent Mode v2 in Gravito CMP
+## Enabling Google Consent Mode v2 in Gravito CMP
 
 Gravito CMP supports two ways to enable Consent Mode v2:
 
 ---
 
-### ✅ 1. With GTM Template
-comming soon
+### 1. With GTM Template
+coming soon
 
 
 ---
 
-### ⚙️ 2. Without GTM Template
+### 2. Without GTM Template
 
 You can also enable GCMv2 in your **Gravito CMP** or **TCF CMP** by modifying the CMP configuration directly in the Gravito Admin Portal.
 
@@ -51,7 +51,7 @@ You can also enable GCMv2 in your **Gravito CMP** or **TCF CMP** by modifying th
    - **Tick the checkbox** labeled **"Use GCMv2"**.
    - This will open a section for **Google Consent Mode mapping**.
 
-    ![](./images/GCMv2img2.png)
+    ![](../images/GCMv2img2.png)
 
 #### Consent Mapping:
 
@@ -63,7 +63,7 @@ You’ll now see dropdowns to map categories for the following Google consent si
 
 For each of these, select the relevant **consent category** from the dropdown list.
 
- ![](./images/GCMv2img3.png)
+ ![](../images/GCMv2img3.png)
 
 Once mappings are complete, click **Save** at the bottom-right.
 
@@ -77,9 +77,9 @@ You may continue filling out the other CMP configuration steps, or jump directly
 2. Since we’re not using the GTM template, click on **"Deployment Script"**.
 3. Click **"Publish"**.
 
-  ![](./images/GCMv2Img1.png)
+  ![](../images/GCMv2Img1.png)
 
-> ⚠️ **Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.
+> **Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.
 
 Once the config is published, you’ll be provided with a **deployment script**, which you can embed directly in your webpage to activate Consent Mode v2.
 

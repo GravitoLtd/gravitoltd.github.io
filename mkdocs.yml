@@ -39,7 +39,6 @@ nav:
       - GTM Template: 'Gravito_Intelligent_CMP/GTM_Template.md'
       - Release Notes: 'Gravito_Intelligent_CMP/Release_Notes.md'
       - Advanced Features: 'Gravito_Intelligent_CMP/Advanced_Features.md'
-      - Consent Mode v2 : 'Gravito_Intelligent_CMP/Google Consent Mode v2.md'
   - Gravito TCF 2.2 CMP:
       - Getting Started: 'Gravito_TCF_2.2_CMP/Getting_Started.md'
       - Setup and Design: 'Gravito_TCF_2.2_CMP/Setup_and_Design.md'

@@ -2,6 +2,10 @@
 
 Here are the links to the advanced features supported by Gravito Intelligent CMP
 
+### Google Consent Mode V2
+
+ 1. [Implementing Google Consent Mode V2](./advanced/Google_consent_mode_v2.md)
+
 ### Customization
 
 1.  [Advanced Customization Options](./advanced/Light_Cmp_Config_Options.md)
