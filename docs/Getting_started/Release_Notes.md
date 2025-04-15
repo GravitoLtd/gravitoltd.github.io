@@ -12,16 +12,21 @@ Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 78 - 22/01/2025 <mark>New</mark>
+## Release notes: Sprint 79 - 15/04/2025 <mark>New</mark>
+
+- Added GCM-V2 default setup for Gravito CMP, TCF CMP & Pro Gravito CMP in their respective configurators.
+- Improved Reporting UI for better user experience and accurate data representation.
+
+## Release notes: Sprint 78 - 22/01/2025
 
 In the latest version , based on feedback collected from our customers we have modified some of the names and order of options in the configurator to keep things more understandable.
 
 _Gravito CMP Configurator:_
 
 - The step names in configurator are changed as follows to better describe its purpose
-    - Core => Consent Categories
-    - Text => Banner Content
-    - style => Appearance
+  - Core => Consent Categories
+  - Text => Banner Content
+  - style => Appearance
 - A new validation layer has been added which checks config for mandatory values and validity of privacy URL. It also displays report of errors found along with their location.
 - The sequence "Consent Categories" & "Setting" section has been changed along with their internal order keeping in mind the practicality of its occurrence.
 - Some user irrelevant configurations have been removed or placed under advance section to reduce complexity & confusion.
@@ -29,9 +34,9 @@ _Gravito CMP Configurator:_
 _TCF CMP Configurator:_
 
 - The step names in configurator are changes as follows to better describe its purpose
-    - Core => TCF Settings
-    - Text => Banner Content
-    - style => Appearance
+  - Core => TCF Settings
+  - Text => Banner Content
+  - style => Appearance
 - A new validation layer has been added which checks config for mandatory values and validity of privacy URL. It also displays report of errors found along with their location.
 - The sequence "TCF Settings" & "Setting" section has been changed along with their internal order keeping in mind the practicality of its occurrence
 - Some user irrelevant configurations have been removed or placed under advance section to reduce complexity & confusion.
@@ -66,15 +71,15 @@ _Manage Cookie Scan:_
 
 - Domain Grouping: To see stats of a group of domains. For. eg. Publisher groups.
 
-    - Available Under Domain -> Manage Domain groups
-    - Allows you to manage different domain groups with overlap of domains
-    - Available for selection under Dashboard and Compare trends.
+  - Available Under Domain -> Manage Domain groups
+  - Allows you to manage different domain groups with overlap of domains
+  - Available for selection under Dashboard and Compare trends.
 
 - 📅 Date-wise filter
 
-    - Dashboard
-    - Compare trends
-    - Reporting section “Consent Data”
+  - Dashboard
+  - Compare trends
+  - Reporting section “Consent Data”
 
 - Added note stating that reporting data is from past 60 days
 - Unnecessary app bar options and filters are removed in CMP(TCF & Gravito) configurator section.
