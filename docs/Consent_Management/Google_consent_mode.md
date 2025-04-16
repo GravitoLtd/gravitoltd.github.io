@@ -15,6 +15,7 @@ This document explains:
 - The requirements to use it with Gravito  
 - How Gravito handles tag behavior and consent signals  
 - How to test if your setup is working  
+- Getting Support
 
 ---
 
@@ -33,24 +34,30 @@ For example:
 
 To enable Google Consent Mode via Gravito CMP, you’ll need:
 
-1. **A Gravito TCF 2.2 CMP implementation**  
-   - This should be already configured and running on your site. If not, [follow the setup guide](https://docs.gravito.net/Gravito_TCF_2.2_CMP/).
+1. **A Gravito TCF 2.2 CMP/ Intelligent CMP implementation**
+      - This should be already configured and running on your site. If not, 
+      - [TCF 2.2 setup and implementation guide](../Gravito_TCF_2.2_CMP/advanced/googleconsentmode.md).
+      - [Intelligent CMP setup and implementation guide](../Gravito_Intelligent_CMP/advanced/Google_consent_mode_v2.md).
 
-2. **Gravito Google Consent Mode support enabled**  
-   - Gravito handles tag-level behavior without needing manual Google Tag Manager configuration.  
-   - The required consent signals (`ad_storage`, `analytics_storage`, etc.) are automatically injected based on user preferences.
-
-3. **Google Tags already present**  
-   - Either through Google Tag Manager or gtag.js, your analytics or ad tracking must be installed to benefit from Consent Mode.
+2. **Gravito Google Consent Mode support enabled**
+      - Gravito handles tag-level behavior without needing manual Google Tag Manager configuration.  
+      - The required consent signals (`ad_storage`, `analytics_storage`, etc.) are automatically injected based on user preferences.
 
 ---
 
 ## How Gravito Handles Google Consent Mode
 
-Gravito CMP is designed to dynamically manage Consent Mode with minimal configuration:
+Gravito CMP is designed to dynamically manage Consent Mode with minimal configuration. It depends basically on how you implement the CMP either with the deployment script or using Gravito's GTM template available in the GTM Gallery Here
 
-- The CMP loads before any tags fire.  
-- User consent decisions are collected and stored per TCF 2.2 standards.  
-- Gravito automatically triggers the required `gtag('consent', 'update')` calls using the appropriate `ad_storage`, `analytics_storage`, `functionality_storage`, and `security_storage` values.  
-- No need to manually configure Google Tag Manager’s Consent Initialization.
 
+## How to test if your setup is working
+
+Please get in touch with Gravito support to get access to tooling which includes chrome extension's, sample script etc to validate that GCM is correctly setup on your site. 
+Here is an excmple of the Gravito's GCM validator plugin in action. Basically, you can check from the data layer how the consents are populated, like below. This example screenshot shows that the consent were *"denied"* which later was updated to *"granted"* when user gave consent
+
+ ![Screenshot of Gravito's GCM Validator](./img/gcm_validator.jpg "Screenshot of Gravito's GCM Validator")
+
+
+## Google Consent Mode support
+
+All support issues related to implementation and working of **Google Consent Mode**, must be raised to Gravito's GCM support box : [gcm.support(@)gravito.net](mailto: gcm.support@gravito.net)
