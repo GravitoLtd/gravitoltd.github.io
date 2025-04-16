@@ -47,7 +47,7 @@ To enable Google Consent Mode via Gravito CMP, you’ll need:
 
 ## How Gravito Handles Google Consent Mode
 
-Gravito CMP is designed to dynamically manage Consent Mode with minimal configuration. It depends basically on how you implement the CMP either with the deployment script or using Gravito's GTM template available in the GTM Gallery Here
+Gravito CMP is designed to dynamically manage Consent Mode with minimal configuration. It depends basically on how you implement the CMP either with the deployment script or using Gravito's GTM template available in the [GTM Gallery Here](https://tagmanager.google.com/gallery/#/owners/GravitoLtd/templates/gravito-cmp-gtm-template)
 
 
 ## How to test if your setup is working
