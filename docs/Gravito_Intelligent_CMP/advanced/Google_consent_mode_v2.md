@@ -30,7 +30,7 @@ With **Consent Mode v2**, Google introduced two **new consent signals** required
 - **Login** to the Gravito Admin Portal.
 - Click on the **"CMP"** tab.
 - Select the Gravito CMP from the option.
-- On the CMP Config listing page, click the **"New"** button to create a new CMP.
+- On the CMP Config listing page, click the **"New Configuration"** button to create a new CMP Config.
 - Fill in the **basic information**, then click **Next** at the bottom-left corner.
 - On the **Consent Category** page:
   - **Tick the checkbox** labeled **"Use GCMv2"**.
@@ -66,7 +66,7 @@ Gravito CMP supports two ways to enable Consent Mode v2:
 
    ![](../images/GCMV2PublishGTM.png)
 
-   > **Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.  
+ >**Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.  
    Once the config is published, you’ll be provided with a button labeled **"Copy GTM Token"**. Clicking this will copy the GTM token to your clipboard. We will use this token in the GTM template.
 
    ![](../images/GCMv2PublishCopyToken.png)
@@ -129,6 +129,6 @@ Gravito CMP supports two ways to enable Consent Mode v2:
 
    ![](../images/GCMv2Img1.png)
 
-   > **Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.
+> **Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.
 
 Once the config is published, you’ll be provided with a **deployment script**, which you can embed directly in your webpage to activate Consent Mode v2.

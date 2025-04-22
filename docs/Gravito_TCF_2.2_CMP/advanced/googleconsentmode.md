@@ -1,84 +1,131 @@
-# Google Consent Mode V2 for TCF
+# Google Consent Mode v2
 
-Google's Consent Mode is a tool within Google Tag Manager that allows websites to adjust how tags behave based on user consent for tracking. It helps manage and control the behavior of tags, such as Google Analytics and Google Ads, depending on whether the user has provided consent for data collection and processing.
+## What is Google Consent Mode v2?
 
-For detailed information and guidance on Google Consent Mode, refer to the official Google support documentation: [Google Consent Mode -- Official Documentation](https://support.google.com/analytics/answer/9976101?hl=en)
+**Google Consent Mode v2** allows you to adjust how Google tags behave based on the user's consent choices. This helps ensure compliance with data protection regulations while still enabling important site functionality.
 
-**Changes in Google Consent Mode v2**
+Consent Mode v2 particularly impacts:
 
-In Consent Mode v2, Google introduced two additional consent types to offer users more granular control over their data sharing preferences:
+- **Cookies**
+- **Ad Personalization**
+- **Analytics Tracking**
 
-- **ad_user_data:** This consent type pertains to user consent specifically for Google's advertising purposes. When a user actively agrees, typically through interaction with a consent banner, to share their data with Google for advertising purposes, the ad_user_data consent is set to 'granted.'
-- **ad_personalization:** This consent type focuses on whether user data can be utilized for personalized advertising, such as remarketing or targeted ads. It requires explicit user agreement, typically through a consent banner interaction, to share their data with Google for ad personalization.
+With **Consent Mode v2**, Google introduced two **new consent signals** required to comply with the **EU Digital Markets Act (DMA)**:
 
-These additional consent types provide users with clearer choices and control over data sharing for advertising purposes, aligning with evolving privacy regulations and user expectations.
+### ✅ Consent Signals:
+- `ad_storage`
+- `analytics_storage`
+- `ad_user_data` (🆕)
+- `ad_personalization` (🆕)
 
-**Enabling Google Consent Mode v2 in New Configuration**
+> The new signals `ad_user_data` and `ad_personalization` are essential under DMA for platforms like Google Ads and should be set according to user consent.
 
-Gravito TCF CMP now supports Google Consent Mode v2, allowing you to integrate it into your configuration for enhanced user consent management. To use this feature in a new configuration, follow these steps:
-
-1.  **Login to the Gravito Admin Portal:** Access the Gravito Admin Portal and navigate to the CMP tab. From the dropdown menu, select TCF 2.2 CMP Configurator.'
-
-![](../img/tcf_configurator.png)
-
-1.  **Creating a New Configuration:**
-    - Click on "New Configuration" to initiate a new setup.
-    - Fill in necessary details like configuration name and preferred language. Proceed by clicking 'Next.'
-
-![](../img/newconfiguration.png)
-
-1.  **Settings Configuration:**
-
-    - Configure preferences based on specific requirements in the settings section. Click 'Next' to proceed.
-
-1.  **Core Configuration Tabs:**
-
-    - Define consentable items, for your TCF CMP like purposes,special purposes , vendors, special features etc.
-    - Enable Google Consent Mode (GCM) by checking the 'Use GCM' checkbox.
-      ![](../img/gcmsettings.png)
-
-1.  **Configuration and Publishing:**
-
-    - The 4 consents for Google Consent Mode v2 will be predefined in the configuration as per Google's requirements and should not be modified.
-    - Publish the configuration to generate a deployment script.
-
-1.  **Implement Deployment Script on Website:**
-
-    - Copy the generated script and integrate it into your website.
-
-1.  **Verification:**
-    - Confirm correct consent propagation by checking the dataLayer object on your website.
+**[Official Google Documentation on Consent Mode v2](https://developers.google.com/tag-platform/devguides/consent)**
 
 ---
 
-### **Enabling Google Consent Mode v2 in Existing Configuration** 
+## Enabling Google Consent Mode v2 in Gravito CMP
 
-To enable Google Consent Mode v2 in an existing configuration within Gravito TCF CMP, follow these steps:
+### Creating Config in Admin Portal
+- **Login** to the Gravito Admin Portal.
+- Click on the **"CMP"** tab.
+- Select the TCF 2.2 CMP from the option.
+- On the CMP Config listing page, click the **"New Configuration"** button to create a new CMP Config.
+- Fill in the **basic information**, then click **Next** at the bottom-left corner.
+- On the **TCF Settings** Tab:
+  - **Tick the checkbox** labeled **"Use GCM"**.
+  - This will enable the GCMv2 for your CMP config
 
-1.  **Access the Gravito Admin Portal:** Log in to the Gravito Admin Portal and navigate to the CMP tab. Select TCF 2.2 CMP Configurator option.
+    ![](../img/GCMv2Settings.png)
 
-1.  **Copying an Existing Configuration:**
+#### Consent Mapping:
 
-    - Click the 'Copy From' button in front of the desired configuration.
+You’ll now see default mapping for the following Google consent signals:
+- `ad_storage`
+- `analytics_storage`
+- `ad_user_data`
+- `ad_personalization`
 
-1.  **Modifying Copied Configuration:**
 
-    - Follow similar steps as the new configuration for settings, core tabs, consent able items, and customization options. Maintain consistency with the original configuration.
+You may continue filling out the other CMP configuration steps, or jump directly to the **"Deploy"** tab.
 
-1.  **Enabling Google Consent Mode (GCM):**
+---
 
-    - Check the 'Use GCM' checkbox in settings.
-    - This will open Additional sections for Google Consent Mode v2 which will be prefilled for you according to the Google Consent Mode v2 requirements and should not be modified.
-    - Also make sure that you have configured "googleTCFId" field correctly.
+Gravito TCF 2.2 CMP supports two ways to enable Consent Mode v2:
 
-1.  **Finalizing Configuration and Publishing:**
+---
 
-    - Complete modifications and configurations.
-    - Publish the modified configuration to generate a deployment script.
+### 1. With GTM Template
 
-1.  **Implementing Updated Deployment Script:**
+- In the **Deploy** tab, you’ll see multiple deployment options.
+- Click on the **"GTM Template"** option.
+- Click **"Publish"**.
 
-    - Integrate the updated script into your website.
+   ![](../img/GCMv2Deploy.png)
 
-1.  **Verification:**
-    - Confirm correct consent propagation by examining the dataLayer object on your website.
+   > **Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.  
+   Once the config is published, you’ll be provided with a button labeled **"Copy GTM Token"**. Clicking this will copy the GTM token to your clipboard. We will use this token in the GTM template.
+
+   ![](../img/GCMv2CopyToken.png)
+
+- **Login** to your **Google Tag Manager** account and click on a new **Tag**.
+
+#### Tag Configuration:
+- Choose the **Gravito Consent Management** template from the list.
+
+   ![](../img/GTMTemplateSearch.png)
+
+#### Fill the fields:
+
+| Field                          | Description                                                                 |
+|--------------------------------|-----------------------------------------------------------------------------|
+| **Gravito Token**              | Paste the **CMP token** copied from Gravito portal                          |
+| **Gravito CMP type**           | Select **Gravito TCF CMP**              |
+| ✅ **Enable Google Consent Mode** | Enable this to activate GCM support                                       |
+
+---
+
+### Google Consent Mode Settings
+
+| Option                     | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| **Wait for update**        | Time to wait (in ms) for consent before proceeding (default: `2000`)        |
+| **Enable URL passthrough** | Optional: Enable if you need to forward consent state via query params      |
+| **Redact ads data**        | Set to **Dynamic (based on ad_storage)** for flexible ad personalization    |
+
+---
+
+### Default Consent State (Optional)
+
+- Configure regional preferences if needed.
+- You can **leave it blank** to apply globally.
+
+   ![](../img/GTMTemplateView.png)
+
+### Add Trigger and Save
+
+- Add a **Page View** or **All Pages** trigger to fire this tag on every page load.
+- Click **Save**.
+
+---
+
+### Publish the GTM Container
+
+- Submit and **Publish** the container.
+- CMP will now load and handle consent dynamically on your site.
+
+---
+
+### 2. Without GTM Template
+
+#### Deployment (Without Template):
+
+- In the **Deploy** tab, you'll see multiple deployment options.
+- Since we’re not using the GTM template, click on **"Deployment Script"**.
+- Click **"Publish"**.
+
+   ![](../img/GCMDeployScript.png)
+
+>**Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.
+
+Once the config is published, you’ll be provided with a **deployment script**, which you can embed directly in your webpage to activate Consent Mode v2.
