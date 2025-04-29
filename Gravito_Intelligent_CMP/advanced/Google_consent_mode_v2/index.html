@@ -155,7 +155,7 @@
               
                 <h1 id="google-consent-mode-v2">Google Consent Mode v2</h1>
 <h2 id="what-is-google-consent-mode-v2">What is Google Consent Mode v2?</h2>
-<p><strong>Google Consent Mode v2</strong> allows you to adjust how Google tags (like GA4, Google Ads, Floodlight) behave based on the user's consent choices. This helps ensure compliance with data protection regulations while still enabling important site functionality.</p>
+<p><strong>Google Consent Mode v2</strong> allows you to adjust how Google tags behave based on the user's consent choices. This helps ensure compliance with data protection regulations while still enabling important site functionality.</p>
 <p>Consent Mode v2 particularly impacts:</p>
 <ul>
 <li><strong>Cookies</strong></li>
@@ -163,32 +163,25 @@
 <li><strong>Analytics Tracking</strong></li>
 </ul>
 <p>With <strong>Consent Mode v2</strong>, Google introduced two <strong>new consent signals</strong> required to comply with the <strong>EU Digital Markets Act (DMA)</strong>:</p>
-<h3 id="consent-signals">✅ Consent Signals:</h3>
-<ol>
+<h3 id="consent-signals">Consent Signals:</h3>
+<ul>
 <li><code>ad_storage</code></li>
 <li><code>analytics_storage</code></li>
 <li><code>ad_user_data</code> (🆕)</li>
 <li><code>ad_personalization</code> (🆕)</li>
-</ol>
+</ul>
 <blockquote>
 <p>The new signals <code>ad_user_data</code> and <code>ad_personalization</code> are essential under DMA for platforms like Google Ads and should be set according to user consent.</p>
 </blockquote>
 <p><strong><a href="https://developers.google.com/tag-platform/devguides/consent">Official Google Documentation on Consent Mode v2</a></strong></p>
 <hr />
 <h2 id="enabling-google-consent-mode-v2-in-gravito-cmp">Enabling Google Consent Mode v2 in Gravito CMP</h2>
-<p>Gravito CMP supports two ways to enable Consent Mode v2:</p>
-<hr />
-<h3 id="1-with-gtm-template">1. With GTM Template</h3>
-<p>coming soon</p>
-<hr />
-<h3 id="2-without-gtm-template">2. Without GTM Template</h3>
-<p>You can also enable GCMv2 in your <strong>Gravito CMP</strong> or <strong>TCF CMP</strong> by modifying the CMP configuration directly in the Gravito Admin Portal.</p>
-<h4 id="steps">Steps:</h4>
-<ol>
+<h3 id="creating-config-in-admin-portal">Creating Config in Admin Portal</h3>
+<ul>
 <li><strong>Login</strong> to the Gravito Admin Portal.</li>
 <li>Click on the <strong>"CMP"</strong> tab.</li>
 <li>Select the Gravito CMP from the option.</li>
-<li>On the CMP Config listing page, click the <strong>"New"</strong> button to create a new CMP.</li>
+<li>On the CMP Config listing page, click the <strong>"New Configuration"</strong> button to create a new CMP Config.</li>
 <li>Fill in the <strong>basic information</strong>, then click <strong>Next</strong> at the bottom-left corner.</li>
 <li>On the <strong>Consent Category</strong> page:</li>
 <li><strong>Tick the checkbox</strong> labeled <strong>"Use GCMv2"</strong>.</li>
@@ -196,30 +189,117 @@
 <p>This will open a section for <strong>Google Consent Mode mapping</strong>.</p>
 <p><img alt="" src="../../images/GCMv2img2.png" /></p>
 </li>
-</ol>
+</ul>
 <h4 id="consent-mapping">Consent Mapping:</h4>
 <p>You’ll now see dropdowns to map categories for the following Google consent signals:
 - <code>ad_storage</code>
 - <code>analytics_storage</code>
 - <code>ad_user_data</code>
 - <code>ad_personalization</code></p>
-<p>For each of these, select the relevant <strong>consent category</strong> from the dropdown list.</p>
-<p><img alt="" src="../../images/GCMv2img3.png" /></p>
+<p>For each of these, select the relevant <strong>consent category</strong> from the dropdown list. You will see default mappings, but you can change them as per your requirements.</p>
 <p>Once mappings are complete, click <strong>Save</strong> at the bottom-right.</p>
 <p>You may continue filling out the other CMP configuration steps, or jump directly to the <strong>"Deploy"</strong> tab.</p>
 <hr />
+<p>Gravito CMP supports two ways to enable Consent Mode v2:</p>
+<hr />
+<h3 id="1-with-gtm-template">1. With GTM Template</h3>
+<ul>
+<li>In the <strong>Deploy</strong> tab, you’ll see multiple deployment options.</li>
+<li>Click on the <strong>"GTM Template"</strong> option.</li>
+<li>Click <strong>"Publish"</strong>.</li>
+</ul>
+<p><img alt="" src="../../images/GCMV2PublishGTM.png" /></p>
+<blockquote>
+<p><strong>Note:</strong> When you click <strong>Publish</strong>, the system will validate all required fields. If anything is missing, it will display an error.<br />
+   Once the config is published, you’ll be provided with a button labeled <strong>"Copy GTM Token"</strong>. Clicking this will copy the GTM token to your clipboard. We will use this token in the GTM template.</p>
+</blockquote>
+<p><img alt="" src="../../images/GCMv2PublishCopyToken.png" /></p>
+<ul>
+<li><strong>Login</strong> to your <strong>Google Tag Manager</strong> account and click on a new <strong>Tag</strong>.</li>
+</ul>
+<h4 id="tag-configuration">Tag Configuration:</h4>
+<ul>
+<li>Choose the <strong>Gravito Consent Management</strong> template from the list.</li>
+</ul>
+<p><img alt="" src="../../images/GTMTemplateSearch.png" /></p>
+<h4 id="fill-the-fields">Fill the fields:</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gravito Token</strong></td>
+<td>Paste the <strong>CMP token</strong> copied from Gravito portal</td>
+</tr>
+<tr>
+<td><strong>Gravito CMP type</strong></td>
+<td>Select <strong>Gravito CMP</strong> (or other type if applicable)</td>
+</tr>
+<tr>
+<td>✅ <strong>Enable Google Consent Mode</strong></td>
+<td>Enable this to activate GCM support</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="google-consent-mode-settings">Google Consent Mode Settings</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wait for update</strong></td>
+<td>Time to wait (in ms) for consent before proceeding (default: <code>2000</code>)</td>
+</tr>
+<tr>
+<td><strong>Enable URL passthrough</strong></td>
+<td>Optional: Enable if you need to forward consent state via query params</td>
+</tr>
+<tr>
+<td><strong>Redact ads data</strong></td>
+<td>Set to <strong>Dynamic (based on ad_storage)</strong> for flexible ad personalization</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="default-consent-state-optional">Default Consent State (Optional)</h3>
+<ul>
+<li>Configure regional preferences if needed.</li>
+<li>You can <strong>leave it blank</strong> to apply globally.</li>
+</ul>
+<p><img alt="" src="../../images/GTMTemplateView.png" /></p>
+<h3 id="add-trigger-and-save">Add Trigger and Save</h3>
+<ul>
+<li>Add a <strong>Page View</strong> or <strong>All Pages</strong> trigger to fire this tag on every page load.</li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<hr />
+<h3 id="publish-the-gtm-container">Publish the GTM Container</h3>
+<ul>
+<li>Submit and <strong>Publish</strong> the container.</li>
+<li>CMP will now load and handle consent dynamically on your site.</li>
+</ul>
+<hr />
+<h3 id="2-without-gtm-template">2. Without GTM Template</h3>
 <h4 id="deployment-without-template">Deployment (Without Template):</h4>
-<ol>
-<li>In the Deploy tab, you'll see multiple deployment options.</li>
+<ul>
+<li>In the <strong>Deploy</strong> tab, you'll see multiple deployment options.</li>
 <li>Since we’re not using the GTM template, click on <strong>"Deployment Script"</strong>.</li>
 <li>Click <strong>"Publish"</strong>.</li>
-</ol>
+</ul>
 <p><img alt="" src="../../images/GCMv2Img1.png" /></p>
 <blockquote>
 <p><strong>Note:</strong> When you click <strong>Publish</strong>, the system will validate all required fields. If anything is missing, it will display an error.</p>
 </blockquote>
 <p>Once the config is published, you’ll be provided with a <strong>deployment script</strong>, which you can embed directly in your webpage to activate Consent Mode v2.</p>
-<hr />
               
             </div>
           </div><footer>

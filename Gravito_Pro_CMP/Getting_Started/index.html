@@ -66,6 +66,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#gravito-pro-cmp-configurator">Gravito Pro CMP Configurator:</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#easy-integration">Easy Integration:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resurfacing">Resurfacing</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -180,6 +184,11 @@ gravitoSDKTag.onload = function () {
 };
 document.body.appendChild(gravitoSDKTag);
 </code></pre>
+<h3 id="resurfacing">Resurfacing</h3>
+<p>To open the CMP again, we have a window-scoped function which can be used:</p>
+<p><code>window.gravitoPROCMP.openPreferences() — this will open the second layer (Details tab).</code></p>
+<p>To open the first layer (Declaration tab):</p>
+<p><code>window.gravitoPROCMP.openPreferences(0) — this will open the first layer (Declaration).</code></p>
               
             </div>
           </div><footer>
