@@ -12,7 +12,7 @@ Consent Mode v2 particularly impacts:
 
 With **Consent Mode v2**, Google introduced two **new consent signals** required to comply with the **EU Digital Markets Act (DMA)**:
 
-### ✅ Consent Signals:
+### Consent Signals:
 - `ad_storage`
 - `analytics_storage`
 - `ad_user_data` (🆕)

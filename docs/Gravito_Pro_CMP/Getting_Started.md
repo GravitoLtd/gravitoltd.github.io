@@ -24,3 +24,14 @@ gravitoSDKTag.onload = function () {
 };
 document.body.appendChild(gravitoSDKTag);
 ```
+
+
+### Resurfacing 
+
+To open the CMP again, we have a window-scoped function which can be used:
+
+```window.gravitoPROCMP.openPreferences() — this will open the second layer (Details tab).```
+
+To open the first layer (Declaration tab):
+
+```window.gravitoPROCMP.openPreferences(0) — this will open the first layer (Declaration).```
