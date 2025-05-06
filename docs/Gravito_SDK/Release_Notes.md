@@ -1,6 +1,16 @@
 Release Notes
 =============
 
+Release Notes 3.0.6 (v306)* (06/05/2025)*
+
+New Features:
+
+- Added Support for Microsoft Universal Event Tracking (UET) Mode
+You can now enable Microsoft UET tracking by configuring useUET and adsConsentId in your CMP setup. This allows consent-aware integration with Microsoft's advertising platform.  
+
+
+ 
+
 Release Notes (V 2.0.12)* (08/02/2024)*
 
 New Features:
