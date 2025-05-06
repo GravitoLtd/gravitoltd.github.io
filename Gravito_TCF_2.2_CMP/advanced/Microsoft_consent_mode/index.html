@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>TCF CMP Migration Guide - Gravito Documentation</title>
+    <title>Microsoft Consent Mode - Gravito Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "TCF CMP Migration Guide";
-        var mkdocs_page_input_path = "Gravito_TCF_2.2_CMP\\advanced\\Migration_To_TCF.md";
+        var mkdocs_page_name = "Microsoft Consent Mode";
+        var mkdocs_page_input_path = "Gravito_TCF_2.2_CMP\\advanced\\Microsoft_consent_mode.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -146,7 +146,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">TCF CMP Migration Guide</li>
+      <li class="breadcrumb-item active">Microsoft Consent Mode</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -155,103 +155,79 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="tcf-cmp-migration-guide">TCF CMP Migration Guide</h1>
-<h2 id="introduction">Introduction</h2>
-<p>This guide provides a step-by-step explanation of the new feature in our CMP configurator tool that simplifies the migration process from other CMP providers to ours. Users can now import their existing configurations by pasting the TcString and/or AcString generated from their previous CMP after clicking on the "Accept All" action.</p>
-<p>By doing so, the configurator can extract and pre-fill relevant details such as:</p>
+                <h1 id="microsoft-consent-mode">Microsoft Consent Mode</h1>
+<h2 id="enabling-microsoft-consent-mode-in-gravito-tcf-cmp">Enabling Microsoft Consent Mode in Gravito TCF CMP</h2>
+<p>Gravito CMP supports two ways to enable Universal Consent Mode:</p>
+<h3 id="1-using-configurator">1. Using Configurator</h3>
+<ol>
+<li><strong>Login</strong> to the Gravito Admin Portal.</li>
+<li>Click on the <strong>CMP</strong> tab.</li>
+<li>Select the <strong>TCF 2.2 CMP Configurator</strong> from the option.</li>
+<li>On the CMP Config listing page, click the <strong>New Configuration</strong> button to create a new CMP config.</li>
+<li>Fill in the <strong>basic information</strong>, then click <strong>Next</strong> at the bottom-left corner.</li>
+<li>
+<p>On the <strong>TCF Settings</strong> page:</p>
 <ul>
-<li>Publisher Country Code</li>
-<li>Purpose One Treatment</li>
-<li>Vendors</li>
-<li>Special Features</li>
-<li>Purposes</li>
-<li>Publisher Restrictions</li>
-<li>ACM (Additional Consent Mode)</li>
-<li>Google Vendors</li>
+<li><strong>Tick the checkbox</strong> labeled <strong>"Microsoft's Universal Event Tracking (UET)"</strong>.</li>
+<li>This will open a section for <strong>Microsoft UET Setup</strong>.
+  <img alt="" src="../../img/UET_Img1.png" /></li>
 </ul>
-<p>This feature minimizes the manual effort required to set up a new CMP configuration, ensuring a seamless transition.</p>
-<h2 id="step-by-step-guide">Step-by-Step Guide</h2>
-<h3 id="step-1-obtain-tcstring-and-acstring-from-your-previous-cmp">Step 1: Obtain TcString and AcString from Your Previous CMP</h3>
-<ol>
-<li>
-<p>Go to your website where the existing CMP is live.</p>
-</li>
-<li>
-<p>Click on the "Accept All" button of CMP.</p>
-</li>
-<li>
-<p>Retrieve the generated TcString and/or AcString from the browser's cookies section in the developer tools.
-   <img alt="" src="../../img/dev_tools_cookies.png" /></p>
 </li>
 </ol>
-<h3 id="step-2-paste-the-strings-in-the-configurator-tool">Step 2: Paste the Strings in the Configurator Tool</h3>
+<h4 id="consent-mapping">Consent Mapping:</h4>
+<p>You’ll now see dropdowns to map category for : <code>ad_storage</code></p>
+<p><strong>Note:</strong> The <code>ad_storage</code> signal mapping is predefined according to Microsoft's requirements and is common across both GCMv2 &amp; UET.</p>
+<p>You may continue filling out the other CMP configuration steps, or jump directly to the <strong>"Deploy"</strong> tab.</p>
+<h3 id="2-without-configurator">2. Without Configurator</h3>
 <ol>
 <li>
-<p>Open the Gravito's TCF CMP configurator and navigate to TCF setting section.</p>
+<p><strong>Enable UET Mode</strong>:<br />
+    Add the <code>useUET</code> flag under the <code>settings</code> section of your configuration and set its value to <code>true</code>.</p>
+<p><pre><code>
+ "settings": {
+     "useUET": true
+     // ... other settings
+ }
+ </code></pre></p>
 </li>
 <li>
-<p>Find and click on the "Import Data" button on top-right corner of the configurator.
-   <img alt="" src="../../img/Import_Data_Button.png" /></p>
+<p>Add <code>adsConsentId</code></p>
+<p>You must also define the <code>adsConsentId</code> property in your configuration. This is required to map consent values for Microsoft UET. There are two cases:</p>
+<ul>
+<li>
+<p><strong>If Google Consent Mode is already configured</strong>:</p>
+<p>The <code>adsConsentId</code> property will already be available in your config.</p>
 </li>
 <li>
-<p>You will see fields labeled TcString and AcString.</p>
+<p><strong>If not configured</strong>:</p>
+<p>Add the <code>adsConsentId</code> property under the <code>core</code> section of your config manually.</p>
+</li>
+</ul>
 </li>
 <li>
-<p>Paste the TcString into the corresponding field.</p>
+<p>Define <code>adsConsentId</code> </p>
+<p>The <code>adsConsentId</code> should be an array of TCF Purpose IDs that will be mapped to advertising consent.</p>
+<p>Example:
+  <pre><code>
+  "core": {
+      "adsConsentId": [1]
+  }
+  </code></pre></p>
+<p>This example maps the consent value of <strong>Purpose 1</strong> (typically used for storing and accessing information) to UET consent.</p>
 </li>
 <li>
-<p>(Optional) If available, paste the AcString into its respective field.
-   <img alt="" src="../../img/tcString_modal.png" /></p>
+<p>How Gravito CMP Handles UET Consent</p>
+<p>Once the above configuration is complete:</p>
+<ul>
+<li>Microsoft UET mode is considered <strong>enabled</strong>.</li>
+<li>Gravito CMP adds the corresponding ads consent value (<code>denied</code> or <code>granted</code>) to the global <code>uetq</code> window object.</li>
+<li>By default, the value is <code>denied</code>.</li>
+<li>After consent is obtained, the CMP updates the value based on the mapping defined in <code>adsConsentId</code>.</li>
+</ul>
+<p>Microsoft reads this value from the <code>uetq</code> object to determine whether tracking is allowed.</p>
+<p>Gravito CMP's follow the approach mentioned <a href="https://help.ads.microsoft.com/#apex/ads/en/60119/1-500">Here</a></p>
 </li>
 </ol>
-<h3 id="step-3-upload-and-extract-configuration">Step 3: Upload and Extract Configuration</h3>
-<ol>
-<li>
-<p>Click on the "Upload" button.</p>
-</li>
-<li>
-<p>The system will process the provided TcString and AcString.</p>
-</li>
-<li>
-<p>Upon successful extraction, relevant settings will be automatically populated in the configurator.
-   <img alt="" src="../../img/Imported_data.png" /> <br/><br/></p>
-</li>
-<li>
-<p>Review the extracted configuration and make necessary adjustments if required.</p>
-</li>
-</ol>
-<h2 id="popular-cmp-providers">Popular CMP Providers</h2>
-<p>The following table lists some popular CMP providers and details of their TcString &amp; AcString. This information can be useful for users who want to identify the strings set by their previous CMP.</p>
-<table>
-<thead>
-<tr>
-<th>CMP Provider</th>
-<th>TcString Name</th>
-<th>AcString Name</th>
-<th>Location</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>OneTrust</td>
-<td><code>eupubconsent-v2</code></td>
-<td>``</td>
-<td><code>Cookies</code></td>
-</tr>
-<tr>
-<td>Sourcepoint</td>
-<td><code>euconsent-v2</code></td>
-<td>``</td>
-<td><code>Cookies</code></td>
-</tr>
-<tr>
-<td>Cookie Bot</td>
-<td><code>cookiebotTcfConsentString</code></td>
-<td><code>cookiebotGacmConsentString</code></td>
-<td><code>Local Storage</code></td>
-</tr>
-</tbody>
-</table>
               
             </div>
           </div><footer>

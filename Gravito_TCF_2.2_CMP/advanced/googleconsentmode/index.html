@@ -56,6 +56,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Consent_Management/Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito Pro CMP</span></p>
               <ul>
@@ -179,17 +181,21 @@
 <h3 id="creating-config-in-admin-portal">Creating Config in Admin Portal</h3>
 <ul>
 <li><strong>Login</strong> to the Gravito Admin Portal.</li>
-<li>Click on the <strong>"CMP"</strong> tab.</li>
-<li>Select the TCF 2.2 CMP from the option.</li>
+<li>Click on the <strong>CMP</strong> tab.</li>
+<li>Select the <strong>TCF 2.2 CMP Configurator</strong> from the option.</li>
 <li>On the CMP Config listing page, click the <strong>"New Configuration"</strong> button to create a new CMP Config.</li>
 <li>Fill in the <strong>basic information</strong>, then click <strong>Next</strong> at the bottom-left corner.</li>
 <li>On the <strong>TCF Settings</strong> Tab:</li>
-<li><strong>Tick the checkbox</strong> labeled <strong>"Use GCM"</strong>.</li>
+<li><strong>Tick the checkbox</strong> labeled <strong>Use GCM</strong>.</li>
 <li>
 <p>This will enable the GCMv2 for your CMP config</p>
 <p><img alt="" src="../../img/GCMv2Settings.png" /></p>
 </li>
+<li>
+<p><strong>Use GCM Advance Mode</strong> is enabled by default. You can uncheck this if you want to use the <strong>Basic Mode</strong>.</p>
+</li>
 </ul>
+<p><strong>Note:</strong> when the using GCM Basic Mode, the <strong>GTM template</strong> deployment option will not be available.</p>
 <h4 id="consent-mapping">Consent Mapping:</h4>
 <p>You’ll now see default mapping for the following Google consent signals:
 - <code>ad_storage</code>
@@ -298,6 +304,22 @@
 <p><strong>Note:</strong> When you click <strong>Publish</strong>, the system will validate all required fields. If anything is missing, it will display an error.</p>
 </blockquote>
 <p>Once the config is published, you’ll be provided with a <strong>deployment script</strong>, which you can embed directly in your webpage to activate Consent Mode v2.</p>
+<blockquote>
+<p><strong>Note:</strong> If you are using <strong>GCM Basic Mode</strong>, you will see additional logic in your deployment script.
+   <img alt="" src="../../img/additional_Gtm_logic.png" /></p>
+</blockquote>
+<p>below the comment <code>// Insert your GTM script here</code> you can add your GTM script. You can get the GTM script from your GTM account. It will look like this:</p>
+<pre><code class="language-js">(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({ &quot;gtm.start&quot;: new Date().getTime(), event: &quot;gtm.js&quot; });
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s),
+    dl = l != &quot;dataLayer&quot; ? &quot;&amp;l=&quot; + l : &quot;&quot;;
+  j.async = true;
+  j.src = &quot;https://www.googletagmanager.com/gtm.js?id=&quot; + i + dl;
+  f.parentNode.insertBefore(j, f);
+})(window, document, &quot;script&quot;, &quot;dataLayer&quot;, &quot;{{Your_GTM_ID}}&quot;);
+</code></pre>
               
             </div>
           </div><footer>
