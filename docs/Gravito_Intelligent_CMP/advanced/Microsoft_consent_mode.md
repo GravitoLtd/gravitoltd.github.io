@@ -53,12 +53,6 @@ You may continue filling out the other CMP configuration steps, or jump directly
 
           Add the `adsConsentId` property under the `core` section of your config manually.
 
-    <pre><code>
-      "core": {
-          "adsConsentId": [1] // or {{YOUR_CONSENT_ITEM_ID}}
-          // ... other core settings
-      }
-    </code></pre>
 
 3.  Define `adsConsentId` Based on CMP Type
 
