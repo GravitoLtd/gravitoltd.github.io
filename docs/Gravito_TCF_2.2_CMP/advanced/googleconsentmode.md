@@ -134,10 +134,11 @@ Gravito TCF 2.2 CMP supports two ways to enable Consent Mode v2:
 
 Once the config is published, you’ll be provided with a **deployment script**, which you can embed directly in your webpage to activate Consent Mode v2.
 
->**Note:** If you are using **GCM Basic Mode**, you will see additional logic in you deployment script.
+>**Note:** If you are using **GCM Basic Mode**, you will see additional logic in your deployment script.
    ![](../img/additional_Gtm_logic.png)
 
    below the comment `// Insert your GTM script here` you can add your GTM script. You can get the GTM script from your GTM account. It will look like this:
+   
 ```js
 (function (w, d, s, l, i) {
   w[l] = w[l] || [];

@@ -1,7 +1,7 @@
 # Consent Management: Microsoft Consent Mode
 
-_Last updated: _  
-_Announced: _
+_Last updated: 06/05/2025_  
+_Announced: 05/06/2025_
 
 ---
 
