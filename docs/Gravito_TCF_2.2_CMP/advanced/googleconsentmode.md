@@ -28,15 +28,19 @@ With **Consent Mode v2**, Google introduced two **new consent signals** required
 
 ### Creating Config in Admin Portal
 - **Login** to the Gravito Admin Portal.
-- Click on the **"CMP"** tab.
-- Select the TCF 2.2 CMP from the option.
+- Click on the **CMP** tab.
+- Select the **TCF 2.2 CMP Configurator** from the option.
 - On the CMP Config listing page, click the **"New Configuration"** button to create a new CMP Config.
 - Fill in the **basic information**, then click **Next** at the bottom-left corner.
 - On the **TCF Settings** Tab:
-  - **Tick the checkbox** labeled **"Use GCM"**.
+  - **Tick the checkbox** labeled **Use GCM**.
   - This will enable the GCMv2 for your CMP config
 
     ![](../img/GCMv2Settings.png)
+
+   - **Use GCM Advance Mode** is enabled by default. You can uncheck this if you want to use the **Basic Mode**.
+
+**Note:** when the using GCM Basic Mode, the **GTM template** deployment option will not be available.
 
 #### Consent Mapping:
 
@@ -129,3 +133,20 @@ Gravito TCF 2.2 CMP supports two ways to enable Consent Mode v2:
 >**Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.
 
 Once the config is published, you’ll be provided with a **deployment script**, which you can embed directly in your webpage to activate Consent Mode v2.
+
+>**Note:** If you are using **GCM Basic Mode**, you will see additional logic in you deployment script.
+   ![](../img/additional_Gtm_logic.png)
+
+   below the comment `// Insert your GTM script here` you can add your GTM script. You can get the GTM script from your GTM account. It will look like this:
+```js
+(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s),
+    dl = l != "dataLayer" ? "&l=" + l : "";
+  j.async = true;
+  j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+  f.parentNode.insertBefore(j, f);
+})(window, document, "script", "dataLayer", "{{Your_GTM_ID}}");
+```

@@ -26,3 +26,4 @@ Based on the CMP you are using, please refer to below setup documentation for co
 
 - [Gravito Intelligent CMP](../Gravito_Intelligent_CMP/advanced/Microsoft_consent_mode.md)
 - [Gravito TCF CMP](../Gravito_TCF_2.2_CMP/advanced/Microsoft_consent_mode.md)
+- [Official Microsoft Documentation](https://help.ads.microsoft.com/#apex/ads/en/56960/1-500)

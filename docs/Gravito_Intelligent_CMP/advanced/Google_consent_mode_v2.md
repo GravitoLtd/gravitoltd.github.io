@@ -27,16 +27,21 @@ With **Consent Mode v2**, Google introduced two **new consent signals** required
 ## Enabling Google Consent Mode v2 in Gravito CMP
 
 ### Creating Config in Admin Portal
-- **Login** to the Gravito Admin Portal.
-- Click on the **"CMP"** tab.
-- Select the Gravito CMP from the option.
-- On the CMP Config listing page, click the **"New Configuration"** button to create a new CMP Config.
-- Fill in the **basic information**, then click **Next** at the bottom-left corner.
-- On the **Consent Category** page:
-  - **Tick the checkbox** labeled **"Use GCMv2"**.
-  - This will open a section for **Google Consent Mode mapping**.
+
+1. **Login** to the Gravito Admin Portal.
+2. Click on the **CMP** tab.
+3. Select the **Gravito CMP Configurator** from the option.
+4. On the CMP Config listing page, click the **New Configuration** button to create a new CMP Config.
+5. Fill in the **basic information**, then click **Next** at the bottom-left corner.
+6. On the **Consent Category** page:
+    - **Tick the checkbox** labeled **"Use GCMv2"**.
+    - This will open a section for **Google Consent Mode mapping**.
 
     ![](../images/GCMv2img2.png)
+
+    - **Use GCM Advance Mode** is enabled by default. You can uncheck this if you want to use the **Basic Mode**.
+
+**Note:** when the using GCM Basic Mode, the **GTM template** deployment option will not be available.
 
 #### Consent Mapping:
 
@@ -132,3 +137,20 @@ Gravito CMP supports two ways to enable Consent Mode v2:
 > **Note:** When you click **Publish**, the system will validate all required fields. If anything is missing, it will display an error.
 
 Once the config is published, you’ll be provided with a **deployment script**, which you can embed directly in your webpage to activate Consent Mode v2.
+
+>**Note:** If you are using **GCM Basic Mode**, you will see additional logic in you deployment script.
+   ![](../images/additional_Gtm_logic.png)
+
+   below the comment `// Insert your GTM script here` you can add your GTM script. You can get the GTM script from your GTM account. It will look like this:
+```js
+(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s),
+    dl = l != "dataLayer" ? "&l=" + l : "";
+  j.async = true;
+  j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+  f.parentNode.insertBefore(j, f);
+})(window, document, "script", "dataLayer", "{{Your_GTM_ID}}");
+```
