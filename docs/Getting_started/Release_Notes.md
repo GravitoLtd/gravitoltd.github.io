@@ -12,7 +12,12 @@ Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 79 - 15/04/2025 <mark>New</mark>
+## Release notes: Sprint 80 - 06/05/2025 <mark>New</mark>
+
+- Added support for Microsoft's universal Tracking (UET) and GCM V2 Basic/Advanced setup in the Gravito Intelligent and TCF CMP configurator.
+- UI improvements in PRO CMP configurator for better user experience.
+
+## Release notes: Sprint 79 - 15/04/2025
 
 - Added GCM-V2 default setup for Gravito CMP, TCF CMP & Pro Gravito CMP in their respective configurators.
 - Improved Reporting UI for better user experience and accurate data representation.
