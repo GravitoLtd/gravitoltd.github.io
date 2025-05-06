@@ -14,6 +14,7 @@ Here are few of the advanced features of Gravito TCF 2.2 CMP
 2. [Gravito CMP Integration with Google Advertising Products](./advanced/googleadproducts.md)
 3. [Gravito CMP Integration with Google additional consent mode](./advanced/googleacm.md)
 4. [Gravito CMP Integration with Google consent mode V2](./advanced/googleconsentmode.md)
+5. [Gravito CMP Integration with Microsoft consent mode](./advanced/Microsoft_consent_mode.md)
 
 ## Customization
 

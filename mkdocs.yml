@@ -29,6 +29,7 @@ nav:
   - Consent Managment:
       - IAB TCF: 'Consent_Management/Iab_tcf.md'
       - Google Consent Mode: 'Consent_Management/Google_consent_mode.md'
+      - Microsoft Consent Mode: 'Consent_Management/Microsoft_consent_mode.md'
   - Gravito Pro CMP:
       - Getting Started: 'Gravito_Pro_CMP/Getting_Started.md'
       - Setup and Design: 'Gravito_Pro_CMP/Setup_and_Design.md'

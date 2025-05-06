@@ -4,7 +4,11 @@ Here are the links to the advanced features supported by Gravito Intelligent CMP
 
 ### Google Consent Mode V2
 
- 1. [Implementing Google Consent Mode V2](./advanced/Google_consent_mode_v2.md)
+1.  [Implementing Google Consent Mode V2](./advanced/Google_consent_mode_v2.md)
+
+### Microsoft Consent Mode
+
+1.  [Implementing Microsoft Consent Mode](./advanced/Microsoft_consent_mode.md)
 
 ### Customization
 
