@@ -33,6 +33,8 @@ nav:
   - Gravito Pro CMP:
       - Getting Started: 'Gravito_Pro_CMP/Getting_Started.md'
       - Setup and Design: 'Gravito_Pro_CMP/Setup_and_Design.md'
+      - Gravito CMP's GCM-V2: 'Gravito_Pro_CMP/Gravito_cmp_gcmv2.md'
+      - Gravito CMP's UET: 'Gravito_Pro_CMP/Gravito_cmp_uet.md'
       - Release Notes: 'Gravito_Pro_CMP/Release_Notes.md'
   - Gravito Intelligent CMP:
       - Getting Started: 'Gravito_Intelligent_CMP/Getting_Started.md'
