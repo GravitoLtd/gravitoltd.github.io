@@ -33,12 +33,12 @@ With **Consent Mode v2**, Google introduced two **new consent signals** required
 3. Select the **Gravito Pro CMP Configurator** from the option.
 4. On the CMP Config listing page, click the **New Configuration** button to create a new CMP Config.
 5. Give config an appropriate name and choose **TCF CMP** as **Framework**. After that, click **Get Started** to proceed.
-        ![](./img/tcf_configurator_setup.png)
+        ![](../../img/tcf_configurator_setup.png)
 
 6. Now navigate to **TCF CMP** tab and **TCF Settings** sub-tab for GCMv2 related setup.
 7. You can enable GCM by checking the checkbox labeled **Google's GCM-V2**.
 8. After enabling GCM, some additional fields will appear for configuration.
-    ![](./img/tcf_gcm_setup.png)
+    ![](../../img/tcf_gcm_setup.png)
 
     - **Use GCM Advance Mode** is enabled by default. You can uncheck this if you want to use the **Basic Mode**.
     - All other fields are related to Google consent signal mapping. They are explained below.
@@ -61,7 +61,7 @@ you may continue filling out the other CMP configuration steps, or jump directly
 
 >**Note:** If you are using **GCM Basic Mode**, you will see additional logic in your deployment script.
 
-   ![](./img/tcf_additional_Gtm_logic.png)
+   ![](../../img/tcf_additional_Gtm_logic.png)
 
    below the comment `// Insert your GTM script here` you can add your GTM script. You can get the GTM script from your GTM account. It will look like this:
    

@@ -11,12 +11,12 @@ Pro Gravito CMP supports two ways to enable Microsoft's Universal Consent Mode:
 3. Select the **Gravito Pro CMP Configurator** from the option.
 4. On the CMP Config listing page, click the **New Configuration** button to create a new CMP config.
 5. Give config an appropriate name and choose **Gravito CMP** as **Framework**. After that, click **Get Started** to proceed.
-        ![](./img/configurator_setup.png)
+        ![](../../img/configurator_setup.png)
 
 6. Now navigate to **Gravito CMP** tab and **Consent Categories** sub-tab for UET related setup.
 7. You can enable UET by checking the checkbox labeled **Microsoft's Universal Event Tracking (UET)**.
 8. After enabling UET, an additional field will appear for configuration.
-    ![](./img/uet_setup.png)
+    ![](../../img/uet_setup.png)
 
 #### Consent Mapping:
 
