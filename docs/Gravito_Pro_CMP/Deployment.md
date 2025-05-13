@@ -17,6 +17,53 @@ This option allows you to quickly integrate Gravito's CMP with your website usin
 
     ![](./img/gtm_deployment2.png)
 
+3. **Login** to your **Google Tag Manager** account and click on a new **Tag**.
+
+    #### Tag Configuration:
+    - Choose the **Gravito Consent Management** template from the list.
+
+    ![](../img/GTMTemplateSearch.png)
+
+    #### Fill the fields:
+
+    | Field                          | Description                                                                 |
+    |--------------------------------|-----------------------------------------------------------------------------|
+    | **Gravito Token**              | Paste the **CMP token** copied from Gravito portal                          |
+    | **Gravito CMP type**           | Select **Gravito Pro CMP**              |
+    | ✅ **Enable Google Consent Mode** | Enable this to activate GCM support                                       |
+
+    ---
+
+    ### Google Consent Mode Settings
+
+    | Option                     | Description                                                                 |
+    |----------------------------|-----------------------------------------------------------------------------|
+    | **Wait for update**        | Time to wait (in ms) for consent before proceeding (default: `2000`)        |
+    | **Enable URL passthrough** | Optional: Enable if you need to forward consent state via query params      |
+    | **Redact ads data**        | Set to **Dynamic (based on ad_storage)** for flexible ad personalization    |
+
+    ---
+
+    ### Default Consent State (Optional)
+
+    - Configure regional preferences if needed.
+    - You can **leave it blank** to apply globally.
+
+    ![](../img/GTMTemplateView.png)
+
+    ### Add Trigger and Save
+
+    - Add a **Page View** or **All Pages** trigger to fire this tag on every page load.
+    - Click **Save**.
+
+    
+
+    ### Publish the GTM Container
+
+    - Submit and **Publish** the container.
+    - CMP will now load and handle consent dynamically on your site.
+
+
 ## 2. WordPress Plugin:
 Seamlessly integrate Gravito's CMP into your WordPress website using our dedicated plugin. Please follow the steps below to deploy using the WordPress plugin:
 
@@ -27,6 +74,10 @@ Seamlessly integrate Gravito's CMP into your WordPress website using our dedicat
 2. if the validation and publishing is successful, you will get an option to copy WordPress Token by clicking on the **Copy WordPress Token** button.
 
     ![](./img/wordpress_deployment2.png)
+
+3. Use this token in the WordPress plugin to integrate Gravito's CMP into your website.
+
+
 
 ## 3. Deployment Script:
 Utilize the deployment script to efficiently incorporate Gravito's CMP into your website's codebase. Please follow the steps below to deploy using the deployment script:

@@ -111,7 +111,7 @@ window.addEventListener('gravito:cmp:light', function (event) {
 });
 ```
 
-Below is the list of event typse dispatched by the Gravito CMP component:
+Below is the list of event types  dispatched by the Gravito CMP component:
 
 | Event Name | Description |
 |------------|-------------|
