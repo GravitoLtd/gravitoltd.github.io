@@ -17,8 +17,13 @@ With **Consent Mode v2**, Google introduced two **new consent signals** required
 - `analytics_storage`
 - `ad_user_data` (🆕)
 - `ad_personalization` (🆕)
+- `functionality_storage`
+- `personalization_storage`
+- `security_storage`
 
 > The new signals `ad_user_data` and `ad_personalization` are essential under DMA for platforms like Google Ads and should be set according to user consent.
+
+**Note:** The `functionality_storage`, `personalization_storage`, and `security_storage` signals can only be set to `granted` or `denied`.
 
 **[Official Google Documentation on Consent Mode v2](https://developers.google.com/tag-platform/devguides/consent)**
 
