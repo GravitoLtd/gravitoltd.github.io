@@ -7,6 +7,7 @@ In PRO CMP you can fire GTM tags based on the consents given by the user. This i
 You can modify this field in either of the following ways:
 
 1.  **Using Configurator**:  
+
     -   Open the CMP configurator in admin Portal.  
     -   Select the config from the list and click on the **Copy Configuration** icon/button.  
     -   This will create a new CMP config with the same settings as the original one. Now enter the name on the Basic Settings page and click the **Get Started** button.  
@@ -25,8 +26,10 @@ You can modify this field in either of the following ways:
 
 
 2.  **Without Configurator**:
+
     -   if you are having Gravito CMP component in context then update the gtmTags field at `window.gravitoPROCMPConfig.gravitoCMP.core.gtmTags` in the config object.
     below code is an example of how the gtmTags field should look like:
+    
 ```javascript
 gravitoCMP: {
     core: {

@@ -1,6 +1,7 @@
 # Customizations in PRO CMP
 
 Gravito's PRO CMP is a highly customizable solution that allows you to tailor the user experience to meet your specific needs. These customizations can be made through the **Styles** tab in Gravito's PRO CMP configurator.
+<br>
     ![](./img/style_tab.png)
 
 ## Styles Tab Fields
@@ -52,6 +53,6 @@ The **Styles** tab allows you to configure the appearance of your CMP. Below are
 
 ## Additional Customizations
 
-Apart from the styles tab, you can also customize the look and feel of the CMP by adding custom CSS. This allows for more granular control over the appearance of various elements within the CMP. You can add your CSS code in the **Custom CSS** editor field in the **Apprarence** sub-tab of the selected framework.
+Apart from the styles tab, you can also customize the look and feel of the CMP by adding custom CSS. This allows for more granular control over the appearance of various elements within the CMP. You can add your CSS code in the **Custom CSS** editor field in the **Appearence** sub-tab of the selected framework.
 
 ![](./img/custom_css.png)
