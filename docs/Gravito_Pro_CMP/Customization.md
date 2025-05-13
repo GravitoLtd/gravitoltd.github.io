@@ -10,7 +10,7 @@ The **Styles** tab allows you to configure the appearance of your CMP. Below are
 
 ### 1. Logo URL
 - **Description**: URL of the logo to be displayed in the CMP.
-- **Example**: `https://gravitocdn.blob.core.windows.net/logos/Website_DEMO_logo.png`
+- **Example**: `https://cdn.gravito.net/logos/Website_DEMO_logo.png`
 - **Note**: It is recommended to use a logo that aligns with your brand identity.
 
 ### 2. Logo Alternate Text
