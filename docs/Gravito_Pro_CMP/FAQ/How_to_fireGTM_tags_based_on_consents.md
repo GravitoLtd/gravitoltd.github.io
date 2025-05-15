@@ -1,25 +1,25 @@
-# How to fire GTM tags based on consents in CMP?
+# How to Fire GTM Tags Based on Consents in CMP?
 
->Note: This Feature is only available in PRO CMP - Gravito CMP Component.
+>Note: This feature is only available in the PRO CMP – Gravito CMP Component.
 
-In PRO CMP you can fire GTM tags based on the consents given by the user. This is done by configuring  the gtmTags field in PRO CMP config. The gtmTags field is an array of objects, where each object represents the Trigger events and its configurations which will be used to fire the GTM tags.
+In PRO CMP you can fire GTM tags based on the consents given by the user. This is done by configuring  the `gtmTags` field in PRO CMP config. The gtmTags field is an array of objects, where each object represents the Trigger events and its configurations which will be used to fire the GTM tags.
 
 You can modify this field in either of the following ways:
 
 1.  **Using Configurator**:  
 
-    -   Open the CMP configurator in admin Portal.  
+    -   Open the CMP configurator in the Admin Portal.  
     -   Select the config from the list and click on the **Copy Configuration** icon/button.  
     -   This will create a new CMP config with the same settings as the original one. Now enter the name on the Basic Settings page and click the **Get Started** button.  
     -   In the left-side menu, select the **Gravito CMP** component.  
     -   Now click on **Consent Categories** Tab.  
-    -   In this tab, you will see the `gtmTags` sections. Click on Add GTM Tags button to add a new GTM tag configuration.It will open a modal which will have the following fields:  
+    -   In this tab, you will see the `gtmTags` sections. Click the Add GTM Tags button to add a new GTM tag configuration.It will open a modal containing the following fields:  
         - **Trigger Name**: This is the event name which will be added to the data layer, and In GTM you can create a Custom Trigger using this event.  
-        - **Consents**: In this multi-select control you can choose the cosnents item to which you want to bind this events, i.e value of this consent will decide wether to add the above events in the dataLayer object.
-        - **Fire Once**: Check this checkbox if you want to fire the event only once in the session. In maximum cases you will need to keep this flag checked as you want your tag to fire once to avoid duplicate loading of tags.
+        - **Consents**: In this multi-select control you can choose the consent items to which you want to bind these events, i.e., the value of this consent will decide wether to add the above events in the dataLayer object.
+        - **Fire Once**: Check this checkbox if you want to fire the event only once in the session. In most cases you will need to keep this flag checked as you want your tag to fire once to avoid duplicate loading of tags.
         
     -   Once you have added the GTM tag configuration by clicking **Save**, you can see it in the list of GTM tags. You can add multiple GTM tags by clicking on the **Add GTM Tags** button again.
-    - Click on the **Save Progress** button and then click on the **Publish** button to publish the new config.  
+    - Click the **Save Progress** button and then click on the **Publish** button to publish the new config.  
     -   Now when you will use this updated config in your website, it will fire GTM tags based on the consents given by the user.
 
    ![](../img/gtmTags.png)
@@ -36,7 +36,7 @@ gravitoCMP: {
         gtmTags: [
             {
                 triggerName: 'Marketing Consent update', // this is the event name which will be added to the data layer
-                consentIds: [3], // this will be the consent id to which this event will be binded
+                consentIds: [3], // this will be the consent id to which this event will be bound
                 fireOnce: true // this will decide whether to fire the event only once in the session or not
             },
             {
