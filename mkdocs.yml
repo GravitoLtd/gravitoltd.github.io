@@ -38,6 +38,14 @@ nav:
       - Deployment: 'Gravito_Pro_CMP/Deployment.md'
       - FAQ's: 'Gravito_Pro_CMP/FAQ.md'
       - Release Notes: 'Gravito_Pro_CMP/Release_Notes.md'
+  - Gravito CMP (New):
+      - Getting Started: 'Gravito_V6_CMP/Getting_Started.md'
+      - Setup and Design: 'Gravito_V6_CMP/Setup_and_Design.md'
+      - Customization: 'Gravito_V6_CMP/Customization.md'
+      - Components: 'Gravito_V6_CMP/Components.md'
+      - Deployment: 'Gravito_V6_CMP/Deployment.md'
+      - FAQ's: 'Gravito_V6_CMP/FAQ.md'
+      - Release Notes: 'Gravito_V6_CMP/Release_Notes.md'
   - Gravito Intelligent CMP:
       - Getting Started: 'Gravito_Intelligent_CMP/Getting_Started.md'
       - Setup and Design: 'Gravito_Intelligent_CMP/Setup_and_Design.md'
