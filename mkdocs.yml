@@ -30,14 +30,6 @@ nav:
       - IAB TCF: 'Consent_Management/Iab_tcf.md'
       - Google Consent Mode: 'Consent_Management/Google_consent_mode.md'
       - Microsoft Consent Mode: 'Consent_Management/Microsoft_consent_mode.md'
-  - Gravito Pro CMP:
-      - Getting Started: 'Gravito_Pro_CMP/Getting_Started.md'
-      - Setup and Design: 'Gravito_Pro_CMP/Setup_and_Design.md'
-      - Customization: 'Gravito_Pro_CMP/Customization.md'
-      - Components: 'Gravito_Pro_CMP/Components.md'
-      - Deployment: 'Gravito_Pro_CMP/Deployment.md'
-      - FAQ's: 'Gravito_Pro_CMP/FAQ.md'
-      - Release Notes: 'Gravito_Pro_CMP/Release_Notes.md'
   - Gravito CMP (New):
       - Getting Started: 'Gravito_V6_CMP/Getting_Started.md'
       - Setup and Design: 'Gravito_V6_CMP/Setup_and_Design.md'
@@ -58,7 +50,14 @@ nav:
       - Mobile apps: 'Gravito_TCF_2.2_CMP/Mobile_apps.md'
       - Release Notes: 'Gravito_TCF_2.2_CMP/Release_Notes.md'
       - Advanced features: 'Gravito_TCF_2.2_CMP/Advanced_features.md'
-
+  - Gravito Pro CMP:
+      - Getting Started: 'Gravito_Pro_CMP/Getting_Started.md'
+      - Setup and Design: 'Gravito_Pro_CMP/Setup_and_Design.md'
+      - Customization: 'Gravito_Pro_CMP/Customization.md'
+      - Components: 'Gravito_Pro_CMP/Components.md'
+      - Deployment: 'Gravito_Pro_CMP/Deployment.md'
+      - FAQ's: 'Gravito_Pro_CMP/FAQ.md'
+      - Release Notes: 'Gravito_Pro_CMP/Release_Notes.md'
   - Gravito SDK:
       - Getting Started: 'Gravito_SDK/Getting_Started.md'
       - Release Notes: 'Gravito_SDK/Release_Notes.md'
