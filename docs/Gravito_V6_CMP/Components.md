@@ -4,7 +4,7 @@ Gravito CMP (New) can be used to deploy various CMP components such as the Stand
 
 ## - Standard CMP  
 Gravito’s own non-TCF  CMP. It is a lightweight solution suitable for any website.  
-[Standard CMP Documentation](./Components/GravitoCMP/gravito_cmp.md)
+[Standard CMP Documentation](./Components/StandardCMP/gravito_cmp.md)
 
 ## - TCF 2.2 CMP  
 A TCF-certified CMP designed for GDPR compliance. It is a full-featured CMP suitable for any website.  

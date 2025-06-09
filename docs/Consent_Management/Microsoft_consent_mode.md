@@ -24,6 +24,9 @@ Consent Mode is set via a property in UET called `ad_storage`. The possible valu
 
 Based on the CMP you are using, please refer to below setup documentation for configuring Microsoft Consent Mode.
 
+- [Gravito New CMP (Standard Component) setup and implementation guide](../Gravito_V6_CMP/Components/StandardCMP/Gravito_cmp_uet.md).
+- [Gravito New CMP (TCF Component) setup and implementation guide](../Gravito_V6_CMP/Components/TCFCMP/tcf_cmp_uet.md).
+
 - [Gravito Intelligent CMP](../Gravito_Intelligent_CMP/advanced/Microsoft_consent_mode.md)
 - [Gravito TCF CMP](../Gravito_TCF_2.2_CMP/advanced/Microsoft_consent_mode.md)
 - [Official Microsoft Documentation](https://help.ads.microsoft.com/#apex/ads/en/56960/1-500)

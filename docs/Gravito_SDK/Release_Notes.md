@@ -1,6 +1,65 @@
 Release Notes
 =============
 
+Release Notes 6.0.0 (v600) (10/06/2025)
+
+New Features:
+
+- Added support for Gravito CMP v6 and all its components.  
+  This version introduces full compatibility with the latest Gravito CMP v6, enabling seamless integration with all CMP modules.
+- Changed the signature of the `gravito.init()`  
+  This allows for more flexible and dynamic initialization of the Gravito SDK.
+
+Changes:
+
+- Removed unused modules to improve performance and reduce SDK size.
+- Major refactor for v6 compatibility.
+
+Breaking Changes:
+
+- This version is not backward compatible.
+- CMP versions below v6 are no longer supported.
+
+Integration:
+
+Use the following snippet to include this version of the SDK in your project:
+
+```html
+<script>
+    // init gravito 
+    window.gravito = {};
+    
+    // add config object to gravito
+    window.gravito.config = {
+        cmp: {
+            settings: {
+                // common settings for all CMP components
+            },
+            styles: {
+                // common styles for all CMP components
+            },
+            tcf: {
+                // configuration for TCF CMP
+            },
+            standard: {
+                // configuration for standard CMP
+            },
+        },
+        firstParty: {
+            // configuration for first party CMP
+        }
+    };
+
+    // load gravito SDK
+    var gravitoSDKTag = document.createElement("script");
+    gravitoSDKTag.src = "https://cdn.gravito.net/sdk/v6/latest/sdk.js";
+    gravitoSDKTag.onload = function () {
+        window.gravito.init();
+    };
+    document.body.appendChild(gravitoSDKTag);
+</script>
+```
+
 Release Notes 3.0.6 (v306)* (06/05/2025)*
 
 New Features:

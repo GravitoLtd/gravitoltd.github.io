@@ -77,3 +77,31 @@ you may continue filling out the other CMP configuration steps, or jump directly
   f.parentNode.insertBefore(j, f);
 })(window, document, "script", "dataLayer", "{{Your_GTM_ID}}");
 ```
+
+### Custom Events in dataLayer
+
+Gravito SDK as well as the GTM template will automatically push custom events to the `dataLayer` based on user consent choices. These events can be used to trigger specific tags in Google Tag Manager.
+
+Below are the primary GTM events pushed by Gravito for consent updates:
+
+- **gravitoGCMConsents**
+
+  This event is triggered when there is an update in the Gravito Consent Management (GCM) consents. It pushes the current consent states as an object, which can be used for conditional tag firing in GTM.
+
+  ```javascript
+  dataLayer.push({
+    event: "gravitoGCMConsents",
+    consents: consents,  // Object containing the user's consent states
+  });.
+  ```
+- **gravitoTCFConsents**
+
+  This event is triggered when there is an update in the Gravito Consent Management (GCM) consents. It pushes the current consent states as an object, which can be used for conditional tag firing in GTM.
+
+```javascript
+ window.dataLayer.push({
+  event: "gravitoTCFConsents",
+  consentObj: currentState,  // Object representing the current TCF consent state
+});
+  ```
+

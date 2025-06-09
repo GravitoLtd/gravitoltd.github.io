@@ -35,9 +35,13 @@ For example:
 To enable Google Consent Mode via Gravito CMP, you’ll need:
 
 1. **A Gravito TCF 2.2 CMP/ Intelligent CMP implementation**
-      - This should be already configured and running on your site. If not, 
+This should be already configured and running on your site. If not, 
+
+      - [Gravito New CMP (Standard Component) setup and implementation guide](../Gravito_V6_CMP/Components/StandardCMP/Gravito_cmp_gcmv2.md).
+      - [Gravito New CMP (TCF Component) setup and implementation guide](../Gravito_V6_CMP/Components/TCFCMP/tcf_cmp_gcmv2.md).
       - [TCF 2.2 setup and implementation guide](../Gravito_TCF_2.2_CMP/advanced/googleconsentmode.md).
       - [Intelligent CMP setup and implementation guide](../Gravito_Intelligent_CMP/advanced/Google_consent_mode_v2.md).
+   
 
 2. **Gravito Google Consent Mode support enabled**
       - Gravito handles tag-level behavior without needing manual Google Tag Manager configuration.  
