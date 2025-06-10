@@ -4,15 +4,22 @@ Stay up to date with our latest releases!
 
 Gravito’s release notes are generally divided as different category as development happens constantly under all categories. You can jump to specific release notes here
 
-- [Gravito Intelligent CMP](https://docs.gravito.net/Gravito_Intelligent_CMP/Release_Notes/)
-- [Gravito TCF 2.2 CMP](https://docs.gravito.net/Gravito_TCF_2.2_CMP/Release_Notes/)
+- [Gravito CMP](https://docs.gravito.net/Gravito_V6_CMP/Release_Notes/) <mark>Latest</mark>
+- [Gravito Intelligent CMP](https://docs.gravito.net/Gravito_Intelligent_CMP/Release_Notes/) (Only applicable to existing deployments)
+- [Gravito TCF 2.2 CMP](https://docs.gravito.net/Gravito_TCF_2.2_CMP/Release_Notes/)  (Only applicable to existing deployments)
 - [Gravito SDK](https://docs.gravito.net/Gravito_SDK/Release_Notes/)
 
 Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 80 - 06/05/2025 <mark>New</mark>
+## Release notes: Sprint 81 - 10/06/2025 <mark>New</mark>
+
+- Latest version of Gravito CMP and its **modular Configurator**. This is the latest version of Gravito and is a powerful, new tool from Gravito designed for ultimate customizability and flexibility. It provides a single, consistent setup-to-deployment process for all CMP frameworks, making consent management smoother than ever! 
+  - Existing versions of CMP will continue to function.
+- Possibility of Custom Tabs on the CMP.
+
+## Release notes: Sprint 80 - 06/05/2025 
 
 - Added support for Microsoft's universal Tracking (UET) and GCM V2 Basic/Advanced setup in the Gravito Intelligent and TCF CMP configurator.
 - UI improvements in PRO CMP configurator for better user experience.
