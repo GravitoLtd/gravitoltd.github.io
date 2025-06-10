@@ -269,7 +269,7 @@ Below is the list of event types dispatched by the TCF CMP component:
 
 # FAQ's
 
-- [How to Resurface the CMP UI to All users and Collect Consent Again?](../../FAQ/How_to_resurface_ProCMP.md)
+- [How to Resurface the CMP UI to All users and Collect Consent Again?](../../FAQ/How_to_resurface_CMP.md)
 
 - [How to use your custom font in CMP?](../../FAQ/How_to_addCustomFonts.md)
 - [How to Provide Google with the Required Legitimate Interest's Even on Reject All Action?](../../FAQ/How_to_be_google_complaint.md)
