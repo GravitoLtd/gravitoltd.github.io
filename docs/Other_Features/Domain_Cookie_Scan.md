@@ -16,7 +16,7 @@ To enable the automated scan for your domain, please access Gravito's admin port
 ![](../img/domaincookiescan/adddomain.png)
 
 
-As you might be using various technologies on your site, at times it would be imposible for a automated scan to capture all possible cookies which are dropped. 
+As you might be using various technologies on your site, at times it would be impossible for a automated scan to capture all possible cookies which are dropped. 
 
 We provide an easier way for you to manage the cookie listing and publish the listing which will be used by the CMP banner.
 

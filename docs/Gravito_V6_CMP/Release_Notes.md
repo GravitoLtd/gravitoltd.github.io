@@ -24,5 +24,8 @@ Gravito CMP (New) includes **lazy loading**, reducing the initial load size of C
 #### Enhanced Tab-Based Layout
 The new **tab-based layout** improves usability and consent navigation. Users can now switch easily between different layers and settings, resulting in a more intuitive and efficient consent flow.
 
+#### Custom Tabs
+Now you can create custom tabs in the CMP interface, allowing you to display your own content or additional information relevant to your users.
+
 ---
 
