@@ -129,7 +129,7 @@ Below is the list of event types  dispatched by the Standard CMP component:
 
 # FAQ's
 
-- [How to Resurface the CMP UI to All users and Collect Consent Again?](../../FAQ/How_to_resurface_ProCMP.md)
+- [How to Resurface the CMP UI to All users and Collect Consent Again?](../../FAQ/How_to_resurface_CMP.md)
 
 - [How to use your custom font in CMP?](../../FAQ/How_to_addCustomFonts.md)
 
