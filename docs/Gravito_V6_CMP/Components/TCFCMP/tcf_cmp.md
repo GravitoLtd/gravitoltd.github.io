@@ -31,6 +31,103 @@ Additionally, you can also choose the type of consent input controls you want to
 
 Help content for each field is provided in the configurator itself. You can hover over each field to see the help content.
 
+## Stub loading
+
+We recommend adding the TCF stub in the <head> of your website so that it is the first thing that loads and the __tcfAPI window object is available early. Below is the stub script.
+
+
+```html
+<script>
+      "use strict";
+      !(function () {
+        var e = function () {
+          var e,
+            t = "__tcfapiLocator",
+            a = [],
+            n = window;
+          for (; n; ) {
+            try {
+              if (n.frames[t]) {
+                e = n;
+                break;
+              }
+            } catch (e) {}
+            if (n === window.top) break;
+            n = n.parent;
+          }
+          e ||
+            (!(function e() {
+              var a = n.document,
+                r = !!n.frames[t];
+              if (!r)
+                if (a.body) {
+                  var s = a.createElement("iframe");
+                  (s.style.cssText = "display:none"),
+                    (s.name = t),
+                    a.body.appendChild(s);
+                } else setTimeout(e, 5);
+              return !r;
+            })(),
+            (n.__tcfapi = function () {
+              for (
+                var e, t = arguments.length, n = new Array(t), r = 0;
+                r < t;
+                r++
+              )
+                n[r] = arguments[r];
+              if (!n.length) return a;
+              if ("setGdprApplies" === n[0])
+                n.length > 3 &&
+                  2 === parseInt(n[1], 10) &&
+                  "boolean" == typeof n[3] &&
+                  ((e = n[3]), "function" == typeof n[2] && n[2]("set", !0));
+              else if ("ping" === n[0]) {
+                var s = { gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub" };
+                "function" == typeof n[2] && n[2](s);
+              } else a.push(n);
+            }),
+            n.addEventListener(
+              "message",
+              function (e) {
+                var t = "string" == typeof e.data,
+                  a = {};
+                try {
+                  a = t ? JSON.parse(e.data) : e.data;
+                } catch (e) {}
+                var n = a.__tcfapiCall;
+                n &&
+                  window.__tcfapi(
+                    n.command,
+                    n.version,
+                    function (a, r) {
+                      var s = {
+                        __tcfapiReturn: {
+                          returnValue: a,
+                          success: r,
+                          callId: n.callId,
+                        },
+                      };
+                      t && (s = JSON.stringify(s)),
+                        e &&
+                          e.source &&
+                          e.source.postMessage &&
+                          e.source.postMessage(s, "*");
+                    },
+                    n.parameter
+                  );
+              },
+              !1
+            ));
+        };
+        "undefined" != typeof module ? (module.exports = e) : e();
+      })();
+</script>
+```
+If the stub is not added manually, our CMP will inject it automatically, but this may cause timing issues.
+
+
+
+
 ## Event & Integration
 
 TCF CMP Component, when used with PRO CMP, dispatches various events in its lifecycle. All these events are dispatched under the common namespace of `gravito:tcfv2:client`. You can listen to these events on your website and take the required action.
