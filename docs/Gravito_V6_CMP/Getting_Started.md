@@ -1,6 +1,8 @@
 # Introducing Gravito CMP (New)!
 
-**Gravito CMP (New)** is a powerful, new tool from Gravito designed for ultimate customizability and flexibility. It provides a single, consistent setup-to-deployment process for all CMP frameworks, making consent management smoother than ever! 
+**Gravito CMP (New)** is the latest version of Gravito and is a powerful, new tool from Gravito designed for ultimate customizability and flexibility. It provides a single, consistent setup-to-deployment process for all CMP frameworks, making consent management smoother than ever! 
+
+<span style="background-color: #FFFF00">Are you looking for the documentation of Gravito TCF CMP, Intelligent CMP or the PRO CMP. The links you had earlier will work and the documentation is still valid. If you cannot find a specific documentation please email us at **support(@)gravito.net** and we will help you with the same.</span>
 
 ## Quick Reminder:
 Have you registered with Gravito yet? 👉 [Get Registered Here](https://adminv2.gravito.net).
