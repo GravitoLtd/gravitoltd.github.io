@@ -59,39 +59,21 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Microsoft_consent_mode/">Microsoft Consent Mode</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Gravito Pro CMP</span></p>
+              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Pro_CMP/Getting_Started/">Getting Started</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Getting_Started/">Getting Started</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Pro_CMP/Setup_and_Design/">Setup and Design</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Setup_and_Design/">Setup and Design</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Pro_CMP/Release_Notes/">Release Notes</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Customization/">Customization</a>
                   </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Gravito Intelligent CMP</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/Getting_Started/">Getting Started</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Components/">Components</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/Setup_and_Design/">Setup and Design</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Deployment/">Deployment</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/GTM_Template/">GTM Template</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/FAQ/">FAQ's</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/Release_Notes/">Release Notes</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_Intelligent_CMP/Advanced_Features/">Advanced Features</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Gravito TCF 2.2 CMP</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_TCF_2.2_CMP/Getting_Started/">Getting Started</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_TCF_2.2_CMP/Setup_and_Design/">Setup and Design</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_TCF_2.2_CMP/Mobile_apps/">Mobile apps</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_TCF_2.2_CMP/Release_Notes/">Release Notes</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_TCF_2.2_CMP/Advanced_features/">Advanced features</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Release_Notes/">Release Notes</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito SDK</span></p>
@@ -128,8 +110,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/GVL_Comparison/">GVL Comparison</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/Prebid_User_Id_Module/">Prebid User Id Module</a>
-                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Try it out</span></p>
               <ul>
@@ -161,6 +141,60 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="release-notes">Release Notes</h1>
+<p>Release Notes 6.0.0 (v600) (10/06/2025)</p>
+<p>New Features:</p>
+<ul>
+<li>Added support for Gravito CMP v6 and all its components.<br />
+  This version introduces full compatibility with the latest Gravito CMP v6, enabling seamless integration with all CMP modules.</li>
+<li>Changed the signature of the <code>gravito.init()</code><br />
+  This allows for more flexible and dynamic initialization of the Gravito SDK.</li>
+</ul>
+<p>Changes:</p>
+<ul>
+<li>Removed unused modules to improve performance and reduce SDK size.</li>
+<li>Major refactor for v6 compatibility.</li>
+</ul>
+<p>Breaking Changes:</p>
+<ul>
+<li>This version is not backward compatible.</li>
+<li>CMP versions below v6 are no longer supported.</li>
+</ul>
+<p>Integration:</p>
+<p>Use the following snippet to include this version of the SDK in your project:</p>
+<pre><code class="language-html">&lt;script&gt;
+    // init gravito 
+    window.gravito = {};
+
+    // add config object to gravito
+    window.gravito.config = {
+        cmp: {
+            settings: {
+                // common settings for all CMP components
+            },
+            styles: {
+                // common styles for all CMP components
+            },
+            tcf: {
+                // configuration for TCF CMP
+            },
+            standard: {
+                // configuration for standard CMP
+            },
+        },
+        firstParty: {
+            // configuration for first party CMP
+        }
+    };
+
+    // load gravito SDK
+    var gravitoSDKTag = document.createElement(&quot;script&quot;);
+    gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdk/v6/latest/sdk.js&quot;;
+    gravitoSDKTag.onload = function () {
+        window.gravito.init();
+    };
+    document.body.appendChild(gravitoSDKTag);
+&lt;/script&gt;
+</code></pre>
 <p>Release Notes 3.0.6 (v306)<em> (06/05/2025)</em></p>
 <p>New Features:</p>
 <ul>
