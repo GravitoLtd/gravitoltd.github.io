@@ -53,6 +53,6 @@ The **Styles** tab allows you to configure the appearance of your CMP. Below are
 
 ## Additional Customizations
 
-Apart from the styles tab, you can also customize the look and feel of the CMP by adding custom CSS. This allows for more granular control over the appearance of various elements within the CMP. You can add your CSS code in the **Custom CSS** editor field in the **Appearence** sub-tab of the selected framework.
+Apart from the styles tab, you can also customize the look and feel of the CMP by adding custom CSS. This allows for more granular control over the appearance of various elements within the CMP. You can add your CSS code in the **Custom CSS** editor field in the **Appearance** sub-tab of the selected framework.
 
 ![](./img/custom_css.png)

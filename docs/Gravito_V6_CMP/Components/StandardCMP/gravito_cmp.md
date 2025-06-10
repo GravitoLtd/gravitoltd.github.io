@@ -11,9 +11,9 @@ You can use the Standard CM component in your v6 CMP while setting up your confi
 
 ## How to setup Standard CMP Component?
 Standard CMP setup can be done using Gravito CMP (New) Configurator on Gravito’s Admin Portal.
-Once you have selected the Gravito CMP component in the configurator, it will add the Gravito CMP tab in the left sidebar of the configurator. Click on it to open the Gravito CMP-specific configurator area.
+Once you have selected the Standard CMP component in the configurator, it will add the Standard CMP tab in the left sidebar of the configurator. Click on it to open the Gravito CMP-specific configurator area.
 
-![](../../img/gravito_cmp_tab.png)
+![](../../img/standard_cmp_tab.png)
 
 In this section, you will find the following tabs:
 
