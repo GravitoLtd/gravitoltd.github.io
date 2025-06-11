@@ -91,6 +91,14 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Setup and Validation</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-setup">Step 1 : Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-validation">Step 2 : Validation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-3-web">Step 3 : Web</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-4-mobile">Step 4 : Mobile</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Version_3_%28Latest%29/">Version 3 (Latest)</a>
@@ -138,13 +146,145 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h3 id="setup-and-validation">Setup and Validation</h3>
+                <h2 id="setup-and-validation">Setup and Validation</h2>
 <p>First Party domain means the domain your website operates. e.g. website.com. To avoid third party cookies being blocked (occurs already on many browsers) you can configure the CMP to set the cookies under first party domain or you can use Gravito’s first party API to store and retrieve other valuable profile data.</p>
 <p>To get started with first party setup, you first need to set up domain in <a href="https://adminv2.gravito.net">Gravito’s admin panel</a></p>
-<h3 id="setup-of-first-party-domain-step-1">Setup of first party domain, step 1.</h3>
+<h3 id="step-1-setup">Step 1 : Setup</h3>
+<p><strong>Setup of first party domain</strong></p>
 <p>Once you have configured your domain gto.website.com, you need to do the DNS changes for your domain. These steps are varying between different DNS providers, generally you have to configure three records:</p>
-<h3 id="first-party-domain-configuration-step-2">First party domain configuration, step 2.</h3>
-<p>After you have made the DNS records (A, TXT and CNAME), allow the changes to propagate to DNS servers (few minutes at least) and then press “Validate” button. After succesful validation you should see domain status as “Validated”:</p>
+<p><img alt="Screenshot of Gravito's DNA" src="../img/dnsentries.jpg" title="Screenshot of Gravito's DNS entries" /></p>
+<h3 id="step-2-validation">Step 2 : Validation</h3>
+<p><strong>First party domain configuration</strong>
+After you have made the DNS records (A, TXT and CNAME), allow the changes to propagate to DNS servers (few minutes at least) and then press “Validate” button. After succesful validation you should see domain status as “Validated”:</p>
+<h3 id="step-3-web">Step 3 : Web</h3>
+<p><strong>Setting up on Web</strong></p>
+<p>Once the DNS entries are done and validated, you can include our SDK. We have attached (as a Txt file) the sample script which for e.g. you can include inside a GTM tag.</p>
+<pre><code class="language-js">function waitForOrGetVendorConsent(vendorId, callback) {
+  if (typeof __tcfapi !== &quot;function&quot;) {
+    return callback(new Error(&quot;__tcfapi is not available.&quot;));
+  }
+
+  // First, check if we already have the TCData available
+  __tcfapi(&quot;getTCData&quot;, 2, function (tcData, success) {
+    if (success &amp;&amp; tcData &amp;&amp; tcData.vendor &amp;&amp; tcData.vendor.consents) {
+      var hasConsent = tcData.vendor.consents[vendorId] === true;
+      // If consent string already exists and eventStatus isn't 'tcloaded', we can resolve
+      if (
+        tcData.eventStatus === &quot;useractioncomplete&quot; ||
+        tcData.eventStatus === &quot;tcloaded&quot;
+      ) {
+        return callback(null, hasConsent);
+      }
+    }
+
+    // Otherwise, wait for consent update via event listener
+    var listener = function (updatedData, ok) {
+      if (!ok || !updatedData) return;
+
+      if (updatedData.vendor &amp;&amp; updatedData.vendor.consents) {
+        var hasConsent = updatedData.vendor.consents[vendorId] === true;
+        // Clean up listener
+        __tcfapi(&quot;removeEventListener&quot;, 2, function () {}, listener);
+        callback(null, hasConsent);
+      }
+    };
+
+    __tcfapi(&quot;addEventListener&quot;, 2, listener);
+  });
+}
+
+function initilizeGravitoSDK(callback) {
+  try {
+    window.gravitoPROCMPConfig = {
+      settings: {
+        sdkVersion: 3,
+      },
+    };
+    var gravitoSDKTag = document.createElement(&quot;script&quot;);
+    gravitoSDKTag.src = &quot;https://cdn.gravito.net/prosdk/latest/sdk.js&quot;;
+    gravitoSDKTag.onload = function () {
+      window.gravito.init(&quot;firstParty&quot;);
+      gravito.state.subscribe(
+        function (value) {
+          // first Party is now loaded and sdk is fully initialized
+          callback(null, value.firstPartyLoaded);
+        },
+        function (currentState, prevState) {
+          return currentState.firstPartyLoaded !== prevState.firstPartyLoaded;
+        }
+      );
+    };
+    document.body.appendChild(gravitoSDKTag);
+  } catch (error) {
+    callback(error);
+  }
+}
+
+function main() {
+  var vendorId = 1347; // gravito TCF vendorId
+  waitForOrGetVendorConsent(vendorId, function (error, hasConsent) {
+    if (error) {
+      console.error(&quot;Error checking vendor consent:&quot;, error);
+      return;
+    }
+
+    if (hasConsent) {
+      console.log(&quot;User has given consent for vendor ID &quot; + vendorId + &quot;.&quot;);
+      // Initialize Gravito SDK
+      initilizeGravitoSDK(function (err, isLoaded) {
+        if (err) {
+          console.error(&quot;Error initializing Gravito SDK:&quot;, err);
+          return;
+        }
+
+        if (isLoaded) {
+          console.log(&quot;Gravito SDK is loaded and initialized.&quot;);
+          // You can now use the Gravito SDK
+          var gravitoFPid = window.gravito.firstParty.profile.i;
+          console.log(&quot;Gravito FP ID:&quot;, gravitoFPid);
+          // Do somethign with FP id.
+          // for eg. pass as the 
+      });
+    } else {
+      console.log(&quot;User has not given consent for vendor ID &quot; + vendorId + &quot;.&quot;);
+    }
+  });
+}
+var waitPeriod = 0;
+function whenAvailable(name, callback) {
+  var interval = 250; // ms
+
+  if (window[name]) {
+    waitPeriod = 0;
+    callback(window[name]);
+    return;
+  }
+  if (this.waitPeriod &gt;= 1500) {
+    console.error(&quot;No TCF CMP in context&quot;);
+    return;
+  }
+  window.setTimeout(function () {
+    if (window[name]) {
+      waitPeriod = 0;
+      callback(window[name]);
+    } else {
+      waitPeriod = waitPeriod + 250;
+      whenAvailable(name, callback);
+    }
+  }, interval);
+}
+
+whenAvailable(&quot;__tcfapi&quot;, function (tcfApi) {
+  console.log(&quot;TCF API is available&quot;);
+  main();
+});
+</code></pre>
+<p>For.eg. this script above basically looks for the consent of the vendor Gravito (1347) from your CMP and based on consent initiates the SDK to provision the PPIDs which you will need. </p>
+<h3 id="step-4-mobile">Step 4 : Mobile</h3>
+<p><strong>Setting up on mobile</strong></p>
+<p>The sample repo is present here at <a href="https://github.com/GravitoLtd/gravitoAndroidFPv3">GitHub - GravitoLtd/gravitoAndroidFPv3</a>
+Please go through the read me file to understand more about the implementation</p>
+<p>You can use the input domains which are your  "xyz.com" and the app domain as for eg : "myapp.xyz.com" (some sub - domain)</p>
               
             </div>
           </div><footer>
