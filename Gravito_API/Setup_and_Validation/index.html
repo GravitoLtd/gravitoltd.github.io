@@ -158,7 +158,7 @@
 After you have made the DNS records (A, TXT and CNAME), allow the changes to propagate to DNS servers (few minutes at least) and then press “Validate” button. After succesful validation you should see domain status as “Validated”:</p>
 <h3 id="step-3-web">Step 3 : Web</h3>
 <p><strong>Setting up on Web</strong></p>
-<p>Once the DNS entries are done and validated, you can include our SDK. We have attached (as a Txt file) the sample script which for e.g. you can include inside a GTM tag.</p>
+<p>Once the DNS entries are done and validated, you can include our SDK. We have attached the sample script which for e.g. you can include inside a GTM tag or implement it directly on your website.</p>
 <pre><code class="language-js">function waitForOrGetVendorConsent(vendorId, callback) {
   if (typeof __tcfapi !== &quot;function&quot;) {
     return callback(new Error(&quot;__tcfapi is not available.&quot;));
