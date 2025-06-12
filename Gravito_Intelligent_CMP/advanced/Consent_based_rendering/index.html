@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Render Certain Elements Based on Consent value provided by Gravito CMP - Gravito Documentation</title>
+    <title>Render Certain Elements Based on Consent Value Provided by Gravito CMP - Gravito Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Render Certain Elements Based on Consent value provided by Gravito CMP";
-        var mkdocs_page_input_path = "Gravito_Intelligent_CMP\\advanced\\Consent_based_rendiering.md";
+        var mkdocs_page_name = "Render Certain Elements Based on Consent Value Provided by Gravito CMP";
+        var mkdocs_page_input_path = "Gravito_Intelligent_CMP\\advanced\\Consent_based_rendering.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -126,7 +126,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Render Certain Elements Based on Consent value provided by Gravito CMP</li>
+      <li class="breadcrumb-item active">Render Certain Elements Based on Consent Value Provided by Gravito CMP</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -135,80 +135,80 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="render-certain-elements-based-on-consent-value-provided-by-gravito-cmp">Render Certain Elements Based on Consent value provided by Gravito CMP</h1>
-<p>Gravito CMP emits events to DOM whenever user takes any action on the consent banner. You can use these events to render certain elements based on the consent value provided by Gravito CMP.</p>
+                <h1 id="render-certain-elements-based-on-consent-value-provided-by-gravito-cmp">Render Certain Elements Based on Consent Value Provided by Gravito CMP</h1>
+<p>Gravito CMP emits events to the DOM whenever a user takes any action on the consent banner. You can use these events to render certain elements based on the consent value provided by Gravito CMP.</p>
 <p>To listen to these events, you can use the following code snippet:</p>
-<pre><code class="language-javascript"> window.addEventListener(&quot;gravito:cmp:light&quot;, function (e) {
-        var syncEvents = [
-          &quot;layer1:opt-out:all&quot;,
-          &quot;layer2:opt-out:all&quot;,
-          &quot;layer2:opt-in:selected&quot;,
-          &quot;layer1:opt-in:all&quot;,
-          &quot;layer2:opt-in:all&quot;,
-          &quot;opt-in:previously&quot;,
-          &quot;cmploaded&quot;,
-        ];
-        if (syncEvents.includes(e.detail.eventType)) {
-        //  consent values was updated/changed
-        // opt-in:previously event is fired when user has already given consent and has cookies
-
-        }
-      });
-
+<pre><code class="language-javascript">window.addEventListener(&quot;gravito:cmp:light&quot;, function (e) {
+  var syncEvents = [
+    &quot;layer1:opt-out:all&quot;,
+    &quot;layer2:opt-out:all&quot;,
+    &quot;layer2:opt-in:selected&quot;,
+    &quot;layer1:opt-in:all&quot;,
+    &quot;layer2:opt-in:all&quot;,
+    &quot;opt-in:previously&quot;,
+    &quot;cmploaded&quot;,
+  ];
+  if (syncEvents.includes(e.detail.eventType)) {
+    // Consent values were updated/changed
+    // &quot;opt-in:previously&quot; event is fired when the user has already given consent and has cookies
+  }
+});
 </code></pre>
-<p>When the events are triggered you can check the consent value and update the elements vissibilty.here is an example of how to do that:</p>
+<p>When these events are triggered, you can check the consent value and update the element visibility. Here is an example of how to do that:</p>
 <pre><code class="language-javascript">function updateViewState() {
-        console.log(&quot;updateViewState&quot;);
-        let id = 2; // id of the consent you want to check
-        let elementID = &quot;YOUR_ELEMENT_ID&quot;; // id of the map
-        // to check for consent value of cookie
-        let isCookieConsent =
-          window.gravitoLightCMP.consentHandler.getConsentValue(2);
-        //  on basis of the consent value you can hide/show map
-        if (!isCookieConsent) {
-          document.getElementById(elementID).style.display = &quot;none&quot;;
-        } else {
-          document.getElementById(elementID).style.display = &quot;block&quot;;
-        }
-      }
+  console.log(&quot;updateViewState&quot;);
+  let id = 2; // ID of the consent you want to check
+  let elementID = &quot;YOUR_ELEMENT_ID&quot;; // ID of the map or element
+
+  // Check the consent value for cookies
+  let isCookieConsent =
+    window.gravitoLightCMP.consentHandler.getConsentValue(2);
+
+  // Show or hide the element based on consent value
+  if (!isCookieConsent) {
+    document.getElementById(elementID).style.display = &quot;none&quot;;
+  } else {
+    document.getElementById(elementID).style.display = &quot;block&quot;;
+  }
+}
 </code></pre>
-<p>You can call this function in the event listener to update the view state whenever the consent value changes.</p>
+<p>You can call this function in the event listener to update the view state whenever the consent value changes:</p>
 <pre><code class="language-javascript">function updateViewState() {
-        console.log(&quot;updateViewState&quot;);
-        let id = 2; // id of the consent you want to check
-        let elementID = &quot;YOUR_ELEMENT_ID&quot;; // id of the map
-        // to check for consent value of cookie
-        let isCookieConsent =
-          window.gravitoLightCMP.consentHandler.getConsentValue(2);
-        //  on basis of the consent value you can hide/show map
-        if (!isCookieConsent) {
-          document.getElementById(elementID).style.display = &quot;none&quot;;
-        } else {
-          document.getElementById(elementID).style.display = &quot;block&quot;;
-        }
-      }
+  console.log(&quot;updateViewState&quot;);
+  let id = 2; // ID of the consent you want to check
+  let elementID = &quot;YOUR_ELEMENT_ID&quot;; // ID of the map or element
+
+  let isCookieConsent =
+    window.gravitoLightCMP.consentHandler.getConsentValue(2);
+
+  if (!isCookieConsent) {
+    document.getElementById(elementID).style.display = &quot;none&quot;;
+  } else {
+    document.getElementById(elementID).style.display = &quot;block&quot;;
+  }
+}
 
 window.addEventListener(&quot;gravito:cmp:light&quot;, function (e) {
-        var syncEvents = [
-          &quot;layer1:opt-out:all&quot;,
-          &quot;layer2:opt-out:all&quot;,
-          &quot;layer2:opt-in:selected&quot;,
-          &quot;layer1:opt-in:all&quot;,
-          &quot;layer2:opt-in:all&quot;,
-          &quot;opt-in:previously&quot;,
-          &quot;cmploaded&quot;,
-        ];
-        if (syncEvents.includes(e.detail.eventType)) {
-          updateViewState();
-        }
-      });
+  var syncEvents = [
+    &quot;layer1:opt-out:all&quot;,
+    &quot;layer2:opt-out:all&quot;,
+    &quot;layer2:opt-in:selected&quot;,
+    &quot;layer1:opt-in:all&quot;,
+    &quot;layer2:opt-in:all&quot;,
+    &quot;opt-in:previously&quot;,
+    &quot;cmploaded&quot;,
+  ];
+  if (syncEvents.includes(e.detail.eventType)) {
+    updateViewState();
+  }
+});
 </code></pre>
-<p>In some cases you might want to show a button or clickable items as the placeholder for hidden elements, if there is no consent. On clicking the button you can call a accept all method to accept all the consents and show the elements.</p>
-<p>CMP provides a method to accept all the consents.You can call this method on the button click to accept all the consents and call the updateViewState method to show the elements.</p>
+<p>In some cases, you might want to show a button or clickable item as a placeholder for hidden elements when consent is not given. On clicking the button, you can call a method to accept all consents and show the hidden elements.</p>
+<p>The CMP provides a method to accept all consents. You can call this method on button click and then call the <code>updateViewState</code> method to show the elements:</p>
 <pre><code class="language-javascript">function buttonClick() {
-      window.gravitoLightCMP.useractionHandler.saveAll()
-        updateViewState();
-      }
+  window.gravitoLightCMP.useractionHandler.saveAll();
+  updateViewState();
+}
 </code></pre>
               
             </div>
