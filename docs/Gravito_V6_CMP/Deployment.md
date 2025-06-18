@@ -22,7 +22,7 @@ This option allows you to quickly integrate Gravito's CMP with your website usin
     #### Tag Configuration:
     - Choose the **Gravito Consent Management** template from the list.
 
-    ![](../img/GTMTemplateSearch.png)
+    ![](./img/GTMTemplateGallary.png)
 
     #### Fill the fields:
 
@@ -49,7 +49,7 @@ This option allows you to quickly integrate Gravito's CMP with your website usin
     - Configure regional preferences if needed.
     - You can **leave it blank** to apply globally.
 
-    ![](../img/GTMTemplateView.png)
+    ![](./img/GTMTemplateView.png)
 
     ### Add Trigger and Save
 
