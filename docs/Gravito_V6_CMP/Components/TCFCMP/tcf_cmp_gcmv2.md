@@ -94,6 +94,7 @@ Below are the primary GTM events pushed by Gravito for consent updates:
     consents: consents,  // Object containing the user's consent states
   });.
   ```
+
 - **gravitoTCFConsents**
 
   This event is triggered when there is an update in the Gravito Consent Management (GCM) consents. It pushes the current consent states as an object, which can be used for conditional tag firing in GTM.

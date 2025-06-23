@@ -1,6 +1,6 @@
 # Welcome to Gravito's Documentation pages
 
-Looking for our product page ? Checkout  [gravito.net](https://www.gravito.net).
+Looking for something else?    [Product Page](https://www.gravito.net) |    [Customer Portal](https://adminv2.gravito.net).
 
 ## We’re leading with privacy in visitor data solutions
 

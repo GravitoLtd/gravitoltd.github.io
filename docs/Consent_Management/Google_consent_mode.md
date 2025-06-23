@@ -1,6 +1,6 @@
 # Consent Management: Google Consent Mode
 
-*Last updated: January 15, 2024*  
+*Last updated: June 15, 2025*  
 *Announced: January 10, 2024*
 
 ---
@@ -30,6 +30,23 @@ For example:
 
 ---
 
+## Understanding Basic and Advanced Modes of Google Consent Mode
+
+Google Consent Mode (GCM) offers two operational modes — **Basic** and **Advanced** — to help websites manage consent and data collection behavior:
+
+- **Basic Mode**: Google tags are completely blocked from firing until the user provides explicit consent. No data is sent to Google unless consent is given.
+- **Advanced Mode**: Google tags load immediately but adjust their behavior based on the consent signals. For example, if a user declines consent for ads, Google still receives basic (non-identifiable) interaction data, but it won’t be used for personalized advertising or measurement that requires consent.
+
+Implementing the correct mode is crucial to ensure both compliance and measurement continuity.
+
+## Why Google Collects Data
+
+When using Google services like Google Ads or Google Analytics, data may be collected **to enable personalized advertising, performance measurement, and audience insights**. Consent Mode helps ensure that such data collection aligns with the user’s consent choices.
+
+For more details, refer to [Google’s Business Privacy Policy](https://business.safety.google/privacy/).
+
+---
+
 ## Requirements
 
 To enable Google Consent Mode via Gravito CMP, you’ll need:
@@ -37,8 +54,8 @@ To enable Google Consent Mode via Gravito CMP, you’ll need:
 1. **A Gravito TCF 2.2 CMP/ Intelligent CMP implementation**
 This should be already configured and running on your site. If not, 
 
-      - [Gravito New CMP (Standard Component) setup and implementation guide](../Gravito_V6_CMP/Components/StandardCMP/Gravito_cmp_gcmv2.md).
-      - [Gravito New CMP (TCF Component) setup and implementation guide](../Gravito_V6_CMP/Components/TCFCMP/tcf_cmp_gcmv2.md).
+      - [Gravito New CMP (Standard Component) setup and implementation guide(New)](../Gravito_V6_CMP/Components/StandardCMP/Gravito_cmp_gcmv2.md).
+      - [Gravito New CMP (TCF Component) setup and implementation guide (New)](../Gravito_V6_CMP/Components/TCFCMP/tcf_cmp_gcmv2.md).
       - [TCF 2.2 setup and implementation guide](../Gravito_TCF_2.2_CMP/advanced/googleconsentmode.md).
       - [Intelligent CMP setup and implementation guide](../Gravito_Intelligent_CMP/advanced/Google_consent_mode_v2.md).
    
