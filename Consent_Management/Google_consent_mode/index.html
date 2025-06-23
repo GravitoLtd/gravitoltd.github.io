@@ -60,6 +60,10 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#what-is-google-consent-mode">What is Google Consent Mode?</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#understanding-basic-and-advanced-modes-of-google-consent-mode">Understanding Basic and Advanced Modes of Google Consent Mode</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-google-collects-data">Why Google Collects Data</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#how-gravito-handles-google-consent-mode">How Gravito Handles Google Consent Mode</a>
@@ -151,7 +155,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="consent-management-google-consent-mode">Consent Management: Google Consent Mode</h1>
-<p><em>Last updated: January 15, 2024</em><br />
+<p><em>Last updated: June 15, 2025</em><br />
 <em>Announced: January 10, 2024</em></p>
 <hr />
 <h2 id="overview">Overview</h2>
@@ -173,6 +177,17 @@
 <li>If the user accepts analytics cookies, <code>analytics_storage</code> is set to <code>granted</code>, enabling full data collection.</li>
 </ul>
 <hr />
+<h2 id="understanding-basic-and-advanced-modes-of-google-consent-mode">Understanding Basic and Advanced Modes of Google Consent Mode</h2>
+<p>Google Consent Mode (GCM) offers two operational modes — <strong>Basic</strong> and <strong>Advanced</strong> — to help websites manage consent and data collection behavior:</p>
+<ul>
+<li><strong>Basic Mode</strong>: Google tags are completely blocked from firing until the user provides explicit consent. No data is sent to Google unless consent is given.</li>
+<li><strong>Advanced Mode</strong>: Google tags load immediately but adjust their behavior based on the consent signals. For example, if a user declines consent for ads, Google still receives basic (non-identifiable) interaction data, but it won’t be used for personalized advertising or measurement that requires consent.</li>
+</ul>
+<p>Implementing the correct mode is crucial to ensure both compliance and measurement continuity.</p>
+<h2 id="why-google-collects-data">Why Google Collects Data</h2>
+<p>When using Google services like Google Ads or Google Analytics, data may be collected <strong>to enable personalized advertising, performance measurement, and audience insights</strong>. Consent Mode helps ensure that such data collection aligns with the user’s consent choices.</p>
+<p>For more details, refer to <a href="https://business.safety.google/privacy/">Google’s Business Privacy Policy</a>.</p>
+<hr />
 <h2 id="requirements">Requirements</h2>
 <p>To enable Google Consent Mode via Gravito CMP, you’ll need:</p>
 <ol>
@@ -180,8 +195,8 @@
 <p><strong>A Gravito TCF 2.2 CMP/ Intelligent CMP implementation</strong>
 This should be already configured and running on your site. If not, </p>
 <ul>
-<li><a href="../../Gravito_V6_CMP/Components/StandardCMP/Gravito_cmp_gcmv2/">Gravito New CMP (Standard Component) setup and implementation guide</a>.</li>
-<li><a href="../../Gravito_V6_CMP/Components/TCFCMP/tcf_cmp_gcmv2/">Gravito New CMP (TCF Component) setup and implementation guide</a>.</li>
+<li><a href="../../Gravito_V6_CMP/Components/StandardCMP/Gravito_cmp_gcmv2/">Gravito New CMP (Standard Component) setup and implementation guide(New)</a>.</li>
+<li><a href="../../Gravito_V6_CMP/Components/TCFCMP/tcf_cmp_gcmv2/">Gravito New CMP (TCF Component) setup and implementation guide (New)</a>.</li>
 <li><a href="../../Gravito_TCF_2.2_CMP/advanced/googleconsentmode/">TCF 2.2 setup and implementation guide</a>.</li>
 <li><a href="../../Gravito_Intelligent_CMP/advanced/Google_consent_mode_v2/">Intelligent CMP setup and implementation guide</a>.</li>
 </ul>
