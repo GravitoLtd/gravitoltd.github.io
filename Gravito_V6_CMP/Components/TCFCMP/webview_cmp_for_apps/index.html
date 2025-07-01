@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Gravito WebView-based CMP Integration Guide - Gravito Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Gravito WebView-based CMP Integration Guide";
+        var mkdocs_page_input_path = "Gravito_V6_CMP\\Components\\TCFCMP\\webview_cmp_for_apps.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../..">
+          <img src="../../../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Getting_started/Register/">Register</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Getting_started/Support/">Support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Getting_started/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Consent Managment</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Consent_Management/Iab_tcf/">IAB TCF</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Consent_Management/Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Deployment/">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../FAQ/">FAQ's</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_SDK/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_SDK/Release_Notes/">Release Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_API/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_API/Setup_and_Validation/">Setup and Validation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_API/Version_3_%28Latest%29/">Version 3 (Latest)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_API/Version_2/">Version 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_API/Microprofile/">Microprofile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Gravito_API/CustomerdataApi/">Customer Data API</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other Features</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Other_Features/Domain_Cookie_Scan/">Domain Cookie Scan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Other_Features/GVL_Comparison/">GVL Comparison</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Try it out</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Try_it_out/Playbooks/">Playbooks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Gravito Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Gravito WebView-based CMP Integration Guide</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gravito-webview-based-cmp-integration-guide">Gravito WebView-based CMP Integration Guide</h1>
+<h2 id="section-1-general-architecture-webview-based-cmp-platform-agnostic">Section 1: General Architecture – WebView-based CMP (Platform-agnostic)</h2>
+<h3 id="overview">Overview</h3>
+<p>Gravito’s WebView-based CMP is a cross-platform solution designed for use in mobile apps. It allows apps to display and interact with the CMP using an embedded web browser (WebView), regardless of the native platform (React Native, Flutter, Native Android, or Native iOS).</p>
+<h3 id="high-level-flow">High-Level Flow</h3>
+<ol>
+<li><strong>CMP HTML Page</strong></li>
+<li>Gravito provides an embeddable CMP HTML containing all configuration and JavaScript logic.</li>
+<li>
+<p>This page must be hosted by the developer (on a CDN or local server).</p>
+</li>
+<li>
+<p><strong>WebView Integration</strong></p>
+</li>
+<li>The CMP HTML is loaded into the mobile app’s WebView component.</li>
+<li>The URL must include <code>?platform={platformName}</code> query param (e.g., <code>reactnative</code>, <code>flutter</code>, <code>android</code>, <code>ios</code>).</li>
+<li>
+<p>This tells the CMP JavaScript how to handle communication for that specific platform.</p>
+</li>
+<li>
+<p><strong>Communication Mechanism</strong></p>
+</li>
+<li>Communication between the CMP (JavaScript) and the native app occurs through:<ul>
+<li><code>window.postMessage</code> from the CMP</li>
+<li>Native event listener or handler (e.g., <code>onMessage</code>)</li>
+<li>JavaScript injection (<code>evaluateJavascript</code>, <code>injectJavaScript</code>, etc.)</li>
+</ul>
+</li>
+<li>Based on the platform, different APIs are used to facilitate this message passing.</li>
+</ol>
+<h3 id="configuration">Configuration</h3>
+<ul>
+<li>In the webview based CMP config make sure you have set below property in config object:</li>
+</ul>
+<pre><code class="language-json">gravito.config.cmp.tcf.core.isWebView = true,
+</code></pre>
+<h4 id="showing-the-cmp-ui-even-if-the-user-has-already-given-consent">Showing the CMP UI even if the user has already given consent</h4>
+<ul>
+<li>If you want to show the CMP UI even if the user has already given consent, you can set the <code>gravito.config.cmp.tcf.core.showUiWhenConsented</code> to <code>true</code> in the config object.</li>
+</ul>
+<pre><code class="language-json">gravito.config.cmp.tcf.core.showUiWhenConsented = true,
+</code></pre>
+<h3 id="core-message-events">Core Message Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event Type</th>
+<th>Direction</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMP-loaded</td>
+<td>CMP → App</td>
+<td>CMP is ready and requests consent data</td>
+</tr>
+<tr>
+<td>cookieData</td>
+<td>App → CMP</td>
+<td>App sends existing consent data (if any)</td>
+</tr>
+<tr>
+<td>save</td>
+<td>CMP → App</td>
+<td>User saved consent; app must store this data</td>
+</tr>
+<tr>
+<td>config</td>
+<td>App → CMP</td>
+<td>App configures display properties of CMP UI (optional)</td>
+</tr>
+<tr>
+<td>load</td>
+<td>CMP → App</td>
+<td>CMP sends version info (informational)</td>
+</tr>
+<tr>
+<td>close</td>
+<td>CMP → App</td>
+<td>CMP UI closed (informational)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="app-responsibilities">App Responsibilities</h3>
+<ul>
+<li>Host the CMP HTML provided by Gravito</li>
+<li>Load it in a WebView with the correct platform query param</li>
+<li>Listen to messages from CMP (<code>CMP-loaded</code>, <code>save</code>)</li>
+<li>Send stored consent data to CMP if available</li>
+<li>Store updated consent data received from CMP</li>
+<li>Optionally configure CMP UI behavior using a <code>config</code> message</li>
+<li>Store the tcf consents and related data in a persistent storage solution (e.g., SharedPreferences, UserDefaults, etc.) in the format mentioned in the <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#how-is-a-cmp-used-in-app">TC Data Format</a>.</li>
+<li>if use Google Additional Consent mode you should also store the AcString data in the same persistent storage solution against the key mentioned in the <a href="https://support.google.com/admanager/answer/9681920?hl=en#store-ac-string:~:text=In-,%2D,-app">Google Additional Consent Mode</a>.</li>
+</ul>
+<p>Note: All the information about the CMP that needs to be stored in the app is available in the data received in the save event.</p>
+<h2 id="section-2-platform-specific-implementation">Section 2: Platform-Specific Implementation</h2>
+<p>We have created platform-specific code examples. These examples demonstrate how to integrate the WebView-based CMP into your mobile applications. Links to the code examples are provided within each section.</p>
+<h3 id="react-native">React Native</h3>
+<h4 id="sample-app">Sample App</h4>
+<p>You can find a sample React Native app that integrates the Gravito CMP using WebView <a href="https://github.com/GravitoLtd/react-native-webview-sample">here</a></p>
+<h4 id="required-packages">Required Packages</h4>
+<pre><code class="language-bash">npm install react-native-webview react-native-default-preference
+</code></pre>
+<h4 id="code-example">Code Example</h4>
+<pre><code class="language-tsx">import React, {useEffect, useState} from 'react';
+import {ActivityIndicator} from 'react-native';
+import {WebView} from 'react-native-webview';
+import DefaultPreference from 'react-native-default-preference';
+
+const CMPWebView = ({navigation}) =&gt; {
+  const [cmpdata, setCmpdata] = useState(undefined);
+  const [loading, setLoading] = useState(true);
+  let webViewRef = null;
+
+  useEffect(() =&gt; {
+    DefaultPreference.get('cmpdata').then(value =&gt; setCmpdata(value));
+  }, []);
+
+  const goBack = () =&gt; navigation.pop();
+
+  return (
+    &lt;&gt;
+      &lt;WebView
+        ref={ref =&gt; (webViewRef = ref)}
+        source={{
+          uri: 'https://yourhost.com/gravito-cmp.html?platform=reactnative',
+        }}
+        startInLoadingState={true}
+        onLoadStart={() =&gt; setLoading(true)}
+        onLoad={() =&gt; {
+          setLoading(false);
+          const configEvent = {
+            type: 'config',
+            backgroundColor: 'orange',
+            logoUrl: 'https://cdn.gravito.net/logos/gravito_logo_white_background.png',
+            displayPreferencesCloseBtn: true,
+          };
+          const configJS = `window.postMessage(${JSON.stringify(configEvent)}, &quot;*&quot;);true;`;
+          webViewRef.injectJavaScript(configJS);
+        }}
+        onMessage={event =&gt; {
+          const {type} = JSON.parse(event.nativeEvent.data);
+          switch (type) {
+            case 'CMP-loaded':
+              const payload = {
+                type: 'cookieData',
+                ...(cmpdata ? JSON.parse(cmpdata) : {}),
+              };
+              const postJS = `window.postMessage(${JSON.stringify(payload)}, &quot;*&quot;);true;`;
+              webViewRef.injectJavaScript(postJS);
+              break;
+
+            case 'save':
+              DefaultPreference.set('cmpdata', event.nativeEvent.data);
+              goBack();
+              break;
+
+            case 'load':
+              console.log('CMP config/version info:', event.nativeEvent.data);
+              break;
+
+            case 'close':
+              break;
+
+            default:
+              break;
+          }
+        }}
+      /&gt;
+
+      {loading &amp;&amp; (
+        &lt;ActivityIndicator
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          size=&quot;large&quot;
+        /&gt;
+      )}
+    &lt;/&gt;
+  );
+};
+
+export default CMPWebView;
+</code></pre>
+<h4 id="consent-storage">Consent Storage</h4>
+<pre><code class="language-tsx">// To store
+DefaultPreference.set('cmpdata', jsonData);
+
+// To retrieve
+DefaultPreference.get('cmpdata').then(value =&gt; { ... });
+</code></pre>
+<p>Note: The <code>cmpdata</code> should be stored in the format mentioned in the <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#how-is-a-cmp-used-in-app">TC Data Format</a> </p>
+<h4 id="opening-the-cmp-ui-from-apps">Opening the CMP UI from Apps</h4>
+<pre><code class="language-tsx">webView.injectJavaScript(
+  'window.gravito.cmp.openPreferences();',
+  true,
+);
+</code></pre>
+<hr />
+<h3 id="flutter">Flutter</h3>
+<h4 id="sample-app_1">Sample App</h4>
+<p>You can find a sample Flutter app that integrates the Gravito CMP using WebView <a href="https://github.com/GravitoLtd/flutter-webview-sample">here</a></p>
+<h4 id="required-packages_1">Required Packages</h4>
+<pre><code class="language-yaml">dependencies:
+  webview_flutter: ^4.0.7
+  webview_flutter_wkwebview: ^3.10.0
+  shared_preferences: ^2.0.15
+</code></pre>
+<h4 id="code-example_1">Code Example</h4>
+<pre><code class="language-dart">import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
+
+class CMPWebView extends StatefulWidget {
+  const CMPWebView({super.key});
+
+  @override
+  State&lt;CMPWebView&gt; createState() =&gt; _CMPWebViewState();
+}
+
+class _CMPWebViewState extends State&lt;CMPWebView&gt; {
+  late final WebViewController controller;
+  bool loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+
+    final WebKitWebViewControllerCreationParams params =
+        WebKitWebViewControllerCreationParams(
+      allowsInlineMediaPlayback: true,
+      mediaTypesRequiringUserAction: const &lt;PlaybackMediaTypes&gt;{},
+    );
+
+    controller = WebKitWebViewController.fromParams(params)
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..addJavaScriptChannel(
+        'FlutterAppWebView',
+        onMessageReceived: _onJavaScriptMessageReceived,
+      )
+      ..setNavigationDelegate(NavigationDelegate(
+        onPageFinished: (_) {
+          setState(() =&gt; loading = false);
+        },
+      ))
+      ..loadRequest(Uri.parse(
+          'https://yourdomain.com/gravito-cmp.html?platform=flutter'));
+  }
+
+  Future&lt;void&gt; _onJavaScriptMessageReceived(JavaScriptMessage message) async {
+    final prefs = await SharedPreferences.getInstance();
+    final data = jsonDecode(message.message);
+    final type = data['type'];
+
+    switch (type) {
+      case 'CMP-loaded':
+        final stored = prefs.getString('cookieData');
+        final cookieMsg = {
+          &quot;type&quot;: &quot;cookieData&quot;,
+          &quot;tcstring&quot;: stored != null ? jsonDecode(stored)[&quot;tcstring&quot;] : null,
+          &quot;nontcfdata&quot;:
+              stored != null ? jsonDecode(stored)[&quot;nontcfdata&quot;] : null,
+        };
+        controller.runJavaScript(
+            'window.postMessage(${jsonEncode(cookieMsg)})');
+        break;
+
+      case 'save':
+        await prefs.setString(&quot;cookieData&quot;, jsonEncode({
+          &quot;tcstring&quot;: data[&quot;tcstring&quot;],
+          &quot;nontcfdata&quot;: data[&quot;nontcfdata&quot;],
+        }));
+        break;
+
+      case 'close':
+        Navigator.of(context).pop();
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Consent Manager'),
+      ),
+      body: Stack(
+        children: [
+          WebViewWidget(controller: controller),
+          if (loading)
+            const Center(child: CircularProgressIndicator()),
+        ],
+      ),
+    );
+  }
+}
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>Important</strong>: You must register the JavaScript adapter with the exact name used in the CMP JavaScript. For Gravito CMP, the adapter name should be <code>"FlutterAppWebView"</code>.</p>
+</blockquote>
+<h4 id="consent-storage_1">Consent Storage</h4>
+<pre><code class="language-dart">// Store
+await prefs.setString('cookieData', jsonEncode(cookie));
+
+// Retrieve
+final stored = prefs.getString('cookieData');
+</code></pre>
+<p>Note: The <code>cookieData</code> should be stored in the format mentioned in the <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#how-is-a-cmp-used-in-app">TC Data Format</a></p>
+<h4 id="opening-preferences-ui-from-app">Opening Preferences UI from App</h4>
+<pre><code class="language-dart">controller.runJavaScript('window.gravito.cmp.openPreferences();');
+</code></pre>
+<hr />
+<h3 id="ios-native">iOS (Native)</h3>
+<h4 id="sample-app_2">Sample App</h4>
+<p>You can find a sample IOS app that integrates the Gravito CMP using WebView <a href="https://github.com/GravitoLtd/ios-webview-sample">here</a></p>
+<h4 id="required-configuration">Required Configuration</h4>
+<ul>
+<li>Ensure <code>NSAppTransportSecurity</code> is updated in <code>Info.plist</code> to allow loading the CMP page if it’s served from HTTP or non-standard HTTPS.</li>
+</ul>
+<pre><code class="language-xml">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+&lt;dict&gt;
+  &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;
+  &lt;true/&gt;
+&lt;/dict&gt;
+</code></pre>
+<h4 id="code-example_2">Code Example</h4>
+<pre><code class="language-swift">import UIKit
+import WebKit
+
+class ViewController: UIViewController, WKScriptMessageHandler {
+
+    var webView: WKWebView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let preferences = WKPreferences()
+        preferences.setValue(true, forKey: &quot;developerExtrasEnabled&quot;)
+
+        let configuration = WKWebViewConfiguration()
+        configuration.preferences = preferences
+        configuration.userContentController.add(self, name: &quot;jsHandler&quot;)
+
+        webView = WKWebView(frame: view.bounds, configuration: configuration)
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        if #available(iOS 16.4, *) {
+            webView.isInspectable = true
+        }
+        view.addSubview(webView)
+
+        loadTheUrl()
+    }
+
+    func loadTheUrl() {
+        let urlString = &quot;https://yourhost.com/gravito-cmp.html?platform=ios&quot;
+        if let url = URL(string: urlString) {
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
+    }
+
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == &quot;jsHandler&quot;,
+           let json = message.body as? [String: Any],
+           let event = json[&quot;event&quot;] as? String {
+            switch event {
+            case &quot;start&quot;:
+                let tcstring = UserDefaults.standard.string(forKey: &quot;tcstring&quot;) ?? &quot;&quot;
+                let nontcfdata = UserDefaults.standard.string(forKey: &quot;nontcfdata&quot;) ?? &quot;&quot;
+                let acstring = UserDefaults.standard.string(forKey: &quot;acstring&quot;) ?? &quot;&quot;
+
+                let dict: [String: Any] = [
+                    &quot;type&quot;: &quot;cookieData&quot;,
+                    &quot;tcstring&quot;: tcstring,
+                    &quot;nontcfdata&quot;: nontcfdata,
+                    &quot;acstring&quot;: acstring,
+                ]
+                if let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: []),
+                   let jsonString = String(data: jsonData, encoding: .utf8) {
+                    let js = &quot;window.postMessage(\(jsonString), &quot;*&quot;);true;&quot;
+                    webView.evaluateJavaScript(js, completionHandler: nil)
+                }
+
+            case &quot;save&quot;:
+                if let tcstring = json[&quot;data&quot;] as? String {
+                    UserDefaults.standard.set(tcstring, forKey: &quot;tcstring&quot;)
+                }
+                if let nontcfdata = json[&quot;nontcfdata&quot;] as? String {
+                    UserDefaults.standard.set(nontcfdata, forKey: &quot;nontcfdata&quot;)
+                }
+                if let acstring = json[&quot;acstring&quot;] as? String {
+                    UserDefaults.standard.set(acstring, forKey: &quot;acstring&quot;)
+                }
+
+            default:
+                break
+            }
+        }
+    }
+}
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>Important</strong>: You must register the JavaScript adapter with the exact name used in the CMP JavaScript. For Gravito CMP, the adapter name should be <code>"jsHandler"</code>.</p>
+</blockquote>
+<h4 id="consent-storage_2">Consent Storage</h4>
+<pre><code class="language-swift">UserDefaults.standard.set(tcstring, forKey: &quot;tcstring&quot;)
+UserDefaults.standard.set(nontcfdata, forKey: &quot;nontcfdata&quot;)
+UserDefaults.standard.set(acstring, forKey: &quot;acstring&quot;)
+
+let tcstring = UserDefaults.standard.string(forKey: &quot;tcstring&quot;)
+let nontcfdata = UserDefaults.standard.string(forKey: &quot;nontcfdata&quot;)
+let acstring = UserDefaults.standard.string(forKey: &quot;acstring&quot;)
+</code></pre>
+<p>Note: The <code>tcstring</code>, <code>nontcfdata</code>, and <code>acstring</code> should be stored in the format mentioned in the <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#how-is-a-cmp-used-in-app">TC Data Format</a>.</p>
+<h4 id="opening-preferences-ui-from-app_1">Opening Preferences UI from App</h4>
+<pre><code class="language-swift">webView.evaluateJavaScript(&quot;window.gravito.cmp.openPreferences();&quot;, completionHandler: nil)
+</code></pre>
+<h3 id="android-native-javakotlin">Android Native (Java/Kotlin)</h3>
+<h4 id="overview_1">Overview</h4>
+<p>The Android implementation of Gravito CMP uses a WebView that communicates with the native app through a <code>JavaScriptInterface</code>. The app handles consent data storage using <code>SharedPreferences</code>.</p>
+<h4 id="sample-app_3">Sample App</h4>
+<p>You can find a sample Android app that integrates the Gravito CMP using WebView <a href="https://github.com/GravitoLtd/GravitoWebViewSampleAndroidForV6">here</a></p>
+<blockquote>
+<p>⚠️ <strong>Important</strong>: You must register the JavaScript adapter with the exact name used in the CMP JavaScript. For Gravito CMP, the adapter name should be <code>"AndroidAppWebView"</code>.</p>
+</blockquote>
+<h4 id="required-setup">Required Setup</h4>
+<ul>
+<li>Minimum Android SDK: 21+</li>
+<li>Add Internet permissions in <code>AndroidManifest.xml</code>:</li>
+</ul>
+<pre><code class="language-xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
+</code></pre>
+<h4 id="required-components">Required Components</h4>
+<ul>
+<li><code>WebView</code> setup in your Activity</li>
+<li>JavaScript interface class (<code>WebAppInterface</code>)</li>
+<li>Consent storage using <code>SharedPreferences</code></li>
+</ul>
+<hr />
+<h3 id="javascript-adapter-webappinterfacejava">JavaScript Adapter: <code>WebAppInterface.java</code></h3>
+<pre><code class="language-java">package com.example.gravito_android_webview_sample;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+import android.webkit.JavascriptInterface;
+import android.widget.Toast;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class WebAppInterface {
+    private final Context context;
+    private final SharedPreferences sharedPreferences;
+
+    public WebAppInterface(Context context) {
+        this.context = context;
+        this.sharedPreferences = context.getSharedPreferences(&quot;MYPREF&quot;, Context.MODE_PRIVATE);
+    }
+
+    @JavascriptInterface
+    public void showToast(String toast) {
+        Toast.makeText(context, toast, Toast.LENGTH_SHORT).show();
+    }
+
+    @JavascriptInterface
+    public void getValueFromWebView(String value) {
+        try {
+            JSONObject jsonObject = new JSONObject(value);
+            String type = jsonObject.optString(&quot;type&quot;);
+
+            switch (type) {
+                case &quot;save&quot;:
+                    String tcString = jsonObject.optString(&quot;tcstring&quot;, &quot;&quot;);
+                    String acString = jsonObject.optString(&quot;acstring&quot;, &quot;&quot;);
+                    String nonTcfData = jsonObject.optString(&quot;nontcfdata&quot;, &quot;&quot;);
+
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(&quot;TC_STRING&quot;, tcString);
+                    editor.putString(&quot;AC_STRING&quot;, acString);
+                    editor.putString(&quot;NON_TCF_DATA&quot;, nonTcfData);
+                    editor.apply();
+                    break;
+
+                case &quot;close&quot;:
+                    Log.d(&quot;WebAppInterface&quot;, &quot;Handling close event&quot;);
+                    break;
+
+                case &quot;load&quot;:
+                    Log.d(&quot;WebAppInterface&quot;, &quot;Handling load event&quot;);
+                    break;
+
+                default:
+                    Log.d(&quot;WebAppInterface&quot;, &quot;Unknown event type: &quot; + type);
+                    break;
+            }
+
+        } catch (JSONException e) {
+            Log.e(&quot;WebAppInterface&quot;, &quot;JSON parse error: &quot; + e.getMessage());
+        }
+    }
+
+    @JavascriptInterface
+    public String getValueFromStorage() {
+        try {
+            String tcString = sharedPreferences.getString(&quot;TC_STRING&quot;, null);
+            String acString = sharedPreferences.getString(&quot;AC_STRING&quot;, null);
+            String nonTcfData = sharedPreferences.getString(&quot;NON_TCF_DATA&quot;, null);
+
+            JSONObject json = new JSONObject();
+            json.put(&quot;tcstring&quot;, tcString);
+            json.put(&quot;acstring&quot;, acString);
+            json.put(&quot;nontcfdata&quot;, nonTcfData);
+
+            return json.toString();
+        } catch (JSONException e) {
+            Log.e(&quot;WebAppInterface&quot;, &quot;JSON creation error: &quot; + e.getMessage());
+            return &quot;{}&quot;;
+        }
+    }
+
+    @JavascriptInterface
+    public void onButtonClick() {
+        // Optional: handle clicks from CMP if required
+    }
+}
+</code></pre>
+<hr />
+<h3 id="mainactivity-setup">MainActivity Setup</h3>
+<pre><code class="language-java">package com.example.gravito_android_webview_sample;
+
+import android.os.Bundle;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    private WebView cmpWebView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        cmpWebView = new WebView(this);
+        setContentView(cmpWebView);
+
+        WebSettings webSettings = cmpWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        // Register JavaScript interface with exact name used in CMP HTML
+        cmpWebView.addJavascriptInterface(new WebAppInterface(this), &quot;AndroidAppWebView&quot;);
+
+        cmpWebView.loadUrl(&quot;https://yourdomain.com/gravito-cmp.html?platform=android&quot;);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (cmpWebView != null) {
+            cmpWebView.destroy();
+        }
+        super.onDestroy();
+    }
+}
+</code></pre>
+<hr />
+<h3 id="opening-preferences-ui-from-native-app">Opening Preferences UI from Native App</h3>
+<pre><code class="language-java">cmpWebView.evaluateJavascript(&quot;window.gravito.cmp.openPreferences();&quot;, null);
+</code></pre>
+<hr />
+<h3 id="consent-storage_3">Consent Storage</h3>
+<p>The following keys are used for storing consent data:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TC_STRING</code></td>
+<td>TCF v2 consent string (<code>tcstring</code>)</td>
+</tr>
+<tr>
+<td><code>AC_STRING</code></td>
+<td>Google Additional Consent string (<code>acstring</code>)</td>
+</tr>
+<tr>
+<td><code>NON_TCF_DATA</code></td>
+<td>Any non-TCF custom data</td>
+</tr>
+</tbody>
+</table>
+<p>Make sure these values are persisted in <code>SharedPreferences</code> for future app launches.</p>
+<hr />
+<p>Note: The <code>tcstring</code>, <code>nontcfdata</code>, and <code>acstring</code> should be stored in the format mentioned in the <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#how-is-a-cmp-used-in-app">TC Data Format</a>.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li>Use <code>WebView</code> to load Gravito CMP with <code>?platform=android</code>.</li>
+<li>Register JavaScript adapter named <code>AndroidAppWebView</code> (case-sensitive).</li>
+<li>Use <code>WebAppInterface</code> class to handle consent events (<code>save</code>, <code>load</code>, <code>close</code>).</li>
+<li>Persist consent data using <code>SharedPreferences</code>.</li>
+<li>Use <code>evaluateJavascript</code> to send commands from app to WebView (e.g., open preferences screen).</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../js/modal.js"></script>
+      <script src="../../../../js/motomo.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
