@@ -1,12 +1,20 @@
 # Deployment for Gravito CMP (New) Configuration
 
+
+Gravito CMP can be deployed in the following ways. 
+
+ 1. GTM (Google Tag Manager) Template
+ 2. WordPress Plugin
+ 3. Deployment Script
+ 4. [Webview for Mobile implementations](./Components/TCFCMP/webview_cmp_for_apps.md) (TCF CMP)
+
 All deployment related actions for Gravito CMP (New) are handled through **Deployment** tab in the Gravito CMP (New) Configurator. This tab is available as the last tab in the sidebar of the configurator.
 
 ![](./img/deployment_highlight.png)
 
 Gravito CMP (New) supports multiple deployment options to suit different environments and use cases. Below are the available deployment methods:
 
-## 1. GTM (Google Tag Manager) Template:
+## 1.  [GTM (Google Tag Manager) Template](#gtm)
 This option allows you to quickly integrate Gravito's CMP with your website using Google Tag Manager. Please follow the steps below to deploy using GTM:
 
 1. Select the **GTM Template** option from the provided **Deployment Method** and click **Validate & Publish** button.
@@ -64,7 +72,7 @@ This option allows you to quickly integrate Gravito's CMP with your website usin
     - CMP will now load and handle consent dynamically on your site.
 
 
-## 2. WordPress Plugin:
+## 2. [WordPress Plugin](#wp)
 Seamlessly integrate Gravito's CMP into your WordPress website using our dedicated plugin. Please follow the steps below to deploy using the WordPress plugin:
 
 1. Select the **WordPress Plugin** option from the provided **Deployment Method** and click **Validate & Publish** button.
