@@ -94,7 +94,7 @@ Utilize the deployment script to efficiently incorporate Gravito's CMP into your
 
     ![](./img/script_deployment1.png)
 
-2. if the validation and publishing is successful, you will get an option to **Generate Deployment Script** and **Download Config**.
+2. if the validation and publishing is successful, you will get an option to **Generate Deployment Script**.
 
     ![](./img/script_deployment2.png)
 
@@ -105,11 +105,14 @@ Utilize the deployment script to efficiently incorporate Gravito's CMP into your
 ## 4. [Webview for Mobile apps](#webview)
 Gravito CMP (New) can be integrated into mobile applications using a webview. This allows you to display the CMP within your app, providing a consistent user experience across platforms. Please follow the steps below to deploy using the webview:
 
-1. First, select any of the above deployment methods (GTM, WordPress Plugin, or Deployment Script) to publish your CMP configuration.
-2. Once published, you can generate a webview script by clicking on the **Generate Webview Script** button in the Deployment tab.
+1. First, select `Deployment Script` as deployment method to publish your CMP configuration.
+
+    ![](./img/script_deployment1.png)
+
+2. Once published, click on the **Generate Deployment Script** button to generate the deployment script.
 
     ![](./img/script_deployment2.png)
 
-3. This will open a modal with the generated webview script as shown in the image below. You can download this script as `html` and host it on you server or CDN and use it in your mobile app's webview.
+3. This will open a modal with the generated deployment script. Now you can activate **Webview mode** toggle to generate the webview script and download it as a `HTML` file.
 
     ![](./img/webview_script.png)
