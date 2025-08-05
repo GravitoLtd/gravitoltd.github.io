@@ -1,6 +1,16 @@
 Release Notes
 =============
 
+Release Notes 6.2.0 (05/08/2025)
+
+Enhancements:
+
+- The Deployment Tab has been redesigned for better usability and clarity. It now provides a more intuitive interface for deploying Gravito CMP across various platforms.
+
+- An option to preview a published CMP configuration has been added. This allows users to see how their CMP will appear on the live site before finalizing deployment.
+
+- In TCF section, the configuration for "Features", "Special Features", and "Special Purposes" is now available to allow for more granular control over consent settings.
+
 Release Notes 6.1.0 (01/07/2025)
 
 New Features:

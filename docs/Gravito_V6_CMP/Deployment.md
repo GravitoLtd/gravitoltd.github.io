@@ -1,31 +1,36 @@
 # Deployment for Gravito CMP (New) Configuration
 
-
-Gravito CMP can be deployed in the following ways. 
-
- 1. GTM (Google Tag Manager) Template
- 2. WordPress Plugin
- 3. Deployment Script
- 4. [Webview for Mobile implementations](./Components/TCFCMP/webview_cmp_for_apps.md) (TCF CMP)
-
 All deployment related actions for Gravito CMP (New) are handled through **Deployment** tab in the Gravito CMP (New) Configurator. This tab is available as the last tab in the sidebar of the configurator.
 
 ![](./img/deployment_highlight.png)
 
-Gravito CMP (New) supports multiple deployment options to suit different environments and use cases. Below are the available deployment methods:
+After configuring your CMP, you can click the **Validate & Publish** button to publish your changes.
 
-## 1.  [GTM (Google Tag Manager) Template](#gtm)
+> **Note**: You cannot make changes to the CMP configuration after publishing. However, you can always create a copy of the configuration to make changes.
+
+After Publishing, the below deployment methods are available:
+
+## 1. Deployment Script
+This option allows you to deploy Gravito CMP using a simple script.
+
+> **Note**: If you want to deploy the CMP on a mobile application, please **enable** the **Webview Mode** option in the Deployment tab.
+        ![](./img/webview_button.png)
+
+Now you can copy or download the deployment script using the options as shown in below image
+    ![](./img/deployment_script.png) 
+
+**For Website** - You can paste the script directly into the `<head>` section of your website so that it loads before any other scripts. 
+
+**For Mobile App** - You can download the script as a `HTML` file and use it in your mobile app's webview.
+
+## 2. GTM (Google Tag Manager) Template
 This option allows you to quickly integrate Gravito's CMP with your website using Google Tag Manager. Please follow the steps below to deploy using GTM:
 
-1. Select the **GTM Template** option from the provided **Deployment Method** and click **Validate & Publish** button.
+1. You can copy the GTM Token by clicking on the **Copy GTM Token** button.
 
-    ![](./img/gtm_deployment1.png)
+    ![](./img/copy_GTM_token.png)
 
-2. if the validation and publishing is successful, you will get an option to copy GTM Token by clicking on the **Copy GTM Token** button.
-
-    ![](./img/gtm_deployment2.png)
-
-3. **Login** to your **Google Tag Manager** account and click on a new **Tag**.
+2. **Login** to your **Google Tag Manager** account and click on a new **Tag**.
 
     #### Tag Configuration:
     - Choose the **Gravito Consent Management** template from the list.
@@ -71,48 +76,11 @@ This option allows you to quickly integrate Gravito's CMP with your website usin
     - Submit and **Publish** the container.
     - CMP will now load and handle consent dynamically on your site.
 
-
-## 2. [WordPress Plugin](#wp)
+## 3. WordPress Plugin
 Seamlessly integrate Gravito's CMP into your WordPress website using our dedicated plugin. Please follow the steps below to deploy using the WordPress plugin:
 
-1. Select the **WordPress Plugin** option from the provided **Deployment Method** and click **Validate & Publish** button.
+1. You can copy the WordPress Token by clicking on the **Copy WordPress Token** button.
 
-    ![](./img/wordpress_deployment1.png)
+    ![](./img/copy_WordPress_token.png)
 
-2. if the validation and publishing is successful, you will get an option to copy WordPress Token by clicking on the **Copy WordPress Token** button.
-
-    ![](./img/wordpress_deployment2.png)
-
-3. Use this token in the WordPress plugin to integrate Gravito's CMP into your website.
-
-
-
-## 3. Deployment Script:
-Utilize the deployment script to efficiently incorporate Gravito's CMP into your website's codebase. Please follow the steps below to deploy using the deployment script:
-
-1. Select the **Deployment Script** option from the provided **Deployment Method** and click **Validate & Publish** button.
-
-    ![](./img/script_deployment1.png)
-
-2. if the validation and publishing is successful, you will get an option to **Generate Deployment Script**.
-
-    ![](./img/script_deployment2.png)
-
-3. Click on the **Generate Deployment Script** button to generate the deployment script. This will open a modal with the generated script as shown in below image. You can paste this script in your website's `<body>` tag.
-
-    ![](./img/script_deployment3.png)
-
-## 4. [Webview for Mobile apps](#webview)
-Gravito CMP (New) can be integrated into mobile applications using a webview. This allows you to display the CMP within your app, providing a consistent user experience across platforms. Please follow the steps below to deploy using the webview:
-
-1. First, select `Deployment Script` as deployment method to publish your CMP configuration.
-
-    ![](./img/script_deployment1.png)
-
-2. Once published, click on the **Generate Deployment Script** button to generate the deployment script.
-
-    ![](./img/script_deployment2.png)
-
-3. This will open a modal with the generated deployment script. Now you can activate **Webview mode** toggle to generate the webview script and download it as a `HTML` file.
-
-    ![](./img/webview_script.png)
+2. Use this token in the WordPress plugin to integrate Gravito's CMP into your website.

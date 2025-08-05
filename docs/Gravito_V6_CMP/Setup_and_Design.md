@@ -28,4 +28,4 @@ You can now go through each of the following sections and configure the CMP as p
 
 ### 4. Deployment Tab
 
-![](./img/deployment_tab.png)
+![](./img/deployment_highlight.png)
