@@ -1,5 +1,14 @@
 Release Notes
 =============
+Release Notes 6.2.0 (05/08/2025)
+
+New Features:
+
+- Configurable Consentable Items in TCF Components
+  You can now explicitly define which Purposes, Special Features, and Extras are shown and saved via configuration. The TCF CMP respects these configurations when constructing the final tcString, allowing for more tailored and compliant consent flows.
+
+- Decoupled GCMv2 Consent Handling
+  GCMv2 consents are now managed independently of Google’s advertising TCF vendor. This allows more flexibility in deploying GCMv2-based consent strategies even when Google TCF consent is not required or applicable.
 
 Release Notes 6.2.0 (05/08/2025)
 
