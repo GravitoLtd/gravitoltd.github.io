@@ -6,3 +6,4 @@
 - [How to Provide Google with the Required Legitimate Interest's Even on Reject All Action?](./FAQ/How_to_be_google_complaint.md)
 - [How to fire GTM tags based on consents in CMP?(Only for Standard CMP Component)](./FAQ/How_to_fireGTM_tags_based_on_consents.md)
 - [How to use Consent Based Rendering?](./FAQ/Consent_based_rendering.md)
+- [How to listen to TCF Consents changes?](./FAQ/How_to_listen_TCF_consents.md)
