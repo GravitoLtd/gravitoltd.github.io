@@ -11,17 +11,19 @@ After configuring your CMP, you can click the **Validate & Publish** button to p
 After Publishing, the below deployment methods are available:
 
 ## 1. Deployment Script
-This option allows you to deploy Gravito CMP using a simple script.
+This option allows you to deploy Gravito CMP using a simple script. You can download the script in the format of your choice.
 
-> **Note**: If you want to deploy the CMP on a mobile application, please **enable** the **Webview Mode** option in the Deployment tab.
-        ![](./img/webview_button.png)
 
 Now you can copy or download the deployment script using the options as shown in below image
     ![](./img/deployment_script.png) 
 
+
+> **Note**: If you want to deploy the CMP on a mobile application, please **enable** the **Webview Mode** option in the Deployment tab.
+        ![](./img/webview_button.png)
+
 **For Website** - You can paste the script directly into the `<head>` section of your website so that it loads before any other scripts. 
 
-**For Mobile App** - You can download the script as a `HTML` file and use it in your mobile app's webview.
+**For Mobile App** - You can download the script as a `HTML` file and use it in your mobile app's webview. This html file can be downloaded only when you enable the webview mode.
 
 ## 2. GTM (Google Tag Manager) Template
 This option allows you to quickly integrate Gravito's CMP with your website using Google Tag Manager. Please follow the steps below to deploy using GTM:
