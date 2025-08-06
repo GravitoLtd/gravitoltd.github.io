@@ -71,7 +71,9 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Deployment</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-gtm-google-tag-manager-template">1. GTM (Google Tag Manager) Template</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1-deployment-script">1. Deployment Script</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-gtm-google-tag-manager-template">2. GTM (Google Tag Manager) Template</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#tag-configuration">Tag Configuration:</a>
     </li>
@@ -87,9 +89,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-wordpress-plugin">2. WordPress Plugin</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-deployment-script">3. Deployment Script:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3-wordpress-plugin">3. WordPress Plugin</a>
     </li>
     </ul>
                   </li>
@@ -159,26 +159,29 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="deployment-for-gravito-cmp-new-configuration">Deployment for Gravito CMP (New) Configuration</h1>
-<p>Gravito CMP can be deployed in the following ways. </p>
-<ol>
-<li>GTM (Google Tag Manager) Template</li>
-<li>WordPress Plugin</li>
-<li>Deployment Script</li>
-<li><a href="../Components/TCFCMP/webview_cmp_for_apps/">Webview for Mobile implementations</a> (TCF CMP)</li>
-</ol>
 <p>All deployment related actions for Gravito CMP (New) are handled through <strong>Deployment</strong> tab in the Gravito CMP (New) Configurator. This tab is available as the last tab in the sidebar of the configurator.</p>
 <p><img alt="" src="../img/deployment_highlight.png" /></p>
-<p>Gravito CMP (New) supports multiple deployment options to suit different environments and use cases. Below are the available deployment methods:</p>
-<h2 id="1-gtm-google-tag-manager-template">1.  <a href="#gtm">GTM (Google Tag Manager) Template</a></h2>
+<p>After configuring your CMP, you can click the <strong>Validate &amp; Publish</strong> button to publish your changes.</p>
+<blockquote>
+<p><strong>Note</strong>: You cannot make changes to the CMP configuration after publishing. However, you can always create a copy of the configuration to make changes.</p>
+</blockquote>
+<p>After Publishing, the below deployment methods are available:</p>
+<h2 id="1-deployment-script">1. Deployment Script</h2>
+<p>This option allows you to deploy Gravito CMP using a simple script. You can download the script in the format of your choice.</p>
+<p>Now you can copy or download the deployment script using the options as shown in below image
+    <img alt="" src="../img/deployment_script.png" /> </p>
+<blockquote>
+<p><strong>Note</strong>: If you want to deploy the CMP on a mobile application, please <strong>enable</strong> the <strong>Webview Mode</strong> option in the Deployment tab.
+        <img alt="" src="../img/webview_button.png" /></p>
+</blockquote>
+<p><strong>For Website</strong> - You can paste the script directly into the <code>&lt;head&gt;</code> section of your website so that it loads before any other scripts. </p>
+<p><strong>For Mobile App</strong> - You can download the script as a <code>HTML</code> file and use it in your mobile app's webview. This html file can be downloaded only when you enable the webview mode.</p>
+<h2 id="2-gtm-google-tag-manager-template">2. GTM (Google Tag Manager) Template</h2>
 <p>This option allows you to quickly integrate Gravito's CMP with your website using Google Tag Manager. Please follow the steps below to deploy using GTM:</p>
 <ol>
 <li>
-<p>Select the <strong>GTM Template</strong> option from the provided <strong>Deployment Method</strong> and click <strong>Validate &amp; Publish</strong> button.</p>
-<p><img alt="" src="../img/gtm_deployment1.png" /></p>
-</li>
-<li>
-<p>if the validation and publishing is successful, you will get an option to copy GTM Token by clicking on the <strong>Copy GTM Token</strong> button.</p>
-<p><img alt="" src="../img/gtm_deployment2.png" /></p>
+<p>You can copy the GTM Token by clicking on the <strong>Copy GTM Token</strong> button.</p>
+<p><img alt="" src="../img/copy_GTM_token.png" /></p>
 </li>
 <li>
 <p><strong>Login</strong> to your <strong>Google Tag Manager</strong> account and click on a new <strong>Tag</strong>.</p>
@@ -253,35 +256,15 @@
 </ul>
 </li>
 </ol>
-<h2 id="2-wordpress-plugin">2. <a href="#wp">WordPress Plugin</a></h2>
+<h2 id="3-wordpress-plugin">3. WordPress Plugin</h2>
 <p>Seamlessly integrate Gravito's CMP into your WordPress website using our dedicated plugin. Please follow the steps below to deploy using the WordPress plugin:</p>
 <ol>
 <li>
-<p>Select the <strong>WordPress Plugin</strong> option from the provided <strong>Deployment Method</strong> and click <strong>Validate &amp; Publish</strong> button.</p>
-<p><img alt="" src="../img/wordpress_deployment1.png" /></p>
-</li>
-<li>
-<p>if the validation and publishing is successful, you will get an option to copy WordPress Token by clicking on the <strong>Copy WordPress Token</strong> button.</p>
-<p><img alt="" src="../img/wordpress_deployment2.png" /></p>
+<p>You can copy the WordPress Token by clicking on the <strong>Copy WordPress Token</strong> button.</p>
+<p><img alt="" src="../img/copy_WordPress_token.png" /></p>
 </li>
 <li>
 <p>Use this token in the WordPress plugin to integrate Gravito's CMP into your website.</p>
-</li>
-</ol>
-<h2 id="3-deployment-script">3. Deployment Script:</h2>
-<p>Utilize the deployment script to efficiently incorporate Gravito's CMP into your website's codebase. Please follow the steps below to deploy using the deployment script:</p>
-<ol>
-<li>
-<p>Select the <strong>Deployment Script</strong> option from the provided <strong>Deployment Method</strong> and click <strong>Validate &amp; Publish</strong> button.</p>
-<p><img alt="" src="../img/script_deployment1.png" /></p>
-</li>
-<li>
-<p>if the validation and publishing is successful, you will get an option to <strong>Generate Deployment Script</strong> and <strong>Download Config</strong>.</p>
-<p><img alt="" src="../img/script_deployment2.png" /></p>
-</li>
-<li>
-<p>Click on the <strong>Generate Deployment Script</strong> button to generate the deployment script. This will open a modal with the generated script as shown in below image. You can paste this script in your website's <code>&lt;body&gt;</code> tag.</p>
-<p><img alt="" src="../img/script_deployment3.png" /></p>
 </li>
 </ol>
               
