@@ -1,5 +1,16 @@
 Release Notes
 =============
+Release Notes 6.3.0 (16/09/2025)
+
+New Features:
+- Configurable GCMv2 Storage Mapping
+  Added support for configuring Google Consent Mode mappings for personalization_storage, functionality_storage, and security_storage. These can now be explicitly mapped to cookie categories on the consent banner, providing more granular control and transparency.
+
+- Detailed Vendor Listings Under Purposes
+  In the TCF CMP, the vendor count shown under each purpose is now expanded into an actual list of vendors consuming that purpose. This improvement allows users to see exactly which vendors rely on each purpose, enhancing clarity and compliance.
+
+
+
 Release Notes 6.2.0 (05/08/2025)
 
 New Features:
