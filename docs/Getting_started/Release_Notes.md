@@ -13,7 +13,14 @@ Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 81 - 10/06/2025 <mark>New</mark>
+## Release notes: Sprint 82 - 19/09/2025 <mark>New</mark>
+
+- New analytics containing overview of account & domain status has been added to dashboard.
+- Charts in **CMP Statistics** of dashboard are now refined to show deeper insights.
+- Upgraded **Consent statistics** in Reports section to view domain wise and browser wise consent data.
+- Added new GCM V2 consent related options in Gravito CMP V6 configurator.
+
+## Release notes: Sprint 81 - 10/06/2025
 
 - Latest version of Gravito CMP and its **modular Configurator**. This is the latest version of Gravito and is a powerful, new tool from Gravito designed for ultimate customizability and flexibility. It provides a single, consistent setup-to-deployment process for all CMP frameworks, making consent management smoother than ever! 
   - Existing versions of CMP will continue to function.
