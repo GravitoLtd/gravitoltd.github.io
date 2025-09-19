@@ -21,7 +21,7 @@ This document explains:
 
 ## What is Google Consent Mode?
 
-Google Consent Mode provides a way for websites to communicate user consent choices to Google’s tags. It enables Google services to adjust data collection based on consent status, ensuring better compliance and reporting continuity. [Read more here]( https://developers.google.com/tag-platform/security/guides/consent?consentmode=advanced)
+ Google Consent Mode lets a site communicate a visitor’s consent status to Google. Gravito CMP collects and stores user consent and integrates with Google Consent Mode to share that status with Google. When consent is limited or denied, Google tags adjust accordingly (e.g., restricted storage or other consent-aware behavior). Consent Mode is not a banner and not a legal compliance solution; it operates in tandem with our CMP [Read more here]( https://developers.google.com/tag-platform/security/guides/consent?consentmode=advanced)
 
 For example:
 

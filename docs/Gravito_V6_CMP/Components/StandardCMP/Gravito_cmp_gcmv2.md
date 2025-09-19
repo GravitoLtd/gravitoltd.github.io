@@ -2,7 +2,7 @@
 
 ## What is Google Consent Mode v2?
 
-**Google Consent Mode v2** allows you to adjust how Google tags behave based on the user's consent choices. This helps ensure compliance with data protection regulations while still enabling important site functionality.
+**Google Consent Mode v2** allows you to adjust how Google tags behave based on the user's consent choices. Gravito CMP collects and stores user consent and integrates with Google Consent Mode to share that status with Google. When consent is limited or denied, Google tags adjust accordingly (e.g., restricted storage or other consent-aware behavior). Consent Mode is not a banner and not a legal compliance solution; it operates in tandem with our CMP; you remain responsible for obtaining any required consents.
 
 Consent Mode v2 particularly impacts:
 
