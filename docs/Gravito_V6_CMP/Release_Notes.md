@@ -1,5 +1,23 @@
 Release Notes
 =============
+Release Notes 6.4.0 (14/10/2025)
+
+New Features:
+
+- GPP (Global Privacy Platform) Support
+Added support for GPP, enabling multi-region compliant CMP solutions. This enhancement allows the CMP to handle consent frameworks across multiple jurisdictions seamlessly, offering improved flexibility for global deployments.
+
+- Hide Cookie Count on Second Layer
+  Introduced a configuration option to hide the cookie count on the second layer of the standard CMP banner. This provides a cleaner and more customizable user experience while maintaining compliance.
+
+Improvements:
+
+- Enhanced Internal Performance
+  Improved lazy loading mechanisms and optimized internal processes for faster initialization and smoother runtime performance.
+
+- General Stability Enhancements
+  Minor internal fixes and optimizations to improve reliability and overall system responsiveness.
+
 Release Notes 6.3.0 (16/09/2025)
 
 New Features:
