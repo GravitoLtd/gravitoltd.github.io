@@ -33,8 +33,7 @@ Help content for each field is provided in the configurator itself. You can hove
 
 ## Stub loading
 
-We recommend adding the TCF stub in the <head> of your website so that it is the first thing that loads and the __tcfAPI window object is available early. Below is the stub script.
-
+We recommend adding the TCF stub at the very top of the `<body>` section of your website so it loads first and makes the `__tcfapi` window object available as early as possible. Below is the stub script.
 
 ```html
 <script>

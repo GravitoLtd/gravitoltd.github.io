@@ -21,7 +21,7 @@ Now you can copy or download the deployment script using the options as shown in
 > **Note**: If you want to deploy the CMP on a mobile application, please **enable** the [Webview Mode](./Components/TCFCMP/webview_cmp_for_apps.md) option in the Deployment tab.
         ![](./img/webview_button.png)
 
-**For Website** - You can paste the script directly into the `<head>` section of your website so that it loads before any other scripts. 
+**For Website** - You can paste the script at the very top of the `<body>` section of your website so it loads before any other scripts. 
 
 **For Mobile App** - You can download the script as a `HTML` file and use it in your mobile app's webview. This html file can be downloaded only when you enable the webview mode.
 
