@@ -1,11 +1,52 @@
-Release Notes
-=============
+# Release Notes
+
+Release Notes 6.5.0 (11/11/2025)
+
+New Features:
+
+- Added support for hiding the Legitimate Interest checkbox on the CMP UI.
+  This change is UI-only and does not affect internal consent or TCF logic.
+
+  To enable this feature, set:
+
+  ```js
+  gravito.config.cmp.tcf.core.hideLegitimateInterest = true;
+  ```
+
+Bug Fixes:
+
+- Fixed an inconsistency in the window.gravitoData object’s data type.
+  It will now always be a JSON string.
+
+When no consents are present gravitoData.lightCMP / gravitoData.CMP → "{}"
+
+When consents exist → JSON string containing the corresponding consent data.
+
+Release Notes 6.4.3 (05/11/2025)
+
+Bug Fixes:
+
+- Fixed an issue regarding 5.1 issue where TC String generated using latest IAB TCF library was not being accepted by Google Ad Manager. This issue was fixed by using an stable version of IAB TCF library to generate TC String.
+
+Releas Notes 6.4.2 (03/11/2025)
+
+Bug Fixes:
+
+- Resloved the issue for mapping releated to GCMV2 consents in TCF CMP for security_storage, functionality_storage, and personalization_storage.
+  Now the mapping can be done correctly as per the configuration.
+
+Release Notes 6.4.1 (28/10/2025)
+
+Bug Fixes:
+
+- Fixed an issue with OOB vendors section getting populated incorectly when adding disclosed vendors in TCF CMP.
+
 Release Notes 6.4.0 (14/10/2025)
 
 New Features:
 
 - GPP (Global Privacy Platform) Support
-Added support for GPP, enabling multi-region compliant CMP solutions. This enhancement allows the CMP to handle consent frameworks across multiple jurisdictions seamlessly, offering improved flexibility for global deployments.
+  Added support for GPP, enabling multi-region compliant CMP solutions. This enhancement allows the CMP to handle consent frameworks across multiple jurisdictions seamlessly, offering improved flexibility for global deployments.
 
 - Hide Cookie Count on Second Layer
   Introduced a configuration option to hide the cookie count on the second layer of the standard CMP banner. This provides a cleaner and more customizable user experience while maintaining compliance.
@@ -21,13 +62,12 @@ Improvements:
 Release Notes 6.3.0 (16/09/2025)
 
 New Features:
+
 - Configurable GCMv2 Storage Mapping
   Added support for configuring Google Consent Mode mappings for personalization_storage, functionality_storage, and security_storage. These can now be explicitly mapped to cookie categories on the consent banner, providing more granular control and transparency.
 
 - Detailed Vendor Listings Under Purposes
   In the TCF CMP, the vendor count shown under each purpose is now expanded into an actual list of vendors consuming that purpose. This improvement allows users to see exactly which vendors rely on each purpose, enhancing clarity and compliance.
-
-
 
 Release Notes 6.2.0 (05/08/2025)
 
@@ -56,8 +96,9 @@ New Features:
 - WebView Support for TCF CMP  
   Gravito CMP (New) now supports usage in WebView-based mobile applications for the TCF CMP component. This enables seamless integration of the consent flow inside hybrid or native mobile apps using platforms like React Native, Flutter, Android, and iOS.
 
-- UX Improvements in Defaults Tab  
-  - Fixed scrolling behavior on the second layer of the CMP interface for smoother interaction.  
+- UX Improvements in Defaults Tab
+
+  - Fixed scrolling behavior on the second layer of the CMP interface for smoother interaction.
   - Minor refinements in layout and interaction for improved usability.
 
 - Smart Link Handling for Privacy Policy  
@@ -74,8 +115,9 @@ New Features:
   This is the initial release of Gravito CMP (New), a newly developed variant of our CMP platform. It is built using Preact, a lightweight alternative to React, offering improved performance and reduced bundle size.
 
 - Support for Standard and TCF CMP  
-  Gravito CMP (New) supports both Standard CMP and TCF CMP components, allowing you to choose the best fit for your compliance needs.  
-  - Standard CMP: Gravito’s own non-TCF CMP, suitable for any website.  
+  Gravito CMP (New) supports both Standard CMP and TCF CMP components, allowing you to choose the best fit for your compliance needs.
+
+  - Standard CMP: Gravito’s own non-TCF CMP, suitable for any website.
   - TCF CMP: A TCF-certified CMP designed for GDPR compliance, suitable for any website.
 
 - Lazy Loading for Better Performance  
