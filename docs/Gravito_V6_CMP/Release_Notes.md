@@ -1,6 +1,6 @@
 # Release Notes
 
-Release Notes 6.5.0 (11/11/2025)
+## Release Notes 6.5.0 (11/11/2025)
 
 New Features:
 
@@ -9,39 +9,37 @@ New Features:
 
   To enable this feature, set:
 
-  ```js
-  gravito.config.cmp.tcf.core.hideLegitimateInterest = true;
-  ```
+  ```gravito.config.cmp.tcf.core.hideLegitimateInterest = true;```
 
 Bug Fixes:
 
 - Fixed an inconsistency in the window.gravitoData object’s data type.
   It will now always be a JSON string.
 
-When no consents are present gravitoData.lightCMP / gravitoData.CMP → "{}"
+- When no consents are present gravitoData.lightCMP / gravitoData.CMP → "{}"
 
-When consents exist → JSON string containing the corresponding consent data.
+- When consents exist → JSON string containing the corresponding consent data.
 
-Release Notes 6.4.3 (05/11/2025)
+## Release Notes 6.4.3 (05/11/2025)
 
 Bug Fixes:
 
 - Fixed an issue regarding 5.1 issue where TC String generated using latest IAB TCF library was not being accepted by Google Ad Manager. This issue was fixed by using an stable version of IAB TCF library to generate TC String.
 
-Releas Notes 6.4.2 (03/11/2025)
+## Release Notes 6.4.2 (03/11/2025)
 
 Bug Fixes:
 
 - Resloved the issue for mapping releated to GCMV2 consents in TCF CMP for security_storage, functionality_storage, and personalization_storage.
   Now the mapping can be done correctly as per the configuration.
 
-Release Notes 6.4.1 (28/10/2025)
+## Release Notes 6.4.1 (28/10/2025)
 
 Bug Fixes:
 
 - Fixed an issue with OOB vendors section getting populated incorectly when adding disclosed vendors in TCF CMP.
 
-Release Notes 6.4.0 (14/10/2025)
+## Release Notes 6.4.0 (14/10/2025)
 
 New Features:
 
@@ -59,7 +57,7 @@ Improvements:
 - General Stability Enhancements
   Minor internal fixes and optimizations to improve reliability and overall system responsiveness.
 
-Release Notes 6.3.0 (16/09/2025)
+## Release Notes 6.3.0 (16/09/2025)
 
 New Features:
 
@@ -69,7 +67,7 @@ New Features:
 - Detailed Vendor Listings Under Purposes
   In the TCF CMP, the vendor count shown under each purpose is now expanded into an actual list of vendors consuming that purpose. This improvement allows users to see exactly which vendors rely on each purpose, enhancing clarity and compliance.
 
-Release Notes 6.2.0 (05/08/2025)
+## Release Notes 6.2.0 (05/08/2025)
 
 New Features:
 
@@ -79,7 +77,7 @@ New Features:
 - Decoupled GCMv2 Consent Handling
   GCMv2 consents are now managed independently of Google’s advertising TCF vendor. This allows more flexibility in deploying GCMv2-based consent strategies even when Google TCF consent is not required or applicable.
 
-Release Notes 6.2.0 (05/08/2025)
+## Release Notes 6.2.0 (05/08/2025)
 
 Enhancements:
 
@@ -89,7 +87,7 @@ Enhancements:
 
 - In TCF section, the configuration for "Features", "Special Features", and "Special Purposes" is now available to allow for more granular control over consent settings.
 
-Release Notes 6.1.0 (01/07/2025)
+## Release Notes 6.1.0 (01/07/2025)
 
 New Features:
 
@@ -107,7 +105,7 @@ New Features:
 - DOM Layering Enhancements  
   CSS adjustments ensure the CMP consistently renders as the top-most DOM element, preventing visual obstructions.
 
-Release Notes 6.0.0 (v600) (10/06/2025)
+## Release Notes 6.0.0 (v600) (10/06/2025)
 
 New Features:
 
