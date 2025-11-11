@@ -50,11 +50,15 @@ With **Consent Mode v2**, Google introduced two **new consent signals** required
 You’ll now see default mapping for the following Google consent signals::
 
 - `ad_storage`
-- `analytics_storage`
 - `ad_user_data`
 - `ad_personalization`
+- `analytics_storage`
 
-These signals are pre-mapped to the TCF purposes based on Google's requirements and should not be changed.
+These signals are pre-mapped to the TCF purposes based on Google's requirements and should not be changed. However, you can configure the following GCM signals as per your requirements and also set default values for them:
+
+- `functionality_storage`
+- `personalization_storage`
+- `security_storage`
 
 you may continue filling out the other CMP configuration steps, or jump directly to the **Deployment"** tab for publishing your config.
 

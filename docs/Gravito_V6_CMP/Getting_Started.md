@@ -29,7 +29,7 @@ window.gravito.config=gravitoConfig
       gravitoSDKTag.onload = function () {
         window.gravito.init();
       };
-      document.head.appendChild(gravitoSDKTag);;
+      document.body.appendChild(gravitoSDKTag);;
 
 ```
 

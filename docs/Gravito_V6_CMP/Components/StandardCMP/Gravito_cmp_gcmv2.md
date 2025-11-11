@@ -56,11 +56,16 @@ With **Consent Mode v2**, Google introduced two **new consent signals** required
 
 You’ll now see dropdowns to map categories for the following Google consent signals:
 - `ad_storage`
-- `analytics_storage`
 - `ad_user_data`
 - `ad_personalization`
+- `analytics_storage`
+- `functionality_storage`
+- `personalization_storage`
+- `security_storage`
 
 For each of these, select the relevant **consent category** from the dropdown list. You will see default mappings, but you can change them as per your requirements.
+
+Additionally, you can set the default values for `functionality_storage`, `personalization_storage`, and `security_storage` to either `granted` or `denied`.
 
 Once mappings are complete, you may continue filling out the other CMP configuration steps or jump directly to the **Deployment** tab for publishing your config.
 
