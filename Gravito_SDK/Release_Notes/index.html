@@ -141,6 +141,25 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="release-notes">Release Notes</h1>
+<p>Release Notes 6.1.0 (11/11/2025)
+New Features:</p>
+<ul>
+<li>Added Support for New SDK feature called IsHuman
+  This feature allows websites to determine if a user is human or a bot, enhancing security and user experience.</li>
+</ul>
+<p>To enable this feature, set:</p>
+<p><code>js
+  window.gravito.config = {
+    baseURL: "https://your-base-url.com", // Base URL for sending data to backend, if not set, default Gravito URL will be used
+    sendIsHumanToBackend: true, // Enable sending IsHuman data to backend
+    performanceThreshold: 0.02, // Threshold for performance metrics
+    isHumanLikenessThreshold: 1, // Threshold for determining human likeness
+  };</code></p>
+<p>Release Notes 6.0.1 (13/11/2025)</p>
+<p>Bug Fixes:</p>
+<ul>
+<li>Fixed an issue where sdk was not able to deploy only firstParty module when CMP module was not included in the configuration.</li>
+</ul>
 <p>Release Notes 6.0.0 (v600) (10/06/2025)</p>
 <p>New Features:</p>
 <ul>
@@ -162,44 +181,44 @@
 <p>Integration:</p>
 <p>Use the following snippet to include this version of the SDK in your project:</p>
 <pre><code class="language-html">&lt;script&gt;
-    // init gravito 
-    window.gravito = {};
+  // init gravito
+  window.gravito = {};
 
-    // add config object to gravito
-    window.gravito.config = {
-        cmp: {
-            settings: {
-                // common settings for all CMP components
-            },
-            styles: {
-                // common styles for all CMP components
-            },
-            tcf: {
-                // configuration for TCF CMP
-            },
-            standard: {
-                // configuration for standard CMP
-            },
-        },
-        firstParty: {
-            // configuration for first party CMP
-        }
-    };
+  // add config object to gravito
+  window.gravito.config = {
+    cmp: {
+      settings: {
+        // common settings for all CMP components
+      },
+      styles: {
+        // common styles for all CMP components
+      },
+      tcf: {
+        // configuration for TCF CMP
+      },
+      standard: {
+        // configuration for standard CMP
+      },
+    },
+    firstParty: {
+      // configuration for first party CMP
+    },
+  };
 
-    // load gravito SDK
-    var gravitoSDKTag = document.createElement(&quot;script&quot;);
-    gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdk/v6/latest/sdk.js&quot;;
-    gravitoSDKTag.onload = function () {
-        window.gravito.init();
-    };
-    document.body.appendChild(gravitoSDKTag);
+  // load gravito SDK
+  var gravitoSDKTag = document.createElement(&quot;script&quot;);
+  gravitoSDKTag.src = &quot;https://cdn.gravito.net/sdk/v6/latest/sdk.js&quot;;
+  gravitoSDKTag.onload = function () {
+    window.gravito.init();
+  };
+  document.body.appendChild(gravitoSDKTag);
 &lt;/script&gt;
 </code></pre>
 <p>Release Notes 3.0.6 (v306)<em> (06/05/2025)</em></p>
 <p>New Features:</p>
 <ul>
 <li>Added Support for Microsoft Universal Event Tracking (UET) Mode
-You can now enable Microsoft UET tracking by configuring useUET and adsConsentId in your CMP setup. This allows consent-aware integration with Microsoft's advertising platform.  </li>
+  You can now enable Microsoft UET tracking by configuring useUET and adsConsentId in your CMP setup. This allows consent-aware integration with Microsoft's advertising platform.</li>
 </ul>
 <p>Release Notes (V 2.0.12)<em> (08/02/2024)</em></p>
 <p>New Features:</p>

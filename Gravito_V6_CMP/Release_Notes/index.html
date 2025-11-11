@@ -75,6 +75,26 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Release Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-650-11112025">Release Notes 6.5.0 (11/11/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-643-05112025">Release Notes 6.4.3 (05/11/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-642-03112025">Release Notes 6.4.2 (03/11/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-641-28102025">Release Notes 6.4.1 (28/10/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-640-14102025">Release Notes 6.4.0 (14/10/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-630-16092025">Release Notes 6.3.0 (16/09/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-620-05082025">Release Notes 6.2.0 (05/08/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-620-05082025_1">Release Notes 6.2.0 (05/08/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-610-01072025">Release Notes 6.1.0 (01/07/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-600-v600-10062025">Release Notes 6.0.0 (v600) (10/06/2025)</a>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -139,15 +159,79 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="release-notes">Release Notes</h1>
-<p>Release Notes 6.3.0 (16/09/2025)</p>
-<p>New Features:
-- Configurable GCMv2 Storage Mapping
-  Added support for configuring Google Consent Mode mappings for personalization_storage, functionality_storage, and security_storage. These can now be explicitly mapped to cookie categories on the consent banner, providing more granular control and transparency.</p>
+<h2 id="release-notes-650-11112025">Release Notes 6.5.0 (11/11/2025)</h2>
+<p>New Features:</p>
 <ul>
-<li>Detailed Vendor Listings Under Purposes
-  In the TCF CMP, the vendor count shown under each purpose is now expanded into an actual list of vendors consuming that purpose. This improvement allows users to see exactly which vendors rely on each purpose, enhancing clarity and compliance.</li>
+<li>Added support for hiding the Legitimate Interest checkbox on the CMP UI.
+  This change is UI-only and does not affect internal consent or TCF logic.</li>
 </ul>
-<p>Release Notes 6.2.0 (05/08/2025)</p>
+<p>To enable this feature, set:</p>
+<p><code>gravito.config.cmp.tcf.core.hideLegitimateInterest = true;</code></p>
+<p>Bug Fixes:</p>
+<ul>
+<li>
+<p>Fixed an inconsistency in the window.gravitoData object’s data type.
+  It will now always be a JSON string.</p>
+</li>
+<li>
+<p>When no consents are present gravitoData.lightCMP / gravitoData.CMP → "{}"</p>
+</li>
+<li>
+<p>When consents exist → JSON string containing the corresponding consent data.</p>
+</li>
+</ul>
+<h2 id="release-notes-643-05112025">Release Notes 6.4.3 (05/11/2025)</h2>
+<p>Bug Fixes:</p>
+<ul>
+<li>Fixed an issue regarding 5.1 issue where TC String generated using latest IAB TCF library was not being accepted by Google Ad Manager. This issue was fixed by using an stable version of IAB TCF library to generate TC String.</li>
+</ul>
+<h2 id="release-notes-642-03112025">Release Notes 6.4.2 (03/11/2025)</h2>
+<p>Bug Fixes:</p>
+<ul>
+<li>Resloved the issue for mapping releated to GCMV2 consents in TCF CMP for security_storage, functionality_storage, and personalization_storage.
+  Now the mapping can be done correctly as per the configuration.</li>
+</ul>
+<h2 id="release-notes-641-28102025">Release Notes 6.4.1 (28/10/2025)</h2>
+<p>Bug Fixes:</p>
+<ul>
+<li>Fixed an issue with OOB vendors section getting populated incorectly when adding disclosed vendors in TCF CMP.</li>
+</ul>
+<h2 id="release-notes-640-14102025">Release Notes 6.4.0 (14/10/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>
+<p>GPP (Global Privacy Platform) Support
+  Added support for GPP, enabling multi-region compliant CMP solutions. This enhancement allows the CMP to handle consent frameworks across multiple jurisdictions seamlessly, offering improved flexibility for global deployments.</p>
+</li>
+<li>
+<p>Hide Cookie Count on Second Layer
+  Introduced a configuration option to hide the cookie count on the second layer of the standard CMP banner. This provides a cleaner and more customizable user experience while maintaining compliance.</p>
+</li>
+</ul>
+<p>Improvements:</p>
+<ul>
+<li>
+<p>Enhanced Internal Performance
+  Improved lazy loading mechanisms and optimized internal processes for faster initialization and smoother runtime performance.</p>
+</li>
+<li>
+<p>General Stability Enhancements
+  Minor internal fixes and optimizations to improve reliability and overall system responsiveness.</p>
+</li>
+</ul>
+<h2 id="release-notes-630-16092025">Release Notes 6.3.0 (16/09/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>
+<p>Configurable GCMv2 Storage Mapping
+  Added support for configuring Google Consent Mode mappings for personalization_storage, functionality_storage, and security_storage. These can now be explicitly mapped to cookie categories on the consent banner, providing more granular control and transparency.</p>
+</li>
+<li>
+<p>Detailed Vendor Listings Under Purposes
+  In the TCF CMP, the vendor count shown under each purpose is now expanded into an actual list of vendors consuming that purpose. This improvement allows users to see exactly which vendors rely on each purpose, enhancing clarity and compliance.</p>
+</li>
+</ul>
+<h2 id="release-notes-620-05082025">Release Notes 6.2.0 (05/08/2025)</h2>
 <p>New Features:</p>
 <ul>
 <li>
@@ -159,7 +243,7 @@
   GCMv2 consents are now managed independently of Google’s advertising TCF vendor. This allows more flexibility in deploying GCMv2-based consent strategies even when Google TCF consent is not required or applicable.</p>
 </li>
 </ul>
-<p>Release Notes 6.2.0 (05/08/2025)</p>
+<h2 id="release-notes-620-05082025_1">Release Notes 6.2.0 (05/08/2025)</h2>
 <p>Enhancements:</p>
 <ul>
 <li>
@@ -172,7 +256,7 @@
 <p>In TCF section, the configuration for "Features", "Special Features", and "Special Purposes" is now available to allow for more granular control over consent settings.</p>
 </li>
 </ul>
-<p>Release Notes 6.1.0 (01/07/2025)</p>
+<h2 id="release-notes-610-01072025">Release Notes 6.1.0 (01/07/2025)</h2>
 <p>New Features:</p>
 <ul>
 <li>
@@ -180,9 +264,11 @@
   Gravito CMP (New) now supports usage in WebView-based mobile applications for the TCF CMP component. This enables seamless integration of the consent flow inside hybrid or native mobile apps using platforms like React Native, Flutter, Android, and iOS.</p>
 </li>
 <li>
-<p>UX Improvements in Defaults Tab  </p>
+<p>UX Improvements in Defaults Tab</p>
 </li>
-<li>Fixed scrolling behavior on the second layer of the CMP interface for smoother interaction.  </li>
+<li>
+<p>Fixed scrolling behavior on the second layer of the CMP interface for smoother interaction.</p>
+</li>
 <li>
 <p>Minor refinements in layout and interaction for improved usability.</p>
 </li>
@@ -195,7 +281,7 @@
   CSS adjustments ensure the CMP consistently renders as the top-most DOM element, preventing visual obstructions.</p>
 </li>
 </ul>
-<p>Release Notes 6.0.0 (v600) (10/06/2025)</p>
+<h2 id="release-notes-600-v600-10062025">Release Notes 6.0.0 (v600) (10/06/2025)</h2>
 <p>New Features:</p>
 <ul>
 <li>
@@ -204,9 +290,11 @@
 </li>
 <li>
 <p>Support for Standard and TCF CMP<br />
-  Gravito CMP (New) supports both Standard CMP and TCF CMP components, allowing you to choose the best fit for your compliance needs.  </p>
+  Gravito CMP (New) supports both Standard CMP and TCF CMP components, allowing you to choose the best fit for your compliance needs.</p>
 </li>
-<li>Standard CMP: Gravito’s own non-TCF CMP, suitable for any website.  </li>
+<li>
+<p>Standard CMP: Gravito’s own non-TCF CMP, suitable for any website.</p>
+</li>
 <li>
 <p>TCF CMP: A TCF-certified CMP designed for GDPR compliance, suitable for any website.</p>
 </li>

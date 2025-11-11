@@ -186,11 +186,16 @@
 <p>You’ll now see default mapping for the following Google consent signals::</p>
 <ul>
 <li><code>ad_storage</code></li>
-<li><code>analytics_storage</code></li>
 <li><code>ad_user_data</code></li>
 <li><code>ad_personalization</code></li>
+<li><code>analytics_storage</code></li>
 </ul>
-<p>These signals are pre-mapped to the TCF purposes based on Google's requirements and should not be changed.</p>
+<p>These signals are pre-mapped to the TCF purposes based on Google's requirements and should not be changed. However, you can configure the following GCM signals as per your requirements and also set default values for them:</p>
+<ul>
+<li><code>functionality_storage</code></li>
+<li><code>personalization_storage</code></li>
+<li><code>security_storage</code></li>
+</ul>
 <p>you may continue filling out the other CMP configuration steps, or jump directly to the <strong>Deployment"</strong> tab for publishing your config.</p>
 <blockquote>
 <p><strong>Note:</strong> If you are using <strong>GCM Basic Mode</strong>, you will see additional logic in your deployment script.</p>
