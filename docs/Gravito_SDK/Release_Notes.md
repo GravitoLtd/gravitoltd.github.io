@@ -17,7 +17,7 @@ New Features:
   };
   ```
 
-Release Notes 6.0.1 (13/11/2025)
+Release Notes 6.0.1 (13/10/2025)
 
 Bug Fixes:
 
