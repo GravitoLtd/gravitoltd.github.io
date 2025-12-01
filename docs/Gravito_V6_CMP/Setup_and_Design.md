@@ -30,4 +30,4 @@ You can now go through each of the following sections and configure the CMP as p
 
 ![](./img/deployment_highlight.png)
 
-> **Note**: If you want to check how a published CMP looks like, you can always click the publish option from the CMP configuration listing. This will take you to the deployment page. Here you can use the **CMP Preview** button.
+> **Note**: If you want to preview how your customized CMP banner looks, click the “CMP Preview” button in the top-right corner of the Configurator page. For more details, refer to the [CMP Preview document](./Components/preview.md).
