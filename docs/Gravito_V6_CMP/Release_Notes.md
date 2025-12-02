@@ -1,5 +1,11 @@
 # Release Notes
 
+## Release Notes 6.5.1 (02/12/2025)
+
+Improvements:
+
+- Created and exposed a new preview function for internal use.
+
 ## Release Notes 6.5.0 (11/11/2025)
 
 New Features:

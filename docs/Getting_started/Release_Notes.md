@@ -13,7 +13,11 @@ Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 82 - 19/09/2025 <mark>New</mark>
+## Release notes: Sprint 82 - 02/12/2025 <mark>New</mark>
+
+- Gravito CMP configurator preview now opens in a separate browser tab keeping the configurator visible all the time. You can now modify you configuration & styling and see the preview update side-by-side in real-time. See [Detailed CMP preview guide](../Gravito_V6_CMP//Components/preview.md)
+
+## Release notes: Sprint 82 - 19/09/2025
 
 - New analytics containing overview of account & domain status has been added to dashboard.
 - Charts in **CMP Statistics** of dashboard are now refined to show deeper insights.
