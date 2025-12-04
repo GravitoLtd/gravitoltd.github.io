@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>How to Provide Google with the Required Legitimate Interests Even on Reject All Action (Only for TCF Components)? - Gravito Documentation</title>
+    <title>CMP Preview - Gravito Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "How to Provide Google with the Required Legitimate Interests Even on Reject All Action (Only for TCF Components)?";
-        var mkdocs_page_input_path = "Gravito_Pro_CMP\\FAQ\\How_to_be_google_complaint.md";
+        var mkdocs_page_name = "CMP Preview";
+        var mkdocs_page_input_path = "Gravito_V6_CMP\\Components\\preview.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -61,19 +61,19 @@
               </ul>
               <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_V6_CMP/Getting_Started/">Getting Started</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_Started/">Getting Started</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_V6_CMP/Setup_and_Design/">Setup and Design</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Setup_and_Design/">Setup and Design</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_V6_CMP/Customization/">Customization</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Customization/">Customization</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_V6_CMP/Components/">Components</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Components</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_V6_CMP/Deployment/">Deployment</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Deployment/">Deployment</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_V6_CMP/FAQ/">FAQ's</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../FAQ/">FAQ's</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_V6_CMP/Release_Notes/">Release Notes</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Release_Notes/">Release Notes</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito SDK</span></p>
@@ -126,7 +126,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">How to Provide Google with the Required Legitimate Interests Even on Reject All Action (Only for TCF Components)?</li>
+      <li class="breadcrumb-item active">CMP Preview</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -135,35 +135,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="how-to-provide-google-with-the-required-legitimate-interests-even-on-reject-all-action-only-for-tcf-components">How to Provide Google with the Required Legitimate Interests Even on Reject All Action (Only for TCF Components)?</h1>
-<p>In PRO CMP, there is a provision to provide Google with the required legitimate interests even on the Reject All action. This is done by configuring the <code>necessaryLegitimatePurposes</code> field in the <code>gravitoPROCMPConfig</code> object.<br />
-Google requires legitimate interests for purposes <code>[2, 7, 9, 10]</code> to be provided even on a Reject All action.</p>
-<p>You can modify this field in either of the following ways:</p>
+                <h1 id="cmp-preview">CMP Preview</h1>
+<p>The CMP Preview feature in Gravito CMP Configurator allows you to see how your customized CMP banner will appear to end-users before deploying it live. This feature is essential for ensuring that all design elements, colors, fonts, logos and other configuration options are correctly implemented according to your branding guidelines.</p>
+<h2 id="how-to-use-cmp-preview">How to Use CMP Preview</h2>
 <ol>
-<li>
-<p><strong>Using Configurator</strong>:  </p>
-<ul>
-<li>Open the CMP configurator in the Admin Portal.  </li>
-<li>Select the config from the list and click on the <strong>Copy Configuration</strong> icon/button.  </li>
-<li>This will create a new CMP config with the same settings as the original one. Now enter the name on the Basic Settings page and click the <strong>Get Started</strong> button.  </li>
-<li>In the left-side menu, select the <strong>TCF CMP</strong> component.  </li>
-<li>Now click on <strong>TCF Settings</strong>.  </li>
-<li>In the TCF settings, you will see the <code>necessaryLegitimatePurposes</code> field. Change it to use purposes <code>2, 7, 9, 10</code>, then click the <strong>Save Progress</strong> button, and finally click the <strong>Publish</strong> button to publish the new config.  </li>
-<li>Now, when you use this updated config on your website, it will provide Google with the required legitimate interests even on a Reject All action.</li>
-</ul>
-</li>
-<li>
-<p><strong>Without Configurator</strong>:  </p>
-<ul>
-<li>If you are using the TCF CMP component, update the <code>necessaryLegitimatePurposes</code> field at <code>window.gravitoPROCMPConfig.tcfCMP.core.necessaryLegitimatePurposes</code> in the config object.  </li>
-<li>If you are using the Gravito CMP component, update the <code>necessaryLegitimatePurposes</code> field at <code>window.gravitoPROCMPConfig.gravitoCMP.core.necessaryLegitimatePurposes</code> in the config object.  </li>
-<li>Now, when you use this updated config on your website, it will provide Google with the required legitimate interests even on a Reject All action.</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p><strong>Note:</strong> This is only applicable for the TCF CMP component. The CMP will also additionally provide legitimate interest to Google’s TCF vendor. Its ID is configured in the config at <code>window.gravitoPROCMPConfig.tcfCMP.core.googleTcfId</code> in the config object.</p>
+<li><strong>Access the CMP Configurator</strong>: Navigate to the Gravito CMP Configurator and choose the configuration you want to edit or create a new one.</li>
+<li><strong>Preview Button</strong>: Look for the "Preview" button within the configurator interface. This button is typically located at the top right corner of the configurator.
+    <img alt="" src="../../img/preview_button.png" /></li>
+<li><strong>View the Preview</strong>: Clicking the "Preview" button will open a new window with a live preview of your CMP banner. You can interact with the banner to see how it behaves with different user actions.</li>
+<li><strong>Preview Window</strong>: You an place the preview window however you find most convenient. We recommend placing the preview window side-by-side with the configurator to see changes in real-time as you make adjustments.
+    <img alt="" src="../../img/preview_window.png" /><blockquote>
+<p><strong>Pro Tip</strong>: You can also use multi-monitor setups to have the configurator on one screen and the preview on another for better visibility.</p>
 </blockquote>
+</li>
+<li><strong>Make Customizations</strong>: As you make changes in the configurator, the preview will automatically update to reflect those changes. This allows you to see how different configurations affect the appearance and functionality of the CMP banner.</li>
+<li><strong>Debugging</strong>: You can use the browser's developer tools to inspect elements, view GCM dataLayer events, check consent string in cookies, and debug any issues that may arise during the preview.</li>
+</ol>
+<p>Note: If you encounter any issues with the preview not updating correctly, try refreshing the preview window or re-opening it from configurator.</p>
               
             </div>
           </div><footer>
