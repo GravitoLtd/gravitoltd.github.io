@@ -5,9 +5,10 @@ Stay up to date with our latest releases!
 Gravito’s release notes are generally divided as different category as development happens constantly under all categories. You can jump to specific release notes here
 
 - [Gravito CMP](https://docs.gravito.net/Gravito_V6_CMP/Release_Notes/) <mark>Latest</mark>
-- [Gravito Intelligent CMP](https://docs.gravito.net/Gravito_Intelligent_CMP/Release_Notes/) (Only applicable to existing deployments)
-- [Gravito TCF 2.2 CMP](https://docs.gravito.net/Gravito_TCF_2.2_CMP/Release_Notes/)  (Only applicable to existing deployments)
 - [Gravito SDK](https://docs.gravito.net/Gravito_SDK/Release_Notes/)
+- Gravito Intelligent CMP (Older version, to be deprecated) (Please contact Gravito Support)
+- Gravito TCF 2.2 CMP (Older version, to be deprecated) (Please contact Gravito Support)
+
 
 Here you can find more about the general product updates
 
