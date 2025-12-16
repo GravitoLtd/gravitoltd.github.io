@@ -1,5 +1,12 @@
 # Release Notes
 
+## Release Notes 6.5.2 (16/12/2025)
+
+New Features:
+- Added a configuration option to change the behavior close button on the CMP banner.
+- Count of vendor in TCF CMP can now be shown in legal footer section of 2nd tab.
+- Support HTML content rendering in purposes and vendors tabs of TCF CMP.
+
 ## Release Notes 6.5.1 (02/12/2025)
 
 Improvements:
