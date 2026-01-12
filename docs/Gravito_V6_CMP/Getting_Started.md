@@ -2,7 +2,11 @@
 
 **Gravito CMP (New)** is the latest version of Gravito and is a powerful, new tool from Gravito designed for ultimate customizability and flexibility. It provides a single, consistent setup-to-deployment process for all CMP frameworks, making consent management smoother than ever! 
 
-<span style="background-color: #FFFF00">Are you looking for the documentation of Gravito TCF 2.2 CMP, Intelligent CMP or the PRO CMP?. The links you had earlier will work and the documentation is still valid. If you cannot find a specific documentation please email us at **support(@)gravito.net** and we will help you with the same.</span>
+
+## TCF 2.3 Upgrade?:
+Planning to upgrade your TCF version to 2.3 (Deadline: 26/02/2026 ) ? 👉 [Start Here](./FAQ/How_to_upgrade_to_tcf_23.md).
+
+<span style="background-color: #FFFF00">Are you looking for the documentation of Gravito TCF 2.2 CMP, Intelligent CMP or the PRO CMP? Please email us at **support(@)gravito.net** and we will help you with the same.</span>
 
 ## Quick Reminder:
 Have you registered with Gravito yet? 👉 [Get Registered Here](https://adminv2.gravito.net).

@@ -67,6 +67,15 @@ The TCF aims to:
     - **Disclosure of Vendor Count:** Consent Management Platforms (CMPs) are required to disclose the total number of vendors seeking to establish a legal basis on the first layer of their user interfaces.
     - **Facilitated Withdrawal of Consent:** Users must be able to easily withdraw consent, with CMPs ensuring that their interfaces can be resurfaced for users to change their preferences at any time.
 
+### TCF v2.3
+- **Launched:** 19 June, 2025
+- **Key Changes:** 
+    - The TCF v2.3 is a smaller update, but still important, and the deadline to comply with it and make necessary updates is February 28, 2026. TCF 2.3 makes the previously optional **disclosedVendors** segment mandatory in order to resolve the ambiguity around the representation of LI in the TC string. This enhancement ensures that Vendors can always determine whether they were disclosed in the CMP UI.
+    - **Transition Timeline** :
+        - The transition period concludes on **28th February, 2026**.
+        - Starting 1st March, 2026: Any TC String created without the disclosedVendor segment will be deemed invalid. It is important to note that any TC Strings created before 1st    March, 2026 without the disclosedVendor segment will remain valid until they progressively get replaced as users renew and/or change the choices.
+        - All Vendors affected by the signalling ambiguity must recognise and act on the disclosedVendors segment appropriately when they receive a TC String created under 2.3
+
 ---
 
 ## Implications for Stakeholders
