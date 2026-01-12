@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Gravito CMP TCF 2.3 Upgrade - Gravito Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Gravito CMP TCF 2.3 Upgrade";
+        var mkdocs_page_input_path = "Gravito_V6_CMP\\FAQ\\How_to_upgrade_to_tcf_23.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../..">
+          <img src="../../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Register/">Register</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Support/">Support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Consent Managment</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Consent_Management/Iab_tcf/">IAB TCF</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Consent_Management/Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Components/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Deployment/">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">FAQ's</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Release_Notes/">Release Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Setup_and_Validation/">Setup and Validation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Version_3_%28Latest%29/">Version 3 (Latest)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Version_2/">Version 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Microprofile/">Microprofile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/CustomerdataApi/">Customer Data API</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other Features</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Other_Features/Domain_Cookie_Scan/">Domain Cookie Scan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Other_Features/GVL_Comparison/">GVL Comparison</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Try it out</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Try_it_out/Playbooks/">Playbooks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Gravito Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Gravito CMP TCF 2.3 Upgrade</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gravito-cmp-tcf-23-upgrade">Gravito CMP  TCF 2.3 Upgrade</h1>
+<p>The latest Gravito CMP (v6) incorporates the TCF 2.3 changes required for disclosed vendors as well as  introduces several new features, improvements, and changes to enhance user experience and compliance capabilities.</p>
+<p>You can have a look at a sample by <a href="https://j.digitalrights.world">clicking here</a></p>
+<h2 id="new-features-and-improvements">New Features and Improvements</h2>
+<ul>
+<li><strong>TCF 2.3 Compliance</strong>: Updated to comply with the latest TCF 2.3 standards, ensuring that the CMP meets current regulatory requirements including disclosed vendors section and other updates.</li>
+<li><strong>GPP (Global Privacy Platform) Support</strong>: Added support for GPP, enabling multi-region compliant CMP solutions. This enhancement allows the CMP to handle consent frameworks across multiple jurisdictions seamlessly, offering improved flexibility for global deployments.</li>
+<li><strong>Modular Architecture</strong>: The CMP has been restructured into a modular architecture, allowing for easier customization and integration of different components and frameworks based on specific needs.</li>
+<li><strong>Improved User Interface</strong>: The user interface has been revamped for better usability and accessibility, providing a more intuitive experience for end-users. This makes customization based on customer needs much more easier.</li>
+<li><strong>Enhanced Performance</strong>: Optimizations have been made to improve loading times and overall performance, ensuring a smoother experience for users.</li>
+<li><strong>Advanced Configuration Options</strong>: New configuration options have been introduced, allowing for more granular control over consent settings.</li>
+<li><strong>Tab Layout</strong>: The CMP now features a tabbed layout for easier navigation between different sections and settings. You can also add additional tabs as needed.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: For detailed information on the new components available in Gravito V6 CMP, please refer to the <a href="https://docs.gravito.net/Gravito_V6_CMP/Components/">Gravito CMP V6 Components</a> documentation.</p>
+</blockquote>
+<h2 id="migration-from-previous-versions">Migration from Previous Versions</h2>
+<p>Gravito V6 introduces major architectural and UI changes compared to previous releases to make things smoother and faster. We will support you throughout the migration process to ensure a smooth, low-risk transition.</p>
+<h2 id="migration-options">Migration Options</h2>
+<p>You have two supported migration paths — choose the one that best fits your rollout goals and resources:</p>
+<ul>
+<li>
+<p>Option A — Adopt the V6 default UI</p>
+<ul>
+<li>Description: Use the new modern look and feel, including tabbed navigation, improved accessibility, and support for custom tabs.</li>
+<li>Benefits: Full access to V6 features, easier future updates, improved UX and performance.</li>
+</ul>
+</li>
+<li>
+<p>Option B — Preserve your current UI</p>
+<ul>
+<li>Description: Keep your existing look and feel while upgrading V6 internals and compliance capabilities.</li>
+<li>Benefits: Minimal UI changes for end users; reduces immediate redesign effort.</li>
+</ul>
+</li>
+</ul>
+<h2 id="migration-steps-required-information">Migration steps &amp; required information</h2>
+<p>Please follow these steps to help us prepare and execute your migration:</p>
+<ol>
+<li>Send us your latest in-use CMP configuration. We'll extract relevant settings and prepare a V6 configuration for you.</li>
+<li>Provide a list of all custom features, overrides, or integrations you built on top of the current CMP so we can advise on compatibility and required changes.</li>
+<li>Describe any additional changes or new features you want in the V6 CMP (UX changes, new tabs, custom workflows, textual content updates, etc.).</li>
+<li>We recommend maintaining a staging/testing environment to validate behaviors before production rollout.</li>
+<li>After we review your configurator and feature list, we'll provide a migration plan and recommended configuration changes. In majority of the cases it will be just a copy and replace of your existing CMP configuration script.</li>
+</ol>
+<p>Send the required information to support@gravito.net and our team will assist with extraction, mapping, and migration guidance.</p>
+<blockquote>
+<p><strong>Note</strong>: If you want to create a new V6 CMP configuration from scratch instead of migrating an existing one, please visit our new CMP V6 Configurator at <a href="https://adminv2.gravito.net">Gravito Admin Portal</a>.</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/modal.js"></script>
+      <script src="../../../js/motomo.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

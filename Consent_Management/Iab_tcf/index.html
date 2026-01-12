@@ -70,6 +70,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tcf-v22">TCF v2.2</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v23">TCF v2.3</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#implications-for-stakeholders">Implications for Stakeholders</a>
@@ -227,6 +229,20 @@
 <li><strong>Standardized Vendor Information:</strong> Vendors must provide detailed information about data categories collected, retention periods, and any legitimate interests claimed. </li>
 <li><strong>Disclosure of Vendor Count:</strong> Consent Management Platforms (CMPs) are required to disclose the total number of vendors seeking to establish a legal basis on the first layer of their user interfaces.</li>
 <li><strong>Facilitated Withdrawal of Consent:</strong> Users must be able to easily withdraw consent, with CMPs ensuring that their interfaces can be resurfaced for users to change their preferences at any time.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tcf-v23">TCF v2.3</h3>
+<ul>
+<li><strong>Launched:</strong> 19 June, 2025</li>
+<li><strong>Key Changes:</strong> <ul>
+<li>The TCF v2.3 is a smaller update, but still important, and the deadline to comply with it and make necessary updates is February 28, 2026. TCF 2.3 makes the previously optional <strong>disclosedVendors</strong> segment mandatory in order to resolve the ambiguity around the representation of LI in the TC string. This enhancement ensures that Vendors can always determine whether they were disclosed in the CMP UI.</li>
+<li><strong>Transition Timeline</strong> :<ul>
+<li>The transition period concludes on <strong>28th February, 2026</strong>.</li>
+<li>Starting 1st March, 2026: Any TC String created without the disclosedVendor segment will be deemed invalid. It is important to note that any TC Strings created before 1st    March, 2026 without the disclosedVendor segment will remain valid until they progressively get replaced as users renew and/or change the choices.</li>
+<li>All Vendors affected by the signalling ambiguity must recognise and act on the disclosedVendors segment appropriately when they receive a TC String created under 2.3</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
