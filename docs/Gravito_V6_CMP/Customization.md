@@ -10,7 +10,7 @@ The **Styles** tab allows you to configure the appearance of your CMP. Below are
 
 ### 1. Logo URL
 - **Description**: URL of the logo to be displayed in the CMP.
-- **Example**: `https://gravitocdn.blob.core.windows.net/logos/Website_DEMO_logo.png`
+- **Example**: `https://cdn.gravito.net/logos/Website_DEMO_logo.png`
 - **Note**: It is recommended to use a logo that aligns with your brand identity.
 
 ### 2. Logo Alternate Text
@@ -56,3 +56,8 @@ The **Styles** tab allows you to configure the appearance of your CMP. Below are
 Apart from the styles tab, you can also customize the look and feel of the CMP by adding custom CSS. This allows for more granular control over the appearance of various elements within the CMP. You can add your CSS code in the **Custom CSS** editor field in the **Appearance** sub-tab of the selected framework.
 
 ![](./img/custom_css.png)
+
+
+## Technical Customization. 
+
+Gravito CMP’s technical specifications are driven by the configuration and can be tailored per deployment via the settings defined in portal as well as directly. Each parameter is documented with its behavior, defaults, and constraints in the Admin Portal Configurator as well. A consolidated reference of all available configuration keys is available [here](./FAQ/v6-configuration-options.md)
