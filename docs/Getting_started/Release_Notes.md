@@ -9,12 +9,18 @@ Gravito’s release notes are generally divided as different category as develop
 - Gravito Intelligent CMP (Older version, to be deprecated) (Please contact Gravito Support)
 - Gravito TCF 2.2 CMP (Older version, to be deprecated) (Please contact Gravito Support)
 
-
 Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 82 - 02/12/2025 <mark>New</mark>
+## Release notes: Sprint 83 - 26/03/2026 <mark>New</mark>
+
+- Added new configuration option to show/hide the cookie count on 2nd layer/tab of standard CMP banner.
+- Support for separate text on 1st and 2nd layer/tab of TCF CMP for Accept All button.
+- Footer logo can now be controlled via configuration in both TCF and standard CMP.
+- Shortened(remote config) deployment script option in Configuration deployment via configurator. 
+
+## Release notes: Sprint 82 - 02/12/2025
 
 - Gravito CMP configurator preview now opens in a separate browser tab keeping the configurator visible all the time. You can now modify you configuration & styling and see the preview update side-by-side in real-time. See [Detailed CMP preview guide](../Gravito_V6_CMP//Components/preview.md)
 

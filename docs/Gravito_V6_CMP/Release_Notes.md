@@ -1,5 +1,17 @@
 # Release Notes
 
+## Release Notes 6.5.3 (26/03/2026)
+
+New Features:
+- Dutch language support for TCF CMP.
+- Support for separate text on 1st and 2nd layer/tab of TCF CMP for Accept All button.
+- Footer logo made configurable via configuration in both TCF and standard CMP.
+
+Improvements:
+- Fixed Accessibility issues in the vendors tab of TCF CMP.
+- Added missing dropdown for special features in TCF CMP banner.
+- Fixed data retention count which was showing undefined in the certain cases in TCF CMP.
+
 ## Release Notes 6.5.2 (16/12/2025)
 
 New Features:
@@ -44,7 +56,7 @@ Bug Fixes:
 
 Bug Fixes:
 
-- Resloved the issue for mapping releated to GCMV2 consents in TCF CMP for security_storage, functionality_storage, and personalization_storage.
+- Resolved the issue for mapping related to GCMV2 consents in TCF CMP for security_storage, functionality_storage, and personalization_storage.
   Now the mapping can be done correctly as per the configuration.
 
 ## Release Notes 6.4.1 (28/10/2025)
