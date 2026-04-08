@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>GTM Custom Trigger Setup Based on Gravito GCM Consents - Gravito Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GTM Custom Trigger Setup Based on Gravito GCM Consents";
+        var mkdocs_page_input_path = "Gravito_V6_CMP\\FAQ\\GTM_custom_triggers.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../..">
+          <img src="../../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Register/">Register</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Support/">Support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting_started/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Consent Managment</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Consent_Management/Iab_tcf/">IAB TCF</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Consent_Management/Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Components/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Deployment/">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">FAQ's</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Release_Notes/">Release Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Setup_and_Validation/">Setup and Validation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Version_3_%28Latest%29/">Version 3 (Latest)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Version_2/">Version 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/Microprofile/">Microprofile</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Gravito_API/CustomerdataApi/">Customer Data API</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other Features</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Other_Features/Domain_Cookie_Scan/">Domain Cookie Scan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Other_Features/GVL_Comparison/">GVL Comparison</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Try it out</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Try_it_out/Playbooks/">Playbooks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Gravito Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">GTM Custom Trigger Setup Based on Gravito GCM Consents</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gtm-custom-trigger-setup-based-on-gravito-gcm-consents">GTM Custom Trigger Setup Based on Gravito GCM Consents</h1>
+<h2 id="overview">Overview</h2>
+<p>Gravito CMP pushes consent updates using a custom event named
+<code>gravitoGCMConsents</code>.
+Each consent value is available under <code>consent.*</code> in the dataLayer.</p>
+<p>This guide explains how to: </p>
+<ul>
+<li>Create Data Layer Variables (DLVs) </li>
+<li>Create Custom Event triggers </li>
+<li>Map consent categories to GCM signals </li>
+<li>Fire tags based on consent</li>
+</ul>
+<hr />
+<h2 id="mapping-consent-category-to-gcm-signals">Mapping: Consent Category to GCM Signals</h2>
+<table>
+<thead>
+<tr>
+<th>Cookie Consent Category</th>
+<th>GCM v2 Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Necessary</td>
+<td>security_storage</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>analytics_storage</td>
+</tr>
+<tr>
+<td>Functional</td>
+<td>functionality_storage, personalization_storage</td>
+</tr>
+<tr>
+<td>Marketing</td>
+<td>ad_storage, ad_user_data, ad_personalization</td>
+</tr>
+</tbody>
+</table>
+<h2 id="step-1-create-data-layer-variables">Step 1: Create Data Layer Variables</h2>
+<p>Go to GTM UI:</p>
+<ol>
+<li>Navigate to Variables</li>
+<li>Click New under User-Defined Variables</li>
+<li>Click Variable Configuration</li>
+<li>Select Data Layer Variable</li>
+</ol>
+<p>Create variables for the following:</p>
+<ul>
+<li>consent.security_storage</li>
+<li>consent.analytics_storage</li>
+<li>consent.functionality_storage</li>
+<li>consent.personalization_storage</li>
+<li>consent.ad_storage</li>
+<li>consent.ad_user_data</li>
+<li>consent.ad_personalization</li>
+</ul>
+<h3 id="example">Example:<br></h3>
+<p>Name: DLV - consent.analytics_storage<br>
+Data Layer Variable Name: consent.analytics_storage<br>
+Version: Version 2<br></p>
+<hr />
+<h2 id="step-2-create-custom-event-trigger">Step 2: Create Custom Event Trigger</h2>
+<ol>
+<li>Go to Triggers</li>
+<li>Click New</li>
+<li>Select Custom Event</li>
+</ol>
+<p>Configuration:<br></p>
+<p>Name: CE - Gravito GCM Consents<br>
+Event Name: gravitoGCMConsents<br>
+Trigger fires on: All Custom Events<br></p>
+<hr />
+<h2 id="step-3-create-category-based-triggers">Step 3: Create Category-Based Triggers</h2>
+<h3 id="analytics-trigger">Analytics Trigger</h3>
+<ol>
+<li>Go to Triggers → New</li>
+<li>Select Custom Event</li>
+</ol>
+<p>Name: CE - Analytics Granted<br>
+Event: gravitoGCMConsents</p>
+<p>Condition: DLV - consent.analytics_storage equals granted</p>
+<hr />
+<h3 id="marketing-trigger">Marketing Trigger</h3>
+<p>Name: CE - Marketing Granted<br>
+Event: gravitoGCMConsents</p>
+<p>Condition (strict): DLV - consent.ad_storage equals granted<br>
+AND<br>
+DLV - consent.ad_user_data equals granted<br>
+AND<br>
+DLV - consent.ad_personalization equals granted<br></p>
+<hr />
+<h3 id="functional-trigger">Functional Trigger</h3>
+<p>Name: CE - Functional Granted<br>
+Event: gravitoGCMConsents</p>
+<p>Condition: DLV - consent.functionality_storage equals granted</p>
+<p>OR</p>
+<p>DLV - consent.personalization_storage equals granted</p>
+<hr />
+<h3 id="necessary-trigger">Necessary Trigger</h3>
+<p>Name: CE - Necessary Granted<br>
+Event: gravitoGCMConsents</p>
+<p>Condition: DLV - consent.security_storage equals granted</p>
+<hr />
+<h2 id="step-4-attach-triggers-to-tags">Step 4: Attach Triggers to Tags</h2>
+<ol>
+<li>Go to Tags</li>
+<li>Select a tag</li>
+<li>Click Triggering</li>
+<li>Add the relevant trigger</li>
+</ol>
+<p>Example:</p>
+<ul>
+<li>Analytics Script → CE - Analytics Granted</li>
+<li>Marketing Pixel → CE - Marketing Granted</li>
+<li>Functional Script → CE - Functional Granted</li>
+</ul>
+<hr />
+<h2 id="step-5-testing">Step 5: Testing</h2>
+<ol>
+<li>Click Preview in GTM</li>
+<li>Open your website</li>
+<li>Trigger consent changes</li>
+</ol>
+<p>Verify:</p>
+<ul>
+<li>Event gravitoGCMConsents is fired</li>
+<li>Variables show correct values</li>
+<li>Tags fire only when consent is granted</li>
+</ul>
+<hr />
+<h2 id="final-flow">Final Flow</h2>
+<p>Gravito CMP → dataLayer (consent values)\
+→ GTM Variables<br>
+→ Custom Event Trigger<br>
+→ Conditional Trigger<br>
+→ Tag Fires</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/modal.js"></script>
+      <script src="../../../js/motomo.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
