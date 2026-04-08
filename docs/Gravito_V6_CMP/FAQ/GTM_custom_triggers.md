@@ -1,16 +1,17 @@
 # GTM Custom Trigger Setup Based on Gravito GCM Consents
 
-
-
 ## Overview
 
 Gravito CMP pushes consent updates using a custom event named
-`gravitoGCMConsents`.\
+`gravitoGCMConsents`.
 Each consent value is available under `consent.*` in the dataLayer.
 
-This guide explains how to: - Create Data Layer Variables (DLVs) -
-Create Custom Event triggers - Map consent categories to GCM signals -
-Fire tags based on consent
+This guide explains how to: 
+
+- Create Data Layer Variables (DLVs) 
+- Create Custom Event triggers 
+- Map consent categories to GCM signals 
+- Fire tags based on consent
 
 ------------------------------------------------------------------------
 
@@ -45,11 +46,10 @@ Create variables for the following:
 -   consent.ad_user_data
 -   consent.ad_personalization
 
-Example:
-
-Name: DLV - consent.analytics_storage\
-Data Layer Variable Name: consent.analytics_storage\
-Version: Version 2
+### Example:<br>
+Name: DLV - consent.analytics_storage<br>
+Data Layer Variable Name: consent.analytics_storage<br>
+Version: Version 2<br>
 
 ------------------------------------------------------------------------
 
@@ -59,11 +59,11 @@ Version: Version 2
 2.  Click New
 3.  Select Custom Event
 
-Configuration:
+Configuration:<br>
 
-Name: CE - Gravito GCM Consents\
-Event Name: gravitoGCMConsents\
-Trigger fires on: All Custom Events
+Name: CE - Gravito GCM Consents<br>
+Event Name: gravitoGCMConsents<br>
+Trigger fires on: All Custom Events<br>
 
 ------------------------------------------------------------------------
 
@@ -74,7 +74,7 @@ Trigger fires on: All Custom Events
 1.  Go to Triggers → New
 2.  Select Custom Event
 
-Name: CE - Analytics Granted\
+Name: CE - Analytics Granted<br>
 Event: gravitoGCMConsents
 
 Condition: DLV - consent.analytics_storage equals granted
@@ -83,20 +83,20 @@ Condition: DLV - consent.analytics_storage equals granted
 
 ### Marketing Trigger
 
-Name: CE - Marketing Granted\
+Name: CE - Marketing Granted<br>
 Event: gravitoGCMConsents
 
-Condition (strict): DLV - consent.ad_storage equals granted\
-AND\
-DLV - consent.ad_user_data equals granted\
-AND\
-DLV - consent.ad_personalization equals granted
+Condition (strict): DLV - consent.ad_storage equals granted<br>
+AND<br>
+DLV - consent.ad_user_data equals granted<br>
+AND<br>
+DLV - consent.ad_personalization equals granted<br>
 
 ------------------------------------------------------------------------
 
 ### Functional Trigger
 
-Name: CE - Functional Granted\
+Name: CE - Functional Granted<br>
 Event: gravitoGCMConsents
 
 Condition: DLV - consent.functionality_storage equals granted
@@ -109,7 +109,7 @@ DLV - consent.personalization_storage equals granted
 
 ### Necessary Trigger
 
-Name: CE - Necessary Granted\
+Name: CE - Necessary Granted<br>
 Event: gravitoGCMConsents
 
 Condition: DLV - consent.security_storage equals granted
@@ -125,8 +125,8 @@ Condition: DLV - consent.security_storage equals granted
 
 Example:
 
--   Analytics Script → CE - Analytics Granted\
--   Marketing Pixel → CE - Marketing Granted\
+-   Analytics Script → CE - Analytics Granted
+-   Marketing Pixel → CE - Marketing Granted
 -   Functional Script → CE - Functional Granted
 
 ------------------------------------------------------------------------
@@ -148,9 +148,9 @@ Verify:
 ## Final Flow
 
 Gravito CMP → dataLayer (consent values)\
-→ GTM Variables\
-→ Custom Event Trigger\
-→ Conditional Trigger\
+→ GTM Variables<br>
+→ Custom Event Trigger<br>
+→ Conditional Trigger<br>
 → Tag Fires
 
 
