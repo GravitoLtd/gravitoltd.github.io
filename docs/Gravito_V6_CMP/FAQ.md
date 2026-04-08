@@ -8,3 +8,4 @@
 - [How to use Consent Based Rendering?](./FAQ/Consent_based_rendering.md)
 - [How to listen to TCF Consents changes?](./FAQ/How_to_listen_TCF_consents.md)
 - [Upgrading to TCF 2.3](./FAQ/How_to_upgrade_to_tcf_23.md)
+- [How to use custom triggers in GTM based on Gravito CMP consents?](./FAQ/GTM_custom_triggers.md)
