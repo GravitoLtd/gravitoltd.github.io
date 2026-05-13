@@ -154,3 +154,35 @@ Gravito CMP → dataLayer (consent values)\
 → Tag Fires
 
 
+## Example 
+
+The following script delays the initialization of **Google Analytics 4 (GA4)** until the default Google Consent Mode (GCM) consent is received.
+The Gravito CMP dispatches an event when the default consent values are added to the dataLayer. 
+<br>
+This script listens for that event and initializes GA4 only after the consent information becomes available.
+<br>
+This script must be placed inside the <head> section of the document, and the original GA4 initialization script should be removed to prevent GA4 from loading before the default consent is applied.
+
+```js
+   <script>
+      document.addEventListener("gcmConsentUpdated", (event) => {
+
+        let ga4Script = document.createElement("script");
+        ga4Script.src =
+          "https://www.googletagmanager.com/gtag/js?id=<Unique_ID>";
+        ga4Script.async = true;
+        document.head.appendChild(ga4Script);
+        if (!gtag) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+        }
+        gtag("js", new Date());
+
+        gtag("config", "<Unique_ID>", {
+          send_page_view: false,
+        });
+      });
+    </script>
+    ```
