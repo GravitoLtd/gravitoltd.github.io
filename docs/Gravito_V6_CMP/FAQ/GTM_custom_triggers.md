@@ -164,6 +164,7 @@ This script listens for that event and initializes GA4 only after the consent in
 This script must be placed inside the <head> section of the document, and the original GA4 initialization script should be removed to prevent GA4 from loading before the default consent is applied.
 
 ```js
+
    <script>
       document.addEventListener("gcmConsentUpdated", (event) => {
 
@@ -185,4 +186,5 @@ This script must be placed inside the <head> section of the document, and the or
         });
       });
     </script>
-    ```
+    
+```
