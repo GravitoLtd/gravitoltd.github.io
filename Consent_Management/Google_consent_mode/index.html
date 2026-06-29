@@ -66,6 +66,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#google-tag-gateway">Google Tag Gateway</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#how-gravito-handles-google-consent-mode">How Gravito Handles Google Consent Mode</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#how-to-test-if-your-setup-is-working">How to test if your setup is working</a>
@@ -210,6 +212,10 @@ This should be already configured and running on your site. If not, </p>
 </li>
 </ol>
 <hr />
+<h2 id="google-tag-gateway">Google Tag Gateway</h2>
+<p>Google Tag Gateway (GTG) allows Google tags to be served through a customer's first-party infrastructure, such as their Content Delivery Network (CDN) or CMS.</p>
+<p>With GTG enabled, Google tags may load from the customer's own domain instead of directly from Google's domains. This changes how tag loading and consent sequencing should be considered.</p>
+<p>Please click here to know more about GTG <a href="../google_tag_gateway/">Google Tag Gateway</a> </p>
 <h2 id="how-gravito-handles-google-consent-mode">How Gravito Handles Google Consent Mode</h2>
 <p>Gravito CMP is designed to dynamically manage Consent Mode with minimal configuration. It depends basically on how you implement the CMP either with the deployment script or using Gravito's GTM template available in the <a href="https://tagmanager.google.com/gallery/#/owners/GravitoLtd/templates/gravito-cmp-gtm-template">GTM Gallery Here</a></p>
 <h2 id="how-to-test-if-your-setup-is-working">How to test if your setup is working</h2>
