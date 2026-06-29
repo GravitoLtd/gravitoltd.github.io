@@ -2,10 +2,6 @@
 
 ## Overview
 
-Google Tag Gateway (GTG) allows Google tags to be served through a customer's first-party infrastructure, such as their Content Delivery Network (CDN) or CMS.
-
-With GTG enabled, Google tags may load from the customer's own domain instead of directly from Google's domains. This changes how tag loading and consent sequencing should be considered.
-
 Gravito Consent Management Platform supports Google Consent Mode and is compatible with GTG implementations when configured correctly.
 
 ---
@@ -15,20 +11,20 @@ Gravito Consent Management Platform supports Google Consent Mode and is compatib
 In a traditional Google tag implementation, the loading sequence usually looks like:
 ```
 User visits website
-    |
-    v
+    │
+    ▼
 Gravito CMP loads
-    |
-    v
+    │
+    ▼
 Consent Mode default command is set
-    |
-    v
+    │
+    ▼
 Google tags load
-    |
-    v
+    │
+    ▼
 User interacts with banner
-    |
-    v
+    │
+    ▼
 Consent Mode update command is sent
 ```
 
@@ -130,11 +126,11 @@ Ensure the Consent Mode default command executes before GTG-served Google tags.
 Example:
 ```
 Consent Mode default
-        |
-        v
+    │
+    ▼
 Google Tag Gateway
-        |
-        v
+    │
+    ▼
 Google tags
 ```
 
