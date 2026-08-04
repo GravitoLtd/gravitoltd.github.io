@@ -13,7 +13,15 @@ Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 83 - 26/03/2026 <mark>New</mark>
+## Release notes: Sprint 84 - 04/08/2026 <mark>New</mark>
+
+- Removed deprecated CMP configurators from the Admin Portal to reduce confusion and improve usability. The latest Gravito CMP configurator is now the only configurator available for configuration.
+
+  >**Note:** If you need assistance with any of the older CMP configurators, please contact Gravito Support.
+  
+- Removed unused features from the Admin Portal to simplify the interface and improve the overall user experience.
+
+## Release notes: Sprint 83 - 26/03/2026
 
 - Added new configuration option to show/hide the cookie count on 2nd layer/tab of standard CMP banner.
 - Support for separate text on 1st and 2nd layer/tab of TCF CMP for Accept All button.
