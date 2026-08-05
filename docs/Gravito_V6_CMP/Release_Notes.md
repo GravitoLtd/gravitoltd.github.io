@@ -1,5 +1,11 @@
 # Release Notes
 
+## Release Notes 6.6.0 (04/08/2026) <mark>New</mark>
+
+New Features:
+- Added GPP support for Web and WebView.
+- Reduced GravitoData cookie size for improved storage efficiency.
+
 ## Release Notes 6.5.3 (26/03/2026)
 
 New Features:
