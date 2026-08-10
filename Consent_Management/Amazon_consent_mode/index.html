@@ -154,9 +154,9 @@
 <li>amzn_ad_storage: Indicates whether the user has given Amazon consent to read or write advertising cookies or similar technologies from the user's device. Acceptable values are GRANTED or DENIED.</li>
 </ul>
 <p>The permissions <code>amzn_user_data</code> and <code>amzn_ad_storage</code> are both mapped to the Marketing category.</p>
-<p>The values amzn_user_data and amzn_ad_storage are set to GRANTED only when the user has given consent for the *<em>Marketing</em> category. This writes a cookie named <code>amzn_consent</code>.</p>
+<p>The values amzn_user_data and amzn_ad_storage are set to GRANTED only when the user has given consent for the <strong>Marketing</strong> category. This writes a cookie named <code>amzn_consent</code>.</p>
 <h2 id="technical-specs">Technical Specs</h2>
-<p>ACS will be set when cookie consent is master (no TCF string available).</p>
+<p>ACS will be set when cookie consent is master (no TCF string available). </p>
 <pre><code class="language-javascript">var acsPayload = {
   geo: { countryCode: gravitoCMP.getVisitorCountry() },
   amazonConsentFormat: {
