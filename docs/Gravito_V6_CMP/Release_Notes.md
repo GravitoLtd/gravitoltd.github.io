@@ -3,17 +3,20 @@
 ## Release Notes 6.6.0 (04/08/2026) <mark>New</mark>
 
 New Features:
+
 - Added GPP support for Web and WebView.
 - Reduced GravitoData cookie size for improved storage efficiency.
 
 ## Release Notes 6.5.3 (26/03/2026)
 
 New Features:
+
 - Dutch language support for TCF CMP.
 - Support for separate text on 1st and 2nd layer/tab of TCF CMP for Accept All button.
 - Footer logo made configurable via configuration in both TCF and standard CMP.
 
 Improvements:
+
 - Fixed Accessibility issues in the vendors tab of TCF CMP.
 - Added missing dropdown for special features in TCF CMP banner.
 - Fixed data retention count which was showing undefined in the certain cases in TCF CMP.

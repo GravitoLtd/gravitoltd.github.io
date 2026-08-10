@@ -3,6 +3,9 @@
 
 ## Section 1: General Architecture – WebView-based CMP (Platform-agnostic)
 
+
+More details about **GPP** support in 👉 [Webview Mode](../../FAQ/GPP-Support-webview.md) 
+
 ### Overview
 Gravito’s WebView-based CMP is a cross-platform solution designed for use in mobile apps. It allows apps to display and interact with the CMP using an embedded web browser (WebView), regardless of the native platform (React Native, Flutter, Native Android, or Native iOS).
 
