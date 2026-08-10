@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Amazon consent mode - Gravito Documentation</title>
+    <title>Amazon Consent Mode - Gravito Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Amazon consent mode";
+        var mkdocs_page_name = "Amazon Consent Mode";
         var mkdocs_page_input_path = "Consent_Management\\Amazon_consent_mode.md";
         var mkdocs_page_url = null;
       </script>
@@ -51,12 +51,20 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Consent Managment</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../Iab_tcf/">IAB TCF</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Google_consent_mode/">Google Consent Mode</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Amazon Consent Mode</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#how-does-amazon-consent-signal-work">How does Amazon Consent Signal work</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#technical-specs">Technical Specs</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
@@ -126,7 +134,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Amazon consent mode</li>
+          <li class="breadcrumb-item">Consent Managment</li>
+      <li class="breadcrumb-item active">Amazon Consent Mode</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -135,10 +144,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="amazon-consent-signal">Amazon Consent Signal</h1>
+<p>In addition to supporting the Interactive Advertising Bureau’s (IAB) Transparency &amp; Consent Framework (TCF) signal, Amazon Ads has introduced Amazon Consent Signal (ACS) which enables advertisers and other third parties to transmit their end users' privacy choices to Amazon Ads.</p>
+<p>Gravito CMP has built-in support for ACS. You must set up Gravito CMP with ACS once you start collecting or passing user data to Amazon Ads services (e.g., Amazon Advertising). </p>
+<h2 id="how-does-amazon-consent-signal-work">How does Amazon Consent Signal work</h2>
+<p>ACS uses two parameters to communicate user consent:</p>
+<ul>
+<li>amzn_user_data: Indicates whether the user has consented to Amazon processing personal data (e.g. an advertising identifier) for advertising purposes. Acceptable values are GRANTED or DENIED.</li>
+<li>amzn_ad_storage: Indicates whether the user has given Amazon consent to read or write advertising cookies or similar technologies from the user's device. Acceptable values are GRANTED or DENIED.</li>
+</ul>
+<p>The permissions <code>amzn_user_data</code> and <code>amzn_ad_storage</code> are both mapped to the Marketing category.</p>
+<p>The values amzn_user_data and amzn_ad_storage are set to GRANTED only when the user has given consent for the *<em>Marketing</em> category. This writes a cookie named <code>amzn_consent</code>.</p>
+<h2 id="technical-specs">Technical Specs</h2>
+<p>ACS will be set when cookie consent is master (no TCF string available).</p>
+<pre><code class="language-javascript">var acsPayload = {
+  geo: { countryCode: gravitoCMP.getVisitorCountry() },
+  amazonConsentFormat: {
+    amznAdStorage: cats.marketing ? 'GRANTED' : 'DENIED',
+    amznUserData:  cats.marketing ? 'GRANTED' : 'DENIED'
+  },
+  timestamp: new Date().toISOString(),
+  version: '1'
+};
+
+document.cookie = 'amzn_consent=' + JSON.stringify(acsPayload)
+  + '; path=/; max-age=31536000; SameSite=Lax';
+</code></pre>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Microsoft_consent_mode/" class="btn btn-neutral float-left" title="Microsoft Consent Mode"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Gravito_V6_CMP/Getting_Started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -160,6 +198,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../Microsoft_consent_mode/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Gravito_V6_CMP/Getting_Started/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
