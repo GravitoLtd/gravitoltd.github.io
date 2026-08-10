@@ -13,11 +13,11 @@ ACS uses two parameters to communicate user consent:
 
 The permissions `amzn_user_data` and `amzn_ad_storage` are both mapped to the Marketing category.
 
-The values amzn_user_data and amzn_ad_storage are set to GRANTED only when the user has given consent for the **Marketing* category. This writes a cookie named `amzn_consent`.
+The values amzn_user_data and amzn_ad_storage are set to GRANTED only when the user has given consent for the **Marketing** category. This writes a cookie named `amzn_consent`.
 
 ## Technical Specs
 
-ACS will be set when cookie consent is master (no TCF string available).
+ACS will be set when cookie consent is master (no TCF string available). 
 
 ```javascript
 var acsPayload = {
