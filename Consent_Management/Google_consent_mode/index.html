@@ -1,219 +1,38 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Google Consent Mode - Gravito Documentation</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../css/custom.css" rel="stylesheet" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Google Consent Mode";
-        var mkdocs_page_input_path = "Consent_Management\\Google_consent_mode.md";
-        var mkdocs_page_url = null;
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-</head>
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../..">
-          <img src="../../img/logo.png" class="logo" alt="Logo"/>
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+  
+  
+  
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Getting started</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Register/">Register</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Support/">Support</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Release_Notes/">Release Notes</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Consent Managment</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../Iab_tcf/">IAB TCF</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Google Consent Mode</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#what-is-google-consent-mode">What is Google Consent Mode?</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#understanding-basic-and-advanced-modes-of-google-consent-mode">Understanding Basic and Advanced Modes of Google Consent Mode</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#why-google-collects-data">Why Google Collects Data</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#google-tag-gateway">Google Tag Gateway</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-gravito-handles-google-consent-mode">How Gravito Handles Google Consent Mode</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-to-test-if-your-setup-is-working">How to test if your setup is working</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#google-consent-mode-support">Google Consent Mode support</a>
-    </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Microsoft_consent_mode/">Microsoft Consent Mode</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Amazon_consent_mode/">Amazon Consent Mode</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Getting_Started/">Getting Started</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Setup_and_Design/">Setup and Design</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Customization/">Customization</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Components/">Components</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Deployment/">Deployment</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/FAQ/">FAQ's</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Release_Notes/">Release Notes</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Getting_Started/">Getting Started</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Release_Notes/">Release Notes</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Other Features</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/Domain_Cookie_Scan/">Domain Cookie Scan</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/GVL_Comparison/">GVL Comparison</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Try it out</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Try_it_out/Playbooks/">Playbooks</a>
-                  </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
+  <!-- Primary meta -->
+  <meta
+    name="description"
+    content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations."
+  >
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">Gravito Documentation</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Consent Managment</li>
-      <li class="breadcrumb-item active">Google Consent Mode</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <h1 id="consent-management-google-consent-mode">Consent Management: Google Consent Mode</h1>
-<p><em>Last updated: June 15, 2025</em><br />
-<em>Announced: January 10, 2024</em></p>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>Google Consent Mode allows you to adjust how your Google tags behave based on the consent status of your end users. When integrated with <strong>Gravito</strong>’s TCF 2.2 CMP, it helps ensure compliance by dynamically controlling tag behavior across Google products such as Google Analytics, Google Ads, and more — without needing manual tag setup in Google Tag Manager (GTM). It is important to note that Google consent mode is not meant to be a solution to any regulatory requirement.</p>
-<p>This document explains:</p>
-<ul>
-<li>What Google Consent Mode is  </li>
-<li>The requirements to use it with Gravito  </li>
-<li>How Gravito handles tag behavior and consent signals  </li>
-<li>How to test if your setup is working  </li>
-<li>Getting Support</li>
-</ul>
-<hr />
-<h2 id="what-is-google-consent-mode">What is Google Consent Mode?</h2>
-<p>Google Consent Mode lets a site communicate a visitor’s consent status to Google. Gravito CMP collects and stores user consent and integrates with Google Consent Mode to share that status with Google. When consent is limited or denied, Google tags adjust accordingly (e.g., restricted storage or other consent-aware behavior). Consent Mode is not a banner and not a legal compliance solution; it operates in tandem with our CMP <a href="https://developers.google.com/tag-platform/security/guides/consent?consentmode=advanced">Read more here</a></p>
-<p>For example:</p>
-<ul>
-<li>If a user declines marketing cookies, <code>ad_storage</code> is set to <code>denied</code>, limiting tracking.</li>
-<li>If the user accepts analytics cookies, <code>analytics_storage</code> is set to <code>granted</code>, enabling full data collection.</li>
-</ul>
-<hr />
-<h2 id="understanding-basic-and-advanced-modes-of-google-consent-mode">Understanding Basic and Advanced Modes of Google Consent Mode</h2>
-<p>Google Consent Mode (GCM) offers two operational modes — <strong>Basic</strong> and <strong>Advanced</strong> — to help websites manage consent and data collection behavior:</p>
-<ul>
-<li><strong>Basic Mode</strong>: Google tags are completely blocked from firing until the user provides explicit consent. No data is sent to Google unless consent is given.</li>
-<li><strong>Advanced Mode</strong>: Google tags load immediately but adjust their behavior based on the consent signals. For example, if a user declines consent for ads, Google still receives basic (non-identifiable) interaction data, but it won’t be used for personalized advertising or measurement that requires consent.</li>
-</ul>
-<p>Implementing the correct mode is crucial to ensure both compliance and measurement continuity.</p>
-<h2 id="why-google-collects-data">Why Google Collects Data</h2>
-<p>When using Google services like Google Ads or Google Analytics, data may be collected <strong>to enable personalized advertising, performance measurement, and audience insights</strong>. Consent Mode helps ensure that such data collection aligns with the user’s consent choices.</p>
-<p>For more details, refer to <a href="https://business.safety.google/privacy/">Google’s Business Privacy Policy</a>.</p>
-<hr />
-<h2 id="requirements">Requirements</h2>
-<p>To enable Google Consent Mode via Gravito CMP, you’ll need:</p>
-<ol>
-<li>
-<p><strong>A Gravito TCF 2.3 CMP/ Intelligent CMP implementation</strong>
-This should be already configured and running on your site. If not, </p>
-<ul>
-<li><a href="../../Gravito_V6_CMP/Components/StandardCMP/Gravito_cmp_gcmv2/">Gravito New CMP (Standard Component) setup and implementation guide(New)</a>.</li>
-<li><a href="../../Gravito_V6_CMP/Components/TCFCMP/tcf_cmp_gcmv2/">Gravito New CMP (TCF Component) setup and implementation guide (New)</a>.</li>
-<li>TCF 2.2 setup and implementation guide (Please contact <a href="../../Getting_started/Support/">Gravito Support</a> for assistance)</li>
-<li>Intelligent CMP setup and implementation guide (Please contact <a href="../../Getting_started/Support/">Gravito Support</a> for assistance)</li>
-</ul>
-</li>
-<li>
-<p><strong>Gravito Google Consent Mode support enabled</strong></p>
-<ul>
-<li>Gravito handles tag-level behavior without needing manual Google Tag Manager configuration.  </li>
-<li>The required consent signals (<code>ad_storage</code>, <code>analytics_storage</code>, etc.) are automatically injected based on user preferences.</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h2 id="google-tag-gateway">Google Tag Gateway</h2>
-<p>Google Tag Gateway (GTG) allows Google tags to be served through a customer's first-party infrastructure, such as their Content Delivery Network (CDN) or CMS.</p>
-<p>With GTG enabled, Google tags may load from the customer's own domain instead of directly from Google's domains. This changes how tag loading and consent sequencing should be considered.</p>
-<p>Please click here to know more about GTG <a href="../google_tag_gateway/">Google Tag Gateway</a> </p>
-<h2 id="how-gravito-handles-google-consent-mode">How Gravito Handles Google Consent Mode</h2>
-<p>Gravito CMP is designed to dynamically manage Consent Mode with minimal configuration. It depends basically on how you implement the CMP either with the deployment script or using Gravito's GTM template available in the <a href="https://tagmanager.google.com/gallery/#/owners/GravitoLtd/templates/gravito-cmp-gtm-template">GTM Gallery Here</a></p>
-<h2 id="how-to-test-if-your-setup-is-working">How to test if your setup is working</h2>
-<p>Please get in touch with Gravito support to get access to tooling which includes chrome extension's, sample script etc to validate that GCM is correctly setup on your site. 
-Here is an excmple of the Gravito's GCM validator plugin in action. Basically, you can check from the data layer how the consents are populated, like below. This example screenshot shows that the consent were <em>"denied"</em> which later was updated to <em>"granted"</em> when user gave consent</p>
-<p><img alt="Screenshot of Gravito's GCM Validator" src="../img/gcm_validator.jpg" title="Screenshot of Gravito's GCM Validator" /></p>
-<h2 id="google-consent-mode-support">Google Consent Mode support</h2>
-<p>All support issues related to implementation and working of <strong>Google Consent Mode</strong>, must be raised to Gravito's GCM support box : <a href="mailto: gcm.support@gravito.net">gcm.support(@)gravito.net</a></p>
-              
-            </div>
-          </div>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Google Consent Mode | Gravito Documentation">
+  <meta property="og:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
+  <meta property="og:url" content="https://docs.gravito.net/Consent_Management/Google_consent_mode/">
+  <meta
+    property="og:image"
+    content="https://docs.gravito.net/img/social-preview.png"
+  >
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Consent Mode | Gravito Documentation">
+  <meta name="twitter:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
+  <meta
+    name="twitter:image"
+    content="https://docs.gravito.net/img/social-preview.png"
+  >
+
+
+
+
+
 <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         
@@ -237,38 +56,3 @@ Here is an excmple of the Gravito's GCM validator plugin in action. Basically, y
         © 2026 Gravito. All rights reserved.
     </div>
 </footer>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="../Iab_tcf/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../Microsoft_consent_mode/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
-</div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../js/modal.js"></script>
-      <script src="../../js/motomo.js"></script>
-      <script src="../../js/copy-code.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
-</body>
-</html>
