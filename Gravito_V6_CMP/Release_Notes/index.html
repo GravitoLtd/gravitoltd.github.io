@@ -1,38 +1,345 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://docs.gravito.net/Gravito_V6_CMP/Release_Notes/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Release Notes - Gravito Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Release Notes";
+        var mkdocs_page_input_path = "Gravito_V6_CMP\\Release_Notes.md";
+        var mkdocs_page_url = "/Gravito_V6_CMP/Release_Notes/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
 
+<body class="wy-body-for-nav" role="document">
 
-  
-  
-  
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-  <!-- Primary meta -->
-  <meta
-    name="description"
-    content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations."
-  >
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Register/">Register</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Support/">Support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Consent Managment</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Iab_tcf/">IAB TCF</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Amazon_consent_mode/">Amazon Consent Mode</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Components/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Deployment/">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../FAQ/">FAQ's</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Release Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-660-04082026-new">Release Notes 6.6.0 (04/08/2026) New</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-653-26032026">Release Notes 6.5.3 (26/03/2026)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-652-16122025">Release Notes 6.5.2 (16/12/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-651-02122025">Release Notes 6.5.1 (02/12/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-650-11112025">Release Notes 6.5.0 (11/11/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-643-05112025">Release Notes 6.4.3 (05/11/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-642-03112025">Release Notes 6.4.2 (03/11/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-641-28102025">Release Notes 6.4.1 (28/10/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-640-14102025">Release Notes 6.4.0 (14/10/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-630-16092025">Release Notes 6.3.0 (16/09/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-620-05082025">Release Notes 6.2.0 (05/08/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-620-05082025_1">Release Notes 6.2.0 (05/08/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-610-01072025">Release Notes 6.1.0 (01/07/2025)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-600-v600-10062025">Release Notes 6.0.0 (v600) (10/06/2025)</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Release_Notes/">Release Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other Features</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/Domain_Cookie_Scan/">Domain Cookie Scan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/GVL_Comparison/">GVL Comparison</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Try it out</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Try_it_out/Playbooks/">Playbooks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Release Notes | Gravito Documentation">
-  <meta property="og:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
-  <meta property="og:url" content="https://docs.gravito.net/Gravito_V6_CMP/Release_Notes/">
-  <meta
-    property="og:image"
-    content="https://docs.gravito.net/img/social-preview.png"
-  >
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Release Notes | Gravito Documentation">
-  <meta name="twitter:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
-  <meta
-    name="twitter:image"
-    content="https://docs.gravito.net/img/social-preview.png"
-  >
-
-
-
-
-
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Gravito Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Gravito CMP (New)</li>
+      <li class="breadcrumb-item active">Release Notes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="release-notes">Release Notes</h1>
+<h2 id="release-notes-660-04082026-new">Release Notes 6.6.0 (04/08/2026) <mark>New</mark></h2>
+<p>New Features:</p>
+<ul>
+<li>Added GPP support for Web and WebView.</li>
+<li>Reduced GravitoData cookie size for improved storage efficiency.</li>
+</ul>
+<h2 id="release-notes-653-26032026">Release Notes 6.5.3 (26/03/2026)</h2>
+<p>New Features:</p>
+<ul>
+<li>Dutch language support for TCF CMP.</li>
+<li>Support for separate text on 1st and 2nd layer/tab of TCF CMP for Accept All button.</li>
+<li>Footer logo made configurable via configuration in both TCF and standard CMP.</li>
+</ul>
+<p>Improvements:</p>
+<ul>
+<li>Fixed Accessibility issues in the vendors tab of TCF CMP.</li>
+<li>Added missing dropdown for special features in TCF CMP banner.</li>
+<li>Fixed data retention count which was showing undefined in the certain cases in TCF CMP.</li>
+</ul>
+<h2 id="release-notes-652-16122025">Release Notes 6.5.2 (16/12/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>Added a configuration option to have a close button on the CMP banner.</li>
+<li>Count of vendor in TCF CMP can now be shown in legal footer section of 2nd tab.</li>
+<li>Support HTML content rendering in purposes and vendors tabs of TCF CMP.</li>
+</ul>
+<h2 id="release-notes-651-02122025">Release Notes 6.5.1 (02/12/2025)</h2>
+<p>Improvements:</p>
+<ul>
+<li>Created and exposed a new preview function for internal use.</li>
+</ul>
+<h2 id="release-notes-650-11112025">Release Notes 6.5.0 (11/11/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>Added support for hiding the Legitimate Interest checkbox on the CMP UI.
+  This change is UI-only and does not affect internal consent or TCF logic.</li>
+</ul>
+<p>To enable this feature, set:</p>
+<p><code>gravito.config.cmp.tcf.core.hideLegitimateInterest = true;</code></p>
+<p>Bug Fixes:</p>
+<ul>
+<li>
+<p>Fixed an inconsistency in the window.gravitoData object’s data type.
+  It will now always be a JSON string.</p>
+</li>
+<li>
+<p>When no consents are present gravitoData.lightCMP / gravitoData.CMP → "{}"</p>
+</li>
+<li>
+<p>When consents exist → JSON string containing the corresponding consent data.</p>
+</li>
+</ul>
+<h2 id="release-notes-643-05112025">Release Notes 6.4.3 (05/11/2025)</h2>
+<p>Bug Fixes:</p>
+<ul>
+<li>Fixed an issue regarding 5.1 issue where TC String generated using latest IAB TCF library was not being accepted by Google Ad Manager. This issue was fixed by using an stable version of IAB TCF library to generate TC String.</li>
+</ul>
+<h2 id="release-notes-642-03112025">Release Notes 6.4.2 (03/11/2025)</h2>
+<p>Bug Fixes:</p>
+<ul>
+<li>Resolved the issue for mapping related to GCMV2 consents in TCF CMP for security_storage, functionality_storage, and personalization_storage.
+  Now the mapping can be done correctly as per the configuration.</li>
+</ul>
+<h2 id="release-notes-641-28102025">Release Notes 6.4.1 (28/10/2025)</h2>
+<p>Bug Fixes:</p>
+<ul>
+<li>Fixed an issue with OOB vendors section getting populated incorectly when adding disclosed vendors in TCF CMP.</li>
+</ul>
+<h2 id="release-notes-640-14102025">Release Notes 6.4.0 (14/10/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>
+<p>GPP (Global Privacy Platform) Support
+  Added support for GPP, enabling multi-region compliant CMP solutions. This enhancement allows the CMP to handle consent frameworks across multiple jurisdictions seamlessly, offering improved flexibility for global deployments.</p>
+</li>
+<li>
+<p>Hide Cookie Count on Second Layer
+  Introduced a configuration option to hide the cookie count on the second layer of the standard CMP banner. This provides a cleaner and more customizable user experience while maintaining compliance.</p>
+</li>
+</ul>
+<p>Improvements:</p>
+<ul>
+<li>
+<p>Enhanced Internal Performance
+  Improved lazy loading mechanisms and optimized internal processes for faster initialization and smoother runtime performance.</p>
+</li>
+<li>
+<p>General Stability Enhancements
+  Minor internal fixes and optimizations to improve reliability and overall system responsiveness.</p>
+</li>
+</ul>
+<h2 id="release-notes-630-16092025">Release Notes 6.3.0 (16/09/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>
+<p>Configurable GCMv2 Storage Mapping
+  Added support for configuring Google Consent Mode mappings for personalization_storage, functionality_storage, and security_storage. These can now be explicitly mapped to cookie categories on the consent banner, providing more granular control and transparency.</p>
+</li>
+<li>
+<p>Detailed Vendor Listings Under Purposes
+  In the TCF CMP, the vendor count shown under each purpose is now expanded into an actual list of vendors consuming that purpose. This improvement allows users to see exactly which vendors rely on each purpose, enhancing clarity and compliance.</p>
+</li>
+</ul>
+<h2 id="release-notes-620-05082025">Release Notes 6.2.0 (05/08/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>
+<p>Configurable Consentable Items in TCF Components
+  You can now explicitly define which Purposes, Special Features, and Extras are shown and saved via configuration. The TCF CMP respects these configurations when constructing the final tcString, allowing for more tailored and compliant consent flows.</p>
+</li>
+<li>
+<p>Decoupled GCMv2 Consent Handling
+  GCMv2 consents are now managed independently of Google’s advertising TCF vendor. This allows more flexibility in deploying GCMv2-based consent strategies even when Google TCF consent is not required or applicable.</p>
+</li>
+</ul>
+<h2 id="release-notes-620-05082025_1">Release Notes 6.2.0 (05/08/2025)</h2>
+<p>Enhancements:</p>
+<ul>
+<li>
+<p>The Deployment Tab has been redesigned for better usability and clarity. It now provides a more intuitive interface for deploying Gravito CMP across various platforms.</p>
+</li>
+<li>
+<p>An option to preview a published CMP configuration has been added. This allows users to see how their CMP will appear on the live site before finalizing deployment.</p>
+</li>
+<li>
+<p>In TCF section, the configuration for "Features", "Special Features", and "Special Purposes" is now available to allow for more granular control over consent settings.</p>
+</li>
+</ul>
+<h2 id="release-notes-610-01072025">Release Notes 6.1.0 (01/07/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>
+<p>WebView Support for TCF CMP<br />
+  Gravito CMP (New) now supports usage in WebView-based mobile applications for the TCF CMP component. This enables seamless integration of the consent flow inside hybrid or native mobile apps using platforms like React Native, Flutter, Android, and iOS.</p>
+</li>
+<li>
+<p>UX Improvements in Defaults Tab</p>
+</li>
+<li>
+<p>Fixed scrolling behavior on the second layer of the CMP interface for smoother interaction.</p>
+</li>
+<li>
+<p>Minor refinements in layout and interaction for improved usability.</p>
+</li>
+<li>
+<p>Smart Link Handling for Privacy Policy<br />
+  Added feature to suppress CMP UI display when navigating to links matching the privacy policy URL. Improves user experience on privacy-related pages.</p>
+</li>
+<li>
+<p>DOM Layering Enhancements<br />
+  CSS adjustments ensure the CMP consistently renders as the top-most DOM element, preventing visual obstructions.</p>
+</li>
+</ul>
+<h2 id="release-notes-600-v600-10062025">Release Notes 6.0.0 (v600) (10/06/2025)</h2>
+<p>New Features:</p>
+<ul>
+<li>
+<p>Gravito CMP (New) – A New Flavor of Gravito CMP<br />
+  This is the initial release of Gravito CMP (New), a newly developed variant of our CMP platform. It is built using Preact, a lightweight alternative to React, offering improved performance and reduced bundle size.</p>
+</li>
+<li>
+<p>Support for Standard and TCF CMP<br />
+  Gravito CMP (New) supports both Standard CMP and TCF CMP components, allowing you to choose the best fit for your compliance needs.</p>
+</li>
+<li>
+<p>Standard CMP: Gravito’s own non-TCF CMP, suitable for any website.</p>
+</li>
+<li>
+<p>TCF CMP: A TCF-certified CMP designed for GDPR compliance, suitable for any website.</p>
+</li>
+<li>
+<p>Lazy Loading for Better Performance<br />
+  Gravito CMP (New) includes lazy loading, reducing the initial load size of CMP bundles. This leads to faster page loads and a smoother user experience.</p>
+</li>
+<li>
+<p>Enhanced Tab-Based Layout<br />
+  The new tab-based layout improves usability and consent navigation. Users can now switch easily between different layers and settings, resulting in a more intuitive and efficient consent flow.</p>
+</li>
+<li>
+<p>Custom Tabs<br />
+  Now you can create custom tabs in the CMP interface, allowing you to display your own content or additional information relevant to your users.</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
 <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         
@@ -56,3 +363,38 @@
         © 2026 Gravito. All rights reserved.
     </div>
 </footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../FAQ/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Gravito_SDK/Getting_Started/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/modal.js"></script>
+      <script src="../../js/motomo.js"></script>
+      <script src="../../js/copy-code.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

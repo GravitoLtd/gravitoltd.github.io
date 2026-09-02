@@ -1,38 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://docs.gravito.net/Consent_Management/Iab_tcf/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>IAB TCF - Gravito Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "IAB TCF";
+        var mkdocs_page_input_path = "Consent_Management\\Iab_tcf.md";
+        var mkdocs_page_url = "/Consent_Management/Iab_tcf/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
 
+<body class="wy-body-for-nav" role="document">
 
-  
-  
-  
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-  <!-- Primary meta -->
-  <meta
-    name="description"
-    content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations."
-  >
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Register/">Register</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Support/">Support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Consent Managment</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">IAB TCF</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#purpose-of-the-tcf">Purpose of the TCF</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-components">Key Components</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#evolution-of-the-tcf">Evolution of the TCF</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v11">TCF v1.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v20">TCF v2.0</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v21">TCF v2.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v22">TCF v2.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tcf-v23">TCF v2.3</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#implications-for-stakeholders">Implications for Stakeholders</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Google_consent_mode/">Google Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Amazon_consent_mode/">Amazon Consent Mode</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Components/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Deployment/">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/FAQ/">FAQ's</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Release_Notes/">Release Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other Features</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/Domain_Cookie_Scan/">Domain Cookie Scan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/GVL_Comparison/">GVL Comparison</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Try it out</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Try_it_out/Playbooks/">Playbooks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="IAB TCF | Gravito Documentation">
-  <meta property="og:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
-  <meta property="og:url" content="https://docs.gravito.net/Consent_Management/Iab_tcf/">
-  <meta
-    property="og:image"
-    content="https://docs.gravito.net/img/social-preview.png"
-  >
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="IAB TCF | Gravito Documentation">
-  <meta name="twitter:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
-  <meta
-    name="twitter:image"
-    content="https://docs.gravito.net/img/social-preview.png"
-  >
-
-
-
-
-
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Gravito Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Consent Managment</li>
+      <li class="breadcrumb-item active">IAB TCF</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="iab-transparency-and-consent-framework-tcf">IAB Transparency and Consent Framework (TCF)</h1>
+<p><em>Last updated: April 9, 2025</em></p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The <strong>Interactive Advertising Bureau (IAB) Transparency and Consent Framework (TCF)</strong> is a standardized framework designed to assist all parties in the digital advertising supply chain in complying with European data protection laws, notably the <strong>General Data Protection Regulation (GDPR)</strong> and the <strong>ePrivacy Directive</strong>. </p>
+<p>Gravito CMP provides a TCF 2.2 compliant consent management platform recognized by IAB with ID <a href="https://iabeurope.eu/cmp-list/"><strong>302</strong></a>. With Gravito you can customize the look and feel of your CMP so that it blends well with your website. Gravito TCF 2.2 CMP is also listed as one of the<a href="https://support.google.com/admanager/answer/13554116?hl=en#zippy=%2Cgoogle-certified-cmps"> Google Certified TCF CMP's</a> (<em>Web and App</em>)</p>
+<hr />
+<h2 id="purpose-of-the-tcf">Purpose of the TCF</h2>
+<p>The TCF aims to:</p>
+<ul>
+<li><strong>Standardize</strong> the process of obtaining, managing, and communicating user consent for data processing in digital advertising.</li>
+<li><strong>Facilitate Compliance</strong> with legal requirements by providing a common language and set of protocols for publishers, advertisers, and technology vendors.</li>
+<li><strong>Enhance Transparency</strong> by informing users about how their data will be used and obtaining their explicit consent.</li>
+</ul>
+<hr />
+<h2 id="key-components">Key Components</h2>
+<ul>
+<li>
+<p><strong>Global Vendor List (GVL):</strong></p>
+<ul>
+<li>A registry of vendors participating in the TCF, detailing their data processing purposes and legal bases.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consent Management Platform (CMP):</strong></p>
+<ul>
+<li>Tools or services that help publishers collect, manage, and transmit user consent choices to vendors in a standardized manner.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transparency &amp; Consent String (TC String):</strong></p>
+<ul>
+<li>A compressed, encoded data structure that records user consent choices and preferences, which is then shared with vendors to inform them of the user's decisions.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="evolution-of-the-tcf">Evolution of the TCF</h2>
+<h3 id="tcf-v11">TCF v1.1</h3>
+<ul>
+<li><strong>Launched:</strong> April 2018</li>
+<li><strong>Objective:</strong> Establish an initial framework for managing user consent in line with GDPR requirements. </li>
+</ul>
+<h3 id="tcf-v20">TCF v2.0</h3>
+<ul>
+<li><strong>Launched:</strong> August 2019</li>
+<li><strong>Enhancements:</strong></li>
+<li>Provided users with more granular control over data processing purposes.</li>
+<li>Allowed users to object to data processing based on legitimate interests.</li>
+<li>Improved transparency regarding vendors' data processing activities. </li>
+</ul>
+<h3 id="tcf-v21">TCF v2.1</h3>
+<ul>
+<li><strong>Launched:</strong> August 2020</li>
+<li><strong>Updates:</strong></li>
+<li>Aligned the framework with the Planet49 ruling by the Court of Justice of the European Union.</li>
+<li>Standardized the disclosure of the duration of operation of cookies. </li>
+</ul>
+<h3 id="tcf-v22">TCF v2.2</h3>
+<ul>
+<li><strong>Launched:</strong> May 16, 2023</li>
+<li><strong>Key Changes:</strong><ul>
+<li><strong>Removal of Legitimate Interest for Certain Purposes:</strong> Vendors can no longer use legitimate interest as a legal basis for processing personal data for advertising and content personalization; consent is now required. </li>
+<li><strong>Enhanced Transparency:</strong> Introduction of user-friendly descriptions and real-use case examples to better inform users about data processing purposes. </li>
+<li><strong>Standardized Vendor Information:</strong> Vendors must provide detailed information about data categories collected, retention periods, and any legitimate interests claimed. </li>
+<li><strong>Disclosure of Vendor Count:</strong> Consent Management Platforms (CMPs) are required to disclose the total number of vendors seeking to establish a legal basis on the first layer of their user interfaces.</li>
+<li><strong>Facilitated Withdrawal of Consent:</strong> Users must be able to easily withdraw consent, with CMPs ensuring that their interfaces can be resurfaced for users to change their preferences at any time.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tcf-v23">TCF v2.3</h3>
+<ul>
+<li><strong>Launched:</strong> 19 June, 2025</li>
+<li><strong>Key Changes:</strong> <ul>
+<li>The TCF v2.3 is a smaller update, but still important, and the deadline to comply with it and make necessary updates is February 28, 2026. TCF 2.3 makes the previously optional <strong>disclosedVendors</strong> segment mandatory in order to resolve the ambiguity around the representation of LI in the TC string. This enhancement ensures that Vendors can always determine whether they were disclosed in the CMP UI.</li>
+<li><strong>Transition Timeline</strong> :<ul>
+<li>The transition period concludes on <strong>28th February, 2026</strong>.</li>
+<li>Starting 1st March, 2026: Any TC String created without the disclosedVendor segment will be deemed invalid. It is important to note that any TC Strings created before 1st    March, 2026 without the disclosedVendor segment will remain valid until they progressively get replaced as users renew and/or change the choices.</li>
+<li>All Vendors affected by the signalling ambiguity must recognise and act on the disclosedVendors segment appropriately when they receive a TC String created under 2.3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="implications-for-stakeholders">Implications for Stakeholders</h2>
+<ul>
+<li>
+<p><strong>Publishers:</strong></p>
+<ul>
+<li>Must ensure that their CMPs are updated to comply with TCF v2.2 requirements.</li>
+<li>Need to provide clear and accessible information to users about data processing activities and their rights.</li>
+</ul>
+</li>
+<li>
+<p><strong>Advertisers and Vendors:</strong></p>
+<ul>
+<li>Required to register with the GVL and adhere to the updated policies.</li>
+<li>Must rely solely on user consent for processing personal data for advertising and content personalization purposes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consent Management Platforms (CMPs):</strong></p>
+<ul>
+<li>Need to implement the new user interface and transparency requirements.</li>
+<li>Ensure mechanisms are in place for users to easily withdraw consent.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://iabeurope.eu/tcf-2-2-launches-all-you-need-to-know/">IAB Europe: TCF v2.2 Launch Announcement</a></li>
+<li><a href="https://iabeurope.eu/understanding-the-upcoming-transparency-consent-framework-v2-2/">IAB Europe: Understanding the Transparency &amp; Consent Framework v2.2</a></li>
+<li><a href="https://iabeurope.eu/transparency-consent-framework/">IAB Europe: Transparency &amp; Consent Framework Overview</a></li>
+</ul>
+<hr />
+<p><strong>Note:</strong> This document reflects the state of the IAB TCF as of April 9, 2025. For the most current information and guidance, please refer to the official IAB Europe resources linked above.</p>
+              
+            </div>
+          </div>
 <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         
@@ -56,3 +293,38 @@
         © 2026 Gravito. All rights reserved.
     </div>
 </footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Getting_started/Release_Notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Google_consent_mode/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/modal.js"></script>
+      <script src="../../js/motomo.js"></script>
+      <script src="../../js/copy-code.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

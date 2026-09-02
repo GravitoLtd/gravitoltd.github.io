@@ -1,38 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://docs.gravito.net/Try_it_out/Playbooks/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Playbooks - Gravito Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Playbooks";
+        var mkdocs_page_input_path = "Try_it_out\\Playbooks.md";
+        var mkdocs_page_url = "/Try_it_out/Playbooks/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
 
+<body class="wy-body-for-nav" role="document">
 
-  
-  
-  
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-  <!-- Primary meta -->
-  <meta
-    name="description"
-    content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations."
-  >
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Register/">Register</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Support/">Support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Consent Managment</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Iab_tcf/">IAB TCF</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Amazon_consent_mode/">Amazon Consent Mode</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Components/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Deployment/">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/FAQ/">FAQ's</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Release_Notes/">Release Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other Features</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/Domain_Cookie_Scan/">Domain Cookie Scan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/GVL_Comparison/">GVL Comparison</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Try it out</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Playbooks</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#deploy-basic-consent-management-banner-and-wire-the-tags-on-it">Deploy basic consent management banner and wire the tags on it</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deploy-consent-management-banner-with-first-party-api-integration">Deploy consent management banner with first party API integration</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Playbooks | Gravito Documentation">
-  <meta property="og:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
-  <meta property="og:url" content="https://docs.gravito.net/Try_it_out/Playbooks/">
-  <meta
-    property="og:image"
-    content="https://docs.gravito.net/img/social-preview.png"
-  >
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Playbooks | Gravito Documentation">
-  <meta name="twitter:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
-  <meta
-    name="twitter:image"
-    content="https://docs.gravito.net/img/social-preview.png"
-  >
-
-
-
-
-
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Gravito Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Try it out</li>
+      <li class="breadcrumb-item active">Playbooks</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="playbooks">Playbooks</h1>
+<p>Quick guides to get started with various deployment scenarios.</p>
+<h4 id="deploy-basic-consent-management-banner-and-wire-the-tags-on-it">Deploy basic consent management banner and wire the tags on it</h4>
+<ol>
+<li>Register/login to <a href="https://adminv2.gravito.net/">https://adminv2.gravito.net</a></li>
+<li>Navigate to CMP &gt; Gravito CMP configurator &gt; New Configuration</li>
+<li>Create configuration, you will find help from content menus and tooltips</li>
+<li>Upload configuration when satisfied with the result</li>
+<li>Generate deployment script from list of configurations, by clicking script icon in front of your config.</li>
+<li>Copy the script to clipboard (to deploy via GTM or similar) or download it to be uploaded to your server</li>
+<li>If you are up to deploy via GTM, follow the steps <a href="../Gravito_Intelligent_CMP/GTM_Template.md">here</a></li>
+<li>Otherwise embed the uploaded cmp script to your website template, third party tags that you might have need to be wrapped with custom triggers that are listening to CMP events and consent being set</li>
+<li>Add link on your website from which the user can resurface the CMP, give the link id "manageSettings" or whatever you specified when configuring the CMP. Alternatively you can specify the link to call window.gravitoLightCMP.openPreferences()</li>
+<li>Test that CMP opens as it should and after accept/reject click the CMP won't surface again on page reload</li>
+</ol>
+<h4 id="deploy-consent-management-banner-with-first-party-api-integration">Deploy consent management banner with first party API integration</h4>
+<ol>
+<li>Register/login to <a href="https://adminv2.gravito.net/">https://adminv2.gravito.net</a></li>
+<li>If you have not added the domain you are up to deploy CMP to when registering, add the domain by going to Account &gt; Register domains</li>
+<li>Add domain if needed</li>
+<li>Go to Domains &gt; First party domains &gt; New domain</li>
+<li>Select the domain you are planning to use CMP on, repeat the steps if you have multiple domains</li>
+<li>After you have added domain(s), you will have DNS settings to be made, add those to DNS server of your domain</li>
+<li>When you are complete with DNS settings wait few minutes (minimum) for the changes to propagate</li>
+<li>Open newly added first party domain from the list (click on Edit), check to confirm that you have done the required DNS settings and click on Validate</li>
+<li>After validation the certificate is created, repeat the steps for other domains if you added multiple</li>
+<li>Navigate to CMP &gt; Gravito CMP configurator &gt; New Configuration</li>
+<li>On the settings page of the configurator click on the "Use Gravito Backend" checkbox. you can optionally pass your first-party domain URL, else our code SDK will smartly derive it from the domain on which this configuration is deployed, We recommend keeping this field blank unless you need it</li>
+<li>You will find help from content menus and tooltipsUpload configuration when satisfied with the result.</li>
+<li>Generate deployment script from list of configurations</li>
+<li>Copy the script to clipboard (to deploy via GTM or similar) or download it to be uploaded to your server</li>
+<li>If you are up to deploy via GTM, follow the steps <a href="https://docs.gravito.net/Gravito_Intelligent_CMP/GTM_Template/">here</a></li>
+<li>Otherwise embed the uploaded cmp script to your website template, third party tags that you might have need to be wrapped with custom triggers that are listening to CMP events and consent being set</li>
+<li>Add link on your website from which the user can resurface the CMP, give the link id "manageSettings" or whatever you specified when configuring the CMP. Alternatively you can specify the link to call window.gravitoLightCMP.openPreferences()</li>
+<li>Validate that there is request made to https://gto.<yourdomain> when CMP loads on your website (on first page load)</li>
+<li>Test that CMP opens as it should and after accept/reject click the CMP won't surface again on page reload</li>
+</ol>
+              
+            </div>
+          </div>
 <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         
@@ -51,3 +187,36 @@
         © 2026 Gravito. All rights reserved.
     </div>
 </footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Other_Features/GVL_Comparison/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/modal.js"></script>
+      <script src="../../js/motomo.js"></script>
+      <script src="../../js/copy-code.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
