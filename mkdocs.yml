@@ -5,6 +5,7 @@ theme:
   name: readthedocs
   logo: 'img/logo.png'  # Path to your custom logo
   favicon: 'img/favicon-gravito.png'  # Optional: Path to your favicon
+  custom_dir: overrides
   # custom_dir: overrides  # Optional: Specify the custom directory if needed
   palette:
     primary: 'indigo'
@@ -19,6 +20,8 @@ extra_css:
 extra_javascript:
   - js/modal.js  # Your custom JavaScript file
   - js/motomo.js #motomo analytics
+  - js/copy-code.js  #copy code
+  #- js/announcement.js #announcement
 
 nav:
   - Getting started:
@@ -43,13 +46,6 @@ nav:
       - Getting Started: 'Gravito_SDK/Getting_Started.md'
       - Release Notes: 'Gravito_SDK/Release_Notes.md'
       - Version 2 (Latest): 'Gravito_SDK/Version_2_(Latest).md'
-  - Gravito API:
-      - Getting Started: 'Gravito_API/Getting_Started.md'
-      - Setup and Validation: 'Gravito_API/Setup_and_Validation.md'
-      - Version 3 (Latest): 'Gravito_API/Version_3_(Latest).md'
-      - Version 2: 'Gravito_API/Version_2.md'
-      - Microprofile: 'Gravito_API/Microprofile.md'
-      - Customer Data API: 'Gravito_API/CustomerdataApi.md'
   - Other Features:
       - Domain Cookie Scan: 'Other_Features/Domain_Cookie_Scan.md'
       - GVL Comparison: 'Other_Features/GVL_Comparison.md'
