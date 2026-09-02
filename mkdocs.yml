@@ -1,4 +1,6 @@
 site_name: Gravito Documentation
+site_url: https://docs.gravito.net/
+site_description: Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.
 
 
 theme:
