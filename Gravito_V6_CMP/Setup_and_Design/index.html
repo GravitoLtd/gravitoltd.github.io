@@ -67,6 +67,10 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Setup and Design</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-setup">Step 1 : Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-validation">Step 2 : Validation</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Customization/">Customization</a>
@@ -87,21 +91,6 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Release_Notes/">Release Notes</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Gravito API</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Getting_Started/">Getting Started</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Setup_and_Validation/">Setup and Validation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Version_3_%28Latest%29/">Version 3 (Latest)</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Version_2/">Version 2</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/Microprofile/">Microprofile</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_API/CustomerdataApi/">Customer Data API</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Other Features</span></p>
@@ -140,7 +129,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>Gravito CMP (New) Setup can be done using Gravito CMP (New) Configurator on Gravito’s Admin Portal.</p>
+                <h2 id="domain-setup-and-validation">Domain Setup and Validation</h2>
+<p>To get started with Gravito CMP, you first need to validate the ownership of the domain where you are going to deploy the CMP. For Gravito, First Party domain means the domain your website operates. e.g. website.com. To avoid third party cookies being blocked (occurs already on many browsers) you can configure the CMP to set the cookies under first party domain itself, giving the consent persistance under a first party server side cookie.</p>
+<p>To get started with domain and first party setup, you first need to set up domain in <a href="https://adminv2.gravito.net">Gravito’s admin panel</a></p>
+<h3 id="step-1-setup">Step 1 : Setup</h3>
+<p><strong>Setup of first party domain</strong></p>
+<p>Once you have configured your domain gto.website.com, you need to do the DNS changes for your domain. These steps are varying between different DNS providers, generally you have to configure three records:</p>
+<p><img alt="Screenshot of Gravito's DNA" src="../img/dnsentries.jpg" title="Screenshot of Gravito's DNS entries" /></p>
+<h3 id="step-2-validation">Step 2 : Validation</h3>
+<p><strong>First party domain configuration</strong>
+After you have made the DNS records (A, TXT and CNAME), allow the changes to propagate to DNS servers (few minutes at least) and then press “Validate” button. After succesful validation you should see domain status as “Validated”:</p>
+<h2 id="cmp-setup-and-validation">CMP Setup and Validation</h2>
+<p>Gravito CMP Setup can be done using Gravito CMP Configurator on Gravito’s Admin Portal. (Older versions of configurators are depracated, if you need help with any older version please contact Gravito Support)</p>
 <p>Go to CMP &gt;&gt; Gravito CMP (New)</p>
 <p><img alt="" src="../img/configurator_link.png" /></p>
 <p>Click on "New Configuration" button to create a new configuration.</p>
@@ -161,21 +161,31 @@
 </blockquote>
               
             </div>
-          </div><footer>
+          </div>
+<footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Getting_Started/" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Customization/" class="btn btn-neutral float-right" title="Customization">Next <span class="icon icon-circle-arrow-right"></span></a>
+        
+        <a href="../Getting_Started/" class="btn btn-neutral float-left" title="Getting Started">
+            <span class="icon icon-circle-arrow-left"></span>
+            Previous
+        </a>
+        
+
+        
+        <a href="../Customization/" class="btn btn-neutral float-right" title="Customization">
+            Next
+            <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
     </div>
 
-  <hr/>
+    <hr>
 
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <div class="gravito-footer">
+        © 2026 Gravito. All rights reserved.
+    </div>
 </footer>
-          
+
         </div>
       </div>
 
@@ -200,6 +210,7 @@
     <script src="../../js/theme.js"></script>
       <script src="../../js/modal.js"></script>
       <script src="../../js/motomo.js"></script>
+      <script src="../../js/copy-code.js"></script>
       <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
