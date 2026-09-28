@@ -7,5 +7,9 @@
 - [How to fire GTM tags based on consents in CMP?(Only for Standard CMP Component)](./FAQ/How_to_fireGTM_tags_based_on_consents.md)
 - [How to use Consent Based Rendering?](./FAQ/Consent_based_rendering.md)
 - [How to listen to TCF Consents changes?](./FAQ/How_to_listen_TCF_consents.md)
-- [Upgrading to TCF 2.3](./FAQ/How_to_upgrade_to_tcf_23.md)
+- [GPP support in Webview Mode](./FAQ/GPP-Support-webview.md) 
 - [How to use custom triggers in GTM based on Gravito CMP consents?](./FAQ/GTM_custom_triggers.md)
+
+## Older Links
+
+- [Upgrading to TCF 2.3](./FAQ/How_to_upgrade_to_tcf_23.md)

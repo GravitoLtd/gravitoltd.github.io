@@ -82,10 +82,10 @@ Use the following structure when planning a mobile WebView integration:
 
 | Platform | Sample repository |
 | --- | --- |
-| Native iOS | [Git repository placeholder](https://github.com/GravitoLtd/ios-webview-sample/tree/gpp-webview) |
-| React Native | [Git repository placeholder](https://github.com/GravitoLtd/react-native-webview-sample/tree/gpp-support) |
-| Flutter | [Git repository placeholder](https://github.com/GravitoLtd/flutter-webview-sample/tree/gpp-support) |
-| Native Android | [Git repository placeholder](https://github.com/GravitoLtd/GravitoWebViewSampleAndroidForV6/tree/gpp-webview) |
+| Native iOS | [IOS webview sample](https://github.com/GravitoLtd/ios-webview-sample/tree/gpp-webview) |
+| React Native | [React native webview sample](https://github.com/GravitoLtd/react-native-webview-sample/tree/gpp-support) |
+| Flutter | [Flutterwebview sample](https://github.com/GravitoLtd/flutter-webview-sample/tree/gpp-support) |
+| Native Android | [Native Android Sample](https://github.com/GravitoLtd/GravitoWebViewSampleAndroidForV6/tree/gpp-webview) |
 
 ## Message Contract
 

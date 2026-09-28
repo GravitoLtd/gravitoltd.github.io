@@ -149,3 +149,283 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+/* =========================================================
+   Gravito Announcement Bar
+   ========================================================= */
+
+.gravito-announcement {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #ff4010;
+    color: #ffffff;
+
+    font-family: inherit;
+
+    z-index: 9999;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Inner container */
+
+.gravito-announcement-inner {
+    position: relative;
+
+    max-width: 1400px;
+    min-height: 38px;
+
+    margin: 0 auto;
+    padding: 0 56px 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* Main message */
+
+.gravito-announcement-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+
+/* NEW badge */
+
+.gravito-announcement-label {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 3px 7px;
+
+    border-radius: 4px;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+}
+
+
+/* Announcement link */
+
+.gravito-announcement a,
+.gravito-announcement a:visited {
+    color: #ffffff !important;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+
+.gravito-announcement a:hover {
+    color: #ffffff !important;
+
+    border-bottom-color: #ffffff;
+}
+
+
+/* Close button */
+
+.gravito-announcement-close {
+    position: absolute;
+
+    right: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+
+.gravito-announcement-close:hover {
+    background: rgba(0, 0, 0, 0.12);
+
+    color: #ffffff;
+}
+
+
+/* Dismiss animation */
+
+.gravito-announcement-hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 700px) {
+
+    .gravito-announcement-inner {
+        min-height: 48px;
+
+        padding-left: 14px;
+        padding-right: 48px;
+    }
+
+    .gravito-announcement-message {
+        flex-wrap: wrap;
+
+        gap: 4px 8px;
+
+        font-size: 13px;
+    }
+
+    .gravito-announcement-close {
+        right: 10px;
+    }
+
+}
+
+/*Footer styling*/
+.gravito-footer {
+    font-size: 15px;
+    color: #777;
+    padding: 10px 0 15px;
+}
+
+/*Docs card */
+.docs-intro {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.docs-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 25px 0 40px;
+}
+
+.docs-card {
+    display: block;
+    padding: 22px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+    text-decoration: none !important;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.docs-card:hover {
+    transform: translateY(-2px);
+    border-color: #ff4010;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.docs-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.docs-card-description {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.docs-card-link {
+    color: #ff4010;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 700px) {
+    .docs-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Copy code*/
+/* Code block copy button */
+
+pre {
+    position: relative;
+}
+
+.copy-code-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    padding: 4px 9px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+
+    background: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    opacity: 0;
+    transition:
+        opacity 0.15s ease,
+        background 0.15s ease;
+}
+
+pre:hover .copy-code-button {
+    opacity: 1;
+}
+
+.copy-code-button:hover {
+    background: #ff4010;
+    border-color: #ff4010;
+}

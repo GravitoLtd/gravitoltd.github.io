@@ -51,7 +51,7 @@ For more details, refer to [Google’s Business Privacy Policy](https://business
 
 To enable Google Consent Mode via Gravito CMP, you’ll need:
 
-1. **A Gravito TCF 2.2 CMP/ Intelligent CMP implementation**
+1. **A Gravito TCF 2.3 CMP/ Intelligent CMP implementation**
 This should be already configured and running on your site. If not, 
 
       - [Gravito New CMP (Standard Component) setup and implementation guide(New)](../Gravito_V6_CMP/Components/StandardCMP/Gravito_cmp_gcmv2.md).
