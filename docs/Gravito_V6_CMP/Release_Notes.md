@@ -2,6 +2,11 @@
 
 ## Release Notes 6.6.1 (29/09/2026) <mark>New</mark>
 
+Bug Fixes:
+
+- Fixed incorrect `tcstringversion` sent during CMP webview `load` event.
+- Fixed close button display issue when consent does not exist in the webview based CMP banner.
+
 Improvements:
 
 - Updated the CMP to support `TCF 2.4 compliance`, including the latest TCF UI requirements. The CMP now displays the required standard user-friendly text and illustrations.
