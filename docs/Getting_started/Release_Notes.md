@@ -13,7 +13,13 @@ Here you can find more about the general product updates
 
 ## Product Release notes :
 
-## Release notes: Sprint 84 - 04/08/2026 <mark>New</mark>
+## Release notes: Sprint 85 - 29/09/2026 <mark>New</mark>
+
+- Changed CMP configurator's deployment strategy to use a single deployment script for all CMP frameworks. This simplifies the deployment process and reduces the risk of errors during integration.
+- Introduced new features like Republish, version control, and rollback in the CMP configurator. These features allow users to manage their configurations more effectively and ensure that they can revert to previous versions if needed.
+- Modified CMP deployment script logic to included check for the presence of `document.body` and initialize the CMP only after the DOM is fully loaded. This change improves the reliability of the CMP loading process and ensures that it does not interfere with other scripts on the page.
+
+## Release notes: Sprint 84 - 04/08/2026
 
 - Removed deprecated CMP configurators from the Admin Portal to reduce confusion and improve usability. The latest Gravito CMP configurator is now the only configurator available for configuration.
 

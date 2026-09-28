@@ -1,36 +1,65 @@
 # Deployment for Gravito CMP (New) Configuration
 
-All deployment related actions for Gravito CMP (New) are handled through **Deployment** tab in the Gravito CMP (New) Configurator. This tab is available as the last tab in the sidebar of the configurator.
+All deployment-related actions for Gravito CMP (New) are handled through the **Deployment** tab in the Gravito CMP (New) Configurator. This tab is available as the last tab in the sidebar of the configurator.
 
 ![](./img/deployment_highlight.png)
 
-After configuring your CMP, you can click the **Validate & Publish** button to publish your changes.
+## Publish a configuration
 
-> **Note**: You cannot make changes to the CMP configuration after publishing. However, you can always create a copy of the configuration to make changes.
+After configuring your CMP, click **Validate and Publish** to validate the configuration and create its first published version. During publishing, provide a version title and optional version notes so that the change can be identified later.
 
-After Publishing, the below deployment methods are available:
+The deployment URL is stable. You add the deployment script to your website once, and subsequent published versions are served through the same URL. You do not need to replace the script on your website when you update the configuration.
 
-## 1. Deployment Script
-This option allows you to deploy Gravito CMP using a simple script. You can download the script in the format of your choice.
+After a configuration has been published, the Deployment tab shows **Validate and Republish**. To publish changes:
 
+1. Update the configuration and click **Save Progress**.
+2. Open the **Deployment** tab and click **Validate and Republish**.
+3. Enter a version title and optional notes, then click **Publish**.
 
-Now you can copy or download the deployment script using the options as shown in below image
-    ![](./img/deployment_script.png) 
+The new version becomes the live version at the existing deployment URL. The same behavior applies to the deployment script, WebView URL, GTM token, and WordPress token associated with the configuration.
 
+## Manage versions and roll back
 
-> **Note**: If you want to deploy the CMP on a mobile application, please **enable** the [Webview Mode](./Components/TCFCMP/webview_cmp_for_apps.md) option in the Deployment tab.
-        ![](./img/webview_button.png)
+Click **Versions** in the configurator to view the saved draft and published versions. The version list indicates the currently live version and includes the publication date, title, and notes when provided.
 
-**For Website** - You can paste the script at the very top of the `<body>` section of your website so it loads before any other scripts. 
+![](./img/version_control.png)
 
-**For Mobile App** - You can download the script as a `HTML` file and use it in your mobile app's webview. This html file can be downloaded only when you enable the webview mode.
+To roll back to an earlier version:
 
-## 2. GTM (Google Tag Manager) Template
+1. Click **Versions**.
+2. Find the version you want to restore and click **Load to configurator**.
+3. Review the loaded configuration and make any required adjustments.
+4. Click **Validate and Republish**, enter the version details, and publish it.
+
+Loading a version into the configurator does not change production. The rollback takes effect only after you republish it. The deployment URL remains unchanged, so the website, WebView, and other integrations continue to use the same point of contact.
+
+## Website connection
+
+The **Website connection** section provides the values required to connect your website or WebView integration to Gravito CMP.
+![](./img/website_connection.png)
+
+### Web Deployment Script
+
+You can copy the **Web Deployment Script** and paste it into your website's HTML to load Gravito CMP. The script is a one-line snippet that loads the CMP asynchronously.
+
+**For a website**: Paste the one-line script at the very top of the `<body>` section so it loads before other scripts.
+
+### WebView source URL
+
+Copy the **WebView source URL** and use it as the source URL when loading Gravito CMP in your mobile application's WebView.
+
+For platform-specific WebView setup, including the required `platform` query parameter and message handling, see the [WebView-based CMP Integration Guide](./Components/TCFCMP/webview_cmp_for_apps.md).
+
+## Platform integrations
+
+Use the configuration token to connect Gravito CMP to your preferred platform.
+![](./img/platform_integrations.png)
+
+### Google Tag Manager (GTM) Template
+
 This option allows you to quickly integrate Gravito's CMP with your website using Google Tag Manager. Please follow the steps below to deploy using GTM:
 
 1. You can copy the GTM Token by clicking on the **Copy GTM Token** button.
-
-    ![](./img/copy_GTM_token.png)
 
 2. **Login** to your **Google Tag Manager** account and click on a new **Tag**.
 
@@ -78,11 +107,10 @@ This option allows you to quickly integrate Gravito's CMP with your website usin
     - Submit and **Publish** the container.
     - CMP will now load and handle consent dynamically on your site.
 
-## 3. WordPress Plugin
+### WordPress Plugin
+
 Seamlessly integrate Gravito's CMP into your WordPress website using our dedicated plugin. Please follow the steps below to deploy using the WordPress plugin:
 
 1. You can copy the WordPress Token by clicking on the **Copy WordPress Token** button.
-
-    ![](./img/copy_WordPress_token.png)
 
 2. Use this token in the WordPress plugin to integrate Gravito's CMP into your website.
