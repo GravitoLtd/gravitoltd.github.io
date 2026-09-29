@@ -1,6 +1,8 @@
-# Deployment for Gravito CMP (New) Configuration
+# Deployment for Gravito CMP Configuration
 
-All deployment-related actions for Gravito CMP (New) are handled through the **Deployment** tab in the Gravito CMP (New) Configurator. This tab is available as the last tab in the sidebar of the configurator.
+**Note:** We have moved to a new deployment process. If you need support related to the old deployment process, please contact our [support team](../Getting_started/Support.md).
+
+All deployment-related actions for Gravito CMP are handled through the **Deployment** tab in the Gravito CMP Configurator. This tab is available as the last tab in the sidebar of the configurator.
 
 ![](./img/deployment_highlight.png)
 
@@ -73,7 +75,7 @@ This option allows you to quickly integrate Gravito's CMP with your website usin
     | Field                          | Description                                                                 |
     |--------------------------------|-----------------------------------------------------------------------------|
     | **Gravito Token**              | Paste the **CMP token** copied from Gravito portal                          |
-    | **Gravito CMP type**           | Select **Gravito CMP (New)**              |
+    | **Gravito CMP type**           | Select **Gravito CMP**              |
     | ✅ **Enable Google Consent Mode** | Enable this to activate GCM support                                       |
 
     ---

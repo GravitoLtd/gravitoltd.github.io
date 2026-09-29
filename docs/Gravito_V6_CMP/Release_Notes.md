@@ -9,7 +9,7 @@ Bug Fixes:
 
 Improvements:
 
-- Updated the CMP to support `TCF 2.4 compliance`, including the latest TCF UI requirements. The CMP now displays the required standard user-friendly text and illustrations.
+- Updated the CMP to support [TCF 2.4 compliance](https://iabeurope.eu/wp-content/uploads/TCF_V-CMP_comms_TCFpoliciesAmendmentsMulti-deviceConsentTCFUIimprovementsSpecialFeature2Clarification_290526_IABEurope.pdf), including the latest TCF UI requirements. The CMP now displays the required standard user-friendly text and illustrations.
 - Upgraded the IAB TCF libraries to `v1.5.22`.
 
 ## Release Notes 6.6.0 (04/08/2026)
