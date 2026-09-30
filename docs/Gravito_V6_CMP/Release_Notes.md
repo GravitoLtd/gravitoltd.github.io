@@ -2,14 +2,22 @@
 
 ## Release Notes 6.6.1 (29/09/2026) <mark>New</mark>
 
+## TCF 2.4 support (IAB Europe Policies v5.0.b)
+
+* Added support for TCF 2.4, in line with IAB Europe's May 2026 policy update (Policies v5.0.a → v5.0.b). Web deployments must comply by **23 October 2026**. TCF 2.4 adds no new Purposes, Special Purposes, Features or Special Features, and no new consent signal categories. Existing TCF templates keep working without migration.
+* Updated Global Vendor List (GVL) ingestion to pick up the new standard Feature explanatory text, per-Feature illustrations and their translations. The CMP UI now shows the standard explanatory text alongside Features, stating that Features are means of processing used in pursuit of one or more Purposes the user has a choice over.
+* Changed Feature rendering so that Features are no longer shown next to controls the user cannot disable, as the updated Policies require.
+* Renamed Special Feature 2 from *"Actively scan device characteristics for identification"* to *"Identify devices based on information actively requested"*. Labels, translations and UI text now come from the GVL. The vendor guidance for Special Feature 2 now covers actively requesting Client Hints to create a fingerprint. The Special Feature 2 ID and signal are unchanged.
+- Updated the CMP to support [TCF 2.4 compliance](https://iabeurope.eu/wp-content/uploads/TCF_V-CMP_comms_TCFpoliciesAmendmentsMulti-deviceConsentTCFUIimprovementsSpecialFeature2Clarification_290526_IABEurope.pdf), including the latest TCF UI requirements. The CMP now displays the required standard user-friendly text and illustrations.
+
 Bug Fixes:
 
 - Fixed incorrect `tcstringversion` sent during CMP webview `load` event.
 - Fixed close button display issue when consent does not exist in the webview based CMP banner.
 
-Improvements:
 
-- Updated the CMP to support [TCF 2.4 compliance](https://iabeurope.eu/wp-content/uploads/TCF_V-CMP_comms_TCFpoliciesAmendmentsMulti-deviceConsentTCFUIimprovementsSpecialFeature2Clarification_290526_IABEurope.pdf), including the latest TCF UI requirements. The CMP now displays the required standard user-friendly text and illustrations.
+Technical Improvements:
+
 - Upgraded the IAB TCF libraries to `v1.5.22`.
 
 ## Release Notes 6.6.0 (04/08/2026)
