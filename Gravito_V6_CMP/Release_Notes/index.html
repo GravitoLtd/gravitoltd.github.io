@@ -74,7 +74,7 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Amazon_consent_mode/">Amazon Consent Mode</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
+              <p class="caption"><span class="caption-text">Gravito CMP</span></p>
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../Getting_Started/">Getting Started</a>
                   </li>
@@ -90,7 +90,9 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Release Notes</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#release-notes-660-04082026-new">Release Notes 6.6.0 (04/08/2026) New</a>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-661-29092026-new">Release Notes 6.6.1 (29/09/2026) New</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-660-04082026">Release Notes 6.6.0 (04/08/2026)</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#release-notes-653-26032026">Release Notes 6.5.3 (26/03/2026)</a>
     </li>
@@ -121,15 +123,6 @@
     </ul>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Getting_Started/">Getting Started</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Release_Notes/">Release Notes</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
-                  </li>
-              </ul>
               <p class="caption"><span class="caption-text">Other Features</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../Other_Features/Domain_Cookie_Scan/">Domain Cookie Scan</a>
@@ -156,7 +149,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Gravito CMP (New)</li>
+          <li class="breadcrumb-item">Gravito CMP</li>
       <li class="breadcrumb-item active">Release Notes</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -167,7 +160,18 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="release-notes">Release Notes</h1>
-<h2 id="release-notes-660-04082026-new">Release Notes 6.6.0 (04/08/2026) <mark>New</mark></h2>
+<h2 id="release-notes-661-29092026-new">Release Notes 6.6.1 (29/09/2026) <mark>New</mark></h2>
+<p>Bug Fixes:</p>
+<ul>
+<li>Fixed incorrect <code>tcstringversion</code> sent during CMP webview <code>load</code> event.</li>
+<li>Fixed close button display issue when consent does not exist in the webview based CMP banner.</li>
+</ul>
+<p>Improvements:</p>
+<ul>
+<li>Updated the CMP to support <a href="https://iabeurope.eu/wp-content/uploads/TCF_V-CMP_comms_TCFpoliciesAmendmentsMulti-deviceConsentTCFUIimprovementsSpecialFeature2Clarification_290526_IABEurope.pdf">TCF 2.4 compliance</a>, including the latest TCF UI requirements. The CMP now displays the required standard user-friendly text and illustrations.</li>
+<li>Upgraded the IAB TCF libraries to <code>v1.5.22</code>.</li>
+</ul>
+<h2 id="release-notes-660-04082026">Release Notes 6.6.0 (04/08/2026)</h2>
 <p>New Features:</p>
 <ul>
 <li>Added GPP support for Web and WebView.</li>
@@ -363,7 +367,7 @@
         
 
         
-        <a href="../../Gravito_SDK/Getting_Started/" class="btn btn-neutral float-right" title="Getting Started">
+        <a href="../../Other_Features/Domain_Cookie_Scan/" class="btn btn-neutral float-right" title="Domain Cookie Scan">
             Next
             <span class="icon icon-circle-arrow-right"></span>
         </a>
@@ -391,7 +395,7 @@
       <span><a href="../FAQ/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../Gravito_SDK/Getting_Started/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../Other_Features/Domain_Cookie_Scan/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

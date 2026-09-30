@@ -64,7 +64,9 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#product-release-notes">Product Release notes :</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#release-notes-sprint-84-04082026-new">Release notes: Sprint 84 - 04/08/2026 New</a>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-sprint-85-29092026-new">Release notes: Sprint 85 - 29/09/2026 New</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes-sprint-84-04082026">Release notes: Sprint 84 - 04/08/2026</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#release-notes-sprint-83-26032026">Release notes: Sprint 83 - 26/03/2026</a>
     </li>
@@ -102,7 +104,7 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Amazon_consent_mode/">Amazon Consent Mode</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Gravito CMP (New)</span></p>
+              <p class="caption"><span class="caption-text">Gravito CMP</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Getting_Started/">Getting Started</a>
                   </li>
@@ -117,15 +119,6 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/FAQ/">FAQ's</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Release_Notes/">Release Notes</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Gravito SDK</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Getting_Started/">Getting Started</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Release_Notes/">Release Notes</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_SDK/Version_2_%28Latest%29/">Version 2 (Latest)</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Other Features</span></p>
@@ -169,13 +162,20 @@
 <p>Gravito’s release notes are generally divided as different category as development happens constantly under all categories. You can jump to specific release notes here</p>
 <ul>
 <li><a href="https://docs.gravito.net/Gravito_V6_CMP/Release_Notes/">Gravito CMP</a> <mark>Latest</mark></li>
-<li><a href="https://docs.gravito.net/Gravito_SDK/Release_Notes/">Gravito SDK</a></li>
-<li>Gravito Intelligent CMP (Older version, to be deprecated) (Please contact Gravito Support)</li>
-<li>Gravito TCF 2.2 CMP (Older version, to be deprecated) (Please contact Gravito Support)</li>
+<li>Gravito Intelligent CMP (Older version, is deprecated) (Please contact Gravito Support)</li>
+<li>Gravito TCF 2.2 CMP (Older version, is deprecated) (Please contact Gravito Support)</li>
 </ul>
 <p>Here you can find more about the general product updates</p>
 <h2 id="product-release-notes">Product Release notes :</h2>
-<h2 id="release-notes-sprint-84-04082026-new">Release notes: Sprint 84 - 04/08/2026 <mark>New</mark></h2>
+<h2 id="release-notes-sprint-85-29092026-new">Release notes: Sprint 85 - 29/09/2026 <mark>New</mark></h2>
+<ul>
+<li>Changed Gravito CMP configurator's deployment strategy to use a single deployment script for all CMP frameworks. This simplifies the deployment process and reduces the risk of errors during integration.</li>
+<li>Introduced new features like Republish, version control, and rollback in the CMP configurator. These features allow users to manage their configurations more effectively and ensure that they can revert to previous versions if needed.</li>
+<li>Modified CMP deployment script logic to included check for the presence of <code>document.body</code> and initialize the CMP only after the DOM is fully loaded. This change improves the reliability of the CMP loading process and ensures that it does not interfere with other scripts on the page.</li>
+<li>Included <strong>Bridging consent</strong> across your domain network as a features in the configurator.</li>
+<li>The SDK is no longer customer-facing to simplify deployments, so its documentation has been removed to simplify the documentation.</li>
+</ul>
+<h2 id="release-notes-sprint-84-04082026">Release notes: Sprint 84 - 04/08/2026</h2>
 <ul>
 <li>Removed deprecated CMP configurators from the Admin Portal to reduce confusion and improve usability. The latest Gravito CMP configurator is now the only configurator available for configuration.</li>
 </ul>
