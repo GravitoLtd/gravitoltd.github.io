@@ -5,9 +5,8 @@ Stay up to date with our latest releases!
 Gravito’s release notes are generally divided as different category as development happens constantly under all categories. You can jump to specific release notes here
 
 - [Gravito CMP](https://docs.gravito.net/Gravito_V6_CMP/Release_Notes/) <mark>Latest</mark>
-- [Gravito SDK](https://docs.gravito.net/Gravito_SDK/Release_Notes/)
-- Gravito Intelligent CMP (Older version, to be deprecated) (Please contact Gravito Support)
-- Gravito TCF 2.2 CMP (Older version, to be deprecated) (Please contact Gravito Support)
+- Gravito Intelligent CMP (Older version, is deprecated) (Please contact Gravito Support)
+- Gravito TCF 2.2 CMP (Older version, is deprecated) (Please contact Gravito Support)
 
 Here you can find more about the general product updates
 
@@ -15,9 +14,11 @@ Here you can find more about the general product updates
 
 ## Release notes: Sprint 85 - 29/09/2026 <mark>New</mark>
 
-- Changed CMP configurator's deployment strategy to use a single deployment script for all CMP frameworks. This simplifies the deployment process and reduces the risk of errors during integration.
+- Changed Gravito CMP configurator's deployment strategy to use a single deployment script for all CMP frameworks. This simplifies the deployment process and reduces the risk of errors during integration.
 - Introduced new features like Republish, version control, and rollback in the CMP configurator. These features allow users to manage their configurations more effectively and ensure that they can revert to previous versions if needed.
 - Modified CMP deployment script logic to included check for the presence of `document.body` and initialize the CMP only after the DOM is fully loaded. This change improves the reliability of the CMP loading process and ensures that it does not interfere with other scripts on the page.
+- Included **Bridging consent** across your domain network as a features in the configurator.
+- The SDK is no longer customer-facing to simplify deployments, so its documentation has been removed to simplify the documentation.
 
 ## Release notes: Sprint 84 - 04/08/2026
 

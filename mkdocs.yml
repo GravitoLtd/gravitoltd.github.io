@@ -36,7 +36,7 @@ nav:
       - Google Consent Mode: 'Consent_Management/Google_consent_mode.md'
       - Microsoft Consent Mode: 'Consent_Management/Microsoft_consent_mode.md'
       - Amazon Consent Mode : 'Consent_Management/Amazon_consent_mode.md'
-  - Gravito CMP (New):
+  - Gravito CMP:
       - Getting Started: 'Gravito_V6_CMP/Getting_Started.md'
       - Setup and Design: 'Gravito_V6_CMP/Setup_and_Design.md'
       - Customization: 'Gravito_V6_CMP/Customization.md'
@@ -44,10 +44,6 @@ nav:
       - Deployment: 'Gravito_V6_CMP/Deployment.md'
       - FAQ's: 'Gravito_V6_CMP/FAQ.md'
       - Release Notes: 'Gravito_V6_CMP/Release_Notes.md'
-  - Gravito SDK:
-      - Getting Started: 'Gravito_SDK/Getting_Started.md'
-      - Release Notes: 'Gravito_SDK/Release_Notes.md'
-      - Version 2 (Latest): 'Gravito_SDK/Version_2_(Latest).md'
   - Other Features:
       - Domain Cookie Scan: 'Other_Features/Domain_Cookie_Scan.md'
       - GVL Comparison: 'Other_Features/GVL_Comparison.md'
