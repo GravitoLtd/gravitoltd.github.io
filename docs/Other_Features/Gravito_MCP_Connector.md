@@ -142,7 +142,7 @@ Tools that change a draft or save one to your account are marked for confirmatio
 * **Statistics:** consent statistics are totals per domain, not individual visitors.
 * **Drafts:** a draft stays with the connector for 30 days after its last change, unless you save it to Gravito.
 * **Preview links:** anyone who has a preview link can open it until the draft expires, so share it with care. Previews aren't indexed by search engines, and clicks on them aren't counted in your statistics.
-* **Logs:** Gravito keeps a 90-day log of which tools are used, with your email hashed. We don't store your conversations.
+* **Logs:** Gravito keeps a 90-day log of which tools are used: your email address, the app you connected, the time and whether it worked. It doesn't include what the tools returned, and we don't store your conversations.
 
 When you connect, what the tools return goes to your assistant, and its provider's terms cover your use of it. Read our [privacy notice](https://www.gravito.net/privacy-notice/) for how Gravito handles data.
 
