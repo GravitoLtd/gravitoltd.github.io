@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://docs.gravito.net/Other_Features/Gravito_MCP_Connector/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gravito Documentation">
+  <meta property="og:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
+  <meta property="og:image" content="https://docs.gravito.net/img/social-preview.png">
+  <meta property="og:url" content="https://docs.gravito.net/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gravito Documentation">
+  <meta name="twitter:description" content="Gravito documentation for consent management, privacy infrastructure, SDKs and developer integrations.">
+  <meta name="twitter:image" content="https://docs.gravito.net/img/social-preview.png">
+
+    <title>Gravito MCP Connector - Gravito Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Gravito MCP Connector";
+        var mkdocs_page_input_path = "Other_Features/Gravito_MCP_Connector.md";
+        var mkdocs_page_url = "/Other_Features/Gravito_MCP_Connector/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../img/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Register/">Register</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Support/">Support</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Getting_started/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Consent Managment</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Iab_tcf/">IAB TCF</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Google_consent_mode/">Google Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Microsoft_consent_mode/">Microsoft Consent Mode</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Consent_Management/Amazon_consent_mode/">Amazon Consent Mode</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gravito CMP</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Getting_Started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Setup_and_Design/">Setup and Design</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Customization/">Customization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Components/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Deployment/">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/FAQ/">FAQ's</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gravito_V6_CMP/Release_Notes/">Release Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Other Features</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Domain_Cookie_Scan/">Domain Cookie Scan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../GVL_Comparison/">GVL Comparison</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Gravito MCP Connector</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-you-can-do">What you can do</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-it-cant-do">What it can't do</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#before-you-start">Before you start</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connect">Connect</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#claude-web-desktop-or-mobile">Claude (web, desktop or mobile)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#claude-code">Claude Code</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#chatgpt">ChatGPT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#other-assistants">Other assistants</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#after-an-update">After an update</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mobile-apps">Mobile apps</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tools">Tools</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#security-and-data">Security and data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#moving-from-onetrust">Moving from OneTrust</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Try it out</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Try_it_out/Playbooks/">Playbooks</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Gravito Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Other Features</li>
+      <li class="breadcrumb-item active">Gravito MCP Connector</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gravito-mcp-connector">Gravito MCP Connector</h1>
+<p>The Gravito MCP connector links your Gravito account to AI assistants that support the Model Context Protocol (MCP), such as Claude and ChatGPT. You can ask your assistant about your CMP configurations, get install code for your website or mobile app, check a live page, read your consent statistics, and draft a new banner.</p>
+<p>It can't publish, delete or change anything that's live. Publishing always stays with a person in the Gravito portal.</p>
+<hr />
+<h2 id="what-you-can-do">What you can do</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>What your assistant can do</th>
+<th>Try asking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configurations</td>
+<td>List and read your CMP configurations, Standard and TCF</td>
+<td>"How many Gravito configs do I have, and which are TCF?"</td>
+</tr>
+<tr>
+<td>Installation</td>
+<td>Write install code for Astro, Next.js and HTML</td>
+<td>"Add config 1234 to my Astro site"</td>
+</tr>
+<tr>
+<td>Mobile apps</td>
+<td>Give the WebView URL and setup for iOS, Android, React Native and Flutter apps</td>
+<td>"How do I show config 1234 in my iOS app?"</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Set up Google Consent Mode and Tag Manager for Standard and TCF</td>
+<td>"How do I set up GTM with config 1234?"</td>
+</tr>
+<tr>
+<td>Site checks</td>
+<td>Check whether Gravito is installed correctly on a page, and what loads before it</td>
+<td>"Check the Gravito install on <a href="https://www.example.com">www.example.com</a>"</td>
+</tr>
+<tr>
+<td>Cookies</td>
+<td>Read the cookie report for your domains</td>
+<td>"Show the cookie report for example.com"</td>
+</tr>
+<tr>
+<td>Statistics</td>
+<td>Show accept and reject rates per domain</td>
+<td>"Show consent stats for the last 30 days"</td>
+</tr>
+<tr>
+<td>New banners</td>
+<td>Draft a banner from an existing config, with a preview link</td>
+<td>"Make a Finnish version of config 1234 with our green colours"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="what-it-cant-do">What it can't do</h2>
+<ul>
+<li>Publish, restore or delete a configuration</li>
+<li>Change anything on a live website</li>
+<li>Read individual visitors' consent records</li>
+<li>Reach another customer's account</li>
+<li>Give legal advice or decide whether a setup is compliant</li>
+</ul>
+<p>The connector reports how your setup is configured. It doesn't judge whether a setting is right, because that can depend on your own decisions. Different Google Consent Mode mappings can be valid, for example. Your assistant writes its own answers, so check anything important, and contact us if you're unsure:</p>
+<ul>
+<li>Google Consent Mode: <a href="mailto:gcm.support@gravito.net">gcm.support@gravito.net</a></li>
+<li>Anything else: <a href="mailto:support@gravito.net">support@gravito.net</a></li>
+</ul>
+<hr />
+<h2 id="before-you-start">Before you start</h2>
+<p>You need:</p>
+<ul>
+<li>A Gravito account with a CMP configuration. If you're new, <a href="../../Getting_started/Register/">register</a> first.</li>
+<li>Your website's domains added in the Gravito portal. Site checks, cookie reports and statistics work only on your registered domains and their subdomains.</li>
+<li>An AI assistant that supports remote MCP servers with OAuth sign-in.</li>
+</ul>
+<p>Each login gives access to one Gravito customer account. Partner accounts with several customers aren't supported yet.</p>
+<hr />
+<h2 id="connect">Connect</h2>
+<p>Use the address <code>https://mcp.gravito.fi/mcp</code>. The sign-in page shows which app is connecting, and what it will be able to do.</p>
+<h3 id="claude-web-desktop-or-mobile">Claude (web, desktop or mobile)</h3>
+<ol>
+<li>Open <strong>Customize</strong> &gt; <strong>Connectors</strong>.</li>
+<li>Select <strong>Add custom connector</strong> and paste the address.</li>
+<li>
+<p>Select <strong>Connect</strong>. Gravito's sign-in page opens. Enter your Gravito account email and select <strong>Email me a PIN</strong>.</p>
+<p><img alt="Gravito sign-in page for Claude" src="../../img/mcpconnector/claude-signin.png" /></p>
+</li>
+<li>
+<p>Enter the PIN we email you and select <strong>Connect</strong>.</p>
+</li>
+</ol>
+<p>On Team and Enterprise plans, an organisation Owner may need to add the connector first.</p>
+<h3 id="claude-code">Claude Code</h3>
+<pre><code>claude mcp add --transport http --scope user gravito https://mcp.gravito.fi/mcp
+</code></pre>
+<p>Then run <code>/mcp</code> in Claude Code and sign in.</p>
+<h3 id="chatgpt">ChatGPT</h3>
+<ol>
+<li>In ChatGPT's settings, add the address as a custom connector (an app), with OAuth sign-in. Depending on your plan, this may need developer mode turned on.</li>
+<li>
+<p>ChatGPT explains what it shares with the app. Select <strong>Connect Gravito</strong>.</p>
+<p><img alt="ChatGPT's Connect Gravito dialog" src="../../img/mcpconnector/chatgpt-connect.png" /></p>
+</li>
+<li>
+<p>Gravito's sign-in page opens. Enter your Gravito account email and select <strong>Email me a PIN</strong>.</p>
+<p><img alt="Gravito sign-in page for ChatGPT" src="../../img/mcpconnector/chatgpt-signin.png" /></p>
+</li>
+<li>
+<p>Enter the PIN we email you and select <strong>Connect</strong>.</p>
+<p><img alt="Entering the PIN" src="../../img/mcpconnector/chatgpt-pin.png" /></p>
+</li>
+</ol>
+<h3 id="other-assistants">Other assistants</h3>
+<p>Add the address as a custom connector or remote MCP server, using OAuth sign-in. We've tested Claude and ChatGPT. Support for others depends on how each one handles sign-in, so <a href="../../Getting_started/Support/">contact support</a> if you'd like to use a different one.</p>
+<h3 id="after-an-update">After an update</h3>
+<p>Assistants keep the list of tools they got when you connected. If a new feature doesn't appear, refresh or reconnect the connector in your assistant's settings, then start a new chat.</p>
+<hr />
+<h2 id="mobile-apps">Mobile apps</h2>
+<p>For an iOS, Android, React Native or Flutter app, your assistant gives you your configuration's <strong>WebView source URL</strong>, the same one shown in the portal's Deployment tab. It also tells you how to connect the app to the banner and what consent data the app must store, for both Standard and TCF.</p>
+<p>The app loads the URL with two required parameters:</p>
+<pre><code>https://cdn.gravito.net/cmpconfigs/.../latest.html?platform=ios&amp;region=&lt;REGION&gt;
+</code></pre>
+<p>The URL stays the same when you publish changes. For the full setup, see the <a href="../../Gravito_V6_CMP/FAQ/GPP-Support-webview/">WebView integration guide</a> and <a href="../../Gravito_V6_CMP/Deployment/">Deployment</a>.</p>
+<hr />
+<h2 id="tools">Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it does</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list_cmp_configs</code></td>
+<td>Lists your configurations and their kind</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>get_cmp_config</code></td>
+<td>Summarises one configuration</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>list_templates</code></td>
+<td>Lists the portal's templates</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>get_install_snippet</code></td>
+<td>Returns install code for a website, or the WebView setup for a mobile app</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>get_consent_mode_snippet</code></td>
+<td>Returns the code for sites using Google tags</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>get_gtm_setup</code></td>
+<td>Explains the Google Tag Manager setup</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>validate_privacy_link</code></td>
+<td>Checks a privacy policy link</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>check_site_installation</code></td>
+<td>Checks the install on a public page</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>get_cookie_report</code></td>
+<td>Returns the cookie report for a domain</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>get_consent_stats</code></td>
+<td>Returns consent statistics per domain</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>list_cmp_drafts</code></td>
+<td>Lists your drafts and preview links</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>create_cmp_draft</code></td>
+<td>Creates a draft from a configuration</td>
+<td>Draft</td>
+</tr>
+<tr>
+<td><code>update_cmp_draft</code></td>
+<td>Changes a draft</td>
+<td>Draft</td>
+</tr>
+<tr>
+<td><code>save_draft_to_gravito</code></td>
+<td>Saves a draft to your account, unpublished</td>
+<td>Draft</td>
+</tr>
+</tbody>
+</table>
+<p>Tools that change a draft or save one to your account are marked for confirmation, so assistants that support this ask you first. Claude does.</p>
+<hr />
+<h2 id="security-and-data">Security and data</h2>
+<ul>
+<li><strong>Sign-in:</strong> OAuth with your Gravito email and a PIN. You never give your assistant a password or API key.</li>
+<li><strong>Access:</strong> your assistant only sees the Gravito account you signed in with. You can disconnect it at any time.</li>
+<li><strong>Permissions:</strong> the connector has two permissions, <code>cmp:read</code> and <code>cmp:draft</code>. Most assistants ask for both. An app that asks only for <code>cmp:read</code> can read but can't create or save drafts.</li>
+<li><strong>Statistics:</strong> consent statistics are totals per domain, not individual visitors.</li>
+<li><strong>Drafts:</strong> a draft stays with the connector for 30 days after its last change, unless you save it to Gravito.</li>
+<li><strong>Preview links:</strong> anyone who has a preview link can open it until the draft expires, so share it with care. Previews aren't indexed by search engines, and clicks on them aren't counted in your statistics.</li>
+<li><strong>Logs:</strong> Gravito keeps a 90-day log of which tools are used, with your email hashed. We don't store your conversations.</li>
+</ul>
+<p>When you connect, what the tools return goes to your assistant, and its provider's terms cover your use of it. Read our <a href="https://www.gravito.net/privacy-notice/">privacy notice</a> for how Gravito handles data.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Too many PIN requests"</td>
+<td>Wait 15 minutes and try again.</td>
+</tr>
+<tr>
+<td>No PIN email</td>
+<td>Check your spam folder, and that you used your Gravito account email.</td>
+</tr>
+<tr>
+<td>"Partner accounts not supported yet"</td>
+<td>Your login is linked to several customers, which isn't supported yet. Contact support.</td>
+</tr>
+<tr>
+<td>"Isn't registered in your Gravito account"</td>
+<td>Add the domain in the Gravito portal, then try again.</td>
+</tr>
+<tr>
+<td>"Doesn't include draft access"</td>
+<td>The app connected with read access only. Reconnect it and allow draft access (<code>cmp:draft</code>).</td>
+</tr>
+<tr>
+<td>A new feature doesn't appear</td>
+<td>Refresh or reconnect the connector in your assistant's settings, then start a new chat.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="moving-from-onetrust">Moving from OneTrust</h2>
+<p>If your website uses OneTrust, your assistant can rebuild its banner in Gravito for you. For example: "Move www.example.com from OneTrust to Gravito".</p>
+<p>Your domain must be registered in your Gravito account, and you need one Gravito configuration of the same kind, Standard or TCF.</p>
+<ol>
+<li>Ask your assistant to scan your site. You get a report of your OneTrust setup: Standard or TCF, regions, categories, cookies, languages and vendors.</li>
+<li>Ask it to import the site. You get a Gravito draft with a preview link.</li>
+<li>Review the preview and the list of what carried over.</li>
+<li>Ask it to save the draft to Gravito. It appears in the portal, unpublished.</li>
+<li>Review and publish it in the portal.</li>
+<li>Make the listed changes on your site and install Gravito.</li>
+</ol>
+<p><strong>What carries over:</strong> whether you use Standard or TCF, categories, banner texts in up to 12 languages, TCF purposes and vendors, colours, logo, banner position, button shape and order, and your Google Consent Mode mapping.</p>
+<p><strong>What needs your attention:</strong></p>
+<ul>
+<li>Your other custom CSS. It's written for OneTrust's page structure, so your assistant can rewrite the parts you want to keep.</li>
+<li>A logo hosted by OneTrust. Upload it to Gravito before your contract ends.</li>
+<li>Google's Additional Consent vendors. They're imported, but check them in the portal.</li>
+<li>Script tags and Tag Manager triggers that depend on OneTrust. The report lists the ones it can see.</li>
+<li>Banners that differ by region. Each import covers one OneTrust rule.</li>
+</ul>
+<p>Visitors will probably see the banner once more after you switch, because stored OneTrust consent doesn't carry over.</p>
+<p><strong>Tools used for the move:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it does</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scan_onetrust_site</code></td>
+<td>Reports on a registered site's OneTrust setup</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>import_onetrust_site</code></td>
+<td>Creates a draft from a site's OneTrust setup</td>
+<td>Draft</td>
+</tr>
+</tbody>
+</table>
+<p>Saving the draft uses <code>save_draft_to_gravito</code>, described under <a href="#tools">Tools</a>.</p>
+<p><strong>Troubleshooting:</strong></p>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"No OneTrust tag was found" or the site can't be read</td>
+<td>Give your assistant your OneTrust id, the <code>data-domain-script</code> value in your OneTrust tag.</td>
+</tr>
+</tbody>
+</table>
+<p>Need help? Contact <a href="../../Getting_started/Support/">Gravito support</a>.</p>
+              
+            </div>
+          </div>
+<footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        
+        <a href="../GVL_Comparison/" class="btn btn-neutral float-left" title="GVL Comparison">
+            <span class="icon icon-circle-arrow-left"></span>
+            Previous
+        </a>
+        
+
+        
+        <a href="../../Try_it_out/Playbooks/" class="btn btn-neutral float-right" title="Playbooks">
+            Next
+            <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
+    </div>
+
+    <hr>
+
+    <div class="gravito-footer">
+        © 2026 Gravito. All rights reserved.
+    </div>
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../GVL_Comparison/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Try_it_out/Playbooks/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/modal.js"></script>
+      <script src="../../js/motomo.js"></script>
+      <script src="../../js/copy-code.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
