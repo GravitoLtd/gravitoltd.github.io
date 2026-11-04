@@ -47,5 +47,6 @@ nav:
   - Other Features:
       - Domain Cookie Scan: 'Other_Features/Domain_Cookie_Scan.md'
       - GVL Comparison: 'Other_Features/GVL_Comparison.md'
+      - Gravito MCP Connector: 'Other_Features/Gravito_MCP_Connector.md'
   - Try it out:
       - Playbooks: 'Try_it_out/Playbooks.md'
