@@ -14,10 +14,11 @@ It can't publish, delete or change anything that's live. Publishing always stays
 | Installation | Write install code for Astro, Next.js and HTML | "Add config 1234 to my Astro site" |
 | Mobile apps | Give the WebView URL and setup for iOS, Android, React Native and Flutter apps | "How do I show config 1234 in my iOS app?" |
 | Google | Set up Google Consent Mode and Tag Manager for Standard and TCF | "How do I set up GTM with config 1234?" |
-| Site checks | Check whether Gravito is installed correctly on a page, and what loads before it | "Check the Gravito install on [www.example.com](https://www.example.com)" |
-| Cookies | Read the cookie report for your domains | "Show the cookie report for example.com" |
-| Statistics | Show accept and reject rates per domain | "Show consent stats for the last 30 days" |
+| Site checks | Check how Gravito is installed on a page and what loads before it, and spot site code that saves consent or sends banner events without a click. If Gravito is loaded by the site's own code, it says so, using your banner statistics | "Check the Gravito install on [www.example.com](https://www.example.com)" |
+| Cookies | Read the cookie report for your domains. The categories are the cookie scanner's, not your banner's consent categories | "Show the cookie report for example.com" |
+| Statistics | Show consent stats per domain, counted the same way as the Gravito dashboard, with warnings when the numbers look unusual | "Show consent stats for the last 30 days" |
 | New banners | Draft a banner from an existing config, with a preview link | "Make a Finnish version of config 1234 with our green colours" |
+| Health check | Audit up to 5 domains you choose: stats, the live site, the config it loads and the cookie report, in one ranked list. Run it any time, or schedule it weekly in your own assistant | "Run a Gravito audit on my busiest domains" |
 
 ***
 
@@ -116,15 +117,16 @@ The URL stays the same when you publish changes. For the full setup, see the [We
 | Tool | What it does | Access |
 | --- | --- | --- |
 | `list_cmp_configs` | Lists your configurations and their kind | Read |
-| `get_cmp_config` | Summarises one configuration | Read |
+| `get_cmp_config` | Summarises one configuration: consent categories or TCF purposes, Google Consent Mode, texts and colours | Read |
 | `list_templates` | Lists the portal's templates | Read |
 | `get_install_snippet` | Returns install code for a website, or the WebView setup for a mobile app | Read |
 | `get_consent_mode_snippet` | Returns the code for sites using Google tags | Read |
 | `get_gtm_setup` | Explains the Google Tag Manager setup | Read |
 | `validate_privacy_link` | Checks a privacy policy link | Read |
-| `check_site_installation` | Checks the install on a public page | Read |
+| `check_site_installation` | Checks the install on a public page, including site scripts that call the CMP, or reports that Gravito runs from the site's own code | Read |
 | `get_cookie_report` | Returns the cookie report for a domain | Read |
-| `get_consent_stats` | Returns consent statistics per domain | Read |
+| `get_consent_stats` | Returns consent statistics per domain and per day, with the dashboard's accepted and rejected shares and warnings for unusual numbers | Read |
+| `audit_account` | Checks up to 5 chosen domains and returns one ranked list of findings | Read |
 | `list_cmp_drafts` | Lists your drafts and preview links | Read |
 | `create_cmp_draft` | Creates a draft from a configuration | Draft |
 | `update_cmp_draft` | Changes a draft | Draft |
