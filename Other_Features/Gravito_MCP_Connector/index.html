@@ -197,23 +197,28 @@
 </tr>
 <tr>
 <td>Site checks</td>
-<td>Check whether Gravito is installed correctly on a page, and what loads before it</td>
+<td>Check how Gravito is installed on a page and what loads before it, and spot site code that saves consent or sends banner events without a click. If Gravito is loaded by the site's own code, it says so, using your banner statistics</td>
 <td>"Check the Gravito install on <a href="https://www.example.com">www.example.com</a>"</td>
 </tr>
 <tr>
 <td>Cookies</td>
-<td>Read the cookie report for your domains</td>
+<td>Read the cookie report for your domains. The categories are the cookie scanner's, not your banner's consent categories</td>
 <td>"Show the cookie report for example.com"</td>
 </tr>
 <tr>
 <td>Statistics</td>
-<td>Show accept and reject rates per domain</td>
+<td>Show consent stats per domain, counted the same way as the Gravito dashboard, with warnings when the numbers look unusual</td>
 <td>"Show consent stats for the last 30 days"</td>
 </tr>
 <tr>
 <td>New banners</td>
 <td>Draft a banner from an existing config, with a preview link</td>
 <td>"Make a Finnish version of config 1234 with our green colours"</td>
+</tr>
+<tr>
+<td>Health check</td>
+<td>Audit up to 5 domains you choose: stats, the live site, the config it loads and the cookie report, in one ranked list. Run it any time, or schedule it weekly in your own assistant</td>
+<td>"Run a Gravito audit on my busiest domains"</td>
 </tr>
 </tbody>
 </table>
@@ -305,7 +310,7 @@
 </tr>
 <tr>
 <td><code>get_cmp_config</code></td>
-<td>Summarises one configuration</td>
+<td>Summarises one configuration: consent categories or TCF purposes, Google Consent Mode, texts and colours</td>
 <td>Read</td>
 </tr>
 <tr>
@@ -335,7 +340,7 @@
 </tr>
 <tr>
 <td><code>check_site_installation</code></td>
-<td>Checks the install on a public page</td>
+<td>Checks the install on a public page, including site scripts that call the CMP, or reports that Gravito runs from the site's own code</td>
 <td>Read</td>
 </tr>
 <tr>
@@ -345,7 +350,12 @@
 </tr>
 <tr>
 <td><code>get_consent_stats</code></td>
-<td>Returns consent statistics per domain</td>
+<td>Returns consent statistics per domain and per day, with the dashboard's accepted and rejected shares and warnings for unusual numbers</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>audit_account</code></td>
+<td>Checks up to 5 chosen domains and returns one ranked list of findings</td>
 <td>Read</td>
 </tr>
 <tr>
