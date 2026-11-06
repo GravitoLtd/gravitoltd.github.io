@@ -9,10 +9,10 @@ This document provides implementation guidance for integrating Gravito CMP in mo
 The mobile app loads a hosted Gravito CMP HTML page inside a WebView. The CMP page must be configured for WebView mode and loaded with both `platform` and `region` query parameters.
 
 ```text
-https://{yourhostedwebveiewhtmlpath}?platform={platform}&region={region}
+https://{yourhostedwebviewhtmlpath}?platform={platform}&region={region}
 ```
 
-Replace `{yourhostedwebveiewhtmlpath}` with the complete hosted CMP HTML path, `{platform}` with the platform bridge value (`ios`, `reactnative`, `flutter`, or `android`), and `{region}` with the region required by the application. Both query parameters are required.
+Replace `{yourhostedwebviewhtmlpath}` with the complete hosted CMP HTML path, `{platform}` with the platform bridge value (`ios`, `reactnative`, `flutter`, or `android`), and `{region}` with the region required by the application. Both query parameters are required.
 
 Required CMP configuration depends on the underlying framework.
 
@@ -38,9 +38,9 @@ For `GPP + US Privacy`, whether the banner is required is controlled by the acti
 
 The CMP sends `cmpType` with each native event. The app must use `cmpType` to choose which stored values to send back and which fields to persist on save.
 
-The fields exchanged with the app depend on the underlying CMP framework. For `GPP + TCF`, the app must persist and return the TCF fields plus `gppstring` and `googleConsents`. For `GPP + US Privacy`, the app must persist and return `gppstring` and any `googleConsents` sent by the CMP. For Standard CMP, the app must persist and return `gcstring` and any `googleConsents` sent by the CMP.
+The fields exchanged with the app depend on the underlying CMP framework. For `GPP + TCF`, the app must persist and return the TCF fields plus `gppstring`. For `GPP + US Privacy`, the app must persist and return `gppstring`. For Standard CMP, the app must persist and return `gcstring`. Persist `googleConsents` when it is present in a `save` payload. Returning `googleConsents` in `cookieData` is optional and is not implemented consistently by all supplied samples.
 
-This integration does not embed a native CMP SDK. Gravito runs as a web CMP inside `WKWebView`. When consent is saved, the web CMP sends its pre-parsed IAB data through the native bridge, and the host app performs the native persistence normally associated with an in-app CMP integration:
+This integration does not embed a native CMP SDK. Gravito runs as a web CMP inside the platform WebView (`WKWebView` on native iOS and Android `WebView` on native Android). When consent is saved, the web CMP sends its pre-parsed IAB data through the native bridge, and the host app performs the native persistence normally associated with an in-app CMP integration:
 
 ```text
 Gravito web CMP
@@ -65,9 +65,9 @@ Use the following structure when planning a mobile WebView integration:
 
 2. Framework data contract
    - Route by cmpType on every event.
-   - cmpType=tcf: send and store TCF fields plus gppstring and googleConsents.
-   - cmpType=usprivacy: send and store gppstring plus googleConsents when present.
-   - cmpType=standard: send and store gcstring plus googleConsents when present.
+   - cmpType=tcf: send and store TCF fields plus gppstring; store googleConsents when present.
+   - cmpType=usprivacy: send and store gppstring; store googleConsents when present.
+   - cmpType=standard: send and store gcstring; store googleConsents when present.
 
 3. Platform implementation
    - Native iOS: reference implementation included.
@@ -104,7 +104,7 @@ The CMP-to-app message name key is platform-specific:
 | Native iOS | `event` | `{ "event": "start" }` |
 | React Native | `type` | `{ "type": "CMP-loaded" }` |
 | Flutter | `type` | `{ "type": "CMP-loaded" }` |
-| Native Android | `type` | `{ "type": "CMP-loaded" }` |
+| Native Android | JavaScript interface method | `getValueFromStorage(cmpType)` |
 
 For native iOS, CMP-to-app messages are posted through:
 
@@ -114,14 +114,16 @@ window.webkit.messageHandlers.jsHandler.postMessage(message);
 
 The native iOS app must register a `WKScriptMessageHandler` named `jsHandler`.
 
-Each CMP-to-app event includes:
+React Native and Flutter receive a `CMP-loaded` event. Native iOS receives `event: "start"`. The native Android sample instead exposes stored data synchronously through `getValueFromStorage(cmpType)` and receives `save`, `load`, and `close` through `getValueFromWebView(value)`.
+
+CMP-to-app events include:
 
 | Field | Purpose |
 | --- | --- |
 | `event` or `type` | Message name, such as `start`, `cookieData`, or `save`. CMP-to-iOS messages use `event`; other platform CMP messages use `type`. |
 | `cmpType` | CMP framework that owns the payload. Expected values: `tcf`, `usprivacy`, `standard`. |
 | `bannerRequired` | Sent with `save`. When `false`, the app can close or hide the WebView after storing the returned data. |
-| `inAppTCData` | Sent with TCF `save` events. Pre-parsed TCF data used to populate the standard `IABTCF_*` keys. Lowercase `inAppTCData` is the canonical field name emitted by Gravito. |
+| `inAppTCData` | Sent with TCF `save` events. Pre-parsed TCF data used to populate the standard `IABTCF_*` keys. Lowercase `inAppTCData` is the canonical field name emitted by Gravito; the native samples also accept legacy casing variants. |
 | `gppData` | Sent with GPP-enabled `save` events. GPP `PingReturn` data used to populate the standard `IABGPP_*` keys. |
 
 ### IAB Native Storage Payloads
@@ -189,8 +191,7 @@ The app sends these fields back to the CMP in the `cookieData` message. Native i
   "tcstring": "TCF_STRING",
   "nontcfdata": [],
   "acstring": "GOOGLE_AC_STRING",
-  "gppstring": "GPP_STRING",
-  "googleConsents": {}
+  "gppstring": "GPP_STRING"
 }
 ```
 
@@ -249,7 +250,7 @@ The app sends this back to the CMP in the `cookieData` message:
 {
   "type": "cookieData",
   "cmpType": "standard",
-  "gcString": "GC_STRING"
+  "gcstring": "GC_STRING"
 }
 ```
 
@@ -260,7 +261,7 @@ The app persists this field from the `save` message:
 | `gcstring` | `gcstring` | Standard CMP consent string. |
 | `googleConsents` | `googleConsents` | Google consent values, when present. Store as a JSON-compatible object. |
 
-The current iOS sample sends `gcString` in `cookieData` for Standard CMP and stores `gcstring` from the `save` event.
+The current iOS sample sends `gcstring` in `cookieData` for Standard CMP and stores `gcstring` from the `save` event.
 
 The native iOS reference implementation branches by `cmpType` and includes payload handling for `tcf`, `usprivacy`, and `standard`.
 
@@ -416,7 +417,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     }
 
     func loadTheUrl() {
-        let urlString = "https://{yourhostedwebveiewhtmlpath}?platform=ios&region={region}"
+        let urlString = "https://{yourhostedwebviewhtmlpath}?platform=ios&region={region}"
         if let url = URL(string: urlString) {
             let request = URLRequest(url: url)
             webView.load(request)
@@ -682,15 +683,13 @@ class ViewController: UIViewController, WKScriptMessageHandler {
                 let nontcfdata = UserDefaults.standard.object(forKey: "nontcfdata") ?? []
                 let acString = UserDefaults.standard.string(forKey: "acstring") ?? ""
                 let gppString = UserDefaults.standard.string(forKey: "gppstring") ?? ""
-                let googleConsents = UserDefaults.standard.object(forKey: "googleConsents") ?? [:]
                 payload = [
                     "type": "cookieData",
                     "cmpType": cmpType,
                     "tcstring": tcString,
                     "nontcfdata": nontcfdata,
                     "acstring": acString,
-                    "gppstring": gppString,
-                    "googleConsents": googleConsents
+                    "gppstring": gppString
                 ]
             case "usprivacy":
                 let gppString = UserDefaults.standard.string(forKey: "gppstring") ?? ""
@@ -704,7 +703,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
                 payload = [
                     "type": "cookieData",
                     "cmpType": cmpType,
-                    "gcString": gcString
+                    "gcstring": gcString
                 ]
             default:
                 payload = [
@@ -737,9 +736,11 @@ class ViewController: UIViewController, WKScriptMessageHandler {
                 saveGPPData(gppData)
             }
 
-            // Lowercase inAppTCData is the canonical field emitted by Gravito.
+            // Lowercase inAppTCData is canonical; accept legacy casing variants.
             if cmpType == "tcf",
-               let inAppTCData = json["inAppTCData"] as? [String: Any] {
+               let inAppTCData = (json["inAppTCData"]
+                    ?? json["InAppTcData"]
+                    ?? json["inAppTcData"]) as? [String: Any] {
                 saveInAppTCData(inAppTCData)
             }
 
@@ -806,7 +807,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
 Use the hosted WebView URL pattern in production:
 
 ```text
-https://{yourhostedwebveiewhtmlpath}?platform=ios&region={region}
+https://{yourhostedwebviewhtmlpath}?platform=ios&region={region}
 ```
 
 During development, the host portion may point to a local server that is reachable from the simulator or device. Keep both `platform=ios` and the required `region` value, and configure platform transport security if the development server uses HTTP.
@@ -815,7 +816,7 @@ During development, the host portion may point to a local server that is reachab
 
 - Host the CMP HTML page and confirm it is reachable from the app.
 - Enable WebView mode on the CMP framework in context: `gravito.config.cmp.tcf.core.isWebView = true` for `GPP + TCF`, or `gravito.config.cmp.usprivacy.core.isWebView = true` for `GPP + US Privacy`.
-- Load `https://{yourhostedwebveiewhtmlpath}?platform=ios&region={region}`.
+- Load `https://{yourhostedwebviewhtmlpath}?platform=ios&region={region}`.
 - Register the `WKScriptMessageHandler` bridge as `jsHandler`.
 - Choose the framework data contract from `cmpType`: `tcf`, `usprivacy`, or `standard`.
 - On `start`, send a `cookieData` message back to the CMP using the fields required by `cmpType`.
@@ -841,7 +842,7 @@ npm install react-native-webview @react-native-async-storage/async-storage
 Platform query value:
 
 ```text
-https://{yourhostedwebveiewhtmlpath}?platform=reactnative&region={region}
+https://{yourhostedwebviewhtmlpath}?platform=reactnative&region={region}
 ```
 
 Native bridge:
@@ -856,7 +857,7 @@ The supplied sample also recognizes `cmpType: "global"` for a Google-consent-onl
 
 #### React Native Reference Implementation
 
-The following component reflects the sample application flow. Replace the development URL and region before production use.
+The following component is a hardened version of the sample application flow. It adds defensive parsing, waits for the initial storage read, updates in-memory state after saving, and creates a framework-specific `cookieData` payload. Replace the development URL and region before production use.
 
 ```jsx
 import { useEffect, useRef, useState } from 'react';
@@ -976,7 +977,7 @@ export default function WebviewScreen({ navigation }) {
         return {
           type: 'cookieData',
           cmpType,
-          gcString: cmpData?.gcstring ?? '',
+          gcstring: cmpData?.gcstring ?? '',
         };
       case 'global':
         return {
@@ -1054,7 +1055,7 @@ export default function WebviewScreen({ navigation }) {
       ref={webViewRef}
       source={{
         // Replace the placeholders with the hosted CMP HTML path and region.
-        uri: 'https://{yourhostedwebveiewhtmlpath}?platform=reactnative&region={region}',
+        uri: 'https://{yourhostedwebviewhtmlpath}?platform=reactnative&region={region}',
       }}
       startInLoadingState
       scalesPageToFit
@@ -1067,7 +1068,7 @@ export default function WebviewScreen({ navigation }) {
 }
 ```
 
-The sample stores the complete last `save` payload under `cmpdata`, then derives a framework-specific `cookieData` response from it. This keeps the demo simple while ensuring that only fields relevant to the active `cmpType` are returned to the CMP. Production applications may store individual fields separately, but must preserve the framework contracts defined earlier in this guide.
+The repository sample stores the complete last `save` payload under `cmpdata` and returns that stored payload with `type` changed to `cookieData`. The hardened reference implementation above instead derives a framework-specific response so that only fields relevant to the active `cmpType` are returned. Production applications may store individual fields separately, but must preserve the framework contracts defined earlier in this guide.
 
 The initial `AsyncStorage` read is asynchronous. Do not answer `CMP-loaded` before that read finishes, or a returning user can briefly be treated as a first-time user. The reference component avoids this race by mounting the WebView only after storage loads. An application that mounts it earlier must retain an early `CMP-loaded` event and send `cookieData` as soon as loading completes; simply ignoring the event assumes that the CMP will retry.
 
@@ -1078,7 +1079,7 @@ The initial `AsyncStorage` read is asynchronous. Do not answer `CMP-loaded` befo
 #### React Native Developer Checklist
 
 - Install and link `react-native-webview` and `@react-native-async-storage/async-storage` as required by the React Native version.
-- Load `https://{yourhostedwebveiewhtmlpath}?platform=reactnative&region={region}`.
+- Load `https://{yourhostedwebviewhtmlpath}?platform=reactnative&region={region}`.
 - Parse `event.nativeEvent.data` defensively in `onMessage`.
 - On `CMP-loaded`, send `cookieData` selected by the message's `cmpType` after stored data has loaded.
 - On `save`, persist the framework payload and handle `bannerRequired: false` by closing or hiding the WebView after persistence.
@@ -1103,7 +1104,7 @@ flutter pub add webview_flutter webview_flutter_wkwebview shared_preferences
 Platform query value:
 
 ```text
-https://{yourhostedwebveiewhtmlpath}?platform=flutter&region={region}
+https://{yourhostedwebviewhtmlpath}?platform=flutter&region={region}
 ```
 
 JavaScript channel:
@@ -1118,7 +1119,7 @@ The supplied sample also recognizes `cmpType: "global"` for a deployment-specifi
 
 #### Flutter Reference Implementation
 
-The following widget reflects the sample application flow. Replace the hosted CMP URL and region before production use.
+The following widget is a hardened version of the sample application flow. It adds defensive parsing, consistently uses lowercase `acstring`, persists fields needed for the documented round trip, and awaits persistence before handling `bannerRequired: false`. Replace the hosted CMP URL and region before production use.
 
 ```dart
 import 'dart:convert';
@@ -1183,7 +1184,7 @@ class _CmpWebViewState extends State<CmpWebView> {
       )
       ..loadRequest(
         Uri.parse(
-          'https://{yourhostedwebveiewhtmlpath}'
+          'https://{yourhostedwebviewhtmlpath}'
           '?platform=flutter&region={region}',
         ),
       );
@@ -1227,7 +1228,7 @@ class _CmpWebViewState extends State<CmpWebView> {
         return {
           'type': 'cookieData',
           'cmpType': cmpType,
-          'gcString': storedData?['gcstring'] ?? '',
+          'gcstring': storedData?['gcstring'] ?? '',
         };
       case 'usprivacy':
         return {
@@ -1400,7 +1401,7 @@ The example enables WebKit inspection unconditionally to match the supplied deve
 #### Flutter Developer Checklist
 
 - Add `webview_flutter`, `webview_flutter_wkwebview`, and `shared_preferences`.
-- Load `https://{yourhostedwebveiewhtmlpath}?platform=flutter&region={region}`.
+- Load `https://{yourhostedwebviewhtmlpath}?platform=flutter&region={region}`.
 - Register the JavaScript channel with the exact name `FlutterAppWebView`.
 - Parse channel messages defensively and route them by both `type` and `cmpType`.
 - On `CMP-loaded`, read stored data and send the framework-specific `cookieData` payload.
@@ -1417,33 +1418,48 @@ Use `WebView` with JavaScript enabled and register the native bridge object with
 Platform query value:
 
 ```text
-https://{yourhostedwebveiewhtmlpath}?platform=android&region={region}
+https://{yourhostedwebviewhtmlpath}?platform=android&region={region}
 ```
 
 JavaScript interface:
 
 ```text
-AndroidAppWebView or AndroidInterface
+AndroidInterface
 ```
 
 The Android bridge receives CMP messages through the `getValueFromWebView(value: String)` JavaScript interface method. The CMP sends Android message names using the `type` key, for example `type: "save"`.
 
 #### 1. Configure The WebView
 
-Register the bridge name expected by the hosted CMP page. The exact interface name must match the JavaScript bridge contract configured in the CMP HTML.
+Register the bridge name expected by the hosted CMP page. The supplied GPP sample and CMP bridge use the case-sensitive name `AndroidInterface`.
 
 ```kotlin
-val webView: WebView = findViewById(R.id.webView)
+val webView = WebView(this)
+setContentView(webView)
+
 webView.settings.javaScriptEnabled = true
-webView.addJavascriptInterface(WebAppInterface(this), "AndroidAppWebView")
-webView.loadUrl("https://{yourhostedwebveiewhtmlpath}?platform=android&region={region}")
-```
+webView.settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+webView.webViewClient = object : WebViewClient() {
+    override fun onReceivedError(
+        view: WebView?,
+        errorCode: Int,
+        description: String?,
+        failingUrl: String?
+    ) {
+        Toast.makeText(
+            this@WebViewActivity,
+            "Failed to load URL: $description",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+}
+webView.webChromeClient = WebChromeClient()
 
-If the CMP page expects `AndroidInterface`, register the same implementation with that name instead:
-
-```kotlin
 webView.addJavascriptInterface(WebAppInterface(this), "AndroidInterface")
+webView.loadUrl("https://{yourhostedwebviewhtmlpath}?platform=android&region={region}")
 ```
+
+The sample enables mixed content for its HTTP development URL. Prefer an HTTPS-only CMP page in production and enable mixed content only when it is required.
 
 #### 2. Add The Native Android Bridge
 
@@ -1904,8 +1920,8 @@ class WebAppInterface(private val context: Context) {
 
 - Host the CMP HTML page and confirm it is reachable from the app.
 - Enable WebView mode on the CMP framework in context: `gravito.config.cmp.tcf.core.isWebView = true` for `GPP + TCF`, or `gravito.config.cmp.usprivacy.core.isWebView = true` for `GPP + US Privacy`.
-- Load `https://{yourhostedwebveiewhtmlpath}?platform=android&region={region}`.
-- Register the JavaScript interface name expected by the CMP page, such as `AndroidAppWebView` or `AndroidInterface`.
+- Load `https://{yourhostedwebviewhtmlpath}?platform=android&region={region}`.
+- Register the JavaScript interface with the exact name `AndroidInterface`.
 - Choose the framework data contract from `cmpType`: `tcf`, `usprivacy`, or `standard`.
 - On `save`, persist the payload fields required by `cmpType`.
 - On TCF `save`, convert `inAppTCData` to `IABTCF_*` values in Android's default `SharedPreferences`.
@@ -1923,7 +1939,7 @@ class WebAppInterface(private val context: Context) {
 - Native iOS sends `cookieData` back into the WebView with `type: "cookieData"`.
 - React Native, Flutter, and native Android use `type` as the message name key in their bridge payloads.
 - The CMP sends `cmpType` with each event so the app can route storage by framework.
-- Gravito emits the canonical lowercase `inAppTCData` field on TCF save events and `gppData` on GPP-enabled save events.
+- Gravito emits the canonical lowercase `inAppTCData` field on TCF save events and `gppData` on GPP-enabled save events. Native integrations may also accept the legacy `InAppTcData` and `inAppTcData` casing variants for compatibility.
 - Native iOS stores the supplied pre-parsed values in standard `IABTCF_*` and `IABGPP_*` `UserDefaults` keys so third-party native SDKs can consume them without decoding the consent strings.
 - Native Android stores the supplied pre-parsed values in standard `IABTCF_*` and `IABGPP_*` keys in default `SharedPreferences`; Gravito's WebView round-trip strings remain in the app-specific preference store.
 - For `cmpType=tcf`, store and return `tcstring`, `nontcfdata`, `acstring`, `gppstring`, and `googleConsents` when present.
