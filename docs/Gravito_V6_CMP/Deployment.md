@@ -44,7 +44,7 @@ The **Website connection** section provides the values required to connect your 
 
 You can copy the **Web Deployment Script** and paste it into your website's HTML to load Gravito CMP. The script is a one-line snippet that loads the CMP asynchronously.
 
-**For a website**: Paste the one-line script at the very top of the `<body>` section so it loads before other scripts.
+**For a website**: Paste the one-line script as close to the top of the `<head>` section of your HTML as possible. This ensures that the CMP loads before any other scripts that may require consent.
 
 ### WebView source URL
 
