@@ -131,7 +131,6 @@ const CMPWebView = ({navigation}) => {
 
             case 'save':
               DefaultPreference.set('cmpdata', event.nativeEvent.data);
-              goBack();
               break;
 
             case 'load':
@@ -139,6 +138,7 @@ const CMPWebView = ({navigation}) => {
               break;
 
             case 'close':
+              goBack();
               break;
 
             default:
@@ -202,9 +202,9 @@ You can find a sample Flutter app that integrates the Gravito CMP using WebView 
 
 ```yaml
 dependencies:
-  webview_flutter: ^4.0.7
-  webview_flutter_wkwebview: ^3.10.0
-  shared_preferences: ^2.0.15
+  webview_flutter: ^4.2.1
+  webview_flutter_wkwebview: ^3.22.0
+  shared_preferences: ^2.1.1
 ```
 
 #### Code Example
@@ -231,14 +231,16 @@ class _CMPWebViewState extends State<CMPWebView> {
   void initState() {
     super.initState();
 
-    final WebKitWebViewControllerCreationParams params =
-        WebKitWebViewControllerCreationParams(
-      allowsInlineMediaPlayback: true,
-      mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
-    );
+    late final PlatformWebViewControllerCreationParams params;
+    if (WebViewPlatform.instance is WebKitWebViewPlatform) {
+      params = WebKitWebViewControllerCreationParams();
+    } else {
+      params = const PlatformWebViewControllerCreationParams();
+    }
 
-    controller = WebKitWebViewController.fromParams(params)
+    controller = WebViewController.fromPlatformCreationParams(params)
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
       ..addJavaScriptChannel(
         'FlutterAppWebView',
         onMessageReceived: _onJavaScriptMessageReceived,
@@ -250,6 +252,10 @@ class _CMPWebViewState extends State<CMPWebView> {
       ))
       ..loadRequest(Uri.parse(
           'https://yourdomain.com/gravito-cmp.html?platform=flutter'));
+
+    if (controller.platform is WebKitWebViewController) {
+      (controller.platform as WebKitWebViewController).setInspectable(true);
+    }
   }
 
   Future<void> _onJavaScriptMessageReceived(JavaScriptMessage message) async {
@@ -265,6 +271,7 @@ class _CMPWebViewState extends State<CMPWebView> {
           "tcstring": stored != null ? jsonDecode(stored)["tcstring"] : null,
           "nontcfdata":
               stored != null ? jsonDecode(stored)["nontcfdata"] : null,
+          "acstring": stored != null ? jsonDecode(stored)["acstring"] : null,
         };
         controller.runJavaScript(
             'window.postMessage(${jsonEncode(cookieMsg)})');
@@ -274,11 +281,12 @@ class _CMPWebViewState extends State<CMPWebView> {
         await prefs.setString("cookieData", jsonEncode({
           "tcstring": data["tcstring"],
           "nontcfdata": data["nontcfdata"],
+          "acstring": data["acstring"],
         }));
         break;
 
       case 'close':
-        Navigator.of(context).pop();
+        debugPrint('WebView closed');
         break;
 
       default:
@@ -401,7 +409,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
                 ]
                 if let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: []),
                    let jsonString = String(data: jsonData, encoding: .utf8) {
-                    let js = "window.postMessage(\(jsonString), "*");true;"
+                    let js = "window.postMessage(\(jsonString), \"*\");true;"
                     webView.evaluateJavaScript(js, completionHandler: nil)
                 }
 
@@ -446,7 +454,7 @@ Note: The `tcstring`, `nontcfdata`, and `acstring` should be stored in the forma
 ```swift
 webView.evaluateJavaScript("window.gravito.cmp.openPreferences();", completionHandler: nil)
 ```
-### Android Native (Java/Kotlin)
+### Android Native (Kotlin)
 
 #### Overview
 
@@ -455,11 +463,11 @@ The Android implementation of Gravito CMP uses a WebView that communicates with 
 #### Sample App
 You can find a sample Android app that integrates the Gravito CMP using WebView [here](https://github.com/GravitoLtd/GravitoWebViewSampleAndroidForV6)
 
-> ⚠️ **Important**: You must register the JavaScript adapter with the exact name used in the CMP JavaScript. For Gravito CMP, the adapter name should be `"AndroidAppWebView"`.
+> ⚠️ **Important**: You must register the JavaScript adapter with the exact name used in the CMP JavaScript. For Gravito CMP, the adapter name should be `"AndroidInterface"`.
 
 #### Required Setup
 
-- Minimum Android SDK: 21+
+- Minimum Android SDK: 24+
 - Add Internet permissions in `AndroidManifest.xml`:
 
 ```xml
@@ -474,91 +482,66 @@ You can find a sample Android app that integrates the Gravito CMP using WebView 
 
 ---
 
-### JavaScript Adapter: `WebAppInterface.java`
+### JavaScript Adapter: `WebAppInterface.kt`
 
-```java
-package com.example.gravito_android_webview_sample;
+```kotlin
+package com.example.gravito_android_webview_sample
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.util.Log;
-import android.webkit.JavascriptInterface;
-import android.widget.Toast;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.content.Context
+import android.content.SharedPreferences
+import android.util.Log
+import android.webkit.JavascriptInterface
+import android.widget.Toast
+import org.json.JSONException
+import org.json.JSONObject
 
-public class WebAppInterface {
-    private final Context context;
-    private final SharedPreferences sharedPreferences;
+class WebAppInterface(private val context: Context) {
+    private val sharedPreferences: SharedPreferences =
+        context.getSharedPreferences("MYPREF", Context.MODE_PRIVATE)
 
-    public WebAppInterface(Context context) {
-        this.context = context;
-        this.sharedPreferences = context.getSharedPreferences("MYPREF", Context.MODE_PRIVATE);
+    @JavascriptInterface
+    fun showToast(toast: String) {
+        Toast.makeText(context, toast, Toast.LENGTH_SHORT).show()
     }
 
     @JavascriptInterface
-    public void showToast(String toast) {
-        Toast.makeText(context, toast, Toast.LENGTH_SHORT).show();
-    }
-
-    @JavascriptInterface
-    public void getValueFromWebView(String value) {
+    fun getValueFromWebView(value: String) {
         try {
-            JSONObject jsonObject = new JSONObject(value);
-            String type = jsonObject.optString("type");
+            val jsonObject = JSONObject(value)
 
-            switch (type) {
-                case "save":
-                    String tcString = jsonObject.optString("tcstring", "");
-                    String acString = jsonObject.optString("acstring", "");
-                    String nonTcfData = jsonObject.optString("nontcfdata", "");
-
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("TC_STRING", tcString);
-                    editor.putString("AC_STRING", acString);
-                    editor.putString("NON_TCF_DATA", nonTcfData);
-                    editor.apply();
-                    break;
-
-                case "close":
-                    Log.d("WebAppInterface", "Handling close event");
-                    break;
-
-                case "load":
-                    Log.d("WebAppInterface", "Handling load event");
-                    break;
-
-                default:
-                    Log.d("WebAppInterface", "Unknown event type: " + type);
-                    break;
+            when (jsonObject.optString("type")) {
+                "save" -> {
+                    sharedPreferences.edit()
+                        .putString("TC_STRING", jsonObject.optString("tcstring", ""))
+                        .putString("AC_STRING", jsonObject.optString("acstring", ""))
+                        .putString("NON_TCF_DATA", jsonObject.optString("nontcfdata", ""))
+                        .apply()
+                }
+                "close" -> Log.d("WebAppInterface", "Handling close")
+                "load" -> Log.d("WebAppInterface", "Handling load")
+                else -> Log.d("WebAppInterface", "Unknown event type")
             }
-
-        } catch (JSONException e) {
-            Log.e("WebAppInterface", "JSON parse error: " + e.getMessage());
+        } catch (e: JSONException) {
+            Log.e("WebAppInterface", "Failed to parse JSON: ${e.message}")
         }
     }
 
     @JavascriptInterface
-    public String getValueFromStorage() {
-        try {
-            String tcString = sharedPreferences.getString("TC_STRING", null);
-            String acString = sharedPreferences.getString("AC_STRING", null);
-            String nonTcfData = sharedPreferences.getString("NON_TCF_DATA", null);
-
-            JSONObject json = new JSONObject();
-            json.put("tcstring", tcString);
-            json.put("acstring", acString);
-            json.put("nontcfdata", nonTcfData);
-
-            return json.toString();
-        } catch (JSONException e) {
-            Log.e("WebAppInterface", "JSON creation error: " + e.getMessage());
-            return "{}";
+    fun getValueFromStorage(): String {
+        return try {
+            JSONObject()
+                .put("tcstring", sharedPreferences.getString("TC_STRING", null))
+                .put("acstring", sharedPreferences.getString("AC_STRING", null))
+                .put("nontcfdata", sharedPreferences.getString("NON_TCF_DATA", null))
+                .toString()
+        } catch (e: JSONException) {
+            Log.e("WebAppInterface", "Failed to create JSON: ${e.message}")
+            "{}"
         }
     }
 
     @JavascriptInterface
-    public void onButtonClick() {
+    fun onButtonClick() {
         // Optional: handle clicks from CMP if required
     }
 }
@@ -566,40 +549,51 @@ public class WebAppInterface {
 
 ---
 
-### MainActivity Setup
+### `WebViewActivity` Setup
 
-```java
-package com.example.gravito_android_webview_sample;
+```kotlin
+package com.example.gravito_android_webview_sample
 
-import android.os.Bundle;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle
+import android.webkit.WebChromeClient
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.Toast
+import androidx.activity.ComponentActivity
 
-public class MainActivity extends AppCompatActivity {
-    private WebView cmpWebView;
+class WebViewActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        cmpWebView = new WebView(this);
-        setContentView(cmpWebView);
+        val webView = WebView(this)
+        setContentView(webView)
 
-        WebSettings webSettings = cmpWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        // Register JavaScript interface with exact name used in CMP HTML
-        cmpWebView.addJavascriptInterface(new WebAppInterface(this), "AndroidAppWebView");
-
-        cmpWebView.loadUrl("https://yourdomain.com/gravito-cmp.html?platform=android");
-    }
-
-    @Override
-    protected void onDestroy() {
-        if (cmpWebView != null) {
-            cmpWebView.destroy();
+        webView.settings.javaScriptEnabled = true
+        webView.settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+        webView.webViewClient = object : WebViewClient() {
+            override fun onReceivedError(
+                view: WebView?,
+                errorCode: Int,
+                description: String?,
+                failingUrl: String?
+            ) {
+                Toast.makeText(
+                    this@WebViewActivity,
+                    "Failed to load URL: $description",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
-        super.onDestroy();
+        webView.webChromeClient = WebChromeClient()
+
+        webView.addJavascriptInterface(
+            WebAppInterface(this),
+            "AndroidInterface"
+        )
+        webView.loadUrl(
+            "https://yourdomain.com/gravito-cmp.html?platform=android"
+        )
     }
 }
 ```
@@ -608,8 +602,8 @@ public class MainActivity extends AppCompatActivity {
 
 ### Opening Preferences UI from Native App
 
-```java
-cmpWebView.evaluateJavascript("window.gravito.cmp.openPreferences();", null);
+```kotlin
+webView.evaluateJavascript("window.gravito.cmp.openPreferences();", null)
 ```
 
 ---
@@ -632,7 +626,7 @@ Note: The `tcstring`, `nontcfdata`, and `acstring` should be stored in the forma
 ### Summary
 
 - Use `WebView` to load Gravito CMP with `?platform=android`.
-- Register JavaScript adapter named `AndroidAppWebView` (case-sensitive).
+- Register JavaScript adapter named `AndroidInterface` (case-sensitive).
 - Use `WebAppInterface` class to handle consent events (`save`, `load`, `close`).
 - Persist consent data using `SharedPreferences`.
 - Use `evaluateJavascript` to send commands from app to WebView (e.g., open preferences screen).
